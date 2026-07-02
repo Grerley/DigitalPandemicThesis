@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this software or model, please cite the thesis below."
+title: "The Digital Pandemic: An Epidemic-Modelling Framework for Technology-Induced Mental Health in a Connected World"
+type: software
+authors:
+  - family-names: Mutibura
+    given-names: Grerley
+    affiliation: "University of KwaZulu-Natal"
+year: 2026
+version: "1.0.0"
+license: MIT
+repository-code: "https://github.com/GrerleyMutibura/DigitalPandemicThesis"
+keywords:
+  - mathematical epidemiology
+  - compartmental model
+  - network science
+  - Bayesian inference
+  - digital addiction
+  - mental health
+  - public health
+references:
+  - type: thesis
+    title: "The Digital Pandemic: An Epidemic-Modelling Framework for Technology-Induced Mental Health in a Connected World"
+    authors:
+      - family-names: Mutibura
+        given-names: Grerley
+    institution:
+      name: "University of KwaZulu-Natal"
+    thesis-type: "PhD thesis"
+    year: 2026

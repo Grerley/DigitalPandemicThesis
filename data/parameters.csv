@@ -1,0 +1,16 @@
+parameter,symbol,value,unit,lower_95,upper_95,source,description
+transmission_rate,beta,0.033,per_contact_per_month,0.022,0.048,"HBSC Bayesian calibration (Ch 6.5)",Per-contact social-influence transmission probability
+effective_contacts,c,3.7,contacts,2.5,5.0,"Mean-field calibration (Ch 6.5.3)",Effective mean-field transmitting contacts (beta*c = 0.122/month); network model uses full degree ~10
+at_risk_infectivity,eta,0.5,dimensionless,0.3,0.7,"Assumed (Ch 4)",Reduced infectivity weight of At-Risk vs Addicted
+exogenous_rate,mu,0.0015,per_month,0.001,0.003,"Calibration",Non-social (exogenous) acquisition rate
+progression,sigma,0.24,per_year,0.20,0.29,"HMM / survival (Ch 6.4)",At-Risk to Addicted progression rate (PAI)
+remission,gamma1,0.22,per_year,0.18,0.26,"HMM (Ch 6.2)",At-Risk to Susceptible remission rate (PAS)
+recovery,gamma2,0.54,per_year,0.48,0.62,"HMM + survival + Winkler 2013",Addicted to Recovered recovery rate (PIR); mean duration ~1.9 yr
+relapse,delta,0.07,per_year,0.04,0.11,"Multi-state model + clinical lit",Recovered to At-Risk relapse rate (PRA)
+initial_S,pi_S,0.823,proportion,0.815,0.831,"HBSC 2022",Initial Susceptible fraction
+initial_A,pi_A,0.065,proportion,0.060,0.070,"HBSC 2022",Initial At-Risk fraction
+initial_I,pi_I,0.047,proportion,0.043,0.051,"HBSC 2022",Initial Addicted fraction
+initial_R,pi_R,0.065,proportion,0.058,0.072,"Assumed",Initial Recovered fraction
+R0,R0,2.4,dimensionless,1.8,3.0,"NGM derivation (App A.4)",Basic reproduction number
+peak_prevalence,I_peak,0.14,proportion,0.09,0.18,"Model output (Ch 7)",Baseline peak addicted prevalence
+endemic_prevalence,I_star,0.081,proportion,0.052,0.124,"Model output (App A.6)",Endemic equilibrium addicted prevalence

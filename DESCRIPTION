@@ -1,0 +1,22 @@
+Package: digitalpandemic
+Title: Epidemic Modelling of Youth Digital Addiction (Thesis Code)
+Version: 1.0.0
+Authors@R: person("Grerley", "Mutibura", role = c("aut","cre"))
+Description: Reproducible S-A-I-R compartmental and network models, Bayesian and
+    HMM calibration, and intervention scenario analysis accompanying the PhD
+    thesis "The Digital Pandemic".
+License: MIT
+Encoding: UTF-8
+Depends: R (>= 4.1)
+Imports:
+    deSolve,
+    igraph,
+    depmixS4,
+    dplyr,
+    tidyr,
+    ggplot2,
+    survival
+Suggests:
+    cmdstanr,
+    rstan,
+    knitr
