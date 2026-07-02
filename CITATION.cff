@@ -5,11 +5,11 @@ type: software
 authors:
   - family-names: Mutibura
     given-names: Grerley
-    affiliation: "University of KwaZulu-Natal"
+    affiliation: "University of Johannesburg"
 year: 2026
 version: "1.0.0"
 license: MIT
-repository-code: "https://github.com/GrerleyMutibura/DigitalPandemicThesis"
+repository-code: "https://github.com/Grerley/DigitalPandemicThesis"
 keywords:
   - mathematical epidemiology
   - compartmental model
