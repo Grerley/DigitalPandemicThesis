@@ -45,8 +45,19 @@ generate_cohort <- function(n = 10000, years = 10, seed = 42,
   }
   for (yr in 0:years) {
     obs <- t(vapply(state, emit, numeric(2)))
-    # measurement error: misclassify observed state with prob = noise
+    # measurement error: the observed classification misclassifies the true
+    # state with probability `noise` (uniformly to one of the other three
+    # states). The true `state` is retained as ground truth for validation;
+    # `state_observed` is the noisy label for robustness checks.
+    state_obs <- state
+    if (noise > 0) {
+      mis <- runif(n) < noise
+      if (any(mis))
+        state_obs[mis] <- vapply(state[mis], function(s)
+          sample(setdiff(c("S","A","I","R"), s), 1L), character(1))
+    }
     rows[[yr + 1]] <- data.frame(covar, year = yr, state = state,
+                                 state_observed = state_obs,
                                  screen = obs[,1], symptom = obs[,2])
     if (yr == years) break
     # annual transition
