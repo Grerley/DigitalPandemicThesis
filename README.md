@@ -29,7 +29,13 @@ pipeline as a live "flight simulator" for the thesis: explore every model in rea
 parameters, animate network contagion, and compose interventions — with all five model families
 interactive, URL-shareable scenarios, CSV/PNG/SVG export, and a built-in acceptance self-test that
 verifies R₀ ≈ 2.50 / 3.04 / 2.71, peak ≈ 14% @ ~yr 7, endemic ≈ 8%, and a ≈ −63% comprehensive
-intervention. No backend or build step:
+intervention.
+
+**▶ Live demo: https://grerley.github.io/DigitalPandemicThesis/** — deployed automatically from
+`app/` on every push to `main` by [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml).
+(One-time: in *Settings → Pages → Build and deployment*, set the source to **GitHub Actions**.)
+
+Or run it locally — no backend or build step:
 
 ```bash
 cd app && python3 -m http.server 8000   # then open http://localhost:8000/

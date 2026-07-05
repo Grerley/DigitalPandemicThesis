@@ -9,6 +9,12 @@ pipeline (`../R/`) as a live, interactive web application — no backend, no bui
 > not an empirical forecast. See the *Methods & Provenance* screen for the equations,
 > parameter sources, and caveats.
 
+## Live demo
+
+**https://grerley.github.io/DigitalPandemicThesis/** — published from this folder on every push to
+`main` via GitHub Actions ([`.github/workflows/deploy-pages.yml`](../.github/workflows/deploy-pages.yml)).
+One-time setup: *Settings → Pages → Build and deployment → Source: **GitHub Actions***.
+
 ## Run it
 
 The app uses native ES modules and a Web Worker, so it must be served over HTTP
