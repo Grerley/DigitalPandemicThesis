@@ -1,0 +1,13 @@
+{
+  "name": "digital-pandemic-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Interactive Simulation Lab for the S–A–I–R model of technology-induced mental health (Mutibura, 2026). Pure client-side ES modules — no runtime dependencies.",
+  "scripts": {
+    "test": "node test/selftest.mjs",
+    "lint": "node test/lint.mjs",
+    "serve": "python3 -m http.server 8000"
+  },
+  "license": "MIT"
+}
