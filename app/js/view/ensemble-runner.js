@@ -13,6 +13,12 @@ const pending = new Map();
 
 function ensureWorker() {
   if (workerOK !== null) return workerOK;
+  // Allow a host page (e.g. a single-file hosted build) to force main-thread
+  // execution when a separate worker file cannot be loaded.
+  if (typeof globalThis !== "undefined" && globalThis.__DPL_FORCE_MAIN_THREAD__) {
+    workerOK = false;
+    return false;
+  }
   try {
     worker = new Worker(new URL("../network-worker.js", import.meta.url), { type: "module" });
     worker.onmessage = (ev) => {
