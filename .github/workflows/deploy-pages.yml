@@ -1,0 +1,52 @@
+# Deploy the Interactive Simulation Lab (app/) to GitHub Pages.
+# Publishes to https://<owner>.github.io/<repo>/ on every push to the default
+# branch that touches the app, and on manual dispatch. The app is a static site
+# (no build needed); we upload the app/ folder as the Pages artifact.
+#
+# One-time setup: in the repository, Settings → Pages → "Build and deployment" →
+# Source: "GitHub Actions". After that this workflow keeps the site up to date.
+name: Deploy app to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "app/**"
+      - ".github/workflows/deploy-pages.yml"
+  workflow_dispatch:
+
+# Allow the workflow to publish to Pages via OIDC.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Only one Pages deployment at a time; newer pushes supersede in-flight ones.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Verify model self-tests
+        run: node app/test/selftest.mjs
+
+      - name: Upload app/ as Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: app
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -22,6 +22,27 @@ control using three complementary methods:
 3. **Statistical calibration** — hierarchical Bayesian estimation of the transmission rate (Stan),
    Hidden Markov Model estimation of transition probabilities, and logistic regression for risk factors.
 
+## Interactive Simulation Lab
+
+A browser-based, research-grade **interactive lab** ([`app/`](app/)) reimplements this entire
+pipeline as a live "flight simulator" for the thesis: explore every model in real time, sweep
+parameters, animate network contagion, and compose interventions — with all five model families
+interactive, URL-shareable scenarios, CSV/PNG/SVG export, and a built-in acceptance self-test that
+verifies R₀ ≈ 2.50 / 3.04 / 2.71, peak ≈ 14% @ ~yr 7, endemic ≈ 8%, and a ≈ −63% comprehensive
+intervention.
+
+**▶ Live demo: https://grerley.github.io/DigitalPandemicThesis/** — deployed automatically from
+`app/` on every push to `main` by [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml).
+(One-time: in *Settings → Pages → Build and deployment*, set the source to **GitHub Actions**.)
+
+Or run it locally — no backend or build step:
+
+```bash
+cd app && python3 -m http.server 8000   # then open http://localhost:8000/
+```
+
+See [`app/README.md`](app/README.md) for the full description and architecture.
+
 > **Epistemic status.** All quantitative outputs are *conditional model results*, not empirical
 > forecasts. Parameters are calibrated against aggregate WHO HBSC and OECD surveillance data together
 > with a documented **synthetic cohort** that stands in for the longitudinal transition data that do
