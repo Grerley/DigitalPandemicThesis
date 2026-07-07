@@ -71,6 +71,11 @@ export function generateCohort(p, opts = {}) {
   // Empirical annual transition counts (estimated matrix).
   const transCount = [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]];
   let sumPSA = 0, nPSAsteps = 0;
+  // Sum of the actual per-individual (covariate-tilted) onset probabilities over
+  // every Susceptible person-step. Because onset is heterogeneous, the true
+  // generating S→A probability for the population is this mean — NOT the untilted
+  // cohort-average base rate (which the convex expit tilt pushes above).
+  let sumGenPSA = 0, nGenPSA = 0;
 
   const covOddsShift = (i) =>
     Math.log(0.94) * (age[i] - 14) +
@@ -100,6 +105,7 @@ export function generateCohort(p, opts = {}) {
       let ns = s;
       if (s === 0) {
         const pSA_i = expit(logit(basePSA) + covOddsShift(i));
+        sumGenPSA += pSA_i; nGenPSA++;
         const onset = rng.next() < pSA_i ? 1 : 0;
         if (onset) ns = 1;
         // Record the onset event for the risk-factor regression.
@@ -128,8 +134,11 @@ export function generateCohort(p, opts = {}) {
     const tot = row.reduce((a, b) => a + b, 0) || 1;
     return row.map((v) => v / tot);
   });
-  // Known generating annual transition matrix (S-row uses cohort-avg base P_SA).
-  const avgPSA = sumPSA / nPSAsteps;
+  // Known generating annual transition matrix. The S-row uses the mean of the
+  // actual per-individual onset probabilities (the true generating rate for the
+  // heterogeneous population), so it is directly comparable to the empirical
+  // estimate rather than understating it.
+  const avgPSA = nGenPSA ? sumGenPSA / nGenPSA : sumPSA / nPSAsteps;
   const knownMatrix = [
     [1 - avgPSA, avgPSA, 0, 0],
     [pAS, 1 - pAS - pAI, pAI, 0],
