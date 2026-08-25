@@ -3,6 +3,7 @@
 
 import { h, $, clear, toast } from "./view/dom.js";
 import { store, PRESETS } from "./state.js";
+import { ContextView } from "./view/views/context.js";
 import { OverviewView } from "./view/views/overview.js";
 import { ExplorerView } from "./view/views/explorer.js";
 import { PhaseView } from "./view/views/phase.js";
@@ -13,6 +14,7 @@ import { MethodsView } from "./view/views/methods.js";
 import { selfTestPanel } from "./view/views/selftest-panel.js";
 
 const VIEWS = [
+  { id: "context", title: "Research Context", desc: "Questions, framing, sources", make: ContextView },
   { id: "overview", title: "Overview", desc: "Baseline S–A–I–R run", make: OverviewView },
   { id: "explorer", title: "Parameter Explorer", desc: "Sliders, R₀, sensitivity", make: ExplorerView },
   { id: "phase", title: "Phase & Equilibrium", desc: "Bifurcation, phase, lag", make: PhaseView },

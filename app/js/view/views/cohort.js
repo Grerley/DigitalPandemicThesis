@@ -74,7 +74,7 @@ export function CohortView() {
   const regenBtn = h("button", { class: "sm", onclick: () => { seed = (seed * 1103515245 + 12345) % 2147483647; regen(); rebuild(); toast(`Regenerated cohort (seed ${seed})`); } }, ["New random seed"]);
 
   el.appendChild(h("div", { class: "view-head" }, [
-    h("div", { class: "kicker", text: "Screen 5 · Statistical layer" }),
+    h("div", { class: "kicker", text: "Screen 6 · Statistical layer" }),
     h("h1", { text: "Cohort & Risk Factors" }),
     h("p", { class: "prose", text: "A synthetic longitudinal cohort — a modelling instrument, not observed data — whose individual onset probability is tilted by covariates through published odds ratios. It lets us recover the risk-factor forest plot by logistic regression and validate transition-matrix estimation against a known generating matrix." }),
   ]));

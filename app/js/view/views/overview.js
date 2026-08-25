@@ -105,7 +105,7 @@ export function OverviewView() {
   }
 
   el.appendChild(h("div", { class: "view-head" }, [
-    h("div", { class: "kicker", text: "Screen 1 · Deterministic core" }),
+    h("div", { class: "kicker", text: "Screen 2 · Deterministic core" }),
     h("h1", { text: "Overview dashboard" }),
     h("p", { class: "prose", text: "The calibrated S–A–I–R baseline: a nonlinear difference-equation system on a monthly step. Watch the epidemic rise, peak, and settle to an endemic plateau sustained by relapse. Scrub the timeline to inspect the state and live transition rates at any month." }),
   ]));
