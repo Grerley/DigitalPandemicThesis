@@ -1,4 +1,4 @@
-// app.js — Application shell: routing, navigation, scenario bar, theme.
+// app.js, Application shell: routing, navigation, scenario bar, theme.
 // -----------------------------------------------------------------------------
 
 import { h, $, clear, toast } from "./view/dom.js";

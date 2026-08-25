@@ -1,4 +1,4 @@
-// cohort.js — Synthetic longitudinal cohort + statistical layer.
+// cohort.js, Synthetic longitudinal cohort + statistical layer.
 // -----------------------------------------------------------------------------
 // Port of R/03_synthetic_data.R + R/05_regression.R. A MODELLING INSTRUMENT,
 // not observed data: it produces individual trajectories that reproduce known
@@ -73,7 +73,7 @@ export function generateCohort(p, opts = {}) {
   let sumPSA = 0, nPSAsteps = 0;
   // Sum of the actual per-individual (covariate-tilted) onset probabilities over
   // every Susceptible person-step. Because onset is heterogeneous, the true
-  // generating S→A probability for the population is this mean — NOT the untilted
+  // generating S→A probability for the population is this mean, NOT the untilted
   // cohort-average base rate (which the convex expit tilt pushes above).
   let sumGenPSA = 0, nGenPSA = 0;
 

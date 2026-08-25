@@ -1,4 +1,4 @@
-// format.js — Number formatting for legible, tabular metrics.
+// format.js, Number formatting for legible, tabular metrics.
 // -----------------------------------------------------------------------------
 
 export const pct = (x, dp = 1) => `${(x * 100).toFixed(dp)}%`;

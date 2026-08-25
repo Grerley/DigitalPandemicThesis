@@ -1,9 +1,9 @@
-// rng.js — Deterministic, seedable pseudo-random number generators.
+// rng.js, Deterministic, seedable pseudo-random number generators.
 // -----------------------------------------------------------------------------
 // All stochastic components of the lab (network Monte-Carlo, synthetic cohort)
 // draw from an explicit, seeded RNG so that "same seed -> same result" holds
 // exactly, as required for reproducibility. We use `mulberry32`: a small, fast,
-// well-distributed 32-bit generator. It is NOT cryptographic — it is chosen for
+// well-distributed 32-bit generator. It is NOT cryptographic; it is chosen for
 // speed and perfect reproducibility across engines.
 
 /**

@@ -1,4 +1,4 @@
-// ui.js — Shared, composable view components.
+// ui.js, Shared, composable view components.
 // -----------------------------------------------------------------------------
 
 import { h, s, clear, toast } from "./dom.js";
@@ -96,7 +96,7 @@ export function sliderRow(o) {
       valEl,
     ]),
     range,
-    h("div", { class: "slider-desc" }, [o.desc, o.unit && o.unit !== "—" ? ` · ${o.unit}` : ""]),
+    h("div", { class: "slider-desc" }, [o.desc, o.unit ? ` · ${o.unit}` : ""]),
   ]);
   row.setValue = (v) => { range.value = v; valEl.textContent = fmt(v); mark(v); };
   return row;

@@ -1,8 +1,8 @@
-// selftest.mjs — Headless acceptance self-test for the Digital Pandemic Lab.
+// selftest.mjs, Headless acceptance self-test for the Digital Pandemic Lab.
 // -----------------------------------------------------------------------------
 // Runs the model layer under Node (no browser) and asserts the thesis
 // acceptance targets plus the qualitative network/cohort claims. Exits 0 on
-// success, 1 on any failure — suitable for CI and the SessionStart hook.
+// success, 1 on any failure, suitable for CI and the SessionStart hook.
 //
 //   node app/test/selftest.mjs
 
@@ -13,7 +13,7 @@ import { baselineParams } from "../js/model/params.js";
 
 let failures = 0;
 const p = (ok, name, detail = "") => {
-  console.log(`${ok ? "  ✅ PASS" : "  ‼️  FAIL"}  ${name}${detail ? "  —  " + detail : ""}`);
+  console.log(`${ok ? "  ✅ PASS" : "  ‼️  FAIL"}  ${name}${detail ? "  ·  " + detail : ""}`);
   if (!ok) failures++;
 };
 

@@ -1,8 +1,8 @@
-// interventions.js — Intervention scenarios (Chapter 8).
+// interventions.js, Intervention scenarios (Chapter 8).
 // -----------------------------------------------------------------------------
 // Port of R/07_interventions.R. Interventions are multiplicative modifications
 // to model parameters. Efficacies are ASSUMED, informed by the direction and
-// rough magnitude of published evaluations — NOT estimated here. Outputs are
+// rough magnitude of published evaluations, NOT estimated here. Outputs are
 // therefore comparative, not predictive.
 
 import { simulate, summarise } from "./sair.js";
@@ -31,7 +31,7 @@ export const COMPREHENSIVE = Object.freeze({
 export const COST_ASSUMPTIONS = Object.freeze({
   populationYouth: 12_500_000, // approx SA population aged 10–24 (illustrative)
   currency: "ZAR",
-  note: "Costs are illustrative per-youth-per-year figures (ZAR) for comparative framing only — not a costed programme budget.",
+  note: "Costs are illustrative per-youth-per-year figures (ZAR) for comparative framing only, not a costed programme budget.",
 });
 
 /**

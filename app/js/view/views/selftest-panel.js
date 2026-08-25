@@ -1,4 +1,4 @@
-// selftest-panel.js — Renders acceptance self-tests as PASS/FAIL rows.
+// selftest-panel.js, Renders acceptance self-tests as PASS/FAIL rows.
 // -----------------------------------------------------------------------------
 
 import { h } from "../dom.js";

@@ -1,4 +1,4 @@
-// ensemble-runner.js — Worker-backed ensemble runner with main-thread fallback.
+// ensemble-runner.js, Worker-backed ensemble runner with main-thread fallback.
 // -----------------------------------------------------------------------------
 // Prefers a module Web Worker so the UI never freezes; if workers are
 // unavailable (e.g. opened from file://), it runs on the main thread in yielding

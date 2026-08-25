@@ -1,4 +1,4 @@
-// phase.js — Screen 3: Phase & Equilibrium.
+// phase.js, Screen 3: Phase & Equilibrium.
 // -----------------------------------------------------------------------------
 
 import { h, clear } from "../dom.js";

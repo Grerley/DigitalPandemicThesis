@@ -1,4 +1,4 @@
-// r0.js — Reproduction number, equilibrium, and bifurcation.
+// r0.js, Reproduction number, equilibrium, and bifurcation.
 // -----------------------------------------------------------------------------
 // Exact port of R/06_r0_analysis.R. Provides the three R0 values reported in the
 // thesis, the endemic equilibrium (as the fixed point of the deterministic

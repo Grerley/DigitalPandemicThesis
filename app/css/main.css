@@ -1,4 +1,4 @@
-/* main.css — Design system for the Digital Pandemic Simulation Lab.
+/* main.css, Design system for the Digital Pandemic Simulation Lab.
    Editorial / "top-tier journal meets modern data product": a disciplined
    neutral ground, a single ink accent, generous whitespace, a serif for prose
    and a clean grotesque for UI and numerics with tabular figures. Colour-blind
@@ -19,10 +19,10 @@
   --accent-soft: #e8eef6;
   --focus: #1a4f8a;
   /* Colour-blind-safe compartment palette (Okabe–Ito) */
-  --c-s: #0072b2;   /* Susceptible — blue */
-  --c-a: #e69f00;   /* At-Risk — amber */
-  --c-i: #d55e00;   /* Addicted — vermillion */
-  --c-r: #009e73;   /* Recovered — green */
+  --c-s: #0072b2;   /* Susceptible, blue */
+  --c-a: #e69f00;   /* At-Risk, amber */
+  --c-i: #d55e00;   /* Addicted, vermillion */
+  --c-r: #009e73;   /* Recovered, green */
   --good: #2e7d32;
   --bad: #c62828;
   --grid: #ece9e1;
@@ -34,7 +34,7 @@
 
   --r-sm: 5px; --r-md: 9px; --r-lg: 14px;
   --sp: 8px;
-  --maxw: 1320px;
+  --maxw: 1600px;
 }
 
 :root[data-theme="dark"],
@@ -97,7 +97,7 @@ body {
 
 h1,h2,h3,h4 { font-family: var(--sans); font-weight: 650; line-height: 1.2; letter-spacing: -0.01em; }
 p, .prose { font-family: var(--serif); color: var(--ink-2); }
-.prose { max-width: 68ch; }
+.prose { max-width: none; }
 a { color: var(--accent); text-underline-offset: 2px; }
 
 /* ---- Layout ---------------------------------------------------------- */
@@ -135,7 +135,7 @@ nav.sidebar a.navlink[aria-current="page"] { background: var(--accent-soft); col
 nav.sidebar a.navlink[aria-current="page"] .t { color: var(--accent); }
 
 main.content { flex: 1; min-width: 0; padding: clamp(16px, 3vw, 34px); }
-.view { max-width: 1000px; animation: fade .28s ease; }
+.view { max-width: none; animation: fade .28s ease; }
 @keyframes fade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
 .view-head { margin-bottom: 20px; }
 .view-head .kicker { color: var(--accent); font-size: 12px; font-weight: 650; text-transform: uppercase; letter-spacing: .08em; }

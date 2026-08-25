@@ -1,4 +1,4 @@
-// lint.mjs — Dependency-free syntax check for every source file.
+// lint.mjs, Dependency-free syntax check for every source file.
 // -----------------------------------------------------------------------------
 // Parses each .js/.mjs file with `node --check`. Catches syntax errors without
 // requiring any external linter or install step. Exits 1 if any file fails.

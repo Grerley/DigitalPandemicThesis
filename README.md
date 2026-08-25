@@ -2,7 +2,7 @@
 
 **Reproducible modelling pipeline for the doctoral thesis**
 *The Digital Pandemic: An Epidemic-Modelling Framework for Technology-Induced Mental Health in a Connected World*
-Grerley Mutibura · University of KwaZulu-Natal · 2026
+Grerley Mutibura · 2026
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-black.svg)](data/README.md)
@@ -19,23 +19,23 @@ control using three complementary methods:
    pathway, formulated as a system of nonlinear difference equations with a mass-action force of infection.
 2. **Network Monte Carlo simulation** over Erdős–Rényi (random), Watts–Strogatz (small-world), and
    Barabási–Albert (scale-free) topologies, to quantify how social-network structure shapes spread.
-3. **Statistical calibration** — hierarchical Bayesian estimation of the transmission rate (Stan),
+3. **Statistical calibration**: hierarchical Bayesian estimation of the transmission rate (Stan),
    Hidden Markov Model estimation of transition probabilities, and logistic regression for risk factors.
 
 ## Interactive Simulation Lab
 
 A browser-based, research-grade **interactive lab** ([`app/`](app/)) reimplements this entire
 pipeline as a live "flight simulator" for the thesis: explore every model in real time, sweep
-parameters, animate network contagion, and compose interventions — with all five model families
+parameters, animate network contagion, and compose interventions, with all five model families
 interactive, URL-shareable scenarios, CSV/PNG/SVG export, and a built-in acceptance self-test that
 verifies R₀ ≈ 2.50 / 3.04 / 2.71, peak ≈ 14% @ ~yr 7, endemic ≈ 8%, and a ≈ −63% comprehensive
 intervention.
 
-**▶ Live demo: https://grerley.github.io/DigitalPandemicThesis/** — deployed automatically from
+**▶ Live demo: https://grerley.github.io/DigitalPandemicThesis/**, deployed automatically from
 `app/` on every push to `main` by [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml).
 (One-time: in *Settings → Pages → Build and deployment*, set the source to **GitHub Actions**.)
 
-Or run it locally — no backend or build step:
+Or run it locally, no backend or build step:
 
 ```bash
 cd app && python3 -m http.server 8000   # then open http://localhost:8000/

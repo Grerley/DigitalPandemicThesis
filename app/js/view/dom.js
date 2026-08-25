@@ -1,4 +1,4 @@
-// dom.js — Minimal DOM + formatting helpers (no framework).
+// dom.js, Minimal DOM + formatting helpers (no framework).
 // -----------------------------------------------------------------------------
 
 const SVGNS = "http://www.w3.org/2000/svg";

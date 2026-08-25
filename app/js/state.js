@@ -1,4 +1,4 @@
-// state.js — Central scenario state: params, presets, URL sharing, localStorage.
+// state.js, Central scenario state: params, presets, URL sharing, localStorage.
 // -----------------------------------------------------------------------------
 // A single observable store. Views subscribe and re-render on change. The full
 // scenario is URL-encoded (query string) so any state is shareable, and user
