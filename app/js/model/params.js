@@ -1,4 +1,4 @@
-// params.js — Calibrated parameters, metadata, initial state, presets.
+// params.js, Calibrated parameters, metadata, initial state, presets.
 // -----------------------------------------------------------------------------
 // Single source of truth for the S–A–I–R model parameters, mirroring
 // R/utils.R (default_params / default_init) and data/parameters.csv. All rates
@@ -34,7 +34,7 @@ export const INITIAL_STATE = Object.freeze({
 export const PARAM_META = Object.freeze({
   beta: { sym: "β", label: "Transmission", min: 0.0, max: 0.08, step: 0.001, unit: "/contact·mo", desc: "Per-contact social-influence transmission probability.", source: "HBSC Bayesian calibration (Ch 6.5)" },
   k: { sym: "k", label: "Effective contacts", min: 0.5, max: 10, step: 0.1, unit: "contacts", desc: "Effective mean-field transmitting contacts.", source: "Mean-field calibration (Ch 6.5.3)" },
-  eta: { sym: "η", label: "At-Risk infectivity", min: 0.0, max: 1.0, step: 0.01, unit: "—", desc: "Reduced infectivity of At-Risk relative to Addicted.", source: "Assumed (Ch 4)" },
+  eta: { sym: "η", label: "At-Risk infectivity", min: 0.0, max: 1.0, step: 0.01, unit: "", desc: "Reduced infectivity of At-Risk relative to Addicted.", source: "Assumed (Ch 4)" },
   mu: { sym: "μ", label: "Exogenous acquisition", min: 0.0, max: 0.01, step: 0.0001, unit: "/mo", desc: "Non-social (exogenous) acquisition rate.", source: "Calibration" },
   sigma: { sym: "σ", label: "Progression A→I", min: 0.0, max: 0.1, step: 0.001, unit: "/mo", desc: "At-Risk → Addicted progression rate.", source: "HMM / survival (Ch 6.4)" },
   gamma1: { sym: "γ₁", label: "Remission A→S", min: 0.0, max: 0.1, step: 0.001, unit: "/mo", desc: "At-Risk → Susceptible remission rate.", source: "HMM (Ch 6.2)" },
@@ -59,5 +59,5 @@ export const COMPARTMENTS = Object.freeze([
   { key: "S", name: "Susceptible", color: "var(--c-s)", dash: "none", desc: "Not problematically engaged; at risk of exposure." },
   { key: "A", name: "At-Risk", color: "var(--c-a)", dash: "6 3", desc: "Heavy/pre-clinical use; elevated risk; partially transmitting." },
   { key: "I", name: "Addicted", color: "var(--c-i)", dash: "none", desc: "Meets problematic-use thresholds (operational construct)." },
-  { key: "R", name: "Recovered", color: "var(--c-r)", dash: "2 3", desc: "Reduced use; NOT absorbing — subject to relapse." },
+  { key: "R", name: "Recovered", color: "var(--c-r)", dash: "2 3", desc: "Reduced use; NOT absorbing, subject to relapse." },
 ]);

@@ -1,4 +1,4 @@
-// methods.js — Screen 7: Methods & Provenance.
+// methods.js, Screen 7: Methods & Provenance.
 // -----------------------------------------------------------------------------
 
 import { h } from "../dom.js";
@@ -21,7 +21,7 @@ export function MethodsView() {
 
   // Model spec (plain language)
   el.appendChild(panel({ title: "Model specification", children: [
-    h("p", { class: "prose", html: "The population is described by a state distribution <var>x</var>(t) = [S, A, I, R]ᵀ of fractions summing to one, evolving on a monthly step under a <strong>state-dependent</strong> transition matrix <var>P</var>(x). The compartments are <strong>Susceptible</strong>, <strong>At-Risk</strong> (heavy/pre-clinical use, partially transmitting), <strong>Addicted</strong> (meets problematic-use thresholds), and <strong>Recovered</strong> (reduced use, <em>not</em> absorbing — subject to relapse)." }),
+    h("p", { class: "prose", html: "The population is described by a state distribution <var>x</var>(t) = [S, A, I, R]ᵀ of fractions summing to one, evolving on a monthly step under a <strong>state-dependent</strong> transition matrix <var>P</var>(x). The compartments are <strong>Susceptible</strong>, <strong>At-Risk</strong> (heavy/pre-clinical use, partially transmitting), <strong>Addicted</strong> (meets problematic-use thresholds), and <strong>Recovered</strong> (reduced use, <em>not</em> absorbing, subject to relapse)." }),
     eq(`<span class="frac"><span class="num">to</span></span>`, "matrix"),
     h("div", { class: "eq", html: transitionMatrixHTML() }),
     h("p", { class: "prose", html: "Each row is a valid probability vector (sums to 1). The relapse entry P<sub>RA</sub> (from δ) is what makes the epidemic self-sustaining; without it R would be absorbing and I would decay to zero." }),
@@ -31,7 +31,7 @@ export function MethodsView() {
   el.appendChild(panel({ title: "Equations", children: [
     h("h3", { text: "Mass-action force of infection (Eq 4.3)" }),
     h("div", { class: "eq", html: `P<sub>SA</sub>(x<sub>t</sub>) = min&#8202;(&#8202;1 − exp[ −β·k·(I<sub>t</sub> + η·A<sub>t</sub>) ] + μ,&#8202; 1&#8202;)` }),
-    h("p", { class: "prose", html: "Because P<sub>SA</sub> depends on the current prevalence, the map is <strong>nonlinear</strong> — a fixed Markov chain would converge monotonically and could not generate a rise–peak–decline epidemic." }),
+    h("p", { class: "prose", html: "Because P<sub>SA</sub> depends on the current prevalence, the map is <strong>nonlinear</strong>: a fixed Markov chain would converge monotonically and could not generate a rise–peak–decline epidemic." }),
     h("h3", { text: "State update (Eq 4.2)" }),
     h("div", { class: "eq", html: `x(t+1) = P(x<sub>t</sub>)<sup>⊤</sup> · x(t)` }),
     h("h3", { text: "Reed–Frost network transmission (Eq 4.4)" }),
@@ -72,11 +72,11 @@ export function MethodsView() {
 
   // Epistemic caveats
   el.appendChild(panel({ title: "Epistemic caveats", children: [
-    h("div", { class: "caveat", html: "<strong>All quantitative outputs are conditional model results, not empirical forecasts.</strong> The robust conclusions are qualitative — a self-sustaining epidemic with a critical threshold and an exploitable network structure; specific numbers illustrate rather than measure." }),
+    h("div", { class: "caveat", html: "<strong>All quantitative outputs are conditional model results, not empirical forecasts.</strong> The robust conclusions are qualitative, a self-sustaining epidemic with a critical threshold and an exploitable network structure; specific numbers illustrate rather than measure." }),
     h("ul", { class: "prose" }, [
       h("li", { html: "Calibration relies partly on a <strong>synthetic cohort</strong> standing in for longitudinal transition data that do not yet exist." }),
       h("li", { html: "The transmission coefficient β captures peer influence, homophily and shared context jointly; it is <strong>not</strong> identified causal peer transmission." }),
-      h("li", { html: "Intervention efficacies are <strong>assumed</strong>, informed by the direction of published evaluations, not estimated here — scenario outputs are comparative, not predictive." }),
+      h("li", { html: "Intervention efficacies are <strong>assumed</strong> (informed by the direction of published evaluations, not estimated here); scenario outputs are comparative, not predictive." }),
       h("li", { html: "Risk-factor odds ratios are <strong>associational</strong>, not causal. Cost figures are illustrative unit costs, not a programme budget." }),
       h("li", { html: "The South African arm is extrapolated from OECD priors with adjustment factors, not independently estimated." }),
     ]),

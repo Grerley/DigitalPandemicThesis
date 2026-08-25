@@ -1,4 +1,4 @@
-// netgraph.js — Force-directed layout + canvas rendering of a contagion graph.
+// netgraph.js, Force-directed layout + canvas rendering of a contagion graph.
 // -----------------------------------------------------------------------------
 // A compact, seeded force layout (repulsion + spring attraction + centring)
 // computed once, then fast canvas redraws for each animation frame. Node colour

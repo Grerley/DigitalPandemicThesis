@@ -1,4 +1,4 @@
-// interventions.js — Screen 6: Intervention Simulator.
+// interventions.js, Screen 6: Intervention Simulator.
 // -----------------------------------------------------------------------------
 
 import { h, clear } from "../dom.js";
@@ -81,7 +81,7 @@ export function InterventionsView() {
         h("tr", {}, [
           h("td", {}, [h("span", { class: "scen-dot", style: { background: "var(--ink-3)" } }), "Baseline"]),
           h("td", { text: pct(b.peakPrevalence) }), h("td", { text: fx(b.peakYear, 1) }),
-          h("td", { text: pct(b.endemicPrevalence) }), h("td", { text: "—" }), h("td", {}),
+          h("td", { text: pct(b.endemicPrevalence) }), h("td", { text: "n/a" }), h("td", {}),
         ]),
         ...rows.map((r) => {
           const red = (b.peakPrevalence - r.s.peakPrevalence) / b.peakPrevalence;
@@ -130,7 +130,7 @@ export function InterventionsView() {
   function renderMods() {
     const mods = activeMods(store.get());
     clear(modsWrap);
-    if (!Object.keys(mods).length) { modsWrap.appendChild(h("span", { class: "hint", text: "No levers active — baseline parameters." })); return; }
+    if (!Object.keys(mods).length) { modsWrap.appendChild(h("span", { class: "hint", text: "No levers active, baseline parameters." })); return; }
     modsWrap.appendChild(h("div", { class: "row" }, Object.entries(mods).map(([k, v]) =>
       h("span", { class: "pill", text: `${k} × ${fx(v, 2)}` }))));
   }
@@ -163,7 +163,7 @@ export function InterventionsView() {
   el.appendChild(h("div", { class: "view-head" }, [
     h("div", { class: "kicker", text: "Screen 7 · Policy levers" }),
     h("h1", { text: "Intervention Simulator" }),
-    h("p", { class: "prose", text: "Interventions modify model parameters multiplicatively — efficacies are assumed, not estimated, so results are comparative. Compose your own bundle and watch the peak fall and shift against the baseline curve. The comprehensive package lands near a 63% peak reduction." }),
+    h("p", { class: "prose", text: "Interventions modify model parameters multiplicatively, efficacies are assumed, not estimated, so results are comparative. Compose your own bundle and watch the peak fall and shift against the baseline curve. The comprehensive package lands near a 63% peak reduction." }),
   ]));
   el.appendChild(metricsWrap);
   el.appendChild(h("div", { class: "split" }, [

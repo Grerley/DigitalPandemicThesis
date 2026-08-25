@@ -1,4 +1,4 @@
-// network-worker.js — Runs network Monte-Carlo ensembles off the main thread.
+// network-worker.js, Runs network Monte-Carlo ensembles off the main thread.
 // -----------------------------------------------------------------------------
 // Module worker. Receives a job spec, streams progress, posts the final
 // ensemble (mean + 95% envelope). Keeps the UI responsive during heavy runs.

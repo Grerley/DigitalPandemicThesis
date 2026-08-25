@@ -1,4 +1,4 @@
-// charts.js — Reusable, export-ready SVG chart primitives.
+// charts.js, Reusable, export-ready SVG chart primitives.
 // -----------------------------------------------------------------------------
 // Every chart returns a self-contained <svg> element with a fixed viewBox
 // (scaled to its container by CSS). Charts favour direct labelling over

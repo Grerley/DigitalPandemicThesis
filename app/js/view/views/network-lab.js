@@ -1,4 +1,4 @@
-// network-lab.js — Screen 4: Network Lab.
+// network-lab.js, Screen 4: Network Lab.
 // -----------------------------------------------------------------------------
 // Rendered contagion animation on an explicit graph + Monte-Carlo ensembles
 // (mean + 95% envelope) comparing topologies, plus hub-vs-random immunisation.
@@ -134,10 +134,10 @@ export function NetworkLabView() {
     const params = netParams();
     const topos = ["ER", "WS", "BA"];
     for (const t of topos) {
-      topoStatus.textContent = `Running ${TOPO[t]} — ${cfg.runs} runs of ${cfg.n} nodes…`;
+      topoStatus.textContent = `Running ${TOPO[t]}, ${cfg.runs} runs of ${cfg.n} nodes…`;
       const res = await runEnsemble({ topology: t, n: cfg.n, meanDegree: cfg.meanDegree, runs: cfg.runs,
         horizonMonths: cfg.horizonMonths, seed: 42, params, seedHub: false, immunizeFrac: 0, seedFrac: cfg.seedFrac },
-        (frac) => { topoStatus.textContent = `Running ${TOPO[t]} — ${Math.round(frac * 100)}%`; });
+        (frac) => { topoStatus.textContent = `Running ${TOPO[t]}, ${Math.round(frac * 100)}%`; });
       topoResults[t] = res;
       topoCard.update();
     }
@@ -162,11 +162,11 @@ export function NetworkLabView() {
     const cov = cfg.immunizeFrac > 0 ? cfg.immunizeFrac : 0.3;
     const base = { topology: "BA", n: cfg.n, meanDegree: cfg.meanDegree, runs: cfg.runs, horizonMonths: cfg.horizonMonths, seed: 11, params, seedHub: false, seedFrac: cfg.seedFrac };
     immStatus.textContent = "No immunisation…";
-    const none = await runEnsemble({ ...base, immunizeFrac: 0 }, (f) => immStatus.textContent = `No immunisation — ${Math.round(f * 100)}%`);
+    const none = await runEnsemble({ ...base, immunizeFrac: 0 }, (f) => immStatus.textContent = `No immunisation, ${Math.round(f * 100)}%`);
     immStatus.textContent = "Random coverage…";
-    const random = await runEnsemble({ ...base, immunizeFrac: cov, immunizeStrategy: "random" }, (f) => immStatus.textContent = `Random ${Math.round(cov * 100)}% — ${Math.round(f * 100)}%`);
+    const random = await runEnsemble({ ...base, immunizeFrac: cov, immunizeStrategy: "random" }, (f) => immStatus.textContent = `Random ${Math.round(cov * 100)}%, ${Math.round(f * 100)}%`);
     immStatus.textContent = "Hub-targeted…";
-    const hub = await runEnsemble({ ...base, immunizeFrac: cov, immunizeStrategy: "hub" }, (f) => immStatus.textContent = `Hub ${Math.round(cov * 100)}% — ${Math.round(f * 100)}%`);
+    const hub = await runEnsemble({ ...base, immunizeFrac: cov, immunizeStrategy: "hub" }, (f) => immStatus.textContent = `Hub ${Math.round(cov * 100)}%, ${Math.round(f * 100)}%`);
     immResults = { none, random, hub };
     immCard.update();
     const redHub = (none.meanPeak - hub.meanPeak) / none.meanPeak;

@@ -1,4 +1,4 @@
-// cohort.js — Screen 5: Cohort & Risk Factors.
+// cohort.js, Screen 5: Cohort & Risk Factors.
 // -----------------------------------------------------------------------------
 
 import { h, clear, toast } from "../dom.js";
@@ -76,7 +76,7 @@ export function CohortView() {
   el.appendChild(h("div", { class: "view-head" }, [
     h("div", { class: "kicker", text: "Screen 6 · Statistical layer" }),
     h("h1", { text: "Cohort & Risk Factors" }),
-    h("p", { class: "prose", text: "A synthetic longitudinal cohort — a modelling instrument, not observed data — whose individual onset probability is tilted by covariates through published odds ratios. It lets us recover the risk-factor forest plot by logistic regression and validate transition-matrix estimation against a known generating matrix." }),
+    h("p", { class: "prose", text: "A synthetic longitudinal cohort (a modelling instrument, not observed data) whose individual onset probability is tilted by covariates through published odds ratios. It lets us recover the risk-factor forest plot by logistic regression and validate transition-matrix estimation against a known generating matrix." }),
   ]));
   el.appendChild(metricsWrap);
   el.appendChild(h("div", { class: "split" }, [

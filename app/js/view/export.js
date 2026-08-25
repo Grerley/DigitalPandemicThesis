@@ -1,4 +1,4 @@
-// export.js — CSV / SVG / PNG export helpers.
+// export.js, CSV / SVG / PNG export helpers.
 // -----------------------------------------------------------------------------
 
 import { toast } from "./dom.js";

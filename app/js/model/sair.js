@@ -1,4 +1,4 @@
-// sair.js — Deterministic S–A–I–R difference-equation engine.
+// sair.js, Deterministic S–A–I–R difference-equation engine.
 // -----------------------------------------------------------------------------
 // Exact port of R/01_sair_model.R. The population state x = [S, A, I, R]
 // (fractions summing to 1) evolves under a STATE-DEPENDENT transition matrix

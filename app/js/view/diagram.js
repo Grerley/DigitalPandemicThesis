@@ -1,9 +1,9 @@
-// diagram.js — Animated S–A–I–R state-transition diagram.
+// diagram.js, Animated S–A–I–R state-transition diagram.
 // -----------------------------------------------------------------------------
 // Four compartment nodes with directed edges whose thickness tracks the live
 // per-step transition probabilities. Animated dash offset conveys flow
 // direction (disabled under prefers-reduced-motion). Node fill encodes current
-// occupancy. Pure of app state — driven by (state, params) passed in.
+// occupancy. Pure of app state, driven by (state, params) passed in.
 
 import { s } from "./dom.js";
 import { transitionMatrix } from "../model/sair.js";

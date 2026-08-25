@@ -1,4 +1,4 @@
-// build-standalone.mjs — Produce a single, self-contained HTML build.
+// build-standalone.mjs, Produce a single, self-contained HTML build.
 // -----------------------------------------------------------------------------
 // Bundles the ES-module app into one inline <script> and inlines the CSS, so the
 // whole lab is a single portable .html file that runs by double-clicking or from

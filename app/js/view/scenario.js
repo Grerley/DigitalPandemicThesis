@@ -1,4 +1,4 @@
-// scenario.js — Derive effective parameters & trajectories from store state.
+// scenario.js, Derive effective parameters & trajectories from store state.
 // -----------------------------------------------------------------------------
 // Bridges the store and the model layer: applies selected interventions and any
 // user-built custom modifiers to the base parameters, then runs the model.

@@ -1,4 +1,4 @@
-// network.js — Stochastic Reed–Frost contagion on explicit graphs.
+// network.js, Stochastic Reed–Frost contagion on explicit graphs.
 // -----------------------------------------------------------------------------
 // Port of R/02_network_simulation.R with added node-immunisation. Three
 // topologies (Erdős–Rényi, Watts–Strogatz, Barabási–Albert) are generated from

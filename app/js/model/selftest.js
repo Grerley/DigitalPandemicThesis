@@ -1,4 +1,4 @@
-// selftest.js — Automated acceptance tests, surfaced in the UI.
+// selftest.js, Automated acceptance tests, surfaced in the UI.
 // -----------------------------------------------------------------------------
 // Makes correctness VISIBLE: asserts the thesis acceptance targets against the
 // live model code and returns PASS/FAIL rows. Run at startup and on demand.
@@ -22,9 +22,9 @@ export function runSelfTests() {
   const add = (name, got, want, tol, unit = "", detail = "") =>
     results.push({ name, got, want, tol, pass: Math.abs(got - want) <= tol, unit, detail });
 
-  add("R₀ — NGM operative (S₀ = 0.823)", r0.operative, 2.50, 0.05, "", "spectral radius of F·V⁻¹ on {A,I}");
-  add("R₀ — NGM basic (S₀ = 1)", r0.basic, 3.04, 0.05, "", "next-generation matrix at fully susceptible");
-  add("R₀ — crude β·k·D (D = 1/γ₂)", r0.crude, 2.71, 0.05, "", "well-mixed upper estimate");
+  add("R₀, NGM operative (S₀ = 0.823)", r0.operative, 2.50, 0.05, "", "spectral radius of F·V⁻¹ on {A,I}");
+  add("R₀, NGM basic (S₀ = 1)", r0.basic, 3.04, 0.05, "", "next-generation matrix at fully susceptible");
+  add("R₀, crude β·k·D (D = 1/γ₂)", r0.crude, 2.71, 0.05, "", "well-mixed upper estimate");
   add("Peak addicted prevalence", s.peakPrevalence, 0.14, 0.01, "%", "baseline S–A–I–R run");
   add("Peak timing", s.peakYear, 7.0, 1.0, " yr", "year of maximum I(t)");
   add("Endemic prevalence (t = 20 yr)", s.endemicPrevalence, 0.08, 0.01, "%", "sustained by relapse δ");

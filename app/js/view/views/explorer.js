@@ -1,4 +1,4 @@
-// explorer.js — Screen 2: Parameter Explorer.
+// explorer.js, Screen 2: Parameter Explorer.
 // -----------------------------------------------------------------------------
 
 import { h, clear, debounce } from "../dom.js";

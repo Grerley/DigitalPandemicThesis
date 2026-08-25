@@ -5,10 +5,10 @@ thesis. All rates are per month unless stated; annual rates are converted with
 P = 1 − exp(−rate·Δt) (Eq 6.2).
 
 ## States
-- **S** Susceptible — not problematically engaged, at risk of exposure
-- **A** At-Risk — heavy/pre-clinical use, elevated risk, partially transmitting
-- **I** Addicted — meets problematic-use thresholds (operational construct, not a settled diagnosis)
-- **R** Recovered — reduced use; **not absorbing** — subject to relapse
+- **S** Susceptible: not problematically engaged, at risk of exposure
+- **A** At-Risk: heavy/pre-clinical use, elevated risk, partially transmitting
+- **I** Addicted: meets problematic-use thresholds (operational construct, not a settled diagnosis)
+- **R** Recovered: reduced use; **not absorbing**, subject to relapse
 
 ## Transition matrix (Eq 4.1), state-dependent
 ```
@@ -77,5 +77,5 @@ threshold toward zero.
 
 ## Interventions (Chapter 8)
 Interventions modify parameters (β for transmission-reducing structural/behavioural measures; μ for
-age-gating; γ2, δ for treatment). Assumed efficacies — not estimated — so scenario outputs are
+age-gating; γ2, δ for treatment). Assumed efficacies, not estimated, so scenario outputs are
 comparative, not predictive. Coverage ramps in via a logistic scale-up (Eq 8.1).

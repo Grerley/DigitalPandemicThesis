@@ -1,5 +1,5 @@
 #!/bin/bash
-# SessionStart hook — prepare the Digital Pandemic Simulation Lab for web sessions.
+# SessionStart hook, prepare the Digital Pandemic Simulation Lab for web sessions.
 # The app is pure client-side ES modules with NO runtime dependencies, so there
 # is nothing to install. This hook instead (1) runs the headless acceptance
 # self-test so correctness is verified before the session begins, and (2) serves
@@ -26,7 +26,7 @@ if command -v node >/dev/null 2>&1; then
     echo "[digital-pandemic-lab] acceptance self-test: FAILED (see output above)" >&2
   fi
 else
-  echo "[digital-pandemic-lab] node not found — skipping self-test" >&2
+  echo "[digital-pandemic-lab] node not found, skipping self-test" >&2
 fi
 
 # 2) Serve the app on a static server (background), if the port is free.
@@ -41,7 +41,7 @@ if command -v python3 >/dev/null 2>&1; then
     echo "[digital-pandemic-lab] a server is already listening on port ${PORT}"
   fi
 else
-  echo "[digital-pandemic-lab] python3 not found — start a static server manually (see app/README.md)" >&2
+  echo "[digital-pandemic-lab] python3 not found, start a static server manually (see app/README.md)" >&2
 fi
 
 # Expose the app dir + URL to the rest of the session.

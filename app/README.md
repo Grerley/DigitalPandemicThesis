@@ -1,9 +1,9 @@
-# The Digital Pandemic — Interactive Simulation Lab
+# The Digital Pandemic, Interactive Simulation Lab
 
 A research-grade, browser-based "flight simulator" for the dynamical models in the
 thesis *The Digital Pandemic: An Epidemic-Modelling Framework for Technology-Induced
 Mental Health in a Connected World* (Mutibura, 2026). It reimplements the R/Stan
-pipeline (`../R/`) as a live, interactive web application — no backend, no build step.
+pipeline (`../R/`) as a live, interactive web application: no backend, no build step.
 
 > **Epistemic status.** Every quantity on screen is a **conditional model result**,
 > not an empirical forecast. See the *Methods & Provenance* screen for the equations,
@@ -11,7 +11,7 @@ pipeline (`../R/`) as a live, interactive web application — no backend, no bui
 
 ## Live demo
 
-**https://grerley.github.io/DigitalPandemicThesis/** — published from this folder on every push to
+**https://grerley.github.io/DigitalPandemicThesis/**, published from this folder on every push to
 `main` via GitHub Actions ([`.github/workflows/deploy-pages.yml`](../.github/workflows/deploy-pages.yml)).
 One-time setup: *Settings → Pages → Build and deployment → Source: **GitHub Actions***.
 
@@ -33,22 +33,22 @@ No dependencies, no `npm install`. Runs fully client-side in any modern browser.
 
 Seven screens, each a view over the shared, audited model layer:
 
-1. **Overview** — the calibrated S–A–I–R baseline: four-compartment trajectory, the
+1. **Overview**, the calibrated S–A–I–R baseline: four-compartment trajectory, the
    R₀ trio, peak/endemic readouts, and an animated state-transition diagram whose edge
    thickness tracks live monthly transition rates. Scrub the timeline.
-2. **Parameter Explorer** — sliders for all eight monthly rates with live R₀ / peak /
+2. **Parameter Explorer**, sliders for all eight monthly rates with live R₀ / peak /
    endemic, a calibrated baseline overlay, one-way sensitivity (tornado), and reset.
-3. **Phase & Equilibrium** — transcritical bifurcation (I\* vs basic R₀), phase portrait
+3. **Phase & Equilibrium**, transcritical bifurcation (I\* vs basic R₀), phase portrait
    with vector field, and the incidence-vs-prevalence lead.
-4. **Network Lab** — stochastic Reed–Frost contagion on Erdős–Rényi, Watts–Strogatz and
+4. **Network Lab**, stochastic Reed–Frost contagion on Erdős–Rényi, Watts–Strogatz and
    Barabási–Albert graphs. Animated spread on a rendered network, Monte-Carlo ensembles
    (mean + 95% envelope) run in a Web Worker, and hub-vs-random node immunisation.
-5. **Cohort & Risk Factors** — a synthetic longitudinal cohort, a risk-factor odds-ratio
+5. **Cohort & Risk Factors**, a synthetic longitudinal cohort, a risk-factor odds-ratio
    forest plot recovered by logistic regression, a state-flow Sankey, and a
    known-vs-estimated transition-matrix comparison.
-6. **Intervention Simulator** — compose interventions (multiplicative parameter changes),
+6. **Intervention Simulator**, compose interventions (multiplicative parameter changes),
    overlay the baseline, a peak-reduction table, and an illustrative ZAR cost framing.
-7. **Methods & Provenance** — the model spec, rendered equations, parameter table with
+7. **Methods & Provenance**, the model spec, rendered equations, parameter table with
    sources, epistemic caveats, and a live acceptance self-test panel (PASS/FAIL).
 
 ## Architecture
@@ -61,7 +61,7 @@ verified against the thesis acceptance targets by `js/model/selftest.js`.
 js/
   model/            ← scientific core (pure, no DOM)
     params.js         calibrated parameters, metadata, presets
-    rng.js            seeded RNG (mulberry32) — same seed ⇒ same result
+    rng.js            seeded RNG (mulberry32), same seed ⇒ same result
     sair.js           deterministic S–A–I–R difference-equation engine
     r0.js             R₀ (reduced/full NGM, crude), equilibrium, bifurcation
     network.js        graph generators + Reed–Frost contagion + ensembles
@@ -70,7 +70,7 @@ js/
     selftest.js       acceptance-target assertions
   view/             ← rendering, charts, screens
     charts.js         reusable SVG charts (time-series, bifurcation, phase,
-                      tornado, forest, heatmap, Sankey) — export-ready
+                      tornado, forest, heatmap, Sankey), export-ready
     diagram.js        animated state-transition diagram
     netgraph.js       force layout + canvas network renderer
     views/            one module per screen
@@ -85,13 +85,13 @@ js/
 - The deterministic core reproduces the thesis targets exactly: **R₀ ≈ 2.50 / 3.04 / 2.71**,
   **peak ≈ 14% at ~year 7**, **endemic ≈ 8%**, **comprehensive intervention ≈ −63% peak**.
   These are asserted in the self-test panel (Methods screen or the "Self-test" button).
-- All stochastic components draw from a seeded RNG — identical seed ⇒ identical result.
+- All stochastic components draw from a seeded RNG, identical seed ⇒ identical result.
 - Transition-matrix rows sum to 1, all probabilities are clamped to [0, 1], and the state
   vector is renormalised every step.
 
 ## Sharing & export
 
-- Every scenario is encoded in the URL query string — copy the link (Share button) to
+- Every scenario is encoded in the URL query string, copy the link (Share button) to
   reproduce an exact configuration.
 - Trajectories export to **CSV**; every chart exports to **SVG** and **PNG**.
 - Presets: *Calibrated baseline*, *Scale-free outbreak*, *Comprehensive intervention*,

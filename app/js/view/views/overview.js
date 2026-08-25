@@ -1,4 +1,4 @@
-// overview.js — Screen 1: Overview dashboard (baseline S–A–I–R run).
+// overview.js, Screen 1: Overview dashboard (baseline S–A–I–R run).
 // -----------------------------------------------------------------------------
 
 import { h, clear } from "../dom.js";
@@ -115,14 +115,14 @@ export function OverviewView() {
   el.appendChild(panel({
     title: "Four-compartment trajectory",
     sub: "Susceptible → At-Risk → Addicted → Recovered, with relapse R→A",
-    children: [chart, legend(COMPARTMENTS.map((c) => ({ name: `${c.key} — ${c.name}`, color: c.color, dash: c.dash }))), tlHolder],
+    children: [chart, legend(COMPARTMENTS.map((c) => ({ name: `${c.key}, ${c.name}`, color: c.color, dash: c.dash }))), tlHolder],
   }));
 
   el.appendChild(h("div", { class: "split" }, [
     panel({ title: "State-transition diagram", sub: "Edge thickness ∝ live monthly transition probability", badge: "conditional",
       children: [diagWrap, h("p", { class: "chart-cap", text: "Flows animate in the direction of transition; the S→A edge is the mass-action force of infection and grows as the epidemic spreads." })] }),
     panel({ title: "Reading this model", children: [
-      h("p", { class: "prose", html: "Because the S→A probability depends on the current prevalence, the map is <em>nonlinear</em> — a fixed Markov chain could not produce a rise–peak–decline curve. The relapse term δ keeps Recovered non-absorbing, which is what sustains the endemic plateau near 8%." }),
+      h("p", { class: "prose", html: "Because the S→A probability depends on the current prevalence, the map is <em>nonlinear</em>, a fixed Markov chain could not produce a rise–peak–decline curve. The relapse term δ keeps Recovered non-absorbing, which is what sustains the endemic plateau near 8%." }),
       condNote("All values are outputs of the calibrated model, not empirical forecasts. See Methods & Provenance for the equations and parameter sources."),
     ] }),
   ]));
