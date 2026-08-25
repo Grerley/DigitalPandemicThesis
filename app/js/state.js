@@ -47,7 +47,7 @@ class Store {
       customMods: {}, // user-built multipliers { param: multiplier }
       compare: null, // { label, params } overlay
       network: { type: "BA", n: 800, meanDegree: 10, runs: 60, seed: 1, immunizeFrac: 0, immunizeStrategy: "hub" },
-      view: "overview",
+      view: "context",
     };
     this.subs = new Set();
     this._silent = false;

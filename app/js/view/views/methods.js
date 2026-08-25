@@ -11,7 +11,7 @@ export function MethodsView() {
   const el = h("div", { class: "view" });
 
   el.appendChild(h("div", { class: "view-head" }, [
-    h("div", { class: "kicker", text: "Screen 7 · Methods & Provenance" }),
+    h("div", { class: "kicker", text: "Screen 8 · Methods & Provenance" }),
     h("h1", { text: "Methods & Provenance" }),
     h("p", { class: "prose", text: "The model specification, equations, parameters and their sources, and the epistemic caveats carried from the thesis. Every number on the other screens traces back to what is written here." }),
   ]));

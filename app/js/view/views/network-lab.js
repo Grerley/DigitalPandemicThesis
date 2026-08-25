@@ -190,7 +190,7 @@ export function NetworkLabView() {
   const covSel = selectControl("Immunise coverage", { 0: "off", 0.1: "10%", 0.2: "20%", 0.3: "30%", 0.4: "40%", 0.5: "50%" }, String(cfg.immunizeFrac), (v) => { cfg.immunizeFrac = +v; store.set({ network: { immunizeFrac: +v } }, { silent: true }); buildAnimation(); });
 
   el.appendChild(h("div", { class: "view-head" }, [
-    h("div", { class: "kicker", text: "Screen 4 · Network Monte-Carlo" }),
+    h("div", { class: "kicker", text: "Screen 5 · Network Monte-Carlo" }),
     h("h1", { text: "Network Lab" }),
     h("p", { class: "prose", text: "Stochastic Reed–Frost contagion on explicit social graphs. Watch it spread across a rendered network, compare topologies over Monte-Carlo ensembles, and test whether protecting high-degree hubs beats random coverage at equal reach." }),
   ]));

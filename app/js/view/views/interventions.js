@@ -161,7 +161,7 @@ export function InterventionsView() {
   const clearBtn = h("button", { class: "sm", onclick: () => store.set({ interventions: [], customMods: {} }) }, ["Clear all"]);
 
   el.appendChild(h("div", { class: "view-head" }, [
-    h("div", { class: "kicker", text: "Screen 6 · Policy levers" }),
+    h("div", { class: "kicker", text: "Screen 7 · Policy levers" }),
     h("h1", { text: "Intervention Simulator" }),
     h("p", { class: "prose", text: "Interventions modify model parameters multiplicatively — efficacies are assumed, not estimated, so results are comparative. Compose your own bundle and watch the peak fall and shift against the baseline curve. The comprehensive package lands near a 63% peak reduction." }),
   ]));

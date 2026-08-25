@@ -101,7 +101,7 @@ export function ExplorerView() {
   } }, ["Reset to calibrated baseline"]);
 
   el.appendChild(h("div", { class: "view-head" }, [
-    h("div", { class: "kicker", text: "Screen 2 · Parameter Explorer" }),
+    h("div", { class: "kicker", text: "Screen 3 · Parameter Explorer" }),
     h("h1", { text: "Parameter Explorer" }),
     h("p", { class: "prose", text: "Move any of the eight monthly rates and watch the trajectory, R₀, peak and endemic level recompute in real time. The faint dotted line marks the calibrated baseline for I(t). The tornado ranks each parameter's leverage over the peak." }),
   ]));

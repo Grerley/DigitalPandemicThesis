@@ -96,7 +96,7 @@ export function PhaseView() {
   }
 
   el.appendChild(h("div", { class: "view-head" }, [
-    h("div", { class: "kicker", text: "Screen 3 · Dynamical structure" }),
+    h("div", { class: "kicker", text: "Screen 4 · Dynamical structure" }),
     h("h1", { text: "Phase & Equilibrium" }),
     h("p", { class: "prose", text: "The threshold structure of the model. Below R₀ = 1 the disease-free state is stable; above it a positive endemic equilibrium emerges through a transcritical bifurcation. The phase portrait traces the state's approach to that equilibrium, and the lag view shows incidence peaking years before prevalence." }),
   ]));
