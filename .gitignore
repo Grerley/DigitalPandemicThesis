@@ -1,0 +1,9 @@
+# Generated pipeline artifacts
+outputs/
+figures/output/
+
+# R session / build files
+.Rhistory
+.RData
+.Rproj.user/
+*.Rproj

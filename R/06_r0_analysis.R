@@ -41,18 +41,17 @@ endemic_equilibrium <- function(p = default_params(), S0 = 1) {
   R0 <- R0_ngm(p, S0 = S0)
   if (R0 <= 1) return(c(S = S0, A = 0, I = 0, R = 0, R0 = R0))
   Sstar <- S0 / R0
-  # Solve remaining balances numerically for the positive fixed point.
-  f <- function(A) {
-    I <- (p$sigma / (p$gamma2 + p$natmort)) * A
-    R <- (p$gamma2 * I) / (p$delta + p$natmort + 1e-9)
-    # At-Risk balance: inflow from S and relapse = outflow
-    inflow  <- p$beta * p$k * Sstar * (I + p$eta * A) + p$delta * R
-    outflow <- (p$sigma + p$gamma1 + p$natmort) * A
-    inflow - outflow
-  }
-  Astar <- tryCatch(uniroot(f, c(1e-6, 1))$root, error = function(e) NA_real_)
-  Istar <- (p$sigma / (p$gamma2 + p$natmort)) * Astar
-  Rstar <- (p$gamma2 * Istar) / (p$delta + p$natmort + 1e-9)
+  # Compartment ratios at the fixed point, from the I- and R-balance equations:
+  #   sigma*A = (gamma2 + natmort)*I   ->  I = kI * A
+  #   gamma2*I = (delta + natmort)*R   ->  R = kR * A
+  kI <- p$sigma / (p$gamma2 + p$natmort)
+  kR <- (p$gamma2 * kI) / (p$delta + p$natmort + 1e-9)
+  # The At-Risk balance alone is homogeneous in A (inflow and outflow both scale
+  # linearly with A), so it cannot pin down A*'s magnitude. Close the system with
+  # the conservation constraint S* + A* + I* + R* = 1.
+  Astar <- (1 - Sstar) / (1 + kI + kR)
+  Istar <- kI * Astar
+  Rstar <- kR * Astar
   c(S = Sstar, A = Astar, I = Istar, R = Rstar, R0 = R0)
 }
 
