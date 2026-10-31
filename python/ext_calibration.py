@@ -59,8 +59,9 @@ def sec1(rows, ok):
             ax.xaxis.set_major_locator(FixedLocator(ticks)); ax.xaxis.set_major_formatter(FixedFormatter([str(t) for t in ticks]))
             ax.xaxis.set_minor_formatter(NullFormatter())
         ax.set_title(labels[k], fontsize=9); ax.tick_params(labelsize=7)
-    axs[0, 0].legend(frameon=False, fontsize=7)
-    fig.tight_layout(); fig.savefig(FIG / "fig_calx_kept.png"); plt.close(fig)
+    h, l = axs[0, 0].get_legend_handles_labels()
+    fig.legend(h, l, frameon=False, fontsize=8, loc="lower center", ncol=2, bbox_to_anchor=(0.5, -0.02))
+    fig.tight_layout(rect=(0, 0.06, 1, 1)); fig.savefig(FIG / "fig_calx_kept.png"); plt.close(fig)
     # share of kept by gamma2 tercile of its range
     g2 = np.array([r["gamma2"] for r in rows]); kept = np.array([r["ok"] for r in rows])
     edges = np.geomspace(0.15, 1.25, 4)
@@ -133,8 +134,8 @@ def sec2(ok):
     P = np.loadtxt(OUT / "projection_P.csv", delimiter=","); T = np.loadtxt(OUT / "projection_T.csv", delimiter=",")
     G = np.array([x[1] for x in res["G"]]); T1 = np.array([x[1] for x in res["T1"]])
     fig, ax = plt.subplots(figsize=(6.4, 3.6))
-    for arr, col, lab, ls in [(P, C1, "P: persistent shift in 2018", "-"), (G, C3, "G: gradual rise 2018 to 2022", "-"),
-                              (T, C2, "T: shock 2020 to 2021", "-"), (T1, INK, "T1: shock in 2021 only", "--")]:
+    for arr, col, lab, ls in [(P, C1, "P: persistent shift in 2018", "-"), (G, C3, "G: gradual rise 2018 to 2022", ":"),
+                              (T, C2, "T: shock 2020 to 2021", "-."), (T1, INK, "T1: shock in 2021 only", "--")]:
         ax.plot(YEARS, np.median(arr, 0) * 100, color=col, lw=2, ls=ls, label=lab)
         ax.fill_between(YEARS, np.percentile(arr, 5, 0) * 100, np.percentile(arr, 95, 0) * 100, color=col, alpha=0.08, lw=0)
     ax.errorbar([2018, 2022], [7, 11], yerr=0.5, fmt="o", color=GREY, capsize=3)

@@ -560,7 +560,7 @@ def fig_item(item_E, arms):
                             label=f"{'Low' if noise == 'low' else 'High'} noise, {n:,}" if (a_i == 0 and tr_i == 0) else None)
         ax.axvline(0, color=ra.INK, lw=0.6)
         ax.set_yticks(range(len(arms))); ax.set_yticklabels([ITEM_LABELS[a] for a in arms], fontsize=7.5)
-        ax.set_title(title, fontsize=9); ax.set_xlabel("Relative bias (%) with 95% Monte Carlo interval", fontsize=8)
+        ax.set_title(title, fontsize=9); ax.set_xlabel("Relative bias (%)", fontsize=8)
     axs[0].invert_yaxis()
     h, l = axs[0].get_legend_handles_labels()
     fig.legend(h, l, frameon=False, fontsize=7.5, loc="lower center", ncol=2, bbox_to_anchor=(0.6, -0.02))

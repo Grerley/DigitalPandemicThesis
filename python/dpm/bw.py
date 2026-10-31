@@ -89,6 +89,22 @@ def _style_patch(p, hatch_ok=True):
             p.set_linestyle(ls)
 
 
+def _legend_rect(fig):
+    """Reserve room for figure-level legends above or below the axes when re-laying out."""
+    if not fig.legends:
+        return (0, 0, 1, 1)
+    fig.canvas.draw()
+    inv = fig.transFigure.inverted()
+    lo, hi = 0.0, 1.0
+    for lg in fig.legends:
+        bb = lg.get_window_extent().transformed(inv)
+        if bb.y1 < 0.5:
+            lo = max(lo, bb.y1 + 0.01)
+        else:
+            hi = min(hi, bb.y0 - 0.01)
+    return (0, lo, 1, hi)
+
+
 def install(plt):
     import matplotlib.axes as maxes
     import matplotlib.figure as mfig
@@ -141,7 +157,9 @@ def install(plt):
         seq = patches if isinstance(patches, (list, tuple)) else [patches]
         for grp in seq:
             for p in (grp if hasattr(grp, "__iter__") else [grp]):
-                _style_patch(p, hatch_ok=False)
+                _style_patch(p, hatch_ok=False); p.set_hatch(None)
+                if p.get_fill():
+                    p.set_edgecolor("none")
 
     def bars_post(out):
         for p in out.patches:
@@ -178,7 +196,7 @@ def install(plt):
                 data.set_linestyle(ls)
             data.set_linewidth(data.get_linewidth() * LW_SCALE)
         for c in caps:
-            c.set_color(col)
+            c.set_color(col); c.set_markeredgecolor(col); c.set_markerfacecolor(col)
         for b in bars:
             b.set_color(col); b.set_linewidth(0.8)
     wrap("errorbar", errorbar_post)
@@ -214,7 +232,7 @@ def install(plt):
             self.set_size_inches(TEXT_WIDTH_IN, h * TEXT_WIDTH_IN / w)
         try:
             if not self.get_constrained_layout():
-                self.tight_layout()
+                self.tight_layout(rect=_legend_rect(self))
         except Exception:
             pass
         k.pop("dpi", None)
