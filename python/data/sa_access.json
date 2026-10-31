@@ -1,0 +1,5 @@
+{"_note": "Connected-share scenarios for South Africa. Household or child-use figures, not individual youth exposure; used only as scaling scenarios. Sources in thesis research/south_africa_evidence.md items 1.1, 1.7, 1.14.",
+ "Households_national_2024": {"value": 0.821, "source": "Statistics South Africa GHS 2024: households with internet access by any means"},
+ "Children_9_17_2016": {"value": 0.704, "source": "Phyfer et al. 2016, three provinces, children 9 to 17 using the internet"},
+ "Urban_households_2023": {"value": 0.761, "source": "GHS 2023 via Engineering News 2024: urban households with mobile internet"},
+ "Rural_households_2023": {"value": 0.663, "source": "GHS 2023 via Engineering News 2024: rural households with mobile internet"}}

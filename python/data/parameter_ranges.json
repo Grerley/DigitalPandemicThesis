@@ -1,0 +1,8 @@
+{"_units": "per year. Ranges from thesis research/parameter_evidence.md (literature analogues: problematic internet use, gaming disorder, smartphone addiction). eta and alpha are assumptions with no direct evidence.",
+"eta":   {"low": 0.2,   "central": 0.5,   "high": 0.8,  "basis": "assumption"},
+"alpha": {"low": 0.002, "central": 0.01,  "high": 0.05, "log": true, "basis": "assumption; bounded above by acceptance of the 2018 level"},
+"sigma": {"low": 0.10,  "central": 0.19,  "high": 0.30, "basis": "Xin 2026; Chiang 2019"},
+"gamma1":{"low": 0.15,  "central": 0.35,  "high": 0.60, "basis": "Xin 2026; Chiang 2019"},
+"gamma2":{"low": 0.15,  "central": 0.55,  "high": 1.25, "log": true, "basis": "Ko 2007; Wartberg 2019; Wartberg & Lindenberg 2020; Xin 2026; Malygin 2025"},
+"delta": {"low": 0.05,  "central": 0.12,  "high": 0.25, "basis": "Jo 2025"},
+"nu":    {"low": 0.0625,"central": 0.0667,"high": 0.0714, "basis": "age band 10 to 24"}}
