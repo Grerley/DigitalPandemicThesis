@@ -441,6 +441,7 @@ def run_networks(pc1, x22, reps, n_nodes):
         ax.plot(yrs, r.mean(0), color=col, lw=2, label={"ER": "Erdős–Rényi", "WS": "Watts–Strogatz", "BA": "Barabási–Albert"}[kind])
     ax.plot(yrs, y[2] * 100, color=INK, lw=1.2, ls="--", label="Mean-field ODE")
     ax.set_xlabel("Year"); ax.set_ylabel("Problematic use (%)"); ax.set_ylim(0, None); ax.legend(frameon=False, fontsize=8)
+    ax.set_xticks(np.arange(2022, 2043, 4))
     fig.savefig(FIG / "fig_network_topologies.png"); plt.close(fig)
 
     # sensitivity of the 2042 level to mean degree (ER and BA, k = 6 and 20)
