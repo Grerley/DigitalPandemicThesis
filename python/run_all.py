@@ -1,4 +1,4 @@
-"""Thesis v2 pipeline: regenerates every number, table and figure used in the thesis.
+"""Thesis pipeline: regenerates every number, table and figure used in the thesis.
 
     python run_all.py            # full run (about 15 minutes on a laptop)
     python run_all.py --quick    # smoke test
@@ -49,6 +49,18 @@ def run_calibration(ranges, n):
     ok = [r for r in rows if r["ok"]]
     put("cal_n_draws", len(rows)); put("cal_n_ok", len(ok))
     put("cal_n_rejected_2018", sum(1 for r in rows if r.get("reason") == "2018 level not reachable"))
+    put("cal_n_rejected_2022_both", sum(1 for r in rows if r.get("reason") == "2022 level not reachable in either scenario"))
+    put("cal_n_rejected_2022_P", sum(1 for r in rows if r.get("reason") == "2022 level not reachable in Scenario P"))
+    put("cal_n_rejected_2022_T", sum(1 for r in rows if r.get("reason") == "2022 level not reachable in Scenario T"))
+    put("cal_n_rejected_total", len(rows) - len(ok))
+    put("cal_bmax", 200.0); put("cal_dmax", 20.0)
+    # what the rejection does to the parameter distribution: sampled draws against kept draws
+    for k in cal.PARAM_ORDER:
+        put(f"cal_prior_median_{k}", float(np.median([r[k] for r in rows])))
+        put(f"cal_kept_median_{k}", float(np.median([r[k] for r in ok])))
+        put(f"cal_rej_median_{k}", float(np.median([r[k] for r in rows if not r["ok"]])))
+    put("cal_prior_share_gamma2_above08_pct", 100 * float(np.mean([r["gamma2"] > 0.8 for r in rows])))
+    put("cal_kept_share_gamma2_above08_pct", 100 * float(np.mean([r["gamma2"] > 0.8 for r in ok])))
     for k in ["b0", "b1", "d_alpha", "R0_b0", "R0_b1"]:
         v = np.array([r[k] for r in ok])
         put(f"cal_{k}_median", float(np.median(v)))
@@ -112,6 +124,27 @@ def run_projections(ok):
     # does the persistent scenario overshoot (peak before equilibrium)?
     over = np.mean([I.max() > Istar[i] + 1e-4 for i, I in enumerate(res["P"])])
     put("P_share_overshoot", float(over))
+    # plausibility check against bound (3.2): hazard of leaving S, b (I + eta A) + alpha, per year
+    hz_P, hz_T, ratio, A22, R22 = [], [], [], [], []
+    for r in ok:
+        d = {k: r[k] for k in cal.PARAM_ORDER}
+        y = project(r, "P")[:, 2022 - 2018]
+        hz_P.append(r["b1"] * (y[2] + d["eta"] * y[1]) + d["alpha"])
+        A22.append(y[1]); R22.append(y[3])
+        p0 = Params(b=r["b0"], **d)
+        _, yt = simulate(p0, np.array(r["x18"]), 3.0, t_eval=[3.0], alpha_t=cal.shock(p0.alpha, r["d_alpha"]))
+        yt = yt[:, -1]
+        hz_T.append(r["b0"] * (yt[2] + d["eta"] * yt[1]) + d["alpha"] + r["d_alpha"])
+        ratio.append((d["alpha"] + r["d_alpha"]) / d["alpha"])
+    for nm, v in [("hz_P2022", hz_P), ("hz_T2021", hz_T), ("alpha_shock_ratio", ratio)]:
+        v = np.array(v)
+        put(f"{nm}_median", float(np.median(v))); put(f"{nm}_p05", float(np.percentile(v, 5)))
+        put(f"{nm}_p95", float(np.percentile(v, 95)))
+    put("hz_P2022_above_bound_pct", 100 * float(np.mean(np.array(hz_P) > 0.4)))
+    put("hz_T2021_above_bound_pct", 100 * float(np.mean(np.array(hz_T) > 0.4)))
+    for nm, v in [("A2022", A22), ("R2022", R22)]:
+        put(f"lat_{nm}_median", pct(np.median(v))); put(f"lat_{nm}_p05", pct(np.percentile(v, 5)))
+        put(f"lat_{nm}_p95", pct(np.percentile(v, 95)))
 
     fig, ax = plt.subplots(figsize=(6.4, 3.6))
     for sc, col, lab in [("P", C1, "Persistent shift in exposure from 2018"), ("T", C2, "Temporary shock, 2020 to 2021")]:
@@ -172,6 +205,12 @@ def run_mathematics(pc0, pc1):
     ax.axvline(1, color=GREY, lw=0.8); ax.set_xlabel("R₀ (exposure rate b varied, other parameters central)")
     ax.set_ylabel("Equilibrium problematic use I* (%)"); ax.legend(frameon=False, fontsize=8)
     fig.savefig(FIG / "fig_bifurcation.png"); plt.close(fig)
+    x = equilibrium(pc1)
+    put("central_hz_eq_b1", pc1.b * (x[2] + pc1.eta * x[1]) + pc1.alpha)
+    for k in ["eta", "alpha", "sigma", "gamma1", "gamma2", "delta", "nu"]:
+        put(f"central_{k}", getattr(pc1, k))
+    # exact (not linearised) effect of a 10% cut in b on equilibrium prevalence
+    put("I_b_cut10_exact_pct", pct(1 - equilibrium(pc1.with_(b=0.9 * pc1.b))[2] / x[2]))
     # minimum reachable prevalence when social exposure is removed entirely
     put("I_star_b_zero", pct(equilibrium(pc1.with_(b=0.0))[2]))
 
@@ -195,12 +234,25 @@ def run_identifiability(pc1, x18):
     Sm = np.array(cols).T
     sv = np.linalg.svd(Sm, compute_uv=False)
     put("ident_sv_yearly", [float(x) for x in sv])
+    put("ident_sv_min", float(sv[-1])); put("ident_sv_max", float(sv[0]))
     put("ident_rank_yearly_1e-3", int((sv / sv[0] > 1e-3).sum()))
     put("ident_n_params", len(names))
+    # practical identifiability (local, Fisher-information approximation): absolute sensitivities
+    # dI/dlog(theta), independent observation error with standard deviation SIGMA_OBS on each yearly value.
+    # The standard error of the parameter combination along singular direction i is SIGMA_OBS / s_i (log scale).
+    SIGMA_OBS = 0.005
+    Sa = Sm * base[:, None]
+    sva = np.linalg.svd(Sa, compute_uv=False)
+    se = SIGMA_OBS / sva
+    put("ident_sigma_obs_pp", 100 * SIGMA_OBS)
+    put("ident_se_log", [float(x) for x in se])
+    put("ident_n_se_below_0p1", int((se < 0.1).sum()))
+    put("ident_n_se_below_1", int((se < 1.0).sum()))
+    put("ident_se_max", float(se.max()))
 
 def run_convergence_evidence(n):
     g = np.random.default_rng(SEED + 5)
-    worst = 0.0; count = 0
+    worst = 0.0; count = 0; n_endemic = 0; n_alpha = 0; n_dfe = 0
     for _ in range(n):
         p = Params(b=g.uniform(0.2, 8), eta=g.uniform(0, 1), alpha=0.0 if g.random() < 0.5 else g.uniform(1e-4, 0.2),
                    sigma=g.uniform(0.05, 1.5), gamma1=g.uniform(0.05, 1.5), gamma2=g.uniform(0.1, 2), delta=g.uniform(0, 0.6),
@@ -210,7 +262,14 @@ def run_convergence_evidence(n):
         x0 = g.dirichlet(np.ones(4))
         _, y = simulate(p, x0, 600, t_eval=[600], rtol=1e-8, atol=1e-10)
         worst = max(worst, float(np.abs(y[:, -1] - equilibrium(p)).max())); count += 1
+        if p.alpha > 0:
+            n_alpha += 1
+        elif R0(p) > 1:
+            n_endemic += 1      # the runs that bear on Conjecture 5.7
+        else:
+            n_dfe += 1          # R0 < 1: these test Theorem 5.4
     put("conv_n_tested", count); put("conv_max_deviation", worst)
+    put("conv_n_alpha0_R0above1", n_endemic); put("conv_n_alpha_pos", n_alpha); put("conv_n_alpha0_R0below1", n_dfe)
 
 
 # ---------------------------------------------------------------- 4. sensitivity (PRCC)
@@ -266,6 +325,21 @@ def run_with(r, mults):
     return y2[2]  # I from 2024 to 2042
 
 
+def run_with_T(r, mults):
+    """Scenario T: exposure stays at b0 and the 2020-2021 shock to alpha has ended by the intervention start."""
+    d = {k: r[k] for k in cal.PARAM_ORDER}
+    p0 = Params(b=r["b0"], **d)
+    x18 = np.array(r["x18"])
+    _, y = simulate(p0, x18, START - 2018.0, t_eval=[START - 2018.0], alpha_t=cal.shock(p0.alpha, r["d_alpha"]))
+    x24 = y[:, -1]
+    q = p0
+    for m in mults:
+        q = apply(q, m)
+    t = np.arange(0, 2042 - START + 1, 1.0)
+    _, y2 = simulate(q, x24, t[-1], t_eval=t)
+    return y2[2]
+
+
 def run_interventions(ok, n):
     g = np.random.default_rng(SEED + 7)
     sub = ok[:n]
@@ -273,14 +347,28 @@ def run_interventions(ok, n):
     combos = [(a,) for a in names] + [("platform", "minimum_age"), ("school", "treatment"), ("platform", "school"),
                                        tuple(names)]
     out = {c: [] for c in combos}
-    base = []
+    outT = {c: [] for c in combos}
+    absP = {c: [] for c in combos}; absT = {c: [] for c in combos}
+    base = []; baseT = []
     for r in sub:
         draws = {k: INTERVENTIONS[k][1](g) for k in names}
         b = run_with(r, [])
-        base.append(b)
+        bT = run_with_T(r, [])
+        base.append(b[-1]); baseT.append(bT[-1])
         for c in combos:
             y = run_with(r, [draws[k] for k in c])
             out[c].append(1 - y[-1] / b[-1])         # relative reduction in I in 2042
+            absP[c].append(100 * (b[-1] - y[-1]))   # absolute reduction, percentage points
+            yT = run_with_T(r, [draws[k] for k in c])   # same efficacy draw under Scenario T
+            outT[c].append(1 - yT[-1] / bT[-1])
+            absT[c].append(100 * (bT[-1] - yT[-1]))
+    put("int_base_P_2042_median", pct(np.median(base))); put("int_base_T_2042_median", pct(np.median(baseT)))
+    for c in combos:
+        key = "+".join(c)
+        v = np.array(outT[c])
+        put(f"int_T_{key}_median", pct(np.median(v))); put(f"int_T_{key}_p05", pct(np.percentile(v, 5)))
+        put(f"int_T_{key}_p95", pct(np.percentile(v, 95)))
+        put(f"int_absP_{key}_median", float(np.median(absP[c]))); put(f"int_absT_{key}_median", float(np.median(absT[c])))
     table = []
     single = {}
     for c in combos:
@@ -324,7 +412,7 @@ def run_networks(pc1, x22, reps, n_nodes):
     k = 10
     beta = nw.beta_from_b(pc1, k)
     put("net_beta_per_month", beta); put("net_mean_degree", k); put("net_nodes", n_nodes); put("net_reps", reps)
-    put("net_T", nw.transmissibility(pc1, beta))
+    put("net_T", nw.transmissibility(pc1, beta)); put("net_T_career", nw.career_transmissibility(pc1.with_(alpha=0.0), beta))
     months = 20 * 12
     traj = {}
     for kind in ["ER", "WS", "BA"]:
@@ -355,26 +443,77 @@ def run_networks(pc1, x22, reps, n_nodes):
     ax.set_xlabel("Year"); ax.set_ylabel("Problematic use (%)"); ax.set_ylim(0, None); ax.legend(frameon=False, fontsize=8)
     fig.savefig(FIG / "fig_network_topologies.png"); plt.close(fig)
 
-    # targeting on BA networks: protect 10% of nodes (exposure x0.2) chosen by degree or at random
-    cover, damp = 0.10, 0.2
-    res = {"none": [], "random": [], "hub": []}
-    for s in range(reps):
-        G = nw.make_graph("BA", n_nodes, k, seed=SEED + s)
-        deg = np.array([d for _, d in G.degree()])
-        rng = np.random.default_rng(SEED + 2000 + s)
-        m = int(cover * n_nodes)
-        for strat in res:
-            w = np.ones(n_nodes)
-            if strat == "random":
-                w[rng.choice(n_nodes, m, replace=False)] = damp
-            elif strat == "hub":
-                w[np.argsort(-deg)[:m]] = damp
-            res[strat].append(simulate_weighted(G, pc1, beta, months, x22, w, SEED + 3000 + s))
-    for strat, v in res.items():
-        v = np.array(v)
-        put(f"net_target_{strat}_I2042_mean", pct(v.mean()))
-    put("net_target_cover", cover); put("net_target_damp", damp)
-    put("net_target_cover_pct", 100 * cover); put("net_target_damp_pct", 100 * damp)
+    # sensitivity of the 2042 level to mean degree (ER and BA, k = 6 and 20)
+    for kk in [6, 20]:
+        bk = nw.beta_from_b(pc1, kk)
+        for kind in ["ER", "BA"]:
+            v = [nw.simulate(nw.make_graph(kind, n_nodes, kk, seed=SEED + 4000 + s), pc1, bk, months, x22,
+                             seed=SEED + 5000 + s, record_every=months)[-1, 2] for s in range(10)]
+            put(f"net_k{kk}_{kind}_I2042_mean", pct(np.mean(v)))
+    run_threshold_check(pc1, n_nodes, k)
+    run_targeting(pc1, x22, n_nodes, k)
+
+
+def _b_for_Rnet(p, G, k, target):
+    """Exposure rate b at which the heuristic R_net of graph G equals target (alpha = 0)."""
+    from scipy.optimize import brentq
+    f = lambda b: nw.R0_network(p.with_(b=b, alpha=0.0), nw.beta_from_b(p.with_(b=b), k), G) - target
+    return brentq(f, 1e-4, 200.0)
+
+
+def run_threshold_check(pc1, n_nodes, k, reps=20, years=60):
+    """Does the heuristic R_net separate extinction from persistence? alpha = 0, start with 5% in I."""
+    x0 = np.array([0.95, 0.0, 0.05, 0.0])
+    put("thr_reps", reps); put("thr_years", years)
+    for kind in ["ER", "BA"]:
+        for tgt in [0.7, 1.5]:
+            alive, prev, r0mf = [], [], []
+            for s in range(reps):
+                G = nw.make_graph(kind, n_nodes, k, seed=SEED + 6000 + s)
+                b = _b_for_Rnet(pc1, G, k, tgt)
+                q = pc1.with_(b=b, alpha=0.0)
+                y = nw.simulate(G, q, nw.beta_from_b(q, k), years * 12, x0, seed=SEED + 7000 + s, record_every=12)
+                alive.append(y[-1, 1] + y[-1, 2] > 0); prev.append(y[-1, 1] + y[-1, 2]); r0mf.append(R0(q))
+            tag = f"thr_{kind}_{str(tgt).replace('.', 'p')}"
+            put(f"{tag}_persist_pct", 100 * float(np.mean(alive)))
+            put(f"{tag}_AI_mean", pct(np.mean(prev)))
+            put(f"{tag}_R0meanfield", float(np.mean(r0mf)))
+
+
+def run_targeting(pc1, x22, n_nodes, k, reps=60, cover=0.10, damp=0.2):
+    """Paired targeting experiment on BA graphs: the same graph and seed for no protection, random protection
+    and degree-targeted protection of 10% of nodes (susceptibility to social exposure scaled to 0.2).
+    Run at the calibrated exposure rate and at a lower rate where the heuristic R_net is near 1.5."""
+    put("tgt_reps", reps); put("net_target_cover_pct", 100 * cover); put("net_target_damp_pct", 100 * damp)
+    G0 = nw.make_graph("BA", n_nodes, k, seed=SEED + 500)
+    b_near = _b_for_Rnet(pc1, G0, k, 1.5)
+    put("tgt_near_b", b_near); put("tgt_near_b_ratio", b_near / pc1.b)
+    for label, p, x0 in [("far", pc1, x22), ("near", pc1.with_(b=b_near), equilibrium(pc1.with_(b=b_near)))]:
+        beta = nw.beta_from_b(p, k)
+        if label == "near":
+            put("tgt_near_Rnet", nw.R0_network(p.with_(alpha=0.0), beta, G0))
+        base, dr, dh = [], [], []
+        for s in range(reps):
+            G = nw.make_graph("BA", n_nodes, k, seed=SEED + 500 + s)
+            deg = np.array([d for _, d in G.degree()]); rng = np.random.default_rng(SEED + 600 + s)
+            m = int(cover * n_nodes)
+            w0 = np.ones(n_nodes); wr = np.ones(n_nodes); wr[rng.choice(n_nodes, m, replace=False)] = damp
+            wh = np.ones(n_nodes); wh[np.argsort(-deg)[:m]] = damp
+            seed = SEED + 700 + s
+            a = simulate_weighted(G, p, beta, 240, x0, w0, seed)
+            b_ = simulate_weighted(G, p, beta, 240, x0, wr, seed)
+            c = simulate_weighted(G, p, beta, 240, x0, wh, seed)
+            base.append(a); dr.append(a - b_); dh.append(a - c)
+        base, dr, dh = 100 * np.array(base), 100 * np.array(dr), 100 * np.array(dh)
+        se = lambda v: float(v.std(ddof=1) / math.sqrt(reps))
+        put(f"tgt_{label}_base_mean", float(base.mean()))
+        put(f"tgt_{label}_random_I2042_mean", float((base - dr).mean()))
+        put(f"tgt_{label}_hub_I2042_mean", float((base - dh).mean()))
+        put(f"tgt_{label}_random_reduction_mean", float(dr.mean())); put(f"tgt_{label}_random_reduction_se", se(dr))
+        put(f"tgt_{label}_hub_reduction_mean", float(dh.mean())); put(f"tgt_{label}_hub_reduction_se", se(dh))
+        put(f"tgt_{label}_hub_minus_random_mean", float((dh - dr).mean())); put(f"tgt_{label}_hub_minus_random_se", se(dh - dr))
+        put(f"tgt_{label}_random_reduction_rel_pct", float(100 * dr.mean() / base.mean()))
+        put(f"tgt_{label}_hub_reduction_rel_pct", float(100 * dh.mean() / base.mean()))
 
 
 def simulate_weighted(G, p, beta, months, x0, w, seed):
@@ -404,6 +543,35 @@ def simulate_weighted(G, p, beta, months, x0, w, seed):
 
 
 # ---------------------------------------------------------------- 7. HMM recovery study
+def run_recovery_central(pc1, sizes, reps):
+    """Repeat the low-noise recovery study with transition rates taken from the calibrated central point
+    (post-2018 equilibrium) and the matching equilibrium state distribution at entry."""
+    g = np.random.default_rng(SEED + 13)
+    x = equilibrium(pc1)
+    hz = pc1.b * (x[2] + pc1.eta * x[1]) + pc1.alpha
+    truth = dict(sigma=pc1.sigma, gamma1=pc1.gamma1, gamma2=pc1.gamma2, delta=pc1.delta, incidence=hz)
+    P = rec.annual_matrix(**truth)
+    pi0 = np.asarray(x) / np.sum(x)
+    for k, v in truth.items():
+        put(f"recc_truth_{k}", float(v))
+    for i, nm in enumerate(["S", "A", "I", "R"]):
+        put(f"recc_pi0_{nm}", pct(pi0[i]))
+    entries = [(0, 1), (1, 0), (1, 2), (2, 3), (3, 1)]
+    names = ["S_A", "A_S", "A_I", "I_R", "R_A"]
+    sd = np.array([0.8, 1.0, 1.0, 0.8]); mu = np.array([1.0, 3.5, 7.0, 1.0])
+    for n in sizes:
+        est = []
+        for _ in range(reps):
+            _, y = rec.generate(P, pi0, mu, sd, n, 6, g)
+            f = rec.fit_multistart(y, P, pi0, mu, sd, g, starts=2)
+            est.append([f["P"][i, j] for i, j in entries])
+        est = np.array(est); true = np.array([P[i, j] for i, j in entries])
+        for nm, t, e in zip(names, true, est.T):
+            put(f"recc_{n}_{nm}_true", float(t))
+            put(f"recc_{n}_{nm}_relbias_pct", float(100 * (e.mean() - t) / t))
+            put(f"recc_{n}_{nm}_relrmse_pct", float(100 * np.sqrt(((e - t) ** 2).mean()) / t))
+
+
 def run_recovery(sizes, reps):
     g = np.random.default_rng(SEED + 11)
     truth = dict(sigma=0.40, gamma1=0.50, gamma2=0.60, delta=0.15, incidence=0.08)
@@ -411,6 +579,8 @@ def run_recovery(sizes, reps):
     pi0 = np.array([0.75, 0.12, 0.08, 0.05])
     for k, v in truth.items():
         put(f"rec_truth_{k}", v)
+    for i, nm in enumerate(["S", "A", "I", "R"]):
+        put(f"rec_pi0_{nm}", pct(pi0[i]))
     put("rec_reps", reps)
     put("rec_waves", 6)
     entries = [(0, 1), (1, 0), (1, 2), (2, 3), (3, 1)]
@@ -446,22 +616,35 @@ def run_recovery(sizes, reps):
 
 # ---------------------------------------------------------------- 8. South African access scenarios
 def run_sa(pc0, pc1, access):
-    """Scenario only: exposure (b and alpha) scaled by the connected share. Not an estimate for South Africa."""
+    """Scenario only, not an estimate for South Africa. Two-group access model: a share f of young people
+    is connected; the rest have no social media use and so no problematic use. Connected young people meet
+    peers from the whole population at the calibrated rate, but only connected peers can expose them, so
+    their exposure rate is b f; their non-social rate alpha is unchanged. Prevalence among the connected is
+    I_c = I*(b f, alpha); population prevalence is f I_c."""
     out = {}
     for name, f in access.items():
-        q = pc1.with_(b=pc1.b * f, alpha=pc1.alpha * f)
-        x = equilibrium(q)
-        put(f"sa_{name}_access", f); put(f"sa_{name}_Istar", pct(x[2]))
+        q = pc1.with_(b=pc1.b * f)
+        Ic = equilibrium(q)[2]
+        put(f"sa_{name}_access", f); put(f"sa_{name}_access_pct", 100 * f)
+        put(f"sa_{name}_Istar_connected", pct(Ic)); put(f"sa_{name}_Istar_population", pct(f * Ic))
         put(f"sa_{name}_R0", R0(q.with_(alpha=0.0)))
-        out[name] = x[2]
+        out[name] = (f, Ic)
     fs = np.linspace(0.05, 1.0, 60)
-    Is = [equilibrium(pc1.with_(b=pc1.b * f, alpha=pc1.alpha * f))[2] * 100 for f in fs]
-    fig, ax = plt.subplots(figsize=(6.4, 3.2))
-    ax.plot(fs * 100, Is, color=C1, lw=2)
-    for name, f in access.items():
-        ax.plot(f * 100, out[name] * 100, "o", color=C2)
-        ax.annotate(name.replace("_", " "), (f * 100, out[name] * 100), textcoords="offset points", xytext=(4, -10), fontsize=8)
+    Ic = np.array([equilibrium(pc1.with_(b=pc1.b * f))[2] * 100 for f in fs])
+    fig, ax = plt.subplots(figsize=(6.4, 3.4))
+    ax.plot(fs * 100, Ic, color=C1, lw=2, label="Among connected young people")
+    ax.plot(fs * 100, fs * Ic, color=C2, lw=2, ls="--", label="Whole population (unconnected counted as none)")
+    pretty = {"Households_national_2024": "Households, national, 2024", "Urban_households_2023": "Urban households, 2023",
+              "Children_9_17_2016": "Children 9 to 17, 2016", "Rural_households_2023": "Rural households, 2023"}
+    names = sorted(out, key=lambda k: out[k][0])
+    for i, name in enumerate(names):
+        f, ic = out[name]
+        ax.plot(f * 100, f * ic * 100, "o", color=C2, ms=4)
+        ax.annotate(pretty.get(name, name.replace("_", " ")), (f * 100, f * ic * 100), xytext=(f * 100 + 2, 0.6 + 1.1 * i),
+                    textcoords="data", fontsize=7, ha="left", va="center",
+                    arrowprops=dict(arrowstyle="-", color=GREY, lw=0.6))
     ax.set_xlabel("Connected share of young people (%)"); ax.set_ylabel("Equilibrium problematic use (%)")
+    ax.set_ylim(0, None); ax.legend(frameon=False, fontsize=8, loc="upper left")
     fig.savefig(FIG / "fig_sa_access.png"); plt.close(fig)
 
 
@@ -485,6 +668,7 @@ def main():
     put("x2022_central", [float(v) for v in x22])
     run_networks(pc1, x22, 4 if a.quick else 40, 1000 if a.quick else 2000)
     run_recovery([500, 2000] if a.quick else [500, 2000, 8000], 2 if a.quick else 20)
+    run_recovery_central(pc1, [2000] if a.quick else [2000, 8000], 2 if a.quick else 20)
     run_sa(pc0, pc1, {k: v["value"] for k, v in access.items() if not k.startswith("_")})
     put("env_python", platform.python_version()); put("env_numpy", np.__version__); put("env_scipy", scipy.__version__)
     put("env_networkx", networkx.__version__); put("env_matplotlib", matplotlib.__version__); put("seed", SEED)

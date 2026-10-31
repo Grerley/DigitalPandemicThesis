@@ -1,4 +1,4 @@
-"""Parameter-recovery study for a hidden Markov model of S-A-I-R transitions (thesis v2, Chapter 6).
+"""Parameter-recovery study for a hidden Markov model of S-A-I-R transitions (thesis Chapter 6).
 
 Purpose: establish what a panel study would need (sample size, waves, measurement noise) for the
 transition probabilities to be recoverable. The synthetic cohort is generated from KNOWN annual

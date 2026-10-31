@@ -1,9 +1,9 @@
-"""Stochastic S-A-I-R dynamics on explicit contact networks (thesis v2, Chapter 8).
+"""Stochastic S-A-I-R dynamics on explicit contact networks (thesis Chapter 8).
 
 Discrete monthly steps. Each node is one young person. Per month:
   * S -> A with probability 1 - (1 - alpha_m) * (1 - beta) ** (m_I + eta * m_A),
     where m_I, m_A are the numbers of Addicted and At-Risk neighbours.
-    This is a probability by construction (the v1 form 1 - (1-beta)^m + mu could exceed 1).
+    This is a probability by construction.
   * A, I and R leave by competing hazards (sigma, gamma1 | gamma2 | delta), converted with
     P(leave) = 1 - exp(-h dt) and split in proportion to the hazards.
   * Turnover: with probability 1 - exp(-nu dt) a node ages out and is replaced, in the same
@@ -42,22 +42,45 @@ def beta_from_b(p: Params, k: float) -> float:
     return 1.0 - math.exp(-rate_per_edge_per_month)
 
 
-def transmissibility(p: Params, beta: float) -> float:
-    """Probability that an index case who has just entered A influences a given susceptible neighbour
-    before leaving A and I (relapse and the neighbour's own state changes ignored)."""
-    theta = -math.log(1.0 - beta) / DT                    # per-year hazard per edge
+def _rates(p: Params, beta: float):
+    theta = -math.log(1.0 - beta) / DT                    # per-year exposure hazard along one edge
     a = p.sigma + p.gamma1 + p.nu
     c = p.gamma2 + p.nu
-    escape_A = a / (a + p.eta * theta)                   # no transmission during the A spell
-    escape_I = c / (c + theta)                            # no transmission during an I spell
+    d = p.delta + p.nu
+    return theta, a, c, d
+
+
+def transmissibility(p: Params, beta: float) -> float:
+    """Single-spell transmissibility: probability that a node which has just entered A exposes a given
+    susceptible neighbour successfully before its first exit from A and I (relapse ignored)."""
+    theta, a, c, d = _rates(p, beta)
+    escape_A = a / (a + p.eta * theta)
+    escape_I = c / (c + theta)
     return 1.0 - escape_A * ((p.gamma1 + p.nu) / a + (p.sigma / a) * escape_I)
 
 
+def career_transmissibility(p: Params, beta: float) -> float:
+    """Probability that a node which has just entered A exposes a given susceptible neighbour successfully
+    at some point in its whole career, counting returns to A through relapse (the neighbour is held
+    susceptible and remission to S ends the career). Repeated spells re-expose the SAME neighbour,
+    so relapse enters through the geometric sum X / (1 - Y), not through the mean-field multiplier
+    1 / (1 - q), which would allow values above one.
+      X = P(no transmission and the career ends without relapse)
+      Y = P(no transmission and a relapse back into A)."""
+    theta, a, c, d = _rates(p, beta)
+    hA = a + p.eta * theta
+    hI = c + theta
+    X = (p.gamma1 + p.nu) / hA + (p.sigma / hA) * (p.nu / hI + (p.gamma2 / hI) * (p.nu / d))
+    Y = (p.sigma / hA) * (p.gamma2 / hI) * (p.delta / d)
+    return 1.0 - X / (1.0 - Y)
+
+
 def R0_network(p: Params, beta: float, G) -> float:
-    """Excess-degree branching number T (<k^2> - <k>) / <k> (Newman, 2002), with the relapse multiplier."""
-    from .model import relapse_multiplier
+    """Heuristic network reproduction number T_career (<k^2> - <k>) / <k>. The excess-degree form is
+    exact for SIR-type processes on configuration-model networks (Newman, 2002); with remission and
+    relapse the process is SIS-like, so this is an approximation to be checked by simulation."""
     k1, k2 = degree_moments(G)
-    return transmissibility(p, beta) * (k2 - k1) / k1 * relapse_multiplier(p)
+    return career_transmissibility(p, beta) * (k2 - k1) / k1
 
 
 def simulate(G, p: Params, beta: float, months: int, x0, seed: int, record_every: int = 1):

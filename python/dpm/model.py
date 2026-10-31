@@ -1,4 +1,4 @@
-"""S-A-I-R model of problematic digital use with population turnover (thesis v2, Chapter 4).
+"""S-A-I-R model of problematic digital use with population turnover (thesis Chapter 4).
 
 State x = (S, A, I, R) are fractions of the youth population aged 10 to 24.
 All rates are per year.
@@ -157,8 +157,3 @@ def elasticity(f, p: Params, name: str, h: float = 1e-6) -> float:
     up = f(p.with_(**{name: v * (1 + h)}))
     dn = f(p.with_(**{name: v * (1 - h)}))
     return (up - dn) / (2 * h * v) * v / f(p)
-
-
-def problematic(x) -> float:
-    """Model counterpart of the HBSC problematic social media use indicator: A + I."""
-    return float(x[1] + x[2])

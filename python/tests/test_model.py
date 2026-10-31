@@ -80,3 +80,15 @@ def test_floor_when_social_exposure_removed():
         D = a * c * d - p.sigma * p.gamma2 * p.delta
         m = 1 + p.sigma / c + p.sigma * p.gamma2 / (c * d); q = D / (c * d)
         assert abs(equilibrium(p)[2] - p.sigma / c * p.alpha / (p.alpha * m + q)) < 1e-12
+
+
+def test_career_transmissibility_is_a_probability_and_reduces_without_relapse():
+    from dpm import network as nw
+    for _ in range(500):
+        p = random_params(True)
+        beta = float(np.random.uniform(1e-4, 0.3))
+        Tc = nw.career_transmissibility(p, beta)
+        assert 0.0 <= Tc <= 1.0
+        assert Tc >= nw.transmissibility(p, beta) - 1e-12
+        q = p.with_(delta=0.0)
+        assert abs(nw.career_transmissibility(q, beta) - nw.transmissibility(q, beta)) < 1e-12

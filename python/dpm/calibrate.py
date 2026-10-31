@@ -1,5 +1,5 @@
 """Calibration of the S-A-I-R model to the published HBSC problematic social media use series
-(thesis v2, Chapter 7).
+(thesis Chapter 7).
 
 Targets (Boniel-Nissim et al., 2024, pp. iv and 6): problematic social media use was 7% in 2018 and
 11% in 2022 across HBSC countries and regions. Both figures are published rounded to whole per cent,
@@ -14,7 +14,10 @@ literature-based ranges (Latin hypercube) and, for each draw, two quantities are
   Scenario T (transient shock): exposure stays at b0; exogenous acquisition rises by d_alpha during
       2020 and 2021 only (the COVID-19 period) and then returns. Solve d_alpha so that I(2022) = target_2022.
 
-Both scenarios reproduce the data exactly. They differ in what they imply after 2022, which is the
+A draw is kept only if both scenarios can reproduce both targets. The solver bounds (b up to 200 per
+year, d_alpha up to 20 per year) are far above any plausible value; a draw fails when, for example,
+recovery is so fast that even unbounded exposure cannot raise prevalence from 7% to 11% in four years.
+Kept draws reproduce the data exactly. They differ in what they imply after 2022, which is the
 identifiability point the thesis makes.
 """
 from __future__ import annotations
@@ -95,7 +98,14 @@ def calibrate(ranges: dict, n: int = 1000, seed: int = 20261031):
         x18 = equilibrium(p0)
         b1 = solve_b1(p0, x18, t22)
         da = solve_dalpha(p0, x18, t22)
-        rows.append(dict(d, t18=t18, t22=t22, ok=b1 is not None and da is not None, b0=b0, b1=b1, d_alpha=da,
+        reason = None
+        if b1 is None and da is None:
+            reason = "2022 level not reachable in either scenario"
+        elif b1 is None:
+            reason = "2022 level not reachable in Scenario P"
+        elif da is None:
+            reason = "2022 level not reachable in Scenario T"
+        rows.append(dict(d, t18=t18, t22=t22, ok=reason is None, reason=reason, b0=b0, b1=b1, d_alpha=da,
                          R0_b0=R0(p0.with_(alpha=0.0)),
                          R0_b1=R0(p0.with_(b=b1, alpha=0.0)) if b1 else None,
                          x18=x18.tolist()))

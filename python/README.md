@@ -1,4 +1,4 @@
-# Thesis v2 pipeline (Python)
+# Thesis pipeline (Python)
 
 This folder reproduces every number, table and figure in the corrected thesis
 *An Epidemic-Modelling Framework for Problematic Social Media Use among Young People*
