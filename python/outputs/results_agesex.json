@@ -1,0 +1,814 @@
+{
+ "asx_eps_a_central": {
+  "value": 0.7,
+  "note": ""
+ },
+ "asx_eps_s_central": {
+  "value": 0.5,
+  "note": ""
+ },
+ "asx_start_year": {
+  "value": 2024,
+  "note": ""
+ },
+ "asx_c_P_b0": {
+  "value": 0.7925379934840538,
+  "note": ""
+ },
+ "asx_c_P_k2": {
+  "value": 1.5658658656227435,
+  "note": ""
+ },
+ "asx_c_P_phi": {
+  "value": 2.4035477621733112,
+  "note": ""
+ },
+ "asx_c_P_psi": {
+  "value": 1.2953843723183172,
+  "note": ""
+ },
+ "asx_c_P_R0_b0": {
+  "value": 2.1431529946719308,
+  "note": ""
+ },
+ "asx_c_P_R0_b1": {
+  "value": 4.234358663880833,
+  "note": ""
+ },
+ "asx_c_P_total_2022": {
+  "value": 10.999999999431742,
+  "note": ""
+ },
+ "asx_c_P_girls_2022": {
+  "value": 12.999999999145404,
+  "note": ""
+ },
+ "asx_c_P_boys_2022": {
+  "value": 8.999999999718082,
+  "note": ""
+ },
+ "asx_c_P_age11_2022": {
+  "value": 8.999999999431166,
+  "note": ""
+ },
+ "asx_c_P_age13_15_2022": {
+  "value": 11.999999999432031,
+  "note": ""
+ },
+ "asx_c_P_whole_2022": {
+  "value": 11.332784027844271,
+  "note": ""
+ },
+ "asx_c_P_b1019_2022": {
+  "value": 8.999999999431166,
+  "note": ""
+ },
+ "asx_c_P_b1315_2022": {
+  "value": 11.999999999432031,
+  "note": ""
+ },
+ "asx_c_P_b1619_2022": {
+  "value": 12.259106548368404,
+  "note": ""
+ },
+ "asx_c_P_b2024_2022": {
+  "value": 11.591066845520176,
+  "note": ""
+ },
+ "asx_c_P_girls_whole_2022": {
+  "value": 12.972400142368212,
+  "note": ""
+ },
+ "asx_c_P_boys_whole_2022": {
+  "value": 9.693167913320332,
+  "note": ""
+ },
+ "asx_c_P_total_2026": {
+  "value": 11.205136896129813,
+  "note": ""
+ },
+ "asx_c_P_girls_2026": {
+  "value": 12.859650071102847,
+  "note": ""
+ },
+ "asx_c_P_boys_2026": {
+  "value": 9.550623721156782,
+  "note": ""
+ },
+ "asx_c_P_age11_2026": {
+  "value": 9.132755597937702,
+  "note": ""
+ },
+ "asx_c_P_age13_15_2026": {
+  "value": 12.24132754522587,
+  "note": ""
+ },
+ "asx_c_P_whole_2026": {
+  "value": 11.529192415984095,
+  "note": ""
+ },
+ "asx_c_P_b1019_2026": {
+  "value": 9.132755597937702,
+  "note": ""
+ },
+ "asx_c_P_b1315_2026": {
+  "value": 12.24132754522587,
+  "note": ""
+ },
+ "asx_c_P_b1619_2026": {
+  "value": 12.481978744579841,
+  "note": ""
+ },
+ "asx_c_P_b2024_2026": {
+  "value": 11.777544366390266,
+  "note": ""
+ },
+ "asx_c_P_girls_whole_2026": {
+  "value": 12.7489705407214,
+  "note": ""
+ },
+ "asx_c_P_boys_whole_2026": {
+  "value": 10.309414291246789,
+  "note": ""
+ },
+ "asx_c_P_total_2032": {
+  "value": 10.994843620821065,
+  "note": ""
+ },
+ "asx_c_P_girls_2032": {
+  "value": 12.674503212132947,
+  "note": ""
+ },
+ "asx_c_P_boys_2032": {
+  "value": 9.315184029509185,
+  "note": ""
+ },
+ "asx_c_P_age11_2032": {
+  "value": 9.014062334893945,
+  "note": ""
+ },
+ "asx_c_P_age13_15_2032": {
+  "value": 11.985234263784628,
+  "note": ""
+ },
+ "asx_c_P_whole_2032": {
+  "value": 11.130611962348768,
+  "note": ""
+ },
+ "asx_c_P_b1019_2032": {
+  "value": 9.014062334893945,
+  "note": ""
+ },
+ "asx_c_P_b1315_2032": {
+  "value": 11.985234263784628,
+  "note": ""
+ },
+ "asx_c_P_b1619_2032": {
+  "value": 12.020345336486713,
+  "note": ""
+ },
+ "asx_c_P_b2024_2032": {
+  "value": 11.175981658649786,
+  "note": ""
+ },
+ "asx_c_P_girls_whole_2032": {
+  "value": 12.391042663706386,
+  "note": ""
+ },
+ "asx_c_P_boys_whole_2032": {
+  "value": 9.870181260991147,
+  "note": ""
+ },
+ "asx_c_P_total_2042": {
+  "value": 10.980528068821013,
+  "note": ""
+ },
+ "asx_c_P_girls_2042": {
+  "value": 12.668153027593625,
+  "note": ""
+ },
+ "asx_c_P_boys_2042": {
+  "value": 9.292903110048398,
+  "note": ""
+ },
+ "asx_c_P_age11_2042": {
+  "value": 9.005109773922976,
+  "note": ""
+ },
+ "asx_c_P_age13_15_2042": {
+  "value": 11.968237216270031,
+  "note": ""
+ },
+ "asx_c_P_whole_2042": {
+  "value": 11.080085026989849,
+  "note": ""
+ },
+ "asx_c_P_b1019_2042": {
+  "value": 9.005109773922976,
+  "note": ""
+ },
+ "asx_c_P_b1315_2042": {
+  "value": 11.968237216270031,
+  "note": ""
+ },
+ "asx_c_P_b1619_2042": {
+  "value": 11.974866773259087,
+  "note": ""
+ },
+ "asx_c_P_b2024_2042": {
+  "value": 11.076353468246475,
+  "note": ""
+ },
+ "asx_c_P_girls_whole_2042": {
+  "value": 12.364719525436263,
+  "note": ""
+ },
+ "asx_c_P_boys_whole_2042": {
+  "value": 9.795450528543437,
+  "note": ""
+ },
+ "asx_c_T_b0": {
+  "value": 0.8886686919247958,
+  "note": ""
+ },
+ "asx_c_T_k2": {
+  "value": 0.45471501276365167,
+  "note": ""
+ },
+ "asx_c_T_phi": {
+  "value": 2.4325169929137576,
+  "note": ""
+ },
+ "asx_c_T_psi": {
+  "value": 1.0697537334064444,
+  "note": ""
+ },
+ "asx_c_T_R0_b0": {
+  "value": 2.3093412872894836,
+  "note": ""
+ },
+ "asx_c_T_total_2022": {
+  "value": 10.999999983641231,
+  "note": ""
+ },
+ "asx_c_T_girls_2022": {
+  "value": 12.999999984596505,
+  "note": ""
+ },
+ "asx_c_T_boys_2022": {
+  "value": 8.999999982685956,
+  "note": ""
+ },
+ "asx_c_T_age11_2022": {
+  "value": 8.999999984377375,
+  "note": ""
+ },
+ "asx_c_T_age13_15_2022": {
+  "value": 11.99999998327316,
+  "note": ""
+ },
+ "asx_c_T_whole_2022": {
+  "value": 11.419675532073592,
+  "note": ""
+ },
+ "asx_c_T_b1019_2022": {
+  "value": 8.999999984377375,
+  "note": ""
+ },
+ "asx_c_T_b1315_2022": {
+  "value": 11.99999998327316,
+  "note": ""
+ },
+ "asx_c_T_b1619_2022": {
+  "value": 12.351547336213661,
+  "note": ""
+ },
+ "asx_c_T_b2024_2022": {
+  "value": 11.777788746659528,
+  "note": ""
+ },
+ "asx_c_T_girls_whole_2022": {
+  "value": 13.033766425373758,
+  "note": ""
+ },
+ "asx_c_T_boys_whole_2022": {
+  "value": 9.805584638773427,
+  "note": ""
+ },
+ "asx_c_T_total_2026": {
+  "value": 8.186743594009208,
+  "note": ""
+ },
+ "asx_c_T_girls_2026": {
+  "value": 9.950389718195966,
+  "note": ""
+ },
+ "asx_c_T_boys_2026": {
+  "value": 6.4230974698224506,
+  "note": ""
+ },
+ "asx_c_T_age11_2026": {
+  "value": 5.845107010778057,
+  "note": ""
+ },
+ "asx_c_T_age13_15_2026": {
+  "value": 9.357561885624785,
+  "note": ""
+ },
+ "asx_c_T_whole_2026": {
+  "value": 9.275723256776923,
+  "note": ""
+ },
+ "asx_c_T_b1019_2026": {
+  "value": 5.845107010778057,
+  "note": ""
+ },
+ "asx_c_T_b1315_2026": {
+  "value": 9.357561885624785,
+  "note": ""
+ },
+ "asx_c_T_b1619_2026": {
+  "value": 10.527670074570663,
+  "note": ""
+ },
+ "asx_c_T_b2024_2026": {
+  "value": 10.283432372832534,
+  "note": ""
+ },
+ "asx_c_T_girls_whole_2026": {
+  "value": 10.676529481138244,
+  "note": ""
+ },
+ "asx_c_T_boys_whole_2026": {
+  "value": 7.874917032415602,
+  "note": ""
+ },
+ "asx_c_T_total_2032": {
+  "value": 6.962085661937042,
+  "note": ""
+ },
+ "asx_c_T_girls_2032": {
+  "value": 9.054539473250482,
+  "note": ""
+ },
+ "asx_c_T_boys_2032": {
+  "value": 4.869631850623602,
+  "note": ""
+ },
+ "asx_c_T_age11_2032": {
+  "value": 4.966345392761105,
+  "note": ""
+ },
+ "asx_c_T_age13_15_2032": {
+  "value": 7.9599557965250085,
+  "note": ""
+ },
+ "asx_c_T_whole_2032": {
+  "value": 7.986806829480042,
+  "note": ""
+ },
+ "asx_c_T_b1019_2032": {
+  "value": 4.966345392761105,
+  "note": ""
+ },
+ "asx_c_T_b1315_2032": {
+  "value": 7.9599557965250085,
+  "note": ""
+ },
+ "asx_c_T_b1619_2032": {
+  "value": 9.056570763918959,
+  "note": ""
+ },
+ "asx_c_T_b2024_2032": {
+  "value": 8.95938316373329,
+  "note": ""
+ },
+ "asx_c_T_girls_whole_2032": {
+  "value": 9.823326795595563,
+  "note": ""
+ },
+ "asx_c_T_boys_whole_2032": {
+  "value": 6.15028686336452,
+  "note": ""
+ },
+ "asx_c_T_total_2042": {
+  "value": 6.993097737533925,
+  "note": ""
+ },
+ "asx_c_T_girls_2042": {
+  "value": 9.13651517219256,
+  "note": ""
+ },
+ "asx_c_T_boys_2042": {
+  "value": 4.8496803028752895,
+  "note": ""
+ },
+ "asx_c_T_age11_2042": {
+  "value": 4.977129844010203,
+  "note": ""
+ },
+ "asx_c_T_age13_15_2042": {
+  "value": 8.001081684295785,
+  "note": ""
+ },
+ "asx_c_T_whole_2042": {
+  "value": 8.079966152065014,
+  "note": ""
+ },
+ "asx_c_T_b1019_2042": {
+  "value": 4.977129844010203,
+  "note": ""
+ },
+ "asx_c_T_b1315_2042": {
+  "value": 8.001081684295785,
+  "note": ""
+ },
+ "asx_c_T_b1619_2042": {
+  "value": 9.169424564573653,
+  "note": ""
+ },
+ "asx_c_T_b2024_2042": {
+  "value": 9.117431887552522,
+  "note": ""
+ },
+ "asx_c_T_girls_whole_2042": {
+  "value": 10.003795468807002,
+  "note": ""
+ },
+ "asx_c_T_boys_whole_2042": {
+  "value": 6.1561368353230215,
+  "note": ""
+ },
+ "asx_c_homog_P_2042": {
+  "value": 10.491960839853334,
+  "note": ""
+ },
+ "asx_chk_unique_maxdev": {
+  "value": 1.6653345369377348e-16,
+  "note": ""
+ },
+ "asx_chk_mass_maxdev": {
+  "value": 3.3306690738754696e-16,
+  "note": ""
+ },
+ "asx_chk_bstar": {
+  "value": 0.3698000074910071,
+  "note": ""
+ },
+ "asx_chk_below_whole_pct": {
+  "value": 4.088424299554919e-10,
+  "note": ""
+ },
+ "asx_chk_above_whole_pct": {
+  "value": 1.1562400868876495,
+  "note": ""
+ },
+ "asx_d_n": {
+  "value": 100,
+  "note": ""
+ },
+ "asx_d_P_n_ok": {
+  "value": 94,
+  "note": ""
+ },
+ "asx_d_P_n_fail": {
+  "value": 6,
+  "note": ""
+ },
+ "asx_d_P_phi_median": {
+  "value": 1.6939212896317768,
+  "note": ""
+ },
+ "asx_d_P_phi_p05": {
+  "value": 1.4069626277095184,
+  "note": ""
+ },
+ "asx_d_P_phi_p95": {
+  "value": 3.286701585211657,
+  "note": ""
+ },
+ "asx_d_P_psi_median": {
+  "value": 1.872635556270438,
+  "note": ""
+ },
+ "asx_d_P_psi_p05": {
+  "value": 0.9789472438397172,
+  "note": ""
+ },
+ "asx_d_P_psi_p95": {
+  "value": 2.72831179339997,
+  "note": ""
+ },
+ "asx_d_P_total42_median": {
+  "value": 12.99654421806462,
+  "note": ""
+ },
+ "asx_d_P_total42_p05": {
+  "value": 10.740026181949025,
+  "note": ""
+ },
+ "asx_d_P_total42_p95": {
+  "value": 16.728476192026058,
+  "note": ""
+ },
+ "asx_d_P_girls42_median": {
+  "value": 14.700071157440556,
+  "note": ""
+ },
+ "asx_d_P_girls42_p05": {
+  "value": 12.324626821572956,
+  "note": ""
+ },
+ "asx_d_P_girls42_p95": {
+  "value": 18.805290136688253,
+  "note": ""
+ },
+ "asx_d_P_boys42_median": {
+  "value": 11.106082316773476,
+  "note": ""
+ },
+ "asx_d_P_boys42_p05": {
+  "value": 8.723409644216714,
+  "note": ""
+ },
+ "asx_d_P_boys42_p95": {
+  "value": 14.698392092018597,
+  "note": ""
+ },
+ "asx_d_P_whole42_median": {
+  "value": 14.132899384110164,
+  "note": ""
+ },
+ "asx_d_P_whole42_p05": {
+  "value": 10.33279376864787,
+  "note": ""
+ },
+ "asx_d_P_whole42_p95": {
+  "value": 20.522643558961708,
+  "note": ""
+ },
+ "asx_d_P_age13_22_median": {
+  "value": 11.961684784094416,
+  "note": ""
+ },
+ "asx_d_P_age13_22_p05": {
+  "value": 11.410449477016384,
+  "note": ""
+ },
+ "asx_d_P_age13_22_p95": {
+  "value": 12.495900128405111,
+  "note": ""
+ },
+ "asx_d_P_gap42_median": {
+  "value": 3.6292141686748174,
+  "note": ""
+ },
+ "asx_d_P_gap42_p05": {
+  "value": 2.7990509583941745,
+  "note": ""
+ },
+ "asx_d_P_gap42_p95": {
+  "value": 4.25063340576408,
+  "note": ""
+ },
+ "asx_d_P_rho_phi_eps_a": {
+  "value": 0.03812448072824478,
+  "note": ""
+ },
+ "asx_d_P_rho_phi_eps_s": {
+  "value": -0.05936495322038796,
+  "note": ""
+ },
+ "asx_d_P_rho_psi_eps_a": {
+  "value": -0.06972510204818842,
+  "note": ""
+ },
+ "asx_d_P_rho_psi_eps_s": {
+  "value": 0.012318029115341545,
+  "note": ""
+ },
+ "asx_d_T_n_ok": {
+  "value": 91,
+  "note": ""
+ },
+ "asx_d_T_n_fail": {
+  "value": 9,
+  "note": ""
+ },
+ "asx_d_T_phi_median": {
+  "value": 1.759015401268124,
+  "note": ""
+ },
+ "asx_d_T_phi_p05": {
+  "value": 1.4517759793415141,
+  "note": ""
+ },
+ "asx_d_T_phi_p95": {
+  "value": 2.9651700622312767,
+  "note": ""
+ },
+ "asx_d_T_psi_median": {
+  "value": 1.5042346315741564,
+  "note": ""
+ },
+ "asx_d_T_psi_p05": {
+  "value": 0.8517240411289821,
+  "note": ""
+ },
+ "asx_d_T_psi_p95": {
+  "value": 2.1278716318523303,
+  "note": ""
+ },
+ "asx_d_T_total42_median": {
+  "value": 7.126254234206479,
+  "note": ""
+ },
+ "asx_d_T_total42_p05": {
+  "value": 6.6178020549011425,
+  "note": ""
+ },
+ "asx_d_T_total42_p95": {
+  "value": 7.497274520541779,
+  "note": ""
+ },
+ "asx_d_T_girls42_median": {
+  "value": 8.818808261246225,
+  "note": ""
+ },
+ "asx_d_T_girls42_p05": {
+  "value": 8.157031804516238,
+  "note": ""
+ },
+ "asx_d_T_girls42_p95": {
+  "value": 9.803686019562283,
+  "note": ""
+ },
+ "asx_d_T_boys42_median": {
+  "value": 5.322114926160227,
+  "note": ""
+ },
+ "asx_d_T_boys42_p05": {
+  "value": 4.417769533939488,
+  "note": ""
+ },
+ "asx_d_T_boys42_p95": {
+  "value": 5.94746352283527,
+  "note": ""
+ },
+ "asx_d_T_whole42_median": {
+  "value": 8.957379624119003,
+  "note": ""
+ },
+ "asx_d_T_whole42_p05": {
+  "value": 7.665207575593536,
+  "note": ""
+ },
+ "asx_d_T_whole42_p95": {
+  "value": 11.146438627267223,
+  "note": ""
+ },
+ "asx_d_T_age13_22_median": {
+  "value": 11.953812749765682,
+  "note": ""
+ },
+ "asx_d_T_age13_22_p05": {
+  "value": 11.454183917649843,
+  "note": ""
+ },
+ "asx_d_T_age13_22_p95": {
+  "value": 12.475271093121307,
+  "note": ""
+ },
+ "asx_d_T_gap42_median": {
+  "value": 3.4921403629392738,
+  "note": ""
+ },
+ "asx_d_T_gap42_p05": {
+  "value": 2.622690962706036,
+  "note": ""
+ },
+ "asx_d_T_gap42_p95": {
+  "value": 5.121889925039854,
+  "note": ""
+ },
+ "asx_d_T_rho_phi_eps_a": {
+  "value": 0.08708393056219144,
+  "note": ""
+ },
+ "asx_d_T_rho_phi_eps_s": {
+  "value": -0.023602484472049694,
+  "note": ""
+ },
+ "asx_d_T_rho_psi_eps_a": {
+  "value": -0.05416467590380634,
+  "note": ""
+ },
+ "asx_d_T_rho_psi_eps_s": {
+  "value": 0.007437490046185699,
+  "note": ""
+ },
+ "asx_ma_c30_whole_red_pct": {
+  "value": 15.173040514767777,
+  "note": ""
+ },
+ "asx_ma_c30_hbsc_red_pct": {
+  "value": 31.041064418358864,
+  "note": ""
+ },
+ "asx_ma_c30_b1012_red_pct": {
+  "value": 35.32800757212969,
+  "note": ""
+ },
+ "asx_ma_c30_b1315_red_pct": {
+  "value": 29.428279135276302,
+  "note": ""
+ },
+ "asx_ma_c30_b1619_red_pct": {
+  "value": 9.555290000309412,
+  "note": ""
+ },
+ "asx_ma_c30_b2024_red_pct": {
+  "value": 0.9583253402066005,
+  "note": ""
+ },
+ "asx_ma_c50_whole_red_pct": {
+  "value": 28.458413695885586,
+  "note": ""
+ },
+ "asx_ma_c50_hbsc_red_pct": {
+  "value": 58.41020696084838,
+  "note": ""
+ },
+ "asx_ma_c50_b1012_red_pct": {
+  "value": 62.71262004680567,
+  "note": ""
+ },
+ "asx_ma_c50_b1315_red_pct": {
+  "value": 56.79160175478908,
+  "note": ""
+ },
+ "asx_ma_c50_b1619_red_pct": {
+  "value": 18.78879208445006,
+  "note": ""
+ },
+ "asx_ma_c50_b2024_red_pct": {
+  "value": 1.7435947015632003,
+  "note": ""
+ },
+ "asx_ma_c70_whole_red_pct": {
+  "value": 38.94346168320587,
+  "note": ""
+ },
+ "asx_ma_c70_hbsc_red_pct": {
+  "value": 80.16393793203923,
+  "note": ""
+ },
+ "asx_ma_c70_b1012_red_pct": {
+  "value": 82.50470946771225,
+  "note": ""
+ },
+ "asx_ma_c70_b1315_red_pct": {
+  "value": 79.28331933077055,
+  "note": ""
+ },
+ "asx_ma_c70_b1619_red_pct": {
+  "value": 26.556458567051433,
+  "note": ""
+ },
+ "asx_ma_c70_b2024_red_pct": {
+  "value": 2.254824603368333,
+  "note": ""
+ },
+ "asx_ma_d_whole_median": {
+  "value": 38.974406322044004,
+  "note": ""
+ },
+ "asx_ma_d_whole_p05": {
+  "value": 18.0237999482734,
+  "note": ""
+ },
+ "asx_ma_d_whole_p95": {
+  "value": 61.72042496839627,
+  "note": ""
+ },
+ "asx_ma_d_hbsc_median": {
+  "value": 66.5469996271288,
+  "note": ""
+ },
+ "asx_ma_d_hbsc_p05": {
+  "value": 33.87065332388553,
+  "note": ""
+ },
+ "asx_ma_d_hbsc_p95": {
+  "value": 88.13030336626521,
+  "note": ""
+ },
+ "asx_ma_d_n": {
+  "value": 94,
+  "note": ""
+ },
+ "asx_runtime_minutes": {
+  "value": 6.7801800727844235,
+  "note": ""
+ }
+}

@@ -1,0 +1,877 @@
+{
+ "durx_chk_R0_k1_max_rel_err": {
+  "value": 5.588851629314592e-15,
+  "note": ""
+ },
+ "durx_chk_I_k1_max_abs_err": {
+  "value": 8.604228440844963e-16,
+  "note": ""
+ },
+ "durx_chk_fixed_point_max_resid": {
+  "value": 2.1149748619109232e-14,
+  "note": ""
+ },
+ "durx_chk_convergence_max_abs_err": {
+  "value": 2.1649348980190553e-15,
+  "note": ""
+ },
+ "durx_mean_A_years": {
+  "value": 1.8518518518518516,
+  "note": ""
+ },
+ "durx_pcomplete_A_k1": {
+  "value": 0.8900609856601285,
+  "note": ""
+ },
+ "durx_pcomplete_A_kinf": {
+  "value": 0.883805274328194,
+  "note": ""
+ },
+ "durx_mean_I_years": {
+  "value": 1.8181818181818181,
+  "note": ""
+ },
+ "durx_pcomplete_I_k1": {
+  "value": 0.8918436841251824,
+  "note": ""
+ },
+ "durx_pcomplete_I_kinf": {
+  "value": 0.8857923469162129,
+  "note": ""
+ },
+ "durx_mean_R_years": {
+  "value": 8.333333333333334,
+  "note": ""
+ },
+ "durx_pcomplete_R_k1": {
+  "value": 0.6427423674343867,
+  "note": ""
+ },
+ "durx_pcomplete_R_kinf": {
+  "value": 0.5735940669207272,
+  "note": ""
+ },
+ "durx_all1_b0": {
+  "value": 1.1860224884534665,
+  "note": ""
+ },
+ "durx_all1_b1": {
+  "value": 2.475264157776621,
+  "note": ""
+ },
+ "durx_all1_da": {
+  "value": 0.7144625963549196,
+  "note": ""
+ },
+ "durx_all1_R0_b0": {
+  "value": 1.9253504413904774,
+  "note": ""
+ },
+ "durx_all1_R0_b1": {
+  "value": 4.018263553288627,
+  "note": ""
+ },
+ "durx_all1_P2042": {
+  "value": 10.491960843062719,
+  "note": ""
+ },
+ "durx_all1_T2042": {
+  "value": 6.943542172659142,
+  "note": ""
+ },
+ "durx_all1_P2026": {
+  "value": 11.21571828100738,
+  "note": ""
+ },
+ "durx_all1_T2026": {
+  "value": 8.688329201649541,
+  "note": ""
+ },
+ "durx_all1_gap2026": {
+  "value": 2.5273890793578375,
+  "note": ""
+ },
+ "durx_all1_T_peak": {
+  "value": 11.4582494810476,
+  "note": ""
+ },
+ "durx_all1_T_peak_year": {
+  "value": 2022.5833333333333,
+  "note": ""
+ },
+ "durx_all1_Ieq_b1": {
+  "value": 10.494553911602436,
+  "note": ""
+ },
+ "durx_all1_t90": {
+  "value": 10.68,
+  "note": ""
+ },
+ "durx_all1_peak": {
+  "value": 11.415059478889404,
+  "note": ""
+ },
+ "durx_all1_overshoot": {
+  "value": 0.920505567286968,
+  "note": ""
+ },
+ "durx_all1_slow": {
+  "value": 0.3501823323925847,
+  "note": ""
+ },
+ "durx_all1_halflife": {
+  "value": 1.9793893536092713,
+  "note": ""
+ },
+ "durx_all1_floor": {
+  "value": 0.592547263514814,
+  "note": ""
+ },
+ "durx_all1_q": {
+  "value": 0.17951687320594162,
+  "note": ""
+ },
+ "durx_all2_b0": {
+  "value": 1.1988805528985522,
+  "note": ""
+ },
+ "durx_all2_b1": {
+  "value": 2.374970600345727,
+  "note": ""
+ },
+ "durx_all2_da": {
+  "value": 0.8098627870003202,
+  "note": ""
+ },
+ "durx_all2_R0_b0": {
+  "value": 1.9734754272844366,
+  "note": ""
+ },
+ "durx_all2_R0_b1": {
+  "value": 3.9094354387295347,
+  "note": ""
+ },
+ "durx_all2_P2042": {
+  "value": 10.166143833308361,
+  "note": ""
+ },
+ "durx_all2_T2042": {
+  "value": 7.0017292718874,
+  "note": ""
+ },
+ "durx_all2_P2026": {
+  "value": 10.888192945121633,
+  "note": ""
+ },
+ "durx_all2_T2026": {
+  "value": 8.483463719116441,
+  "note": ""
+ },
+ "durx_all2_gap2026": {
+  "value": 2.4047292260051907,
+  "note": ""
+ },
+ "durx_all2_T_peak": {
+  "value": 12.35094254678359,
+  "note": ""
+ },
+ "durx_all2_T_peak_year": {
+  "value": 2023.0,
+  "note": ""
+ },
+ "durx_all2_Ieq_b1": {
+  "value": 10.16445249581556,
+  "note": ""
+ },
+ "durx_all2_t90": {
+  "value": 9.78,
+  "note": ""
+ },
+ "durx_all2_peak": {
+  "value": 11.384566854663662,
+  "note": ""
+ },
+ "durx_all2_overshoot": {
+  "value": 1.2201143588481025,
+  "note": ""
+ },
+ "durx_all2_slow": {
+  "value": 0.3097500512354082,
+  "note": ""
+ },
+ "durx_all2_halflife": {
+  "value": 2.237762924640027,
+  "note": ""
+ },
+ "durx_all2_floor": {
+  "value": 0.5985228742401278,
+  "note": ""
+ },
+ "durx_all2_q": {
+  "value": 0.16989071070153614,
+  "note": ""
+ },
+ "durx_all3_b0": {
+  "value": 1.2054901204175992,
+  "note": ""
+ },
+ "durx_all3_b1": {
+  "value": 2.3168974073726685,
+  "note": ""
+ },
+ "durx_all3_da": {
+  "value": 0.8897364420647131,
+  "note": ""
+ },
+ "durx_all3_R0_b0": {
+  "value": 1.993054548871426,
+  "note": ""
+ },
+ "durx_all3_R0_b1": {
+  "value": 3.8305605652187937,
+  "note": ""
+ },
+ "durx_all3_P2042": {
+  "value": 10.016968295555957,
+  "note": ""
+ },
+ "durx_all3_T2042": {
+  "value": 7.030706514632332,
+  "note": ""
+ },
+ "durx_all3_P2026": {
+  "value": 10.709623936220334,
+  "note": ""
+ },
+ "durx_all3_T2026": {
+  "value": 8.277781792594375,
+  "note": ""
+ },
+ "durx_all3_gap2026": {
+  "value": 2.431842143625959,
+  "note": ""
+ },
+ "durx_all3_T_peak": {
+  "value": 13.105132694390226,
+  "note": ""
+ },
+ "durx_all3_T_peak_year": {
+  "value": 2023.0833333333333,
+  "note": ""
+ },
+ "durx_all3_Ieq_b1": {
+  "value": 10.00626514470552,
+  "note": ""
+ },
+ "durx_all3_t90": {
+  "value": 9.43,
+  "note": ""
+ },
+ "durx_all3_peak": {
+  "value": 11.371712338323835,
+  "note": ""
+ },
+ "durx_all3_overshoot": {
+  "value": 1.3654471936183175,
+  "note": ""
+ },
+ "durx_all3_slow": {
+  "value": 0.2681729068194274,
+  "note": ""
+ },
+ "durx_all3_halflife": {
+  "value": 2.584702492062972,
+  "note": ""
+ },
+ "durx_all3_floor": {
+  "value": 0.6003148106644268,
+  "note": ""
+ },
+ "durx_all3_q": {
+  "value": 0.16622622222450442,
+  "note": ""
+ },
+ "durx_all5_b0": {
+  "value": 1.2118776361595416,
+  "note": ""
+ },
+ "durx_all5_b1": {
+  "value": 2.253693858311769,
+  "note": ""
+ },
+ "durx_all5_da": {
+  "value": 1.0249324800661073,
+  "note": ""
+ },
+ "durx_all5_R0_b0": {
+  "value": 2.0103754074840436,
+  "note": ""
+ },
+ "durx_all5_R0_b1": {
+  "value": 3.738637114474601,
+  "note": ""
+ },
+ "durx_all5_P2042": {
+  "value": 9.86788921738756,
+  "note": ""
+ },
+ "durx_all5_T2042": {
+  "value": 7.04422641607913,
+  "note": ""
+ },
+ "durx_all5_P2026": {
+  "value": 10.53495380358869,
+  "note": ""
+ },
+ "durx_all5_T2026": {
+  "value": 7.943620042200701,
+  "note": ""
+ },
+ "durx_all5_gap2026": {
+  "value": 2.5913337613879888,
+  "note": ""
+ },
+ "durx_all5_T_peak": {
+  "value": 14.253241163416266,
+  "note": ""
+ },
+ "durx_all5_T_peak_year": {
+  "value": 2023.1666666666667,
+  "note": ""
+ },
+ "durx_all5_Ieq_b1": {
+  "value": 9.847695237420245,
+  "note": ""
+ },
+ "durx_all5_t90": {
+  "value": 9.200000000000001,
+  "note": ""
+ },
+ "durx_all5_peak": {
+  "value": 11.330698477160075,
+  "note": ""
+ },
+ "durx_all5_overshoot": {
+  "value": 1.4830032397398303,
+  "note": ""
+ },
+ "durx_all5_slow": {
+  "value": 0.21889210715763424,
+  "note": ""
+ },
+ "durx_all5_halflife": {
+  "value": 3.1666156882521954,
+  "note": ""
+ },
+ "durx_all5_floor": {
+  "value": 0.6016499708597011,
+  "note": ""
+ },
+ "durx_all5_q": {
+  "value": 0.16309204863437166,
+  "note": ""
+ },
+ "durx_all10_b0": {
+  "value": 1.2174157351173258,
+  "note": ""
+ },
+ "durx_all10_b1": {
+  "value": 2.189902508216387,
+  "note": ""
+ },
+ "durx_all10_da": {
+  "value": 1.2799639027223426,
+  "note": ""
+ },
+ "durx_all10_R0_b0": {
+  "value": 2.0244867972330027,
+  "note": ""
+ },
+ "durx_all10_R0_b1": {
+  "value": 3.641671934431052,
+  "note": ""
+ },
+ "durx_all10_P2042": {
+  "value": 9.718605685836584,
+  "note": ""
+ },
+ "durx_all10_T2042": {
+  "value": 7.009028285182464,
+  "note": ""
+ },
+ "durx_all10_P2026": {
+  "value": 10.386108131207465,
+  "note": ""
+ },
+ "durx_all10_T2026": {
+  "value": 7.506516730252609,
+  "note": ""
+ },
+ "durx_all10_gap2026": {
+  "value": 2.8795914009548547,
+  "note": ""
+ },
+ "durx_all10_T_peak": {
+  "value": 15.996625616606803,
+  "note": ""
+ },
+ "durx_all10_T_peak_year": {
+  "value": 2023.25,
+  "note": ""
+ },
+ "durx_all10_Ieq_b1": {
+  "value": 9.69731065563876,
+  "note": ""
+ },
+ "durx_all10_t90": {
+  "value": 14.780000000000001,
+  "note": ""
+ },
+ "durx_all10_peak": {
+  "value": 11.227796713319723,
+  "note": ""
+ },
+ "durx_all10_overshoot": {
+  "value": 1.5304860576809645,
+  "note": ""
+ },
+ "durx_all10_slow": {
+  "value": 0.17143406765451208,
+  "note": ""
+ },
+ "durx_all10_halflife": {
+  "value": 4.043228922018184,
+  "note": ""
+ },
+ "durx_all10_floor": {
+  "value": 0.6025837436411876,
+  "note": ""
+ },
+ "durx_all10_q": {
+  "value": 0.1606084921699723,
+  "note": ""
+ },
+ "durx_all20_b0": {
+  "value": 1.2204538465912793,
+  "note": ""
+ },
+ "durx_all20_b1": {
+  "value": 2.148850585615698,
+  "note": ""
+ },
+ "durx_all20_da": {
+  "value": 1.5862367339010017,
+  "note": ""
+ },
+ "durx_all20_R0_b0": {
+  "value": 2.031944508279304,
+  "note": ""
+ },
+ "durx_all20_R0_b1": {
+  "value": 3.5776405299960845,
+  "note": ""
+ },
+ "durx_all20_P2042": {
+  "value": 9.61654526737689,
+  "note": ""
+ },
+ "durx_all20_T2042": {
+  "value": 6.936465969052663,
+  "note": ""
+ },
+ "durx_all20_P2026": {
+  "value": 10.294157745967917,
+  "note": ""
+ },
+ "durx_all20_T2026": {
+  "value": 7.295124313313956,
+  "note": ""
+ },
+ "durx_all20_gap2026": {
+  "value": 2.9990334326539623,
+  "note": ""
+ },
+ "durx_all20_T_peak": {
+  "value": 17.593824431131655,
+  "note": ""
+ },
+ "durx_all20_T_peak_year": {
+  "value": 2023.1666666666667,
+  "note": ""
+ },
+ "durx_all20_Ieq_b1": {
+  "value": 9.604409962434806,
+  "note": ""
+ },
+ "durx_all20_t90": {
+  "value": 15.31,
+  "note": ""
+ },
+ "durx_all20_peak": {
+  "value": 11.112657541704332,
+  "note": ""
+ },
+ "durx_all20_overshoot": {
+  "value": 1.5082475792695256,
+  "note": ""
+ },
+ "durx_all20_slow": {
+  "value": 0.1442308432974747,
+  "note": ""
+ },
+ "durx_all20_halflife": {
+  "value": 4.805817983954625,
+  "note": ""
+ },
+ "durx_all20_floor": {
+  "value": 0.6030261932939629,
+  "note": ""
+ },
+ "durx_all20_q": {
+  "value": 0.1593200812508829,
+  "note": ""
+ },
+ "durx_allinf_b0": {
+  "value": 1.2236535643634232,
+  "note": ""
+ },
+ "durx_allinf_R0_b0": {
+  "value": 2.0396137964155883,
+  "note": ""
+ },
+ "durx_onlyA10_b0": {
+  "value": 1.187118614750269,
+  "note": ""
+ },
+ "durx_onlyA10_b1": {
+  "value": 2.4995068200344908,
+  "note": ""
+ },
+ "durx_onlyA10_da": {
+  "value": 1.715688808847912,
+  "note": ""
+ },
+ "durx_onlyA10_R0_b0": {
+  "value": 1.98039214634915,
+  "note": ""
+ },
+ "durx_onlyA10_R0_b1": {
+  "value": 4.169763336735953,
+  "note": ""
+ },
+ "durx_onlyA10_P2042": {
+  "value": 10.345713006609527,
+  "note": ""
+ },
+ "durx_onlyA10_T2042": {
+  "value": 6.943042573247503,
+  "note": ""
+ },
+ "durx_onlyA10_P2026": {
+  "value": 11.178363228200226,
+  "note": ""
+ },
+ "durx_onlyA10_T2026": {
+  "value": 8.797687892781179,
+  "note": ""
+ },
+ "durx_onlyA10_gap2026": {
+  "value": 2.380675335419048,
+  "note": ""
+ },
+ "durx_onlyA10_T_peak": {
+  "value": 14.168051238521617,
+  "note": ""
+ },
+ "durx_onlyA10_T_peak_year": {
+  "value": 2023.0833333333333,
+  "note": ""
+ },
+ "durx_onlyA10_Ieq_b1": {
+  "value": 10.34867900553248,
+  "note": ""
+ },
+ "durx_onlyA10_t90": {
+  "value": 10.93,
+  "note": ""
+ },
+ "durx_onlyA10_peak": {
+  "value": 11.473138127596153,
+  "note": ""
+ },
+ "durx_onlyA10_overshoot": {
+  "value": 1.1244591220636728,
+  "note": ""
+ },
+ "durx_onlyA10_slow": {
+  "value": 0.35794963476381864,
+  "note": ""
+ },
+ "durx_onlyA10_halflife": {
+  "value": 1.936437736603072,
+  "note": ""
+ },
+ "durx_onlyA10_floor": {
+  "value": 0.5875673812996552,
+  "note": ""
+ },
+ "durx_onlyA10_q": {
+  "value": 0.17839007741103113,
+  "note": ""
+ },
+ "durx_onlyI10_b0": {
+  "value": 1.1114887592438931,
+  "note": ""
+ },
+ "durx_onlyI10_b1": {
+  "value": 2.0066309784221765,
+  "note": ""
+ },
+ "durx_onlyI10_da": {
+  "value": 0.41919503754854015,
+  "note": ""
+ },
+ "durx_onlyI10_R0_b0": {
+  "value": 1.8362979181245043,
+  "note": ""
+ },
+ "durx_onlyI10_R0_b1": {
+  "value": 3.3151682889059546,
+  "note": ""
+ },
+ "durx_onlyI10_P2042": {
+  "value": 10.23089048272692,
+  "note": ""
+ },
+ "durx_onlyI10_T2042": {
+  "value": 6.961510489103327,
+  "note": ""
+ },
+ "durx_onlyI10_P2026": {
+  "value": 10.921246480545882,
+  "note": ""
+ },
+ "durx_onlyI10_T2026": {
+  "value": 8.140842379303068,
+  "note": ""
+ },
+ "durx_onlyI10_gap2026": {
+  "value": 2.780404101242813,
+  "note": ""
+ },
+ "durx_onlyI10_T_peak": {
+  "value": 11.68213483793908,
+  "note": ""
+ },
+ "durx_onlyI10_T_peak_year": {
+  "value": 2022.6666666666667,
+  "note": ""
+ },
+ "durx_onlyI10_Ieq_b1": {
+  "value": 10.232836456484105,
+  "note": ""
+ },
+ "durx_onlyI10_t90": {
+  "value": 10.34,
+  "note": ""
+ },
+ "durx_onlyI10_peak": {
+  "value": 11.271456382348875,
+  "note": ""
+ },
+ "durx_onlyI10_overshoot": {
+  "value": 1.03861992586477,
+  "note": ""
+ },
+ "durx_onlyI10_slow": {
+  "value": 0.3693097481971386,
+  "note": ""
+ },
+ "durx_onlyI10_halflife": {
+  "value": 1.8768721484978008,
+  "note": ""
+ },
+ "durx_onlyI10_floor": {
+  "value": 0.6212520165618544,
+  "note": ""
+ },
+ "durx_onlyI10_q": {
+  "value": 0.17842892509870448,
+  "note": ""
+ },
+ "durx_onlyR10_b0": {
+  "value": 1.3074203788240137,
+  "note": ""
+ },
+ "durx_onlyR10_b1": {
+  "value": 2.838061693278432,
+  "note": ""
+ },
+ "durx_onlyR10_da": {
+  "value": 0.8269784654960464,
+  "note": ""
+ },
+ "durx_onlyR10_R0_b0": {
+  "value": 2.0795683235703586,
+  "note": ""
+ },
+ "durx_onlyR10_R0_b1": {
+  "value": 4.514189386422832,
+  "note": ""
+ },
+ "durx_onlyR10_P2042": {
+  "value": 10.170490476770391,
+  "note": ""
+ },
+ "durx_onlyR10_T2042": {
+  "value": 7.026343728573005,
+  "note": ""
+ },
+ "durx_onlyR10_P2026": {
+  "value": 10.644178735500356,
+  "note": ""
+ },
+ "durx_onlyR10_T2026": {
+  "value": 8.268928054874248,
+  "note": ""
+ },
+ "durx_onlyR10_gap2026": {
+  "value": 2.375250680626108,
+  "note": ""
+ },
+ "durx_onlyR10_T_peak": {
+  "value": 11.387571569332703,
+  "note": ""
+ },
+ "durx_onlyR10_T_peak_year": {
+  "value": 2022.5833333333333,
+  "note": ""
+ },
+ "durx_onlyR10_Ieq_b1": {
+  "value": 10.159647661739736,
+  "note": ""
+ },
+ "durx_onlyR10_t90": {
+  "value": 8.68,
+  "note": ""
+ },
+ "durx_onlyR10_peak": {
+  "value": 11.195917871220475,
+  "note": ""
+ },
+ "durx_onlyR10_overshoot": {
+  "value": 1.0362702094807386,
+  "note": ""
+ },
+ "durx_onlyR10_slow": {
+  "value": 0.22436941297820923,
+  "note": ""
+ },
+ "durx_onlyR10_halflife": {
+  "value": 3.0893122701500486,
+  "note": ""
+ },
+ "durx_onlyR10_floor": {
+  "value": 0.5794019778227624,
+  "note": ""
+ },
+ "durx_onlyR10_q": {
+  "value": 0.1626084469926201,
+  "note": ""
+ },
+ "durx_range_P2042_min": {
+  "value": 9.61654526737689,
+  "note": ""
+ },
+ "durx_range_P2042_max": {
+  "value": 10.491960843062719,
+  "note": ""
+ },
+ "durx_range_T2042_min": {
+  "value": 6.936465969052663,
+  "note": ""
+ },
+ "durx_range_T2042_max": {
+  "value": 7.04422641607913,
+  "note": ""
+ },
+ "durx_range_t90_min": {
+  "value": 9.200000000000001,
+  "note": ""
+ },
+ "durx_range_t90_max": {
+  "value": 15.31,
+  "note": ""
+ },
+ "durx_range_halflife_min": {
+  "value": 1.9793893536092713,
+  "note": ""
+ },
+ "durx_range_halflife_max": {
+  "value": 4.805817983954625,
+  "note": ""
+ },
+ "durx_range_floor_min": {
+  "value": 0.592547263514814,
+  "note": ""
+ },
+ "durx_range_floor_max": {
+  "value": 0.6030261932939629,
+  "note": ""
+ },
+ "durx_range_R0_b1_min": {
+  "value": 3.5776405299960845,
+  "note": ""
+ },
+ "durx_range_R0_b1_max": {
+  "value": 4.018263553288627,
+  "note": ""
+ },
+ "durx_range_overshoot_min": {
+  "value": 0.920505567286968,
+  "note": ""
+ },
+ "durx_range_overshoot_max": {
+  "value": 1.5304860576809645,
+  "note": ""
+ },
+ "durx_range_gap2026_min": {
+  "value": 2.4047292260051907,
+  "note": ""
+ },
+ "durx_range_gap2026_max": {
+  "value": 2.9990334326539623,
+  "note": ""
+ },
+ "durx_range_da_min": {
+  "value": 0.7144625963549196,
+  "note": ""
+ },
+ "durx_range_da_max": {
+  "value": 1.5862367339010017,
+  "note": ""
+ },
+ "durx_range_T_peak_min": {
+  "value": 11.4582494810476,
+  "note": ""
+ },
+ "durx_range_T_peak_max": {
+  "value": 17.593824431131655,
+  "note": ""
+ },
+ "durx_shapes": {
+  "value": [
+   1,
+   2,
+   3,
+   5,
+   10,
+   20
+  ],
+  "note": ""
+ },
+ "durx_runtime_minutes": {
+  "value": 0.17166378498077392,
+  "note": ""
+ }
+}

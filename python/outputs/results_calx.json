@@ -1,0 +1,454 @@
+{
+ "calx_keep_rate_gamma2_t1_pct": {
+  "value": 99.10179640718563,
+  "note": ""
+ },
+ "calx_gamma2_tercile_edge_1": {
+  "value": 0.30411009977867004,
+  "note": ""
+ },
+ "calx_keep_rate_gamma2_t2_pct": {
+  "value": 97.59036144578313,
+  "note": ""
+ },
+ "calx_gamma2_tercile_edge_2": {
+  "value": 0.6165530185826176,
+  "note": ""
+ },
+ "calx_keep_rate_gamma2_t3_pct": {
+  "value": 44.91017964071856,
+  "note": ""
+ },
+ "calx_gamma2_tercile_edge_3": {
+  "value": 1.25,
+  "note": ""
+ },
+ "calx_G_n_ok": {
+  "value": 805,
+  "note": ""
+ },
+ "calx_G_n_fail": {
+  "value": 0,
+  "note": ""
+ },
+ "calx_G_par_median": {
+  "value": 2.65329628144424,
+  "note": ""
+ },
+ "calx_G_par_p05": {
+  "value": 1.3022669268153129,
+  "note": ""
+ },
+ "calx_G_par_p95": {
+  "value": 10.85103534146515,
+  "note": ""
+ },
+ "calx_G_2026_median": {
+  "value": 16.822037439535908,
+  "note": ""
+ },
+ "calx_G_2026_p05": {
+  "value": 10.695801561238747,
+  "note": ""
+ },
+ "calx_G_2026_p95": {
+  "value": 23.49190072852895,
+  "note": ""
+ },
+ "calx_G_2032_median": {
+  "value": 16.559731193376212,
+  "note": ""
+ },
+ "calx_G_2032_p05": {
+  "value": 10.181622453778775,
+  "note": ""
+ },
+ "calx_G_2032_p95": {
+  "value": 28.430936821864133,
+  "note": ""
+ },
+ "calx_G_2042_median": {
+  "value": 15.94328676875949,
+  "note": ""
+ },
+ "calx_G_2042_p05": {
+  "value": 10.144045661834358,
+  "note": ""
+ },
+ "calx_G_2042_p95": {
+  "value": 27.088901760015325,
+  "note": ""
+ },
+ "calx_T1_n_ok": {
+  "value": 764,
+  "note": ""
+ },
+ "calx_T1_n_fail": {
+  "value": 41,
+  "note": ""
+ },
+ "calx_T1_par_median": {
+  "value": 1.3524166055241287,
+  "note": ""
+ },
+ "calx_T1_par_p05": {
+  "value": 0.5887634092114056,
+  "note": ""
+ },
+ "calx_T1_par_p95": {
+  "value": 8.105923595292406,
+  "note": ""
+ },
+ "calx_T1_2026_median": {
+  "value": 11.850371466736181,
+  "note": ""
+ },
+ "calx_T1_2026_p05": {
+  "value": 7.624857035545797,
+  "note": ""
+ },
+ "calx_T1_2026_p95": {
+  "value": 15.684511179127869,
+  "note": ""
+ },
+ "calx_T1_2032_median": {
+  "value": 8.423365729352469,
+  "note": ""
+ },
+ "calx_T1_2032_p05": {
+  "value": 6.593096326034105,
+  "note": ""
+ },
+ "calx_T1_2032_p95": {
+  "value": 11.791013387509187,
+  "note": ""
+ },
+ "calx_T1_2042_median": {
+  "value": 7.347970231182299,
+  "note": ""
+ },
+ "calx_T1_2042_p05": {
+  "value": 6.603832498615443,
+  "note": ""
+ },
+ "calx_T1_2042_p95": {
+  "value": 9.24583244685102,
+  "note": ""
+ },
+ "calx_w_s2_meanP": {
+  "value": 0.6922956418938114,
+  "note": ""
+ },
+ "calx_w_s2_meanT": {
+  "value": 0.5158517749025371,
+  "note": ""
+ },
+ "calx_w_s2_ratio_P_over_T": {
+  "value": 1.3420437334437996,
+  "note": ""
+ },
+ "calx_w_s2_essP": {
+  "value": 597.4327959216536,
+  "note": ""
+ },
+ "calx_w_s2_essT": {
+  "value": 467.9226974351213,
+  "note": ""
+ },
+ "calx_w_s2_P_2042_median": {
+  "value": 14.868799999999998,
+  "note": ""
+ },
+ "calx_w_s2_P_2042_p05": {
+  "value": 10.651399999999999,
+  "note": ""
+ },
+ "calx_w_s2_P_2042_p95": {
+  "value": 21.9859,
+  "note": ""
+ },
+ "calx_w_s2_P_gamma2_median": {
+  "value": 0.23702520282051837,
+  "note": ""
+ },
+ "calx_w_s2_T_2042_median": {
+  "value": 7.5503,
+  "note": ""
+ },
+ "calx_w_s2_T_2042_p05": {
+  "value": 6.804200000000001,
+  "note": ""
+ },
+ "calx_w_s2_T_2042_p95": {
+  "value": 8.8723,
+  "note": ""
+ },
+ "calx_w_s2_T_gamma2_median": {
+  "value": 0.2083096261523188,
+  "note": ""
+ },
+ "calx_w_s4_meanP": {
+  "value": 0.784530491913105,
+  "note": ""
+ },
+ "calx_w_s4_meanT": {
+  "value": 0.6572526646461383,
+  "note": ""
+ },
+ "calx_w_s4_ratio_P_over_T": {
+  "value": 1.1936512913728428,
+  "note": ""
+ },
+ "calx_w_s4_essP": {
+  "value": 670.3444104841054,
+  "note": ""
+ },
+ "calx_w_s4_essT": {
+  "value": 594.1225731013063,
+  "note": ""
+ },
+ "calx_w_s4_P_2042_median": {
+  "value": 14.2758,
+  "note": ""
+ },
+ "calx_w_s4_P_2042_p05": {
+  "value": 10.2242,
+  "note": ""
+ },
+ "calx_w_s4_P_2042_p95": {
+  "value": 21.7808,
+  "note": ""
+ },
+ "calx_w_s4_P_gamma2_median": {
+  "value": 0.19519024508756347,
+  "note": ""
+ },
+ "calx_w_s4_T_2042_median": {
+  "value": 7.4298,
+  "note": ""
+ },
+ "calx_w_s4_T_2042_p05": {
+  "value": 6.732200000000001,
+  "note": ""
+ },
+ "calx_w_s4_T_2042_p95": {
+  "value": 8.7634,
+  "note": ""
+ },
+ "calx_w_s4_T_gamma2_median": {
+  "value": 0.1822570251587494,
+  "note": ""
+ },
+ "calx_lr_9": {
+  "value": 0.10027407320425095,
+  "note": ""
+ },
+ "calx_pP_9": {
+  "value": 0.014667161035043626,
+  "note": ""
+ },
+ "calx_pT_9": {
+  "value": 0.14627072149714804,
+  "note": ""
+ },
+ "calx_post_P_9_pct": {
+  "value": 9.11355412676678,
+  "note": ""
+ },
+ "calx_lr_10": {
+  "value": 0.5623542067383004,
+  "note": ""
+ },
+ "calx_pP_10": {
+  "value": 0.09807561636972026,
+  "note": ""
+ },
+ "calx_pT_10": {
+  "value": 0.17440185419535975,
+  "note": ""
+ },
+ "calx_post_P_10_pct": {
+  "value": 35.99402775074402,
+  "note": ""
+ },
+ "calx_lr_11": {
+  "value": 0.7660119606076051,
+  "note": ""
+ },
+ "calx_pP_11": {
+  "value": 0.15113138918157834,
+  "note": ""
+ },
+ "calx_pT_11": {
+  "value": 0.19729638302475075,
+  "note": ""
+ },
+ "calx_post_P_11_pct": {
+  "value": 43.3752419402672,
+  "note": ""
+ },
+ "calx_lr_12": {
+  "value": 0.803382162127735,
+  "note": ""
+ },
+ "calx_pP_12": {
+  "value": 0.12893847136004677,
+  "note": ""
+ },
+ "calx_pT_12": {
+  "value": 0.16049456589695354,
+  "note": ""
+ },
+ "calx_post_P_12_pct": {
+  "value": 44.548636389962844,
+  "note": ""
+ },
+ "calx_lr_13": {
+  "value": 1.6914181064983245,
+  "note": ""
+ },
+ "calx_pP_13": {
+  "value": 0.1438461716176548,
+  "note": ""
+ },
+ "calx_pT_13": {
+  "value": 0.08504471547573403,
+  "note": ""
+ },
+ "calx_post_P_13_pct": {
+  "value": 62.8448661474953,
+  "note": ""
+ },
+ "calx_lr_14": {
+  "value": 7.70528558889074,
+  "note": ""
+ },
+ "calx_pP_14": {
+  "value": 0.16461210595220455,
+  "note": ""
+ },
+ "calx_pT_14": {
+  "value": 0.02136353079365904,
+  "note": ""
+ },
+ "calx_post_P_14_pct": {
+  "value": 88.5127260927987,
+  "note": ""
+ },
+ "calx_P2026_share_ge12_pct": {
+  "value": 72.4223602484472,
+  "note": ""
+ },
+ "calx_T2026_share_ge12_pct": {
+  "value": 26.211180124223603,
+  "note": ""
+ },
+ "calx_P2026_share_le10_pct": {
+  "value": 10.683229813664596,
+  "note": ""
+ },
+ "calx_T2026_share_le10_pct": {
+  "value": 53.04347826086957,
+  "note": ""
+ },
+ "calx_sens_uniform_g2_alpha_n_ok": {
+  "value": 182,
+  "note": ""
+ },
+ "calx_sens_uniform_g2_alpha_n": {
+  "value": 300,
+  "note": ""
+ },
+ "calx_sens_uniform_g2_alpha_P_2042_median": {
+  "value": 11.444373652304467,
+  "note": ""
+ },
+ "calx_sens_uniform_g2_alpha_P_2042_p05": {
+  "value": 9.70032257943362,
+  "note": ""
+ },
+ "calx_sens_uniform_g2_alpha_P_2042_p95": {
+  "value": 17.87086742936171,
+  "note": ""
+ },
+ "calx_sens_uniform_g2_alpha_T_2042_median": {
+  "value": 7.132151365375952,
+  "note": ""
+ },
+ "calx_sens_uniform_g2_alpha_T_2042_p05": {
+  "value": 6.562972235365679,
+  "note": ""
+ },
+ "calx_sens_uniform_g2_alpha_T_2042_p95": {
+  "value": 7.6991076890289785,
+  "note": ""
+ },
+ "calx_sens_narrow_n_ok": {
+  "value": 269,
+  "note": ""
+ },
+ "calx_sens_narrow_n": {
+  "value": 300,
+  "note": ""
+ },
+ "calx_sens_narrow_P_2042_median": {
+  "value": 10.852604169192311,
+  "note": ""
+ },
+ "calx_sens_narrow_P_2042_p05": {
+  "value": 9.64069861727485,
+  "note": ""
+ },
+ "calx_sens_narrow_P_2042_p95": {
+  "value": 13.19620452923335,
+  "note": ""
+ },
+ "calx_sens_narrow_T_2042_median": {
+  "value": 6.989298038380482,
+  "note": ""
+ },
+ "calx_sens_narrow_T_2042_p05": {
+  "value": 6.552785526987595,
+  "note": ""
+ },
+ "calx_sens_narrow_T_2042_p95": {
+  "value": 7.47796096369626,
+  "note": ""
+ },
+ "calx_sens_wide_g2_n_ok": {
+  "value": 204,
+  "note": ""
+ },
+ "calx_sens_wide_g2_n": {
+  "value": 300,
+  "note": ""
+ },
+ "calx_sens_wide_g2_P_2042_median": {
+  "value": 14.468940337640241,
+  "note": ""
+ },
+ "calx_sens_wide_g2_P_2042_p05": {
+  "value": 9.95856961907185,
+  "note": ""
+ },
+ "calx_sens_wide_g2_P_2042_p95": {
+  "value": 25.213751849193613,
+  "note": ""
+ },
+ "calx_sens_wide_g2_T_2042_median": {
+  "value": 7.431742542690833,
+  "note": ""
+ },
+ "calx_sens_wide_g2_T_2042_p05": {
+  "value": 6.623136844101456,
+  "note": ""
+ },
+ "calx_sens_wide_g2_T_2042_p95": {
+  "value": 9.03493119049712,
+  "note": ""
+ },
+ "calx_runtime_minutes": {
+  "value": 18.279656255245207,
+  "note": ""
+ }
+}

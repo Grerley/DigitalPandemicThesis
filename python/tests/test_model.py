@@ -92,3 +92,88 @@ def test_career_transmissibility_is_a_probability_and_reduces_without_relapse():
         assert Tc >= nw.transmissibility(p, beta) - 1e-12
         q = p.with_(delta=0.0)
         assert abs(nw.career_transmissibility(q, beta) - nw.transmissibility(q, beta)) < 1e-12
+
+
+def test_structured_model_conserves_groups_and_has_fixed_point():
+    from dpm import agesex as AS
+    for _ in range(5):
+        p = random_params(False)
+        st = AS.Struct(phi=np.random.uniform(0.5, 3), psi=np.random.uniform(0.5, 3),
+                       eps_a=np.random.uniform(0, 1), eps_s=np.random.uniform(0, 1))
+        x = AS.equilibrium(p, st)
+        X = x.reshape(AS.G, AS.K)
+        assert np.allclose(X.sum(1), AS.N_G, atol=1e-8)
+        assert np.all(X > -1e-12)
+        f = AS.rhs_factory(p, st)
+        assert np.max(np.abs(f(0, x))) < 1e-8
+
+
+def test_structured_mixing_is_row_stochastic():
+    from dpm import agesex as AS
+    C = AS.mixing(AS.Struct(eps_a=0.7, eps_s=0.4))
+    assert np.allclose(C.sum(1), 1.0)
+
+
+def test_branching_extinction_certain_below_threshold():
+    import ext_math as em
+    for _ in range(50):
+        p = random_params(True)
+        q = em.extinction_probs(p)
+        if R0(p) < 0.95:
+            assert np.allclose(q, 1.0, atol=1e-6)
+        elif R0(p) > 1.05:
+            assert q[0] < 1 - 1e-4
+
+
+def test_theorem_5_9_routh_hurwitz_at_interior_equilibrium():
+    import ext_math as em
+    rng = np.random.default_rng(59)
+    for i in range(300):
+        alpha = 0.0 if i % 2 == 0 else rng.uniform(1e-4, 0.3)
+        p = Params(b=rng.uniform(0.1, 10), eta=rng.uniform(0, 1), alpha=alpha, sigma=rng.uniform(0.01, 2),
+                   gamma1=rng.uniform(0.01, 2), gamma2=rng.uniform(0.05, 3), delta=rng.uniform(0, 1),
+                   nu=rng.uniform(0.02, 0.2))
+        if alpha == 0.0 and R0(p) <= 1.01:
+            continue
+        x = equilibrium(p)
+        a1, a2, a3, ok = em.routh_hurwitz(em.reduced_jac(p, x))
+        assert ok
+        S, A, I, R = x
+        lam = p.b * (I + p.eta * A) + p.alpha
+        a, c, d = p.sigma + p.gamma1 + p.nu, p.gamma2 + p.nu, p.delta + p.nu
+        D = a * c * d - p.sigma * p.gamma2 * p.delta
+        m = 1 + p.sigma / c + p.sigma * p.gamma2 / (c * d)
+        assert np.isclose(a3, D * p.alpha / lam + lam * c * d * m, rtol=1e-8)
+
+
+def test_optimal_control_sweep_limits_and_adjoint_gradient():
+    """Chapter 9 optimal control: huge weights give the uncontrolled path; the adjoint gives the gradient."""
+    import ext_control as ec
+    rng = np.random.default_rng(91)
+    n = 400
+    for _ in range(3):
+        p = random_params()
+        x0 = rng.dirichlet(np.ones(4))
+        z = np.zeros(n + 1)
+        PY0 = ec.trap(ec.forward(x0, z, z, p, n)[:, 2], n)
+        s = ec.sweep(x0, p, 1e8, 1e8, n=n)
+        assert abs(s["PY"] - PY0) < 1e-6 * PY0 and s["u1"].max() < 1e-6 and s["u2"].max() < 1e-6
+        _, _, P1, P2, _ = ec.marginal(x0, p, n=n)
+        eps = 1e-5
+        for (c1, c2), P in (((eps, 0.0), P1), ((0.0, eps), P2)):
+            fd = (PY0 - ec.prev_years(x0, p, c1, c2, n=n)[0]) / eps
+            assert abs(fd - P) < 1e-3 * abs(P) + 1e-9
+
+
+def test_proposition_5_10_general_durations():
+    import ext_durations as ed
+    rng = np.random.default_rng(510)
+    for i in range(40):
+        p = Params(b=rng.uniform(0.2, 6), eta=rng.uniform(0, 1), alpha=(0.0 if i % 2 == 0 else rng.uniform(1e-3, 0.1)),
+                   sigma=rng.uniform(0.05, 1.5), gamma1=rng.uniform(0.05, 1.5), gamma2=rng.uniform(0.1, 2),
+                   delta=rng.uniform(0.01, 0.6), nu=rng.uniform(0.03, 0.1))
+        assert np.isclose(ed.R0_dur(p, 1, 1, 1), R0(p), rtol=1e-10)
+        assert np.isclose(ed.I_eq_dur(p, 1, 1, 1), equilibrium(p)[2], atol=1e-12)
+        k = tuple(int(v) for v in rng.integers(1, 6, size=3))
+        ch = ed.Chain(*k)
+        assert np.max(np.abs(ch.rhs(p)(0, ch.eq_state(p)))) < 1e-10

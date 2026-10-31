@@ -1,0 +1,226 @@
+{
+ "asxs_derived18_ratio_sex": {
+  "value": 1.1901673817700333,
+  "note": ""
+ },
+ "asxs_derived18_ratio_age": {
+  "value": 0.666521337745735,
+  "note": ""
+ },
+ "asxs_derived18_girls": {
+  "value": 8.303364274719867,
+  "note": ""
+ },
+ "asxs_derived18_boys": {
+  "value": 6.976635725280077,
+  "note": ""
+ },
+ "asxs_derived18_age11": {
+  "value": 5.729063122385143,
+  "note": ""
+ },
+ "asxs_derived18_age1315": {
+  "value": 8.595468438807385,
+  "note": ""
+ },
+ "asxs_const_P_2018_ratio_sex": {
+  "value": 1.871482033079905,
+  "note": ""
+ },
+ "asxs_const_P_2018_ratio_age": {
+  "value": 0.6764896387012852,
+  "note": ""
+ },
+ "asxs_const_P_2018_girls": {
+  "value": 9.12446888445831,
+  "note": ""
+ },
+ "asxs_const_P_2018_boys": {
+  "value": 4.875531115541696,
+  "note": ""
+ },
+ "asxs_const_T_2018_ratio_sex": {
+  "value": 1.881895954954504,
+  "note": ""
+ },
+ "asxs_const_T_2018_ratio_age": {
+  "value": 0.6220839023839942,
+  "note": ""
+ },
+ "asxs_const_T_2018_girls": {
+  "value": 9.142086939005743,
+  "note": ""
+ },
+ "asxs_const_T_2018_boys": {
+  "value": 4.857913060994256,
+  "note": ""
+ },
+ "asxs_c_b0": {
+  "value": 1.099416025581795,
+  "note": ""
+ },
+ "asxs_c_b1": {
+  "value": 1.5065168082894371,
+  "note": ""
+ },
+ "asxs_c_phi0": {
+  "value": 1.2744673913650832,
+  "note": ""
+ },
+ "asxs_c_phi1": {
+  "value": 2.355435490066368,
+  "note": ""
+ },
+ "asxs_c_psi": {
+  "value": 1.3356284547444481,
+  "note": ""
+ },
+ "asxs_c_2018_ratio_age": {
+  "value": 0.6709399758627717,
+  "note": ""
+ },
+ "asxs_c_2018_girls": {
+  "value": 7.607794492544411,
+  "note": ""
+ },
+ "asxs_c_2018_boys": {
+  "value": 6.392205507455591,
+  "note": ""
+ },
+ "asxs_c_total_2022": {
+  "value": 10.999999999252488,
+  "note": ""
+ },
+ "asxs_c_girls_2022": {
+  "value": 12.999999998496117,
+  "note": ""
+ },
+ "asxs_c_boys_2022": {
+  "value": 9.00000000000886,
+  "note": ""
+ },
+ "asxs_c_whole_2022": {
+  "value": 11.366801519140948,
+  "note": ""
+ },
+ "asxs_c_total_2026": {
+  "value": 11.075959298127373,
+  "note": ""
+ },
+ "asxs_c_girls_2026": {
+  "value": 12.769533395319444,
+  "note": ""
+ },
+ "asxs_c_boys_2026": {
+  "value": 9.382385200935303,
+  "note": ""
+ },
+ "asxs_c_whole_2026": {
+  "value": 11.396536249838238,
+  "note": ""
+ },
+ "asxs_c_total_2032": {
+  "value": 10.865113565561655,
+  "note": ""
+ },
+ "asxs_c_girls_2032": {
+  "value": 12.54112605555881,
+  "note": ""
+ },
+ "asxs_c_boys_2032": {
+  "value": 9.189101075564501,
+  "note": ""
+ },
+ "asxs_c_whole_2032": {
+  "value": 11.001124061452886,
+  "note": ""
+ },
+ "asxs_c_total_2042": {
+  "value": 10.853286003205593,
+  "note": ""
+ },
+ "asxs_c_girls_2042": {
+  "value": 12.53429035571379,
+  "note": ""
+ },
+ "asxs_c_boys_2042": {
+  "value": 9.172281650697396,
+  "note": ""
+ },
+ "asxs_c_whole_2042": {
+  "value": 10.958806303453265,
+  "note": ""
+ },
+ "asxs_d_n": {
+  "value": 60,
+  "note": ""
+ },
+ "asxs_d_n_ok": {
+  "value": 57,
+  "note": ""
+ },
+ "asxs_d_phi0_median": {
+  "value": 1.2345573597732662,
+  "note": ""
+ },
+ "asxs_d_phi0_p05": {
+  "value": 1.1262721319321425,
+  "note": ""
+ },
+ "asxs_d_phi0_p95": {
+  "value": 1.4202716946770486,
+  "note": ""
+ },
+ "asxs_d_phi1_median": {
+  "value": 1.8534762988762994,
+  "note": ""
+ },
+ "asxs_d_phi1_p05": {
+  "value": 1.5275677399458465,
+  "note": ""
+ },
+ "asxs_d_phi1_p95": {
+  "value": 5.55604451420314,
+  "note": ""
+ },
+ "asxs_d_total42_median": {
+  "value": 12.662757521863055,
+  "note": ""
+ },
+ "asxs_d_total42_p05": {
+  "value": 10.397053795922327,
+  "note": ""
+ },
+ "asxs_d_total42_p95": {
+  "value": 15.875607295949843,
+  "note": ""
+ },
+ "asxs_d_girls42_median": {
+  "value": 14.726879554987615,
+  "note": ""
+ },
+ "asxs_d_girls42_p05": {
+  "value": 12.0599510341329,
+  "note": ""
+ },
+ "asxs_d_girls42_p95": {
+  "value": 18.382531245588794,
+  "note": ""
+ },
+ "asxs_d_boys42_median": {
+  "value": 10.673222296036938,
+  "note": ""
+ },
+ "asxs_d_boys42_p05": {
+  "value": 8.734674602771591,
+  "note": ""
+ },
+ "asxs_d_boys42_p95": {
+  "value": 13.687897217062812,
+  "note": ""
+ },
+ "asxs_runtime_minutes": {
+  "value": 4.405920000871022,
+  "note": ""
+ }
+}

@@ -1,0 +1,6602 @@
+{
+ "recx_grid_waves": {
+  "value": [
+   3,
+   6,
+   10
+  ],
+  "note": ""
+ },
+ "recx_grid_sizes": {
+  "value": [
+   500,
+   2000,
+   8000
+  ],
+  "note": ""
+ },
+ "recx_grid_reps_500": {
+  "value": 32,
+  "note": "replicates per cell"
+ },
+ "recx_grid_reps_2000": {
+  "value": 16,
+  "note": "replicates per cell"
+ },
+ "recx_grid_reps_8000": {
+  "value": 8,
+  "note": "replicates per cell"
+ },
+ "recx_noise_low_sd_A": {
+  "value": 1.0,
+  "note": ""
+ },
+ "recx_noise_high_sd_A": {
+  "value": 1.8,
+  "note": ""
+ },
+ "recx_noise_low_sd_S": {
+  "value": 0.8,
+  "note": ""
+ },
+ "recx_noise_high_sd_S": {
+  "value": 1.5,
+  "note": ""
+ },
+ "recx_strict_tol": {
+  "value": 1e-09,
+  "note": ""
+ },
+ "recx_strict_iters": {
+  "value": 1500,
+  "note": ""
+ },
+ "recx_gridfit_tol": {
+  "value": 1e-09,
+  "note": ""
+ },
+ "recx_gridfit_iters": {
+  "value": 1500,
+  "note": ""
+ },
+ "recx_orig_tol": {
+  "value": 1e-07,
+  "note": ""
+ },
+ "recx_orig_iters": {
+  "value": 500,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_S_A_relbias_pct": {
+  "value": -23.543415191198825,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_S_A_relbias_mcse_pct": {
+  "value": 13.780401775846029,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_S_A_relrmse_pct": {
+  "value": 80.25693780029938,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_S_A_relrmse_mcse_pct": {
+  "value": 10.844513358679587,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_A_S_relbias_pct": {
+  "value": -0.3199311355522902,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_A_S_relbias_mcse_pct": {
+  "value": 3.5853267216754117,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_A_S_relrmse_pct": {
+  "value": 19.964817922221286,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_A_S_relrmse_mcse_pct": {
+  "value": 2.54757928257412,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_A_I_relbias_pct": {
+  "value": 0.21798703227137717,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_A_I_relbias_mcse_pct": {
+  "value": 2.9506977266548877,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_A_I_relrmse_pct": {
+  "value": 16.430235775633733,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_A_I_relrmse_mcse_pct": {
+  "value": 1.48361922427273,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_I_R_relbias_pct": {
+  "value": 2.233388014149931,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_I_R_relbias_mcse_pct": {
+  "value": 1.9689875858573151,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_I_R_relrmse_pct": {
+  "value": 11.188042614006052,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_I_R_relrmse_mcse_pct": {
+  "value": 1.1342872270416393,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_R_A_relbias_pct": {
+  "value": -11.616581080094557,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_R_A_relbias_mcse_pct": {
+  "value": 11.887678740591596,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_R_A_relrmse_pct": {
+  "value": 67.19947199952783,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_R_A_relrmse_mcse_pct": {
+  "value": 6.920819563004712,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_piR_mean_pct": {
+  "value": 27.368830283672313,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n500_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_low_T3_n2000_S_A_relbias_pct": {
+  "value": -12.683264286206455,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_S_A_relbias_mcse_pct": {
+  "value": 14.761153915138786,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_S_A_relrmse_pct": {
+  "value": 58.55971453610423,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_S_A_relrmse_mcse_pct": {
+  "value": 9.968431962231717,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_A_S_relbias_pct": {
+  "value": -0.993664851816434,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_A_S_relbias_mcse_pct": {
+  "value": 1.7898375475983896,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_A_S_relrmse_pct": {
+  "value": 7.002867022843618,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_A_S_relrmse_mcse_pct": {
+  "value": 1.925621117242203,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_A_I_relbias_pct": {
+  "value": -1.7867597087108433,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_A_I_relbias_mcse_pct": {
+  "value": 2.421094920402413,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_A_I_relrmse_pct": {
+  "value": 9.545575910370626,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_A_I_relrmse_mcse_pct": {
+  "value": 1.1095677421738286,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_I_R_relbias_pct": {
+  "value": -0.4629855435249718,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_I_R_relbias_mcse_pct": {
+  "value": 1.4179812236560845,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_I_R_relrmse_pct": {
+  "value": 5.5112990186644035,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_I_R_relrmse_mcse_pct": {
+  "value": 0.8237484944958421,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_R_A_relbias_pct": {
+  "value": 20.078587959192106,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_R_A_relbias_mcse_pct": {
+  "value": 11.474384399068063,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_R_A_relrmse_pct": {
+  "value": 48.76548117776202,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_R_A_relrmse_mcse_pct": {
+  "value": 7.944008192717717,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_piR_mean_pct": {
+  "value": 22.718578349190416,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n2000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_low_T3_n8000_S_A_relbias_pct": {
+  "value": -13.393317136273318,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_S_A_relbias_mcse_pct": {
+  "value": 9.143753319007217,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_S_A_relrmse_pct": {
+  "value": 27.652097881079133,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_S_A_relrmse_mcse_pct": {
+  "value": 9.466145659206635,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_A_S_relbias_pct": {
+  "value": 1.259622384542125,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_A_S_relbias_mcse_pct": {
+  "value": 1.9921675320169654,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_A_S_relrmse_pct": {
+  "value": 5.419203712815894,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_A_S_relrmse_mcse_pct": {
+  "value": 0.6739153144895114,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_A_I_relbias_pct": {
+  "value": -1.7370849356347637,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_A_I_relbias_mcse_pct": {
+  "value": 1.4107496362078253,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_A_I_relrmse_pct": {
+  "value": 4.116912171279929,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_A_I_relrmse_mcse_pct": {
+  "value": 0.6710932692918433,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_I_R_relbias_pct": {
+  "value": -0.3014668708726399,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_I_R_relbias_mcse_pct": {
+  "value": 1.309042605997246,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_I_R_relrmse_pct": {
+  "value": 3.4764968120862947,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_I_R_relrmse_mcse_pct": {
+  "value": 0.834368749095538,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_R_A_relbias_pct": {
+  "value": 7.1158262268913655,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_R_A_relbias_mcse_pct": {
+  "value": 4.58272578477393,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_R_A_relrmse_pct": {
+  "value": 14.058613452980984,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_R_A_relrmse_mcse_pct": {
+  "value": 2.2524184881617018,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_piR_mean_pct": {
+  "value": 12.25267738389265,
+  "note": ""
+ },
+ "recx_g_design_low_T3_n8000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_low_T6_n500_S_A_relbias_pct": {
+  "value": -8.80911713782203,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_S_A_relbias_mcse_pct": {
+  "value": 5.25286877129005,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_S_A_relrmse_pct": {
+  "value": 30.54459174597184,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_S_A_relrmse_mcse_pct": {
+  "value": 3.876237377793132,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_A_S_relbias_pct": {
+  "value": 3.5774895212671636,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_A_S_relbias_mcse_pct": {
+  "value": 1.861909412230218,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_A_S_relrmse_pct": {
+  "value": 10.96660101009753,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_A_S_relrmse_mcse_pct": {
+  "value": 1.534619764161172,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_A_I_relbias_pct": {
+  "value": -5.525750091645712,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_A_I_relbias_mcse_pct": {
+  "value": 2.0379915793585264,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_A_I_relrmse_pct": {
+  "value": 12.62099893348172,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_A_I_relrmse_mcse_pct": {
+  "value": 1.423784529078788,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_I_R_relbias_pct": {
+  "value": -1.1822295871877693,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_I_R_relbias_mcse_pct": {
+  "value": 1.4828054924939855,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_I_R_relrmse_pct": {
+  "value": 8.340128463189428,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_I_R_relrmse_mcse_pct": {
+  "value": 0.9705797338789665,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_R_A_relbias_pct": {
+  "value": 4.42205505851842,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_R_A_relbias_mcse_pct": {
+  "value": 4.998699718469697,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_R_A_relrmse_pct": {
+  "value": 28.180694386030815,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_R_A_relrmse_mcse_pct": {
+  "value": 3.0887574573403658,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_piR_mean_pct": {
+  "value": 22.98522983918316,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n500_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_low_T6_n2000_S_A_relbias_pct": {
+  "value": -0.17652669299546764,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_S_A_relbias_mcse_pct": {
+  "value": 2.9123469451400794,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_S_A_relrmse_pct": {
+  "value": 11.280852476933697,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_S_A_relrmse_mcse_pct": {
+  "value": 3.7901750445166895,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_A_S_relbias_pct": {
+  "value": 1.2374700289277643,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_A_S_relbias_mcse_pct": {
+  "value": 1.2549115973917886,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_A_S_relrmse_pct": {
+  "value": 5.015314429975516,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_A_S_relrmse_mcse_pct": {
+  "value": 1.2028042756478348,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_A_I_relbias_pct": {
+  "value": -3.0743224900397825,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_A_I_relbias_mcse_pct": {
+  "value": 1.0580090155886013,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_A_I_relrmse_pct": {
+  "value": 5.122714605437807,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_A_I_relrmse_mcse_pct": {
+  "value": 0.8891849552797464,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_I_R_relbias_pct": {
+  "value": 2.001179578097043,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_I_R_relbias_mcse_pct": {
+  "value": 0.8635093549222667,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_I_R_relrmse_pct": {
+  "value": 3.8973639545681,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_I_R_relrmse_mcse_pct": {
+  "value": 0.7600310466712058,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_R_A_relbias_pct": {
+  "value": -0.5921154680016752,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_R_A_relbias_mcse_pct": {
+  "value": 3.1506623804132503,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_R_A_relrmse_pct": {
+  "value": 12.216820464331796,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_R_A_relrmse_mcse_pct": {
+  "value": 2.0647882774760107,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_piR_mean_pct": {
+  "value": 5.863511972707455,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n2000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_low_T6_n8000_S_A_relbias_pct": {
+  "value": -0.006780825772747005,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_S_A_relbias_mcse_pct": {
+  "value": 2.197859311662915,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_S_A_relrmse_pct": {
+  "value": 5.814993108907511,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_S_A_relrmse_mcse_pct": {
+  "value": 1.160800143991198,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_A_S_relbias_pct": {
+  "value": 0.2432361545281464,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_A_S_relbias_mcse_pct": {
+  "value": 0.8911297063409048,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_A_S_relrmse_pct": {
+  "value": 2.3702212769132402,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_A_S_relrmse_mcse_pct": {
+  "value": 0.32745382623795494,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_A_I_relbias_pct": {
+  "value": -0.21745495223238234,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_A_I_relbias_mcse_pct": {
+  "value": 1.3050708831823152,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_A_I_relrmse_pct": {
+  "value": 3.459733620838787,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_A_I_relrmse_mcse_pct": {
+  "value": 1.1377268255626056,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_I_R_relbias_pct": {
+  "value": -1.120844269453364,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_I_R_relbias_mcse_pct": {
+  "value": 0.8580297428005759,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_I_R_relrmse_pct": {
+  "value": 2.531757720059209,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_I_R_relrmse_mcse_pct": {
+  "value": 0.5019121992774747,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_R_A_relbias_pct": {
+  "value": -1.024456749836863,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_R_A_relbias_mcse_pct": {
+  "value": 1.6535438836771401,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_R_A_relrmse_pct": {
+  "value": 4.493213021770599,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_R_A_relrmse_mcse_pct": {
+  "value": 1.0858787480697631,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_piR_mean_pct": {
+  "value": 5.635278626739333,
+  "note": ""
+ },
+ "recx_g_design_low_T6_n8000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_low_T10_n500_S_A_relbias_pct": {
+  "value": -5.984352383874939,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_S_A_relbias_mcse_pct": {
+  "value": 2.223151797159235,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_S_A_relrmse_pct": {
+  "value": 13.748708839886467,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_S_A_relrmse_mcse_pct": {
+  "value": 2.5584869945036446,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_A_S_relbias_pct": {
+  "value": -0.8046747542425227,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_A_S_relbias_mcse_pct": {
+  "value": 1.3474150282462298,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_A_S_relrmse_pct": {
+  "value": 7.54512070604392,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_A_S_relrmse_mcse_pct": {
+  "value": 1.050841722818266,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_A_I_relbias_pct": {
+  "value": 0.05790969704426123,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_A_I_relbias_mcse_pct": {
+  "value": 1.124330399170555,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_A_I_relrmse_pct": {
+  "value": 6.260274576604557,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_A_I_relrmse_mcse_pct": {
+  "value": 0.9152327446124409,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_I_R_relbias_pct": {
+  "value": 1.5379083658046462,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_I_R_relbias_mcse_pct": {
+  "value": 1.178533676214183,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_I_R_relrmse_pct": {
+  "value": 6.739610711807493,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_I_R_relrmse_mcse_pct": {
+  "value": 0.8646775655211446,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_R_A_relbias_pct": {
+  "value": 1.740160152125154,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_R_A_relbias_mcse_pct": {
+  "value": 2.7682351340199753,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_R_A_relrmse_pct": {
+  "value": 15.510804486838994,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_R_A_relrmse_mcse_pct": {
+  "value": 2.1427723161980006,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_piR_mean_pct": {
+  "value": 14.057122201249896,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n500_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_low_T10_n2000_S_A_relbias_pct": {
+  "value": 3.209922654543693,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_S_A_relbias_mcse_pct": {
+  "value": 1.14359315025279,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_S_A_relrmse_pct": {
+  "value": 5.469980150579098,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_S_A_relrmse_mcse_pct": {
+  "value": 1.0485455715824268,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_A_S_relbias_pct": {
+  "value": 0.2502220758655892,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_A_S_relbias_mcse_pct": {
+  "value": 0.7275943405166267,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_A_S_relrmse_pct": {
+  "value": 2.8290482414635236,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_A_S_relrmse_mcse_pct": {
+  "value": 0.3235310387347246,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_A_I_relbias_pct": {
+  "value": 1.2187679070572524,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_A_I_relbias_mcse_pct": {
+  "value": 1.1120681236067835,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_A_I_relrmse_pct": {
+  "value": 4.47613984191819,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_A_I_relrmse_mcse_pct": {
+  "value": 0.5650542247944459,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_I_R_relbias_pct": {
+  "value": -0.8392220980826656,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_I_R_relbias_mcse_pct": {
+  "value": 0.6985528778604981,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_I_R_relrmse_pct": {
+  "value": 2.832655216827144,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_I_R_relrmse_mcse_pct": {
+  "value": 0.4482154063941826,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_R_A_relbias_pct": {
+  "value": -1.4452982556237115,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_R_A_relbias_mcse_pct": {
+  "value": 1.8268675158295389,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_R_A_relrmse_pct": {
+  "value": 7.221534522080939,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_R_A_relrmse_mcse_pct": {
+  "value": 1.0698808300697107,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_piR_mean_pct": {
+  "value": 2.3953528966118722,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n2000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_low_T10_n8000_S_A_relbias_pct": {
+  "value": 0.17705924903791595,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_S_A_relbias_mcse_pct": {
+  "value": 0.5870344586452942,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_S_A_relrmse_pct": {
+  "value": 1.5632070135233807,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_S_A_relrmse_mcse_pct": {
+  "value": 0.33084222402498625,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_A_S_relbias_pct": {
+  "value": -0.3164525938832294,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_A_S_relbias_mcse_pct": {
+  "value": 0.36101210433222014,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_A_S_relrmse_pct": {
+  "value": 1.006205953319731,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_A_S_relrmse_mcse_pct": {
+  "value": 0.24485502308876042,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_A_I_relbias_pct": {
+  "value": -0.11427685951095812,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_A_I_relbias_mcse_pct": {
+  "value": 0.37686028012782125,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_A_I_relrmse_pct": {
+  "value": 1.0036059464679483,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_A_I_relrmse_mcse_pct": {
+  "value": 0.18589084042183066,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_I_R_relbias_pct": {
+  "value": -0.09541262621722493,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_I_R_relbias_mcse_pct": {
+  "value": 0.43215494194318604,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_I_R_relrmse_pct": {
+  "value": 1.1473486070776817,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_I_R_relrmse_mcse_pct": {
+  "value": 0.12187567421931046,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_R_A_relbias_pct": {
+  "value": -0.29325419373720274,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_R_A_relbias_mcse_pct": {
+  "value": 1.1215263122285661,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_R_A_relrmse_pct": {
+  "value": 2.9817355525417595,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_R_A_relrmse_mcse_pct": {
+  "value": 0.6956439899564594,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_piR_mean_pct": {
+  "value": 4.377220498139586,
+  "note": ""
+ },
+ "recx_g_design_low_T10_n8000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_high_T3_n500_S_A_relbias_pct": {
+  "value": 104.65158336330933,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_S_A_relbias_mcse_pct": {
+  "value": 56.41204207028404,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_S_A_relrmse_pct": {
+  "value": 331.0646871944697,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_S_A_relrmse_mcse_pct": {
+  "value": 84.49069147979236,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_A_S_relbias_pct": {
+  "value": 0.35702470905177736,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_A_S_relbias_mcse_pct": {
+  "value": 10.538935112987454,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_A_S_relrmse_pct": {
+  "value": 58.67939348213674,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_A_S_relrmse_mcse_pct": {
+  "value": 6.109964356699779,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_A_I_relbias_pct": {
+  "value": -12.740814488819826,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_A_I_relbias_mcse_pct": {
+  "value": 7.0269229667863,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_A_I_relrmse_pct": {
+  "value": 41.14651129384037,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_A_I_relrmse_mcse_pct": {
+  "value": 4.260727393590561,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_I_R_relbias_pct": {
+  "value": -2.9035102052528434,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_I_R_relbias_mcse_pct": {
+  "value": 3.276818678090511,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_I_R_relrmse_pct": {
+  "value": 18.474147656484064,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_I_R_relrmse_mcse_pct": {
+  "value": 1.8315267047993578,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_R_A_relbias_pct": {
+  "value": 25.54356321575187,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_R_A_relbias_mcse_pct": {
+  "value": 24.787463520429018,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_R_A_relrmse_pct": {
+  "value": 140.35470210445993,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_R_A_relrmse_mcse_pct": {
+  "value": 19.39078009824652,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_piR_mean_pct": {
+  "value": 32.02272470504948,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n500_capped_pct": {
+  "value": 25.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_high_T3_n2000_S_A_relbias_pct": {
+  "value": -13.555254755863936,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_S_A_relbias_mcse_pct": {
+  "value": 41.440519745532676,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_S_A_relrmse_pct": {
+  "value": 161.0698453565863,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_S_A_relrmse_mcse_pct": {
+  "value": 53.06708706156561,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_A_S_relbias_pct": {
+  "value": 6.344756248742824,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_A_S_relbias_mcse_pct": {
+  "value": 4.314548596998542,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_A_S_relrmse_pct": {
+  "value": 17.874167835004027,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_A_S_relrmse_mcse_pct": {
+  "value": 2.845137156908979,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_A_I_relbias_pct": {
+  "value": -0.4939945879722249,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_A_I_relbias_mcse_pct": {
+  "value": 6.844606777108722,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_A_I_relrmse_pct": {
+  "value": 26.513650439944804,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_A_I_relrmse_mcse_pct": {
+  "value": 3.9583295848299733,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_I_R_relbias_pct": {
+  "value": -0.14078627125674664,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_I_R_relbias_mcse_pct": {
+  "value": 2.447240667500209,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_I_R_relrmse_pct": {
+  "value": 9.479167898300854,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_I_R_relrmse_mcse_pct": {
+  "value": 1.8253819222787424,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_R_A_relbias_pct": {
+  "value": 25.364856186434345,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_R_A_relbias_mcse_pct": {
+  "value": 15.035852884167916,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_R_A_relrmse_pct": {
+  "value": 63.51794241530189,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_R_A_relrmse_mcse_pct": {
+  "value": 7.195160609422874,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_piR_mean_pct": {
+  "value": 36.813922320713,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n2000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_high_T3_n8000_S_A_relbias_pct": {
+  "value": -54.72203593790548,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_S_A_relbias_mcse_pct": {
+  "value": 11.137384282637992,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_S_A_relrmse_pct": {
+  "value": 62.15135169731615,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_S_A_relrmse_mcse_pct": {
+  "value": 9.736823007377097,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_A_S_relbias_pct": {
+  "value": -2.2353844996758023,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_A_S_relbias_mcse_pct": {
+  "value": 4.478544160748507,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_A_S_relrmse_pct": {
+  "value": 12.058127900292515,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_A_S_relrmse_mcse_pct": {
+  "value": 3.769236056501696,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_A_I_relbias_pct": {
+  "value": 2.808334521752144,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_A_I_relbias_mcse_pct": {
+  "value": 4.117634158763422,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_A_I_relrmse_pct": {
+  "value": 11.250383115430884,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_A_I_relrmse_mcse_pct": {
+  "value": 1.6157840190816468,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_I_R_relbias_pct": {
+  "value": 0.5917447849321724,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_I_R_relbias_mcse_pct": {
+  "value": 1.0400750242861834,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_I_R_relrmse_pct": {
+  "value": 2.8146854679522826,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_I_R_relrmse_mcse_pct": {
+  "value": 0.6034738443033987,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_R_A_relbias_pct": {
+  "value": 35.05900449041842,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_R_A_relbias_mcse_pct": {
+  "value": 10.627242941024345,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_R_A_relrmse_pct": {
+  "value": 44.94109303913337,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_R_A_relrmse_mcse_pct": {
+  "value": 8.598929388732856,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_piR_mean_pct": {
+  "value": 26.087645737742715,
+  "note": ""
+ },
+ "recx_g_design_high_T3_n8000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_high_T6_n500_S_A_relbias_pct": {
+  "value": -3.687407960167201,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_S_A_relbias_mcse_pct": {
+  "value": 18.653690355010863,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_S_A_relrmse_pct": {
+  "value": 103.9247903877804,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_S_A_relrmse_mcse_pct": {
+  "value": 26.714742349422473,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_A_S_relbias_pct": {
+  "value": -4.071019955341408,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_A_S_relbias_mcse_pct": {
+  "value": 4.70870221403118,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_A_S_relrmse_pct": {
+  "value": 26.531139746152522,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_A_S_relrmse_mcse_pct": {
+  "value": 2.947788549671756,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_A_I_relbias_pct": {
+  "value": 6.049592032385517,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_A_I_relbias_mcse_pct": {
+  "value": 4.125752299718689,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_A_I_relrmse_pct": {
+  "value": 23.754459727721827,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_A_I_relrmse_mcse_pct": {
+  "value": 2.509808444732832,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_I_R_relbias_pct": {
+  "value": 1.2913359510954594,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_I_R_relbias_mcse_pct": {
+  "value": 1.43382005798626,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_I_R_relrmse_pct": {
+  "value": 8.086939300983222,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_I_R_relrmse_mcse_pct": {
+  "value": 1.052496372812274,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_R_A_relbias_pct": {
+  "value": 11.473407361020469,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_R_A_relbias_mcse_pct": {
+  "value": 10.538721512898984,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_R_A_relrmse_pct": {
+  "value": 59.78832044297243,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_R_A_relrmse_mcse_pct": {
+  "value": 8.365693765925585,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_piR_mean_pct": {
+  "value": 28.675982490176043,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n500_capped_pct": {
+  "value": 3.125,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_high_T6_n2000_S_A_relbias_pct": {
+  "value": -14.60494565518302,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_S_A_relbias_mcse_pct": {
+  "value": 6.957198494902082,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_S_A_relrmse_pct": {
+  "value": 30.64871287758861,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_S_A_relrmse_mcse_pct": {
+  "value": 6.57262275677729,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_A_S_relbias_pct": {
+  "value": 0.573424398510218,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_A_S_relbias_mcse_pct": {
+  "value": 2.692209833339259,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_A_S_relrmse_pct": {
+  "value": 10.44263962519706,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_A_S_relrmse_mcse_pct": {
+  "value": 2.1103331360733284,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_A_I_relbias_pct": {
+  "value": -2.764023667332784,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_A_I_relbias_mcse_pct": {
+  "value": 2.4534850169345273,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_A_I_relrmse_pct": {
+  "value": 9.896143580122967,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_A_I_relrmse_mcse_pct": {
+  "value": 1.5605130769698654,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_I_R_relbias_pct": {
+  "value": -0.9049438742195904,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_I_R_relbias_mcse_pct": {
+  "value": 1.380514959805445,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_I_R_relrmse_pct": {
+  "value": 5.4227526892886235,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_I_R_relrmse_mcse_pct": {
+  "value": 1.1948382924558738,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_R_A_relbias_pct": {
+  "value": 6.197547959582879,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_R_A_relbias_mcse_pct": {
+  "value": 5.258028418097089,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_R_A_relrmse_pct": {
+  "value": 21.286440364562573,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_R_A_relrmse_mcse_pct": {
+  "value": 5.956736736486236,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_piR_mean_pct": {
+  "value": 15.967960587881864,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n2000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_high_T6_n8000_S_A_relbias_pct": {
+  "value": -2.1291342756126306,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_S_A_relbias_mcse_pct": {
+  "value": 3.4832339885365986,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_S_A_relrmse_pct": {
+  "value": 9.458522394954963,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_S_A_relrmse_mcse_pct": {
+  "value": 2.0511164585120145,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_A_S_relbias_pct": {
+  "value": 0.6031008107613227,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_A_S_relbias_mcse_pct": {
+  "value": 2.8822648458386517,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_A_S_relrmse_pct": {
+  "value": 7.649567639993917,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_A_S_relrmse_mcse_pct": {
+  "value": 2.2087671863811575,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_A_I_relbias_pct": {
+  "value": -0.7753621656673803,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_A_I_relbias_mcse_pct": {
+  "value": 2.107594057568661,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_A_I_relrmse_pct": {
+  "value": 5.629818422332956,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_A_I_relrmse_mcse_pct": {
+  "value": 1.3392362559047355,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_I_R_relbias_pct": {
+  "value": 1.1265786536303923,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_I_R_relbias_mcse_pct": {
+  "value": 0.8927412062862765,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_I_R_relrmse_pct": {
+  "value": 2.6168850744016257,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_I_R_relrmse_mcse_pct": {
+  "value": 0.3907976767179551,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_R_A_relbias_pct": {
+  "value": -2.0578334405038627,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_R_A_relbias_mcse_pct": {
+  "value": 3.1358387502774177,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_R_A_relrmse_pct": {
+  "value": 8.548044872545185,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_R_A_relrmse_mcse_pct": {
+  "value": 2.049028956377797,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_piR_mean_pct": {
+  "value": 7.508962692225754,
+  "note": ""
+ },
+ "recx_g_design_high_T6_n8000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_high_T10_n500_S_A_relbias_pct": {
+  "value": -11.977177661965985,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_S_A_relbias_mcse_pct": {
+  "value": 4.358175769106696,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_S_A_relrmse_pct": {
+  "value": 27.060254282130984,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_S_A_relrmse_mcse_pct": {
+  "value": 3.7401662297755034,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_A_S_relbias_pct": {
+  "value": -0.22952800246814087,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_A_S_relbias_mcse_pct": {
+  "value": 3.6437127195906838,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_A_S_relrmse_pct": {
+  "value": 20.28863221052696,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_A_S_relrmse_mcse_pct": {
+  "value": 2.9941792326418954,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_A_I_relbias_pct": {
+  "value": 5.238587338309821,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_A_I_relbias_mcse_pct": {
+  "value": 2.720800756824076,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_A_I_relrmse_pct": {
+  "value": 16.028981777064576,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_A_I_relrmse_mcse_pct": {
+  "value": 1.9577242270814286,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_I_R_relbias_pct": {
+  "value": 2.263161707960802,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_I_R_relbias_mcse_pct": {
+  "value": 1.4180258979412463,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_I_R_relrmse_pct": {
+  "value": 8.213198023947463,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_I_R_relrmse_mcse_pct": {
+  "value": 0.8981621031438626,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_R_A_relbias_pct": {
+  "value": 7.9382676826470995,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_R_A_relbias_mcse_pct": {
+  "value": 4.935769187993769,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_R_A_relrmse_pct": {
+  "value": 28.60476246349492,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_R_A_relrmse_mcse_pct": {
+  "value": 3.7548354038947442,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_piR_mean_pct": {
+  "value": 14.847435793739837,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n500_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_high_T10_n2000_S_A_relbias_pct": {
+  "value": -2.107685029259042,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_S_A_relbias_mcse_pct": {
+  "value": 3.8418603470804085,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_S_A_relrmse_pct": {
+  "value": 15.027997207864878,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_S_A_relrmse_mcse_pct": {
+  "value": 1.9405031700452293,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_A_S_relbias_pct": {
+  "value": 0.6426047593962294,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_A_S_relbias_mcse_pct": {
+  "value": 2.2922088530326037,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_A_S_relrmse_pct": {
+  "value": 8.900913563540227,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_A_S_relrmse_mcse_pct": {
+  "value": 1.496351658022479,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_A_I_relbias_pct": {
+  "value": 1.091276408113631,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_A_I_relbias_mcse_pct": {
+  "value": 3.1391437543243383,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_A_I_relrmse_pct": {
+  "value": 12.206729162785907,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_A_I_relrmse_mcse_pct": {
+  "value": 1.5814452707643636,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_I_R_relbias_pct": {
+  "value": -2.2684148270303375,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_I_R_relbias_mcse_pct": {
+  "value": 0.8143934128697138,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_I_R_relrmse_pct": {
+  "value": 3.8851325963697527,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_I_R_relrmse_mcse_pct": {
+  "value": 0.5208596628432155,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_R_A_relbias_pct": {
+  "value": 2.7550536556391734,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_R_A_relbias_mcse_pct": {
+  "value": 3.742917695372524,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_R_A_relrmse_pct": {
+  "value": 14.755738333287233,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_R_A_relrmse_mcse_pct": {
+  "value": 3.57676215140776,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_piR_mean_pct": {
+  "value": 7.241442188212127,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n2000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_design_high_T10_n8000_S_A_relbias_pct": {
+  "value": -3.2431917393540086,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_S_A_relbias_mcse_pct": {
+  "value": 3.0620975635129835,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_S_A_relrmse_pct": {
+  "value": 8.726590575792995,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_S_A_relrmse_mcse_pct": {
+  "value": 2.9324702791440465,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_A_S_relbias_pct": {
+  "value": -1.916249176666242,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_A_S_relbias_mcse_pct": {
+  "value": 2.0519190631185995,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_A_S_relrmse_pct": {
+  "value": 5.757135902356365,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_A_S_relrmse_mcse_pct": {
+  "value": 1.541254810794195,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_A_I_relbias_pct": {
+  "value": -0.4074940300117381,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_A_I_relbias_mcse_pct": {
+  "value": 1.9844609845650911,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_A_I_relrmse_pct": {
+  "value": 5.266179751900097,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_A_I_relrmse_mcse_pct": {
+  "value": 0.7892803835093373,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_I_R_relbias_pct": {
+  "value": -0.27080672827961705,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_I_R_relbias_mcse_pct": {
+  "value": 0.5393665131685552,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_I_R_relrmse_pct": {
+  "value": 1.4524978253941545,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_I_R_relrmse_mcse_pct": {
+  "value": 0.32853459221073145,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_R_A_relbias_pct": {
+  "value": 0.03466812091253283,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_R_A_relbias_mcse_pct": {
+  "value": 2.562460641778918,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_R_A_relrmse_pct": {
+  "value": 6.779722240864282,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_R_A_relrmse_mcse_pct": {
+  "value": 1.3217830764472946,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_piR_mean_pct": {
+  "value": 8.150907598652415,
+  "note": ""
+ },
+ "recx_g_design_high_T10_n8000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_true_design_S_A": {
+  "value": 0.07688365361336424,
+  "note": "annual transition probability"
+ },
+ "recx_true_design_A_S": {
+  "value": 0.3296835223663338,
+  "note": "annual transition probability"
+ },
+ "recx_true_design_A_I": {
+  "value": 0.2637468178930671,
+  "note": "annual transition probability"
+ },
+ "recx_true_design_I_R": {
+  "value": 0.4511883639059736,
+  "note": "annual transition probability"
+ },
+ "recx_true_design_R_A": {
+  "value": 0.1392920235749422,
+  "note": "annual transition probability"
+ },
+ "recx_g_central_low_T3_n500_S_A_relbias_pct": {
+  "value": 0.8632849748427996,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_S_A_relbias_mcse_pct": {
+  "value": 2.847571604089262,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_S_A_relrmse_pct": {
+  "value": 15.878093279757163,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_S_A_relrmse_mcse_pct": {
+  "value": 2.1682119269703928,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_A_S_relbias_pct": {
+  "value": 1.0868962809379643,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_A_S_relbias_mcse_pct": {
+  "value": 2.2234827843630587,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_A_S_relrmse_pct": {
+  "value": 12.42744905395483,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_A_S_relrmse_mcse_pct": {
+  "value": 1.2956535434613168,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_A_I_relbias_pct": {
+  "value": -1.8448900490215814,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_A_I_relbias_mcse_pct": {
+  "value": 2.5779675967978877,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_A_I_relrmse_pct": {
+  "value": 14.471594387879833,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_A_I_relrmse_mcse_pct": {
+  "value": 1.32887139274274,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_I_R_relbias_pct": {
+  "value": 2.8081296574221866,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_I_R_relbias_mcse_pct": {
+  "value": 1.8767097735136908,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_I_R_relrmse_pct": {
+  "value": 10.819834516615778,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_I_R_relrmse_mcse_pct": {
+  "value": 1.2055870997938898,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_R_A_relbias_pct": {
+  "value": -1.443115853723596,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_R_A_relbias_mcse_pct": {
+  "value": 11.752193973580491,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_R_A_relrmse_pct": {
+  "value": 65.44935860907866,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_R_A_relrmse_mcse_pct": {
+  "value": 5.262672726833975,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_piR_mean_pct": {
+  "value": 31.24228897170284,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n500_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_low_T3_n2000_S_A_relbias_pct": {
+  "value": -1.2821082411058689,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_S_A_relbias_mcse_pct": {
+  "value": 2.359271807775921,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_S_A_relrmse_pct": {
+  "value": 9.22693088119801,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_S_A_relrmse_mcse_pct": {
+  "value": 1.2011061080434562,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_A_S_relbias_pct": {
+  "value": 0.8430554763381192,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_A_S_relbias_mcse_pct": {
+  "value": 1.4973574232453188,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_A_S_relrmse_pct": {
+  "value": 5.860198915600186,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_A_S_relrmse_mcse_pct": {
+  "value": 0.9860930585366605,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_A_I_relbias_pct": {
+  "value": -3.2259252906830147,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_A_I_relbias_mcse_pct": {
+  "value": 1.5152848515514548,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_A_I_relrmse_pct": {
+  "value": 6.696858718920984,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_A_I_relrmse_mcse_pct": {
+  "value": 1.1891471663629982,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_I_R_relbias_pct": {
+  "value": 2.120901362864279,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_I_R_relbias_mcse_pct": {
+  "value": 1.7410239430882233,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_I_R_relrmse_pct": {
+  "value": 7.0686411810967265,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_I_R_relrmse_mcse_pct": {
+  "value": 0.8756033856672969,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_R_A_relbias_pct": {
+  "value": 9.136124965428062,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_R_A_relbias_mcse_pct": {
+  "value": 5.878433906689145,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_R_A_relrmse_pct": {
+  "value": 24.53178667185917,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_R_A_relrmse_mcse_pct": {
+  "value": 3.039556419916051,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_piR_mean_pct": {
+  "value": 31.074605062330868,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n2000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_low_T3_n8000_S_A_relbias_pct": {
+  "value": -1.0338829271120082,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_S_A_relbias_mcse_pct": {
+  "value": 1.6776801910201102,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_S_A_relrmse_pct": {
+  "value": 4.557542064574128,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_S_A_relrmse_mcse_pct": {
+  "value": 1.3999029130866614,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_A_S_relbias_pct": {
+  "value": 0.5739908097676715,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_A_S_relbias_mcse_pct": {
+  "value": 0.8732486312428832,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_A_S_relrmse_pct": {
+  "value": 2.380631776119677,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_A_S_relrmse_mcse_pct": {
+  "value": 0.4613811890624475,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_A_I_relbias_pct": {
+  "value": 0.38325403068851793,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_A_I_relbias_mcse_pct": {
+  "value": 1.2154890824820423,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_A_I_relrmse_pct": {
+  "value": 3.2386385441216277,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_A_I_relrmse_mcse_pct": {
+  "value": 0.520114978656311,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_I_R_relbias_pct": {
+  "value": 2.1729105002912514,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_I_R_relbias_mcse_pct": {
+  "value": 1.061731837733923,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_I_R_relrmse_pct": {
+  "value": 3.5514027523052003,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_I_R_relrmse_mcse_pct": {
+  "value": 1.095345922240375,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_R_A_relbias_pct": {
+  "value": 1.9582684162245458,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_R_A_relbias_mcse_pct": {
+  "value": 4.534301700590961,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_R_A_relrmse_pct": {
+  "value": 12.155412727417247,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_R_A_relrmse_mcse_pct": {
+  "value": 1.4128025853605009,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_piR_mean_pct": {
+  "value": 30.6094280536604,
+  "note": ""
+ },
+ "recx_g_central_low_T3_n8000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_low_T6_n500_S_A_relbias_pct": {
+  "value": -0.01943994390260287,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_S_A_relbias_mcse_pct": {
+  "value": 1.4525878673422297,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_S_A_relrmse_pct": {
+  "value": 8.08769032507206,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_S_A_relrmse_mcse_pct": {
+  "value": 0.9099529683664971,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_A_S_relbias_pct": {
+  "value": -0.39843011124717903,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_A_S_relbias_mcse_pct": {
+  "value": 1.247031020435148,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_A_S_relrmse_pct": {
+  "value": 6.954597321002975,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_A_S_relrmse_mcse_pct": {
+  "value": 0.704356942080275,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_A_I_relbias_pct": {
+  "value": 2.6129637159889274,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_A_I_relbias_mcse_pct": {
+  "value": 1.6473791530231774,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_A_I_relrmse_pct": {
+  "value": 9.537147354914406,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_A_I_relrmse_mcse_pct": {
+  "value": 1.3320864050742633,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_I_R_relbias_pct": {
+  "value": -1.5325003744425094,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_I_R_relbias_mcse_pct": {
+  "value": 0.967641437420961,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_I_R_relrmse_pct": {
+  "value": 5.601320013309687,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_I_R_relrmse_mcse_pct": {
+  "value": 0.5876880760316199,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_R_A_relbias_pct": {
+  "value": -6.1683432521083095,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_R_A_relbias_mcse_pct": {
+  "value": 2.996619255762578,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_R_A_relrmse_pct": {
+  "value": 17.788198176320424,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_R_A_relrmse_mcse_pct": {
+  "value": 1.5086886834312692,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_piR_mean_pct": {
+  "value": 29.6773946358566,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n500_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_low_T6_n2000_S_A_relbias_pct": {
+  "value": 1.253379245049149,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_S_A_relbias_mcse_pct": {
+  "value": 1.034384063081881,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_S_A_relrmse_pct": {
+  "value": 4.197644027461915,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_S_A_relrmse_mcse_pct": {
+  "value": 0.9551436927634108,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_A_S_relbias_pct": {
+  "value": -1.3975853761987909,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_A_S_relbias_mcse_pct": {
+  "value": 0.6848646848218933,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_A_S_relrmse_pct": {
+  "value": 2.998139328234694,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_A_S_relrmse_mcse_pct": {
+  "value": 0.47259784666981236,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_A_I_relbias_pct": {
+  "value": -0.33752746743779316,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_A_I_relbias_mcse_pct": {
+  "value": 1.2175854391196097,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_A_I_relrmse_pct": {
+  "value": 4.727752036075535,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_A_I_relrmse_mcse_pct": {
+  "value": 0.7480672935395634,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_I_R_relbias_pct": {
+  "value": -1.1505527483845412,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_I_R_relbias_mcse_pct": {
+  "value": 0.6849315474862935,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_I_R_relrmse_pct": {
+  "value": 2.891494422948928,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_I_R_relrmse_mcse_pct": {
+  "value": 0.4153071274063374,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_R_A_relbias_pct": {
+  "value": 1.7280233627902082,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_R_A_relbias_mcse_pct": {
+  "value": 2.48925837225161,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_R_A_relrmse_pct": {
+  "value": 9.79449709784631,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_R_A_relrmse_mcse_pct": {
+  "value": 1.989855713610493,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_piR_mean_pct": {
+  "value": 31.71562049943935,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n2000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_low_T6_n8000_S_A_relbias_pct": {
+  "value": 0.17222332842503468,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_S_A_relbias_mcse_pct": {
+  "value": 0.5457664151383652,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_S_A_relrmse_pct": {
+  "value": 1.4541965940355777,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_S_A_relrmse_mcse_pct": {
+  "value": 0.34899198293862366,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_A_S_relbias_pct": {
+  "value": -0.23816744524464145,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_A_S_relbias_mcse_pct": {
+  "value": 0.699742616696571,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_A_S_relrmse_pct": {
+  "value": 1.8666016820210753,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_A_S_relrmse_mcse_pct": {
+  "value": 0.5351627342709621,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_A_I_relbias_pct": {
+  "value": 0.17608151478691478,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_A_I_relbias_mcse_pct": {
+  "value": 0.8010864200874592,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_A_I_relrmse_pct": {
+  "value": 2.126777107970989,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_A_I_relrmse_mcse_pct": {
+  "value": 0.45577825455133814,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_I_R_relbias_pct": {
+  "value": 0.18269513051348574,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_I_R_relbias_mcse_pct": {
+  "value": 0.6288944707075933,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_I_R_relrmse_pct": {
+  "value": 1.6738982339794222,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_I_R_relrmse_mcse_pct": {
+  "value": 0.3644230616022209,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_R_A_relbias_pct": {
+  "value": 0.031664965479633746,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_R_A_relbias_mcse_pct": {
+  "value": 1.5619817689799038,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_R_A_relrmse_pct": {
+  "value": 4.132736623161215,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_R_A_relrmse_mcse_pct": {
+  "value": 0.7129073919012713,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_piR_mean_pct": {
+  "value": 31.32874636299669,
+  "note": ""
+ },
+ "recx_g_central_low_T6_n8000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_low_T10_n500_S_A_relbias_pct": {
+  "value": 1.8683948065626537,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_S_A_relbias_mcse_pct": {
+  "value": 1.1747204932731263,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_S_A_relrmse_pct": {
+  "value": 6.802199240685462,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_S_A_relrmse_mcse_pct": {
+  "value": 0.9368594135375039,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_A_S_relbias_pct": {
+  "value": 1.494720370487346,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_A_S_relbias_mcse_pct": {
+  "value": 0.9612795480811099,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_A_S_relrmse_pct": {
+  "value": 5.556977455620956,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_A_S_relrmse_mcse_pct": {
+  "value": 0.8067920105444728,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_A_I_relbias_pct": {
+  "value": 1.044213623730656,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_A_I_relbias_mcse_pct": {
+  "value": 1.3104901986134019,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_A_I_relrmse_pct": {
+  "value": 7.370841435853869,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_A_I_relrmse_mcse_pct": {
+  "value": 0.8827963265031179,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_I_R_relbias_pct": {
+  "value": -0.04466837404958459,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_I_R_relbias_mcse_pct": {
+  "value": 0.9408944824231975,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_I_R_relrmse_pct": {
+  "value": 5.238869200727114,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_I_R_relrmse_mcse_pct": {
+  "value": 0.5975861192121352,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_R_A_relbias_pct": {
+  "value": 2.3593359990457126,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_R_A_relbias_mcse_pct": {
+  "value": 1.4180522158863602,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_R_A_relrmse_pct": {
+  "value": 8.240358065811202,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_R_A_relrmse_mcse_pct": {
+  "value": 1.682788245292322,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_piR_mean_pct": {
+  "value": 31.167481397814978,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n500_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_low_T10_n2000_S_A_relbias_pct": {
+  "value": -0.34777028629554696,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_S_A_relbias_mcse_pct": {
+  "value": 0.5041502652158293,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_S_A_relrmse_pct": {
+  "value": 1.9832943606000477,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_S_A_relrmse_mcse_pct": {
+  "value": 0.2834104118426352,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_A_S_relbias_pct": {
+  "value": 0.678211193191178,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_A_S_relbias_mcse_pct": {
+  "value": 0.6315871204620618,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_A_S_relrmse_pct": {
+  "value": 2.5384059532653924,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_A_S_relrmse_mcse_pct": {
+  "value": 0.3732731445326624,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_A_I_relbias_pct": {
+  "value": 0.17703502898430398,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_A_I_relbias_mcse_pct": {
+  "value": 0.924269315162077,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_A_I_relrmse_pct": {
+  "value": 3.5840546739328762,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_A_I_relrmse_mcse_pct": {
+  "value": 0.3836264901343399,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_I_R_relbias_pct": {
+  "value": 0.3624607676133087,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_I_R_relbias_mcse_pct": {
+  "value": 0.6151406965791323,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_I_R_relrmse_pct": {
+  "value": 2.4098441768871135,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_I_R_relrmse_mcse_pct": {
+  "value": 0.4889834586997058,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_R_A_relbias_pct": {
+  "value": -0.15031649804054217,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_R_A_relbias_mcse_pct": {
+  "value": 0.8856395145017437,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_R_A_relrmse_pct": {
+  "value": 3.4333591851547416,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_R_A_relrmse_mcse_pct": {
+  "value": 0.4671356691875741,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_piR_mean_pct": {
+  "value": 31.274798732937082,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n2000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_low_T10_n8000_S_A_relbias_pct": {
+  "value": 0.35231469520308484,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_S_A_relbias_mcse_pct": {
+  "value": 0.47613485848899,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_S_A_relrmse_pct": {
+  "value": 1.3080735716061067,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_S_A_relrmse_mcse_pct": {
+  "value": 0.16275007741511002,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_A_S_relbias_pct": {
+  "value": 0.3474139165736597,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_A_S_relbias_mcse_pct": {
+  "value": 0.45215615274532284,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_A_S_relrmse_pct": {
+  "value": 1.245717758839141,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_A_S_relrmse_mcse_pct": {
+  "value": 0.22398472408773232,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_A_I_relbias_pct": {
+  "value": -1.2516830834414152,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_A_I_relbias_mcse_pct": {
+  "value": 0.43104335198032645,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_A_I_relrmse_pct": {
+  "value": 1.6933101134696085,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_A_I_relrmse_mcse_pct": {
+  "value": 0.4092938698029147,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_I_R_relbias_pct": {
+  "value": 0.21777962333562698,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_I_R_relbias_mcse_pct": {
+  "value": 0.38271753876998993,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_I_R_relrmse_pct": {
+  "value": 1.0357301606670142,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_I_R_relrmse_mcse_pct": {
+  "value": 0.1505155805450447,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_R_A_relbias_pct": {
+  "value": 2.0199590316701848,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_R_A_relbias_mcse_pct": {
+  "value": 0.9876115842143406,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_R_A_relrmse_pct": {
+  "value": 3.3027066140586068,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_R_A_relrmse_mcse_pct": {
+  "value": 0.6438530722023592,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_piR_mean_pct": {
+  "value": 31.000260906881945,
+  "note": ""
+ },
+ "recx_g_central_low_T10_n8000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_high_T3_n500_S_A_relbias_pct": {
+  "value": -11.001610148511508,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_S_A_relbias_mcse_pct": {
+  "value": 8.943412094743065,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_S_A_relrmse_pct": {
+  "value": 50.99567278356198,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_S_A_relrmse_mcse_pct": {
+  "value": 5.304143611575444,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_A_S_relbias_pct": {
+  "value": -1.4418684082254718,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_A_S_relbias_mcse_pct": {
+  "value": 5.869730191999023,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_A_S_relrmse_pct": {
+  "value": 32.71306608741299,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_A_S_relrmse_mcse_pct": {
+  "value": 4.820107176493124,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_A_I_relbias_pct": {
+  "value": 11.720617575887553,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_A_I_relbias_mcse_pct": {
+  "value": 4.877570638950013,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_A_I_relrmse_pct": {
+  "value": 29.57844539249094,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_A_I_relrmse_mcse_pct": {
+  "value": 3.1408249214293544,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_I_R_relbias_pct": {
+  "value": 1.215955369586157,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_I_R_relbias_mcse_pct": {
+  "value": 2.867794367426628,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_I_R_relrmse_pct": {
+  "value": 16.01343585898998,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_I_R_relrmse_mcse_pct": {
+  "value": 1.7965442931209414,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_R_A_relbias_pct": {
+  "value": 15.004321045397008,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_R_A_relbias_mcse_pct": {
+  "value": 27.289653912058665,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_R_A_relrmse_pct": {
+  "value": 152.68140417179637,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_R_A_relrmse_mcse_pct": {
+  "value": 20.24813835292125,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_piR_mean_pct": {
+  "value": 24.76195153136547,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n500_capped_pct": {
+  "value": 3.125,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_high_T3_n2000_S_A_relbias_pct": {
+  "value": -7.676274218957016,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_S_A_relbias_mcse_pct": {
+  "value": 7.696407694670973,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_S_A_relrmse_pct": {
+  "value": 30.78060358283253,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_S_A_relrmse_mcse_pct": {
+  "value": 5.768748658118434,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_A_S_relbias_pct": {
+  "value": 3.137283777405368,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_A_S_relbias_mcse_pct": {
+  "value": 4.418018953540287,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_A_S_relrmse_pct": {
+  "value": 17.396146745977656,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_A_S_relrmse_mcse_pct": {
+  "value": 2.7233600433411618,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_A_I_relbias_pct": {
+  "value": 1.8588861216339676,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_A_I_relbias_mcse_pct": {
+  "value": 3.465177050031435,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_A_I_relrmse_pct": {
+  "value": 13.548698735825955,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_A_I_relrmse_mcse_pct": {
+  "value": 4.361333321540546,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_I_R_relbias_pct": {
+  "value": 0.9181435161296093,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_I_R_relbias_mcse_pct": {
+  "value": 2.3802727439040154,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_I_R_relrmse_pct": {
+  "value": 9.264365199342915,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_I_R_relrmse_mcse_pct": {
+  "value": 1.6184739735837277,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_R_A_relbias_pct": {
+  "value": 30.106176106730352,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_R_A_relbias_mcse_pct": {
+  "value": 27.21262923239278,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_R_A_relrmse_pct": {
+  "value": 109.6097152895884,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_R_A_relrmse_mcse_pct": {
+  "value": 33.08401077420887,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_piR_mean_pct": {
+  "value": 26.25448702694885,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n2000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_high_T3_n8000_S_A_relbias_pct": {
+  "value": -0.4186597351482743,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_S_A_relbias_mcse_pct": {
+  "value": 4.908560978447018,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_S_A_relrmse_pct": {
+  "value": 12.993578111042535,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_S_A_relrmse_mcse_pct": {
+  "value": 2.7611941977166428,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_A_S_relbias_pct": {
+  "value": 2.6297521561797694,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_A_S_relbias_mcse_pct": {
+  "value": 2.592195560424134,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_A_S_relrmse_pct": {
+  "value": 7.345198511089423,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_A_S_relrmse_mcse_pct": {
+  "value": 1.6214523792044497,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_A_I_relbias_pct": {
+  "value": -0.8318328942351713,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_A_I_relbias_mcse_pct": {
+  "value": 2.8574617443109847,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_A_I_relrmse_pct": {
+  "value": 7.605758299166303,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_A_I_relrmse_mcse_pct": {
+  "value": 2.3023687036323697,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_I_R_relbias_pct": {
+  "value": -1.0464428324998352,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_I_R_relbias_mcse_pct": {
+  "value": 1.3614771013117348,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_I_R_relrmse_pct": {
+  "value": 3.7510507705793197,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_I_R_relrmse_mcse_pct": {
+  "value": 0.7505450380887093,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_R_A_relbias_pct": {
+  "value": -4.085490816497899,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_R_A_relbias_mcse_pct": {
+  "value": 9.921716764032348,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_R_A_relrmse_pct": {
+  "value": 26.566416394226984,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_R_A_relrmse_mcse_pct": {
+  "value": 6.290908668539935,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_piR_mean_pct": {
+  "value": 29.028713222292456,
+  "note": ""
+ },
+ "recx_g_central_high_T3_n8000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_high_T6_n500_S_A_relbias_pct": {
+  "value": 5.771153165445646,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_S_A_relbias_mcse_pct": {
+  "value": 4.529545429506766,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_S_A_relrmse_pct": {
+  "value": 25.87134408174357,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_S_A_relrmse_mcse_pct": {
+  "value": 6.090040850813594,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_A_S_relbias_pct": {
+  "value": 3.6092929149905113,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_A_S_relbias_mcse_pct": {
+  "value": 3.649531385936036,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_A_S_relrmse_pct": {
+  "value": 20.63779190686589,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_A_S_relrmse_mcse_pct": {
+  "value": 2.627355467550193,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_A_I_relbias_pct": {
+  "value": 6.315265772998462,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_A_I_relbias_mcse_pct": {
+  "value": 2.5868227308345437,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_A_I_relrmse_pct": {
+  "value": 15.726531367317994,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_A_I_relrmse_mcse_pct": {
+  "value": 2.924547466350068,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_I_R_relbias_pct": {
+  "value": -1.297213551278259,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_I_R_relbias_mcse_pct": {
+  "value": 1.4713046911376353,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_I_R_relrmse_pct": {
+  "value": 8.293951128183235,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_I_R_relrmse_mcse_pct": {
+  "value": 0.8521300502390506,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_R_A_relbias_pct": {
+  "value": -7.757933351670775,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_R_A_relbias_mcse_pct": {
+  "value": 6.386999978361972,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_R_A_relrmse_pct": {
+  "value": 36.397697184306,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_R_A_relrmse_mcse_pct": {
+  "value": 5.992706867060882,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_piR_mean_pct": {
+  "value": 31.221677358309506,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n500_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_high_T6_n2000_S_A_relbias_pct": {
+  "value": 1.6095683403279788,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_S_A_relbias_mcse_pct": {
+  "value": 1.8133011822750869,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_S_A_relrmse_pct": {
+  "value": 7.204972443166568,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_S_A_relrmse_mcse_pct": {
+  "value": 1.047116945894322,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_A_S_relbias_pct": {
+  "value": 7.566872814037188,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_A_S_relbias_mcse_pct": {
+  "value": 3.1491195262150242,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_A_S_relrmse_pct": {
+  "value": 14.353113635711457,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_A_S_relrmse_mcse_pct": {
+  "value": 2.0782096961848664,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_A_I_relbias_pct": {
+  "value": 1.309715311263419,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_A_I_relbias_mcse_pct": {
+  "value": 2.47241889615554,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_A_I_relrmse_pct": {
+  "value": 9.664790849654352,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_A_I_relrmse_mcse_pct": {
+  "value": 1.2537078364353,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_I_R_relbias_pct": {
+  "value": 0.0011754862150284938,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_I_R_relbias_mcse_pct": {
+  "value": 1.1428332696786467,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_I_R_relrmse_pct": {
+  "value": 4.426174377047705,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_I_R_relrmse_mcse_pct": {
+  "value": 0.5183266367232819,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_R_A_relbias_pct": {
+  "value": -4.553441520487941,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_R_A_relbias_mcse_pct": {
+  "value": 3.7308200551083344,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_R_A_relrmse_pct": {
+  "value": 15.149887918215168,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_R_A_relrmse_mcse_pct": {
+  "value": 2.8754493047576255,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_piR_mean_pct": {
+  "value": 30.972555059024327,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n2000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_high_T6_n8000_S_A_relbias_pct": {
+  "value": 0.3696494068210695,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_S_A_relbias_mcse_pct": {
+  "value": 2.2797631143766686,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_S_A_relrmse_pct": {
+  "value": 6.043002539108354,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_S_A_relrmse_mcse_pct": {
+  "value": 2.043707721378735,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_A_S_relbias_pct": {
+  "value": -3.136072744621401,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_A_S_relbias_mcse_pct": {
+  "value": 1.5823677570134214,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_A_S_relrmse_pct": {
+  "value": 5.23088580343779,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_A_S_relrmse_mcse_pct": {
+  "value": 0.8977272771895719,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_A_I_relbias_pct": {
+  "value": 2.234577191012219,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_A_I_relbias_mcse_pct": {
+  "value": 1.2639028483844874,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_A_I_relrmse_pct": {
+  "value": 4.021876190743943,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_A_I_relrmse_mcse_pct": {
+  "value": 0.8593340969503803,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_I_R_relbias_pct": {
+  "value": 0.7116985462274867,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_I_R_relbias_mcse_pct": {
+  "value": 0.49650532733213454,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_I_R_relrmse_pct": {
+  "value": 1.4940340026875722,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_I_R_relrmse_mcse_pct": {
+  "value": 0.3945306182896318,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_R_A_relbias_pct": {
+  "value": 1.5075925433976,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_R_A_relbias_mcse_pct": {
+  "value": 3.7119411902295094,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_R_A_relrmse_pct": {
+  "value": 9.935914002997677,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_R_A_relrmse_mcse_pct": {
+  "value": 2.4941490217485454,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_piR_mean_pct": {
+  "value": 32.11551244229972,
+  "note": ""
+ },
+ "recx_g_central_high_T6_n8000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_high_T10_n500_S_A_relbias_pct": {
+  "value": -0.04697393581769123,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_S_A_relbias_mcse_pct": {
+  "value": 1.8886167802705647,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_S_A_relrmse_pct": {
+  "value": 10.515478123934853,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_S_A_relrmse_mcse_pct": {
+  "value": 1.2033576736636564,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_A_S_relbias_pct": {
+  "value": -1.7085178716499982,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_A_S_relbias_mcse_pct": {
+  "value": 3.3611915110832604,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_A_S_relrmse_pct": {
+  "value": 18.792149768381233,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_A_S_relrmse_mcse_pct": {
+  "value": 2.79969141204425,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_A_I_relbias_pct": {
+  "value": -2.4840308732875767,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_A_I_relbias_mcse_pct": {
+  "value": 1.866258649614011,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_A_I_relrmse_pct": {
+  "value": 10.683677791120354,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_A_I_relrmse_mcse_pct": {
+  "value": 1.2174133681148103,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_I_R_relbias_pct": {
+  "value": 1.5105546826488514,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_I_R_relbias_mcse_pct": {
+  "value": 1.0835977059679172,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_I_R_relrmse_pct": {
+  "value": 6.21944363179049,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_I_R_relrmse_mcse_pct": {
+  "value": 0.5969883252396604,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_R_A_relbias_pct": {
+  "value": -2.969193220448766,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_R_A_relbias_mcse_pct": {
+  "value": 3.29588225392261,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_R_A_relrmse_pct": {
+  "value": 18.58935564143471,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_R_A_relrmse_mcse_pct": {
+  "value": 1.8184405946908861,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_piR_mean_pct": {
+  "value": 31.00716227860011,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n500_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_high_T10_n2000_S_A_relbias_pct": {
+  "value": -1.9005675660332129,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_S_A_relbias_mcse_pct": {
+  "value": 1.910776359737554,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_S_A_relrmse_pct": {
+  "value": 7.640559634413954,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_S_A_relrmse_mcse_pct": {
+  "value": 1.5026446195900414,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_A_S_relbias_pct": {
+  "value": -0.7034170362851063,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_A_S_relbias_mcse_pct": {
+  "value": 1.6741247595803224,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_A_S_relrmse_pct": {
+  "value": 6.521901654159945,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_A_S_relrmse_mcse_pct": {
+  "value": 0.9381557400020959,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_A_I_relbias_pct": {
+  "value": -2.355481647871366,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_A_I_relbias_mcse_pct": {
+  "value": 1.6692237898861793,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_A_I_relrmse_pct": {
+  "value": 6.880618773358141,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_A_I_relrmse_mcse_pct": {
+  "value": 1.3477191817325989,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_I_R_relbias_pct": {
+  "value": 0.3324321618585154,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_I_R_relbias_mcse_pct": {
+  "value": 0.8963321129871313,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_I_R_relrmse_pct": {
+  "value": 3.487360032147177,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_I_R_relrmse_mcse_pct": {
+  "value": 0.6000135880684205,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_R_A_relbias_pct": {
+  "value": -1.6138581734264457,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_R_A_relbias_mcse_pct": {
+  "value": 1.6483560474282586,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_R_A_relrmse_pct": {
+  "value": 6.584884440165599,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_R_A_relrmse_mcse_pct": {
+  "value": 0.8916972432240059,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_piR_mean_pct": {
+  "value": 30.096318172996416,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n2000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_g_central_high_T10_n8000_S_A_relbias_pct": {
+  "value": 0.9947643324832004,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_S_A_relbias_mcse_pct": {
+  "value": 1.377966748889382,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_S_A_relrmse_pct": {
+  "value": 3.7790346127674144,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_S_A_relrmse_mcse_pct": {
+  "value": 1.281421435762069,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_A_S_relbias_pct": {
+  "value": 1.056032804700324,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_A_S_relbias_mcse_pct": {
+  "value": 1.4278257506079906,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_A_S_relrmse_pct": {
+  "value": 3.9225004656848856,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_A_S_relrmse_mcse_pct": {
+  "value": 0.7130090059808442,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_A_I_relbias_pct": {
+  "value": 0.1272240122520795,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_A_I_relbias_mcse_pct": {
+  "value": 0.5905961545238007,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_A_I_relrmse_pct": {
+  "value": 1.5677412648334623,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_A_I_relrmse_mcse_pct": {
+  "value": 0.29256429249654325,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_I_R_relbias_pct": {
+  "value": 0.821725661409988,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_I_R_relbias_mcse_pct": {
+  "value": 0.423063062979847,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_I_R_relrmse_pct": {
+  "value": 1.3885638442019554,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_I_R_relrmse_mcse_pct": {
+  "value": 0.30335582459432064,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_R_A_relbias_pct": {
+  "value": -1.2291826076015688,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_R_A_relbias_mcse_pct": {
+  "value": 2.1941404918837604,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_R_A_relrmse_pct": {
+  "value": 5.933856871352525,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_R_A_relrmse_mcse_pct": {
+  "value": 2.354563010860672,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_piR_mean_pct": {
+  "value": 29.97814295032376,
+  "note": ""
+ },
+ "recx_g_central_high_T10_n8000_capped_pct": {
+  "value": 0.0,
+  "note": "share of fits whose best start reached the iteration cap"
+ },
+ "recx_true_central_S_A": {
+  "value": 0.4990975660539778,
+  "note": "annual transition probability"
+ },
+ "recx_true_central_A_S": {
+  "value": 0.270440947535377,
+  "note": "annual transition probability"
+ },
+ "recx_true_central_A_I": {
+  "value": 0.14681080009063327,
+  "note": "annual transition probability"
+ },
+ "recx_true_central_I_R": {
+  "value": 0.42305018961951335,
+  "note": "annual transition probability"
+ },
+ "recx_true_central_R_A": {
+  "value": 0.11307956328284252,
+  "note": "annual transition probability"
+ },
+ "recx_grid_mcse_rel_median_pct": {
+  "value": 15.795898525281011,
+  "note": ""
+ },
+ "recx_grid_mcse_rel_max_pct": {
+  "value": 39.680145003632155,
+  "note": ""
+ },
+ "recx_need20_design_low_T3_S_A": {
+  "value": "> 8,000†",
+  "note": "smallest panel for relative RMSE <= 20%; numeric None"
+ },
+ "recx_need20_design_low_T3_A_S": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_low_T3_A_I": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_low_T3_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_low_T3_R_A": {
+  "value": "5,500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 5500"
+ },
+ "recx_need20_design_low_T6_S_A": {
+  "value": "910",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 910"
+ },
+ "recx_need20_design_low_T6_A_S": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_low_T6_A_I": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_low_T6_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_low_T6_R_A": {
+  "value": "890",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 890"
+ },
+ "recx_need20_design_low_T10_S_A": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_low_T10_A_S": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_low_T10_A_I": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_low_T10_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_low_T10_R_A": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_high_T3_S_A": {
+  "value": "> 8,000†",
+  "note": "smallest panel for relative RMSE <= 20%; numeric None"
+ },
+ "recx_need20_design_high_T3_A_S": {
+  "value": "1,800",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 1800"
+ },
+ "recx_need20_design_high_T3_A_I": {
+  "value": "3,200",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 3200"
+ },
+ "recx_need20_design_high_T3_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_high_T3_R_A": {
+  "value": "> 8,000†",
+  "note": "smallest panel for relative RMSE <= 20%; numeric None"
+ },
+ "recx_need20_design_high_T6_S_A": {
+  "value": "3,400",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 3400"
+ },
+ "recx_need20_design_high_T6_A_S": {
+  "value": "770",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 770"
+ },
+ "recx_need20_design_high_T6_A_I": {
+  "value": "660",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 660"
+ },
+ "recx_need20_design_high_T6_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_high_T6_R_A": {
+  "value": "2,200",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 2200"
+ },
+ "recx_need20_design_high_T10_S_A": {
+  "value": "1,100",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 1100"
+ },
+ "recx_need20_design_high_T10_A_S": {
+  "value": "520",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 520"
+ },
+ "recx_need20_design_high_T10_A_I": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_high_T10_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_design_high_T10_R_A": {
+  "value": "1,100",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 1100"
+ },
+ "recx_need20_central_low_T3_S_A": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_low_T3_A_S": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_low_T3_A_I": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_low_T3_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_low_T3_R_A": {
+  "value": "3,000",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 3000"
+ },
+ "recx_need20_central_low_T6_S_A": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_low_T6_A_S": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_low_T6_A_I": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_low_T6_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_low_T6_R_A": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_low_T10_S_A": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_low_T10_A_S": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_low_T10_A_I": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_low_T10_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_low_T10_R_A": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_high_T3_S_A": {
+  "value": "4,000",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 4000"
+ },
+ "recx_need20_central_high_T3_A_S": {
+  "value": "1,500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 1500"
+ },
+ "recx_need20_central_high_T3_A_I": {
+  "value": "1,100",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 1100"
+ },
+ "recx_need20_central_high_T3_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_high_T3_R_A": {
+  "value": "> 8,000",
+  "note": "smallest panel for relative RMSE <= 20%; numeric None"
+ },
+ "recx_need20_central_high_T6_S_A": {
+  "value": "670",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 670"
+ },
+ "recx_need20_central_high_T6_A_S": {
+  "value": "570",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 570"
+ },
+ "recx_need20_central_high_T6_A_I": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_high_T6_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_high_T6_R_A": {
+  "value": "1,300",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 1300"
+ },
+ "recx_need20_central_high_T10_S_A": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_high_T10_A_S": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_high_T10_A_I": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_high_T10_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need20_central_high_T10_R_A": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 20%; numeric 500"
+ },
+ "recx_need10_design_low_T3_S_A": {
+  "value": "> 8,000†",
+  "note": "smallest panel for relative RMSE <= 10%; numeric None"
+ },
+ "recx_need10_design_low_T3_A_S": {
+  "value": "1,300",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 1300"
+ },
+ "recx_need10_design_low_T3_A_I": {
+  "value": "1,800",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 1800"
+ },
+ "recx_need10_design_low_T3_I_R": {
+  "value": "630",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 630"
+ },
+ "recx_need10_design_low_T3_R_A": {
+  "value": "> 8,000†",
+  "note": "smallest panel for relative RMSE <= 10%; numeric None"
+ },
+ "recx_need10_design_low_T6_S_A": {
+  "value": "2,600",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 2600"
+ },
+ "recx_need10_design_low_T6_A_S": {
+  "value": "590",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 590"
+ },
+ "recx_need10_design_low_T6_A_I": {
+  "value": "720",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 720"
+ },
+ "recx_need10_design_low_T6_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_design_low_T6_R_A": {
+  "value": "2,700",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 2700"
+ },
+ "recx_need10_design_low_T10_S_A": {
+  "value": "810",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 810"
+ },
+ "recx_need10_design_low_T10_A_S": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_design_low_T10_A_I": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_design_low_T10_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_design_low_T10_R_A": {
+  "value": "1,200",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 1200"
+ },
+ "recx_need10_design_high_T3_S_A": {
+  "value": "> 8,000†",
+  "note": "smallest panel for relative RMSE <= 10%; numeric None"
+ },
+ "recx_need10_design_high_T3_A_S": {
+  "value": "> 8,000",
+  "note": "smallest panel for relative RMSE <= 10%; numeric None"
+ },
+ "recx_need10_design_high_T3_A_I": {
+  "value": "> 8,000",
+  "note": "smallest panel for relative RMSE <= 10%; numeric None"
+ },
+ "recx_need10_design_high_T3_I_R": {
+  "value": "1,800",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 1800"
+ },
+ "recx_need10_design_high_T3_R_A": {
+  "value": "> 8,000†",
+  "note": "smallest panel for relative RMSE <= 10%; numeric None"
+ },
+ "recx_need10_design_high_T6_S_A": {
+  "value": "7,500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 7500"
+ },
+ "recx_need10_design_high_T6_A_S": {
+  "value": "2,500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 2500"
+ },
+ "recx_need10_design_high_T6_A_I": {
+  "value": "2,000",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 2000"
+ },
+ "recx_need10_design_high_T6_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_design_high_T6_R_A": {
+  "value": "6,400",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 6400"
+ },
+ "recx_need10_design_high_T10_S_A": {
+  "value": "5,700",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 5700"
+ },
+ "recx_need10_design_high_T10_A_S": {
+  "value": "1,700",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 1700"
+ },
+ "recx_need10_design_high_T10_A_I": {
+  "value": "2,800",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 2800"
+ },
+ "recx_need10_design_high_T10_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_design_high_T10_R_A": {
+  "value": "4,100",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 4100"
+ },
+ "recx_need10_central_low_T3_S_A": {
+  "value": "1,700",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 1700"
+ },
+ "recx_need10_central_low_T3_A_S": {
+  "value": "750",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 750"
+ },
+ "recx_need10_central_low_T3_A_I": {
+  "value": "980",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 980"
+ },
+ "recx_need10_central_low_T3_I_R": {
+  "value": "650",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 650"
+ },
+ "recx_need10_central_low_T3_R_A": {
+  "value": "> 8,000",
+  "note": "smallest panel for relative RMSE <= 10%; numeric None"
+ },
+ "recx_need10_central_low_T6_S_A": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_central_low_T6_A_S": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_central_low_T6_A_I": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_central_low_T6_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_central_low_T6_R_A": {
+  "value": "2,000",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 2000"
+ },
+ "recx_need10_central_low_T10_S_A": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_central_low_T10_A_S": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_central_low_T10_A_I": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_central_low_T10_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_central_low_T10_R_A": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_central_high_T3_S_A": {
+  "value": "> 8,000",
+  "note": "smallest panel for relative RMSE <= 10%; numeric None"
+ },
+ "recx_need10_central_high_T3_A_S": {
+  "value": "4,900",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 4900"
+ },
+ "recx_need10_central_high_T3_A_I": {
+  "value": "4,200",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 4200"
+ },
+ "recx_need10_central_high_T3_I_R": {
+  "value": "1,700",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 1700"
+ },
+ "recx_need10_central_high_T3_R_A": {
+  "value": "> 8,000",
+  "note": "smallest panel for relative RMSE <= 10%; numeric None"
+ },
+ "recx_need10_central_high_T6_S_A": {
+  "value": "1,500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 1500"
+ },
+ "recx_need10_central_high_T6_A_S": {
+  "value": "3,300",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 3300"
+ },
+ "recx_need10_central_high_T6_A_I": {
+  "value": "1,900",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 1900"
+ },
+ "recx_need10_central_high_T6_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_central_high_T6_R_A": {
+  "value": "7,900",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 7900"
+ },
+ "recx_need10_central_high_T10_S_A": {
+  "value": "630",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 630"
+ },
+ "recx_need10_central_high_T10_A_S": {
+  "value": "1,200",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 1200"
+ },
+ "recx_need10_central_high_T10_A_I": {
+  "value": "620",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 620"
+ },
+ "recx_need10_central_high_T10_I_R": {
+  "value": "≤ 500",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 500"
+ },
+ "recx_need10_central_high_T10_R_A": {
+  "value": "1,200",
+  "note": "smallest panel for relative RMSE <= 10%; numeric 1200"
+ },
+ "recx_item_h_AI": {
+  "value": 0.4,
+  "note": ""
+ },
+ "recx_item_perfect_sens": {
+  "value": 1.0,
+  "note": ""
+ },
+ "recx_item_perfect_spec": {
+  "value": 1.0,
+  "note": ""
+ },
+ "recx_item_imperfect_sens": {
+  "value": 0.8,
+  "note": ""
+ },
+ "recx_item_imperfect_spec": {
+  "value": 0.9,
+  "note": ""
+ },
+ "recx_item_low_8000_reps": {
+  "value": 8,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_S_A_relbias_pct": {
+  "value": -14.334140789788316,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_S_A_relbias_mcse_pct": {
+  "value": 2.767778012165355,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_S_A_relrmse_pct": {
+  "value": 16.09632747100578,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_S_A_relrmse_mcse_pct": {
+  "value": 2.511352040033724,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_A_S_relbias_pct": {
+  "value": 0.010985952694496374,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_A_S_relbias_mcse_pct": {
+  "value": 0.9232458909790456,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_A_S_relrmse_pct": {
+  "value": 2.4427037310374846,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_A_S_relrmse_mcse_pct": {
+  "value": 0.5886966053751598,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_A_I_relbias_pct": {
+  "value": 1.3885278267754924,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_A_I_relbias_mcse_pct": {
+  "value": 0.9190092526547147,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_A_I_relrmse_pct": {
+  "value": 2.8000099233725435,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_A_I_relrmse_mcse_pct": {
+  "value": 0.46511710660561717,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_I_R_relbias_pct": {
+  "value": 0.7289456784992249,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_I_R_relbias_mcse_pct": {
+  "value": 0.8423348517659408,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_I_R_relrmse_pct": {
+  "value": 2.3447937691190543,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_I_R_relrmse_mcse_pct": {
+  "value": 0.4490995305070617,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_R_A_relbias_pct": {
+  "value": -3.4399278039882266,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_R_A_relbias_mcse_pct": {
+  "value": 2.2214670183249003,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_R_A_relrmse_pct": {
+  "value": 6.81010376508233,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_R_A_relrmse_mcse_pct": {
+  "value": 0.7289181626757488,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_piR_mean_pct": {
+  "value": 20.380168694429003,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_none_iters_median": {
+  "value": 324.5,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_S_A_relbias_pct": {
+  "value": 0.3831343494905123,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_S_A_relbias_mcse_pct": {
+  "value": 0.6534132296381931,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_S_A_relrmse_pct": {
+  "value": 1.7707156379337194,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_S_A_relrmse_mcse_pct": {
+  "value": 0.7249379649153584,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_A_S_relbias_pct": {
+  "value": 0.16557368283465715,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_A_S_relbias_mcse_pct": {
+  "value": 0.8508370572234604,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_A_S_relrmse_pct": {
+  "value": 2.2571842038389733,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_A_S_relrmse_mcse_pct": {
+  "value": 0.4484527802529468,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_A_I_relbias_pct": {
+  "value": 1.494520744560059,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_A_I_relbias_mcse_pct": {
+  "value": 0.9576343092304518,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_A_I_relrmse_pct": {
+  "value": 2.9416044172232514,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_A_I_relrmse_mcse_pct": {
+  "value": 0.4698381515306572,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_I_R_relbias_pct": {
+  "value": 0.7098326425978918,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_I_R_relbias_mcse_pct": {
+  "value": 0.8447334733717997,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_I_R_relrmse_pct": {
+  "value": 2.344970120863165,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_I_R_relrmse_mcse_pct": {
+  "value": 0.45145652585295976,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_R_A_relbias_pct": {
+  "value": 0.08326314192655564,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_R_A_relbias_mcse_pct": {
+  "value": 2.1619473789301815,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_R_A_relrmse_pct": {
+  "value": 5.720581092480471,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_R_A_relrmse_mcse_pct": {
+  "value": 0.9061625035285662,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_piR_mean_pct": {
+  "value": 4.958332990556247,
+  "note": ""
+ },
+ "recx_item_low_8000_orig_perfect_iters_median": {
+  "value": 29.0,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_S_A_relbias_pct": {
+  "value": -4.971235046635508,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_S_A_relbias_mcse_pct": {
+  "value": 3.0827979308545785,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_S_A_relrmse_pct": {
+  "value": 9.551894025075134,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_S_A_relrmse_mcse_pct": {
+  "value": 1.8778568513346487,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_A_S_relbias_pct": {
+  "value": 0.23889915776454343,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_A_S_relbias_mcse_pct": {
+  "value": 0.9145427155730596,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_A_S_relrmse_pct": {
+  "value": 2.431417581953958,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_A_S_relrmse_mcse_pct": {
+  "value": 0.5221754867756332,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_A_I_relbias_pct": {
+  "value": 1.4320610452248816,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_A_I_relbias_mcse_pct": {
+  "value": 0.9224580357534625,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_A_I_relrmse_pct": {
+  "value": 2.829717411921822,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_A_I_relrmse_mcse_pct": {
+  "value": 0.4717345592858124,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_I_R_relbias_pct": {
+  "value": 0.7139028608732411,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_I_R_relbias_mcse_pct": {
+  "value": 0.8431653622716446,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_I_R_relrmse_pct": {
+  "value": 2.3422536352209415,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_I_R_relrmse_mcse_pct": {
+  "value": 0.4487133827174954,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_R_A_relbias_pct": {
+  "value": -1.298504469532821,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_R_A_relbias_mcse_pct": {
+  "value": 2.196590903701917,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_R_A_relrmse_pct": {
+  "value": 5.954930314032126,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_R_A_relrmse_mcse_pct": {
+  "value": 0.5709698611770707,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_piR_mean_pct": {
+  "value": 10.107527224654477,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_none_iters_median": {
+  "value": 109.5,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_S_A_relbias_pct": {
+  "value": 0.32165359028820784,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_S_A_relbias_mcse_pct": {
+  "value": 0.6456685023510478,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_S_A_relrmse_pct": {
+  "value": 1.7382967918750265,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_S_A_relrmse_mcse_pct": {
+  "value": 0.7118532263836816,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_A_S_relbias_pct": {
+  "value": 0.16368482578731344,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_A_S_relbias_mcse_pct": {
+  "value": 0.8463094756536873,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_A_S_relrmse_pct": {
+  "value": 2.2450992900674924,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_A_S_relrmse_mcse_pct": {
+  "value": 0.44345380503869886,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_A_I_relbias_pct": {
+  "value": 1.5878403049594827,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_A_I_relbias_mcse_pct": {
+  "value": 0.9602185961505585,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_A_I_relrmse_pct": {
+  "value": 2.9958930389463627,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_A_I_relrmse_mcse_pct": {
+  "value": 0.47888318133783486,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_I_R_relbias_pct": {
+  "value": 0.7148120602457804,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_I_R_relbias_mcse_pct": {
+  "value": 0.8456350542311156,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_I_R_relrmse_pct": {
+  "value": 2.3487543073050556,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_I_R_relrmse_mcse_pct": {
+  "value": 0.45221536714477617,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_R_A_relbias_pct": {
+  "value": 0.013519533519708488,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_R_A_relbias_mcse_pct": {
+  "value": 2.1696447280182816,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_R_A_relrmse_pct": {
+  "value": 5.740356304142563,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_R_A_relrmse_mcse_pct": {
+  "value": 0.9013544447142433,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_piR_mean_pct": {
+  "value": 4.960992842634986,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfect_iters_median": {
+  "value": 24.0,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_S_A_relbias_pct": {
+  "value": 0.4006673822970602,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_S_A_relbias_mcse_pct": {
+  "value": 0.7168039329341892,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_S_A_relrmse_pct": {
+  "value": 1.938347104913418,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_S_A_relrmse_mcse_pct": {
+  "value": 0.6545546758639617,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_A_S_relbias_pct": {
+  "value": 0.1486651223945846,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_A_S_relbias_mcse_pct": {
+  "value": 0.9063140888146475,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_A_S_relrmse_pct": {
+  "value": 2.4024857776278448,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_A_S_relrmse_mcse_pct": {
+  "value": 0.5280068547008284,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_A_I_relbias_pct": {
+  "value": 1.6120258234928382,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_A_I_relbias_mcse_pct": {
+  "value": 0.9202575155446624,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_A_I_relrmse_pct": {
+  "value": 2.920058992558679,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_A_I_relrmse_mcse_pct": {
+  "value": 0.46751620325914517,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_I_R_relbias_pct": {
+  "value": 0.7134652541864424,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_I_R_relbias_mcse_pct": {
+  "value": 0.8460497739056217,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_I_R_relrmse_pct": {
+  "value": 2.349390177984832,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_I_R_relrmse_mcse_pct": {
+  "value": 0.44926529787370306,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_R_A_relbias_pct": {
+  "value": -0.4074124923383675,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_R_A_relbias_mcse_pct": {
+  "value": 2.4956475792270365,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_R_A_relrmse_pct": {
+  "value": 6.615420078636409,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_R_A_relrmse_mcse_pct": {
+  "value": 1.208130770191704,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_piR_mean_pct": {
+  "value": 4.864964936459904,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_imperfect_iters_median": {
+  "value": 24.0,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_S_A_relbias_pct": {
+  "value": -6.913784584190183,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_S_A_relbias_mcse_pct": {
+  "value": 2.2171740870259784,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_S_A_relrmse_pct": {
+  "value": 9.067052652424723,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_S_A_relrmse_mcse_pct": {
+  "value": 2.0473263231146874,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_A_S_relbias_pct": {
+  "value": -0.00276356708346066,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_A_S_relbias_mcse_pct": {
+  "value": 0.866671056748454,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_A_S_relrmse_pct": {
+  "value": 2.292997750007924,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_A_S_relrmse_mcse_pct": {
+  "value": 0.5096040504478639,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_A_I_relbias_pct": {
+  "value": 1.5361047058966313,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_A_I_relbias_mcse_pct": {
+  "value": 0.9621285443133282,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_A_I_relrmse_pct": {
+  "value": 2.9731224357491843,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_A_I_relrmse_mcse_pct": {
+  "value": 0.48129967344331775,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_I_R_relbias_pct": {
+  "value": 0.722748392710901,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_I_R_relbias_mcse_pct": {
+  "value": 0.8431421525822401,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_I_R_relrmse_pct": {
+  "value": 2.344906408663955,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_I_R_relrmse_mcse_pct": {
+  "value": 0.4513875538666321,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_R_A_relbias_pct": {
+  "value": 0.8397814852387916,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_R_A_relbias_mcse_pct": {
+  "value": 2.1085034666383162,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_R_A_relrmse_pct": {
+  "value": 5.641430760430413,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_R_A_relrmse_mcse_pct": {
+  "value": 0.9124812680559762,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_piR_mean_pct": {
+  "value": 11.90115311825148,
+  "note": ""
+ },
+ "recx_item_low_8000_strict_perfectfree_iters_median": {
+  "value": 1102.5,
+  "note": ""
+ },
+ "recx_item_low_8000_llgain_median": {
+  "value": 0.873975417620386,
+  "note": ""
+ },
+ "recx_item_low_8000_llgain_min": {
+  "value": 0.008855173800839111,
+  "note": ""
+ },
+ "recx_item_low_8000_llgain_max": {
+  "value": 2.1082999559585005,
+  "note": ""
+ },
+ "recx_item_high_8000_reps": {
+  "value": 6,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_S_A_relbias_pct": {
+  "value": -35.859225014824325,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_S_A_relbias_mcse_pct": {
+  "value": 6.535549344957713,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_S_A_relrmse_pct": {
+  "value": 38.722745833239784,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_S_A_relrmse_mcse_pct": {
+  "value": 5.772126328335681,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_A_S_relbias_pct": {
+  "value": -3.3819478383389,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_A_S_relbias_mcse_pct": {
+  "value": 1.408216269230853,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_A_S_relrmse_pct": {
+  "value": 4.620923769753994,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_A_S_relrmse_mcse_pct": {
+  "value": 1.1762071850107574,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_A_I_relbias_pct": {
+  "value": 2.0775733826209772,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_A_I_relbias_mcse_pct": {
+  "value": 1.5969455127047758,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_A_I_relrmse_pct": {
+  "value": 4.131281400838579,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_A_I_relrmse_mcse_pct": {
+  "value": 1.1728587216045605,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_I_R_relbias_pct": {
+  "value": -0.1732795048237389,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_I_R_relbias_mcse_pct": {
+  "value": 0.4791912886699357,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_I_R_relrmse_pct": {
+  "value": 1.0854249133301337,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_I_R_relrmse_mcse_pct": {
+  "value": 0.23115142444717535,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_R_A_relbias_pct": {
+  "value": -3.969887992457404,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_R_A_relbias_mcse_pct": {
+  "value": 7.887177415314489,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_R_A_relrmse_pct": {
+  "value": 18.07755095625213,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_R_A_relrmse_mcse_pct": {
+  "value": 4.998759968650273,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_piR_mean_pct": {
+  "value": 34.38023801645607,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_none_iters_median": {
+  "value": 135.5,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_S_A_relbias_pct": {
+  "value": -0.8091686113535392,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_S_A_relbias_mcse_pct": {
+  "value": 1.0318566023514872,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_S_A_relrmse_pct": {
+  "value": 2.4450754754570654,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_S_A_relrmse_mcse_pct": {
+  "value": 0.7361262727896735,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_A_S_relbias_pct": {
+  "value": -0.4599918701198016,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_A_S_relbias_mcse_pct": {
+  "value": 1.4893899391533034,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_A_S_relrmse_pct": {
+  "value": 3.3619941217723324,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_A_S_relrmse_mcse_pct": {
+  "value": 0.6868676700861234,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_A_I_relbias_pct": {
+  "value": 1.875724775991922,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_A_I_relbias_mcse_pct": {
+  "value": 1.2908138790241728,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_A_I_relrmse_pct": {
+  "value": 3.442287870977252,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_A_I_relrmse_mcse_pct": {
+  "value": 0.921309556141169,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_I_R_relbias_pct": {
+  "value": -0.3398877652991018,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_I_R_relbias_mcse_pct": {
+  "value": 0.4037792493481908,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_I_R_relrmse_pct": {
+  "value": 0.9647342141859381,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_I_R_relrmse_mcse_pct": {
+  "value": 0.2570793162195965,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_R_A_relbias_pct": {
+  "value": 1.2854121948591826,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_R_A_relbias_mcse_pct": {
+  "value": 4.562387038263519,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_R_A_relrmse_pct": {
+  "value": 10.282468669792655,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_R_A_relrmse_mcse_pct": {
+  "value": 3.143276151239513,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_piR_mean_pct": {
+  "value": 5.044159408048658,
+  "note": ""
+ },
+ "recx_item_high_8000_orig_perfect_iters_median": {
+  "value": 62.0,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_S_A_relbias_pct": {
+  "value": -8.032193042880294,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_S_A_relbias_mcse_pct": {
+  "value": 5.991060839517175,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_S_A_relrmse_pct": {
+  "value": 15.619864755882995,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_S_A_relrmse_mcse_pct": {
+  "value": 3.3770405843213402,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_A_S_relbias_pct": {
+  "value": -0.7446483818835904,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_A_S_relbias_mcse_pct": {
+  "value": 0.9656732753159063,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_A_S_relrmse_pct": {
+  "value": 2.2841027967100342,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_A_S_relrmse_mcse_pct": {
+  "value": 0.47356104775799057,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_A_I_relbias_pct": {
+  "value": 1.7774444697871372,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_A_I_relbias_mcse_pct": {
+  "value": 1.6054196905974776,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_A_I_relrmse_pct": {
+  "value": 4.005767187189912,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_A_I_relrmse_mcse_pct": {
+  "value": 0.9975719991592366,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_I_R_relbias_pct": {
+  "value": -0.3123914340269391,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_I_R_relbias_mcse_pct": {
+  "value": 0.4140942187688135,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_I_R_relrmse_pct": {
+  "value": 0.9772197900893009,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_I_R_relrmse_mcse_pct": {
+  "value": 0.22271842444634818,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_R_A_relbias_pct": {
+  "value": 2.1598617453695317,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_R_A_relbias_mcse_pct": {
+  "value": 7.372837134030503,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_R_A_relrmse_pct": {
+  "value": 16.627045431579425,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_R_A_relrmse_mcse_pct": {
+  "value": 5.25400226431868,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_piR_mean_pct": {
+  "value": 8.948724975532016,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_none_iters_median": {
+  "value": 325.5,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_S_A_relbias_pct": {
+  "value": -1.3947105530390673,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_S_A_relbias_mcse_pct": {
+  "value": 0.7031685308913658,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_S_A_relrmse_pct": {
+  "value": 2.1017724522264887,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_S_A_relrmse_mcse_pct": {
+  "value": 0.4524711239708556,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_A_S_relbias_pct": {
+  "value": -0.4457753214273664,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_A_S_relbias_mcse_pct": {
+  "value": 1.2417965705010061,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_A_S_relrmse_pct": {
+  "value": 2.812296081449101,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_A_S_relrmse_mcse_pct": {
+  "value": 0.5911000481223851,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_A_I_relbias_pct": {
+  "value": 2.387858423335436,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_A_I_relbias_mcse_pct": {
+  "value": 1.5796880566040041,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_A_I_relrmse_pct": {
+  "value": 4.263676773722496,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_A_I_relrmse_mcse_pct": {
+  "value": 1.0130078877349011,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_I_R_relbias_pct": {
+  "value": -0.22343653702848812,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_I_R_relbias_mcse_pct": {
+  "value": 0.35727186176016884,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_I_R_relrmse_pct": {
+  "value": 0.8295419230558325,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_I_R_relrmse_mcse_pct": {
+  "value": 0.20588335496634255,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_R_A_relbias_pct": {
+  "value": 0.7180663524458802,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_R_A_relbias_mcse_pct": {
+  "value": 4.482457322805318,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_R_A_relrmse_pct": {
+  "value": 10.048767961315953,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_R_A_relrmse_mcse_pct": {
+  "value": 2.7088402918578107,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_piR_mean_pct": {
+  "value": 5.0655793067102515,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_perfect_iters_median": {
+  "value": 54.0,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_S_A_relbias_pct": {
+  "value": -0.3649740263835485,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_S_A_relbias_mcse_pct": {
+  "value": 1.2562206306460186,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_S_A_relrmse_pct": {
+  "value": 2.832606115265238,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_S_A_relrmse_mcse_pct": {
+  "value": 0.5914672043253811,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_A_S_relbias_pct": {
+  "value": 0.5666991596953833,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_A_S_relbias_mcse_pct": {
+  "value": 1.0810417379917956,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_A_S_relrmse_pct": {
+  "value": 2.4828218087492835,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_A_S_relrmse_mcse_pct": {
+  "value": 0.5200205194441408,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_A_I_relbias_pct": {
+  "value": 1.1351669481880926,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_A_I_relbias_mcse_pct": {
+  "value": 1.650254657287377,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_A_I_relrmse_pct": {
+  "value": 3.8607390704050504,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_A_I_relrmse_mcse_pct": {
+  "value": 0.8818886918838047,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_I_R_relbias_pct": {
+  "value": -0.49139395809204056,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_I_R_relbias_mcse_pct": {
+  "value": 0.3640296920117962,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_I_R_relrmse_pct": {
+  "value": 0.9508186501012579,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_I_R_relrmse_mcse_pct": {
+  "value": 0.23428230165957048,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_R_A_relbias_pct": {
+  "value": 3.455191334766004,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_R_A_relbias_mcse_pct": {
+  "value": 5.9296297804735145,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_R_A_relrmse_pct": {
+  "value": 13.701857313051907,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_R_A_relrmse_mcse_pct": {
+  "value": 3.853483278329005,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_piR_mean_pct": {
+  "value": 5.130707744700233,
+  "note": ""
+ },
+ "recx_item_high_8000_strict_imperfect_iters_median": {
+  "value": 52.5,
+  "note": ""
+ },
+ "recx_item_high_8000_llgain_median": {
+  "value": 1.8787491384791792,
+  "note": ""
+ },
+ "recx_item_high_8000_llgain_min": {
+  "value": 0.9268651037127711,
+  "note": ""
+ },
+ "recx_item_high_8000_llgain_max": {
+  "value": 3.0096972409373848,
+  "note": ""
+ },
+ "recx_item_true_piR_pct": {
+  "value": 5.0,
+  "note": ""
+ },
+ "recx_q_S": {
+  "value": 0.06,
+  "note": ""
+ },
+ "recx_q_A": {
+  "value": 0.36,
+  "note": ""
+ },
+ "recx_q_I": {
+  "value": 0.75,
+  "note": ""
+ },
+ "recx_rho": {
+  "value": 0.15,
+  "note": ""
+ },
+ "recx_mis_bin_SR_pos_pct": {
+  "value": 0.00033456226314239904,
+  "note": ""
+ },
+ "recx_mis_bin_A_pos_pct": {
+  "value": 6.121474145412707,
+  "note": ""
+ },
+ "recx_mis_bin_I_neg_pct": {
+  "value": 16.572570800781243,
+  "note": ""
+ },
+ "recx_mis_bin_A_band_pct": {
+  "value": 82.9572967582138,
+  "note": ""
+ },
+ "recx_mis_bin_SR_band0_pct": {
+  "value": 90.21620290408005,
+  "note": ""
+ },
+ "recx_mis_bin_mean_A": {
+  "value": 3.239999999999998,
+  "note": ""
+ },
+ "recx_mis_bb_SR_pos_pct": {
+  "value": 0.49020914942119675,
+  "note": ""
+ },
+ "recx_mis_bb_A_pos_pct": {
+  "value": 16.321390518524034,
+  "note": ""
+ },
+ "recx_mis_bb_I_neg_pct": {
+  "value": 24.29979251600274,
+  "note": ""
+ },
+ "recx_mis_bb_A_band_pct": {
+  "value": 59.522396536700064,
+  "note": ""
+ },
+ "recx_mis_bb_SR_band0_pct": {
+  "value": 86.66840605751426,
+  "note": ""
+ },
+ "recx_mis_bb_mean_A": {
+  "value": 3.239999999999985,
+  "note": ""
+ },
+ "recx_mis_gauss_low_SR_pos_pct": {
+  "value": 9.275398734560803e-07,
+  "note": ""
+ },
+ "recx_mis_gauss_low_A_pos_pct": {
+  "value": 2.2750131948179195,
+  "note": ""
+ },
+ "recx_mis_gauss_low_I_neg_pct": {
+  "value": 6.680720126885807,
+  "note": ""
+ },
+ "recx_mis_gauss_high_SR_pos_pct": {
+  "value": 0.13498980316300932,
+  "note": ""
+ },
+ "recx_mis_gauss_high_A_pos_pct": {
+  "value": 13.326026290250537,
+  "note": ""
+ },
+ "recx_mis_gauss_high_I_neg_pct": {
+  "value": 20.232838096364308,
+  "note": ""
+ },
+ "recx_mis_design_trueI_pct": {
+  "value": 8.0,
+  "note": ""
+ },
+ "recx_mis_design_true_IR": {
+  "value": 0.4511883639059736,
+  "note": ""
+ },
+ "recx_mis_design_bin_obs_prev_pct": {
+  "value": 7.402749999999999,
+  "note": ""
+ },
+ "recx_mis_design_bin_ppv_pct": {
+  "value": 89.8922697646145,
+  "note": ""
+ },
+ "recx_mis_design_bin_naive_exit": {
+  "value": 0.5665124446996048,
+  "note": ""
+ },
+ "recx_mis_design_bin_naive_exit_ratio": {
+  "value": 1.2556007424377293,
+  "note": ""
+ },
+ "recx_mis_design_bb_obs_prev_pct": {
+  "value": 8.37675,
+  "note": ""
+ },
+ "recx_mis_design_bb_ppv_pct": {
+  "value": 71.87453367952965,
+  "note": ""
+ },
+ "recx_mis_design_bb_naive_exit": {
+  "value": 0.6377771808875757,
+  "note": ""
+ },
+ "recx_mis_design_bb_naive_exit_ratio": {
+  "value": 1.4135497098513088,
+  "note": ""
+ },
+ "recx_mis_design_gauss_low_obs_prev_pct": {
+  "value": 7.710500000000001,
+  "note": ""
+ },
+ "recx_mis_design_gauss_low_ppv_pct": {
+  "value": 96.42695026262888,
+  "note": ""
+ },
+ "recx_mis_design_gauss_low_naive_exit": {
+  "value": 0.5000324233188509,
+  "note": ""
+ },
+ "recx_mis_design_gauss_low_naive_exit_ratio": {
+  "value": 1.1082564696261898,
+  "note": ""
+ },
+ "recx_mis_design_gauss_high_obs_prev_pct": {
+  "value": 8.07725,
+  "note": ""
+ },
+ "recx_mis_design_gauss_high_ppv_pct": {
+  "value": 78.72419449688941,
+  "note": ""
+ },
+ "recx_mis_design_gauss_high_naive_exit": {
+  "value": 0.6047231421585316,
+  "note": ""
+ },
+ "recx_mis_design_gauss_high_naive_exit_ratio": {
+  "value": 1.3402897559755202,
+  "note": ""
+ },
+ "recx_mis_central_trueI_pct": {
+  "value": 10.494553908523098,
+  "note": ""
+ },
+ "recx_mis_central_true_IR": {
+  "value": 0.42305018961951335,
+  "note": ""
+ },
+ "recx_mis_central_bin_obs_prev_pct": {
+  "value": 10.78725,
+  "note": ""
+ },
+ "recx_mis_central_bin_ppv_pct": {
+  "value": 80.71102458921412,
+  "note": ""
+ },
+ "recx_mis_central_bin_naive_exit": {
+  "value": 0.5791095969779138,
+  "note": ""
+ },
+ "recx_mis_central_bin_naive_exit_ratio": {
+  "value": 1.3688909996678136,
+  "note": ""
+ },
+ "recx_mis_central_bb_obs_prev_pct": {
+  "value": 13.814499999999999,
+  "note": ""
+ },
+ "recx_mis_central_bb_ppv_pct": {
+  "value": 57.33287487784574,
+  "note": ""
+ },
+ "recx_mis_central_bb_naive_exit": {
+  "value": 0.6593253465561547,
+  "note": ""
+ },
+ "recx_mis_central_bb_naive_exit_ratio": {
+  "value": 1.558503843596299,
+  "note": ""
+ },
+ "recx_mis_central_gauss_low_obs_prev_pct": {
+  "value": 10.507249999999999,
+  "note": ""
+ },
+ "recx_mis_central_gauss_low_ppv_pct": {
+  "value": 92.55038187917867,
+  "note": ""
+ },
+ "recx_mis_central_gauss_low_naive_exit": {
+  "value": 0.4889243141640296,
+  "note": ""
+ },
+ "recx_mis_central_gauss_low_naive_exit_ratio": {
+  "value": 1.155712315372705,
+  "note": ""
+ },
+ "recx_mis_central_gauss_high_obs_prev_pct": {
+  "value": 12.907750000000002,
+  "note": ""
+ },
+ "recx_mis_central_gauss_high_ppv_pct": {
+  "value": 64.27340163855048,
+  "note": ""
+ },
+ "recx_mis_central_gauss_high_naive_exit": {
+  "value": 0.6332435939648661,
+  "note": ""
+ },
+ "recx_mis_central_gauss_high_naive_exit_ratio": {
+  "value": 1.4968521690875456,
+  "note": ""
+ },
+ "recx_meas_2000_reps": {
+  "value": 12,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_S_A_relbias_pct": {
+  "value": -7.061269120234935,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_S_A_relbias_mcse_pct": {
+  "value": 4.5506753099328145,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_S_A_relrmse_pct": {
+  "value": 16.663031690815956,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_S_A_relrmse_mcse_pct": {
+  "value": 5.4660905474052335,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_A_S_relbias_pct": {
+  "value": -0.6245450588317861,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_A_S_relbias_mcse_pct": {
+  "value": 1.6926473460951024,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_A_S_relrmse_pct": {
+  "value": 5.648509710638899,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_A_S_relrmse_mcse_pct": {
+  "value": 0.8494858898599845,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_A_I_relbias_pct": {
+  "value": -0.8080079151515946,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_A_I_relbias_mcse_pct": {
+  "value": 2.861079710149769,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_A_I_relrmse_pct": {
+  "value": 9.523467067044708,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_A_I_relrmse_mcse_pct": {
+  "value": 2.0059762025075445,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_I_R_relbias_pct": {
+  "value": 0.19592007333193426,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_I_R_relbias_mcse_pct": {
+  "value": 1.3358278359490896,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_I_R_relrmse_pct": {
+  "value": 4.434769526750528,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_I_R_relrmse_mcse_pct": {
+  "value": 0.716024326736203,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_R_A_relbias_pct": {
+  "value": 0.23964253619091583,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_R_A_relbias_mcse_pct": {
+  "value": 4.604113915692073,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_R_A_relrmse_pct": {
+  "value": 15.271998657036196,
+  "note": ""
+ },
+ "recx_meas_2000_bin_binom_R_A_relrmse_mcse_pct": {
+  "value": 4.093898172525364,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_S_A_relbias_pct": {
+  "value": -12.169210662274956,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_S_A_relbias_mcse_pct": {
+  "value": 4.42853489063125,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_S_A_relrmse_pct": {
+  "value": 19.074087715949826,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_S_A_relrmse_mcse_pct": {
+  "value": 4.462319610080628,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_A_S_relbias_pct": {
+  "value": -3.664810431439015,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_A_S_relbias_mcse_pct": {
+  "value": 2.5948450367589313,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_A_S_relrmse_pct": {
+  "value": 9.35394376245128,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_A_S_relrmse_mcse_pct": {
+  "value": 1.4911777733850542,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_A_I_relbias_pct": {
+  "value": 4.2371220713982565,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_A_I_relbias_mcse_pct": {
+  "value": 3.666368529240874,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_A_I_relrmse_pct": {
+  "value": 12.877035511413993,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_A_I_relrmse_mcse_pct": {
+  "value": 2.508674941296738,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_I_R_relbias_pct": {
+  "value": -0.6593604025087497,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_I_R_relbias_mcse_pct": {
+  "value": 1.4608223891709051,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_I_R_relrmse_pct": {
+  "value": 4.889660389038221,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_I_R_relrmse_mcse_pct": {
+  "value": 0.8416986069560551,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_R_A_relbias_pct": {
+  "value": -4.373506998553003,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_R_A_relbias_mcse_pct": {
+  "value": 3.8028371620139616,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_R_A_relrmse_pct": {
+  "value": 13.349338513766533,
+  "note": ""
+ },
+ "recx_meas_2000_bin_cat_R_A_relrmse_mcse_pct": {
+  "value": 2.1592116054950763,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_S_A_relbias_pct": {
+  "value": -15.14213709518861,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_S_A_relbias_mcse_pct": {
+  "value": 7.493568481405203,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_S_A_relrmse_pct": {
+  "value": 29.102810349691165,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_S_A_relrmse_mcse_pct": {
+  "value": 4.138507828977132,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_A_S_relbias_pct": {
+  "value": -1.075220416704582,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_A_S_relbias_mcse_pct": {
+  "value": 4.462486242563566,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_A_S_relrmse_pct": {
+  "value": 14.839397462843914,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_A_S_relrmse_mcse_pct": {
+  "value": 2.7674916617116576,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_A_I_relbias_pct": {
+  "value": 1.3858530354798944,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_A_I_relbias_mcse_pct": {
+  "value": 3.441958727407077,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_A_I_relrmse_pct": {
+  "value": 11.499498568583764,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_A_I_relrmse_mcse_pct": {
+  "value": 1.8111012381533556,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_I_R_relbias_pct": {
+  "value": -1.3907063927845498,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_I_R_relbias_mcse_pct": {
+  "value": 1.6945709074062068,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_I_R_relrmse_pct": {
+  "value": 5.789761690556379,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_I_R_relrmse_mcse_pct": {
+  "value": 1.1873615294701676,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_R_A_relbias_pct": {
+  "value": 2.857536699534102,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_R_A_relbias_mcse_pct": {
+  "value": 5.189823852757516,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_R_A_relrmse_pct": {
+  "value": 17.448280827587105,
+  "note": ""
+ },
+ "recx_meas_2000_bin_band3_R_A_relrmse_mcse_pct": {
+  "value": 3.770875667074828,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_S_A_relbias_pct": {
+  "value": -7.669584042735887,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_S_A_relbias_mcse_pct": {
+  "value": 26.191535726126776,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_S_A_relrmse_pct": {
+  "value": 87.20541554290831,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_S_A_relrmse_mcse_pct": {
+  "value": 11.608743003731568,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_A_S_relbias_pct": {
+  "value": -34.61708779524885,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_A_S_relbias_mcse_pct": {
+  "value": 20.30058743892599,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_A_S_relrmse_pct": {
+  "value": 75.70729899715246,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_A_S_relrmse_mcse_pct": {
+  "value": 10.38055864411613,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_A_I_relbias_pct": {
+  "value": -15.53233132080597,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_A_I_relbias_mcse_pct": {
+  "value": 12.824497136088924,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_A_I_relrmse_pct": {
+  "value": 45.281324086077404,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_A_I_relrmse_mcse_pct": {
+  "value": 9.082957087372034,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_I_R_relbias_pct": {
+  "value": -0.09853200298819939,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_I_R_relbias_mcse_pct": {
+  "value": 2.9142896273272987,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_I_R_relrmse_pct": {
+  "value": 9.666107433038142,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_I_R_relrmse_mcse_pct": {
+  "value": 2.7932399957174683,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_R_A_relbias_pct": {
+  "value": 28.88858389928282,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_R_A_relbias_mcse_pct": {
+  "value": 29.85698662280883,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_R_A_relrmse_pct": {
+  "value": 103.15224879684564,
+  "note": ""
+ },
+ "recx_meas_2000_bin_bin6_R_A_relrmse_mcse_pct": {
+  "value": 18.205374848520716,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_S_A_relbias_pct": {
+  "value": 148.45106893919086,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_S_A_relbias_mcse_pct": {
+  "value": 7.143115986704061,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_S_A_relrmse_pct": {
+  "value": 150.3295880230601,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_S_A_relrmse_mcse_pct": {
+  "value": 8.291396312434173,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_A_S_relbias_pct": {
+  "value": 66.0020815396111,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_A_S_relbias_mcse_pct": {
+  "value": 0.5201210753795857,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_A_S_relrmse_pct": {
+  "value": 66.0246208078855,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_A_S_relrmse_mcse_pct": {
+  "value": 0.5160130009209052,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_A_I_relbias_pct": {
+  "value": -38.28270560780577,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_A_I_relbias_mcse_pct": {
+  "value": 1.2128883642701305,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_A_I_relrmse_pct": {
+  "value": 38.49347514423612,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_A_I_relrmse_mcse_pct": {
+  "value": 1.192516087130485,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_I_R_relbias_pct": {
+  "value": 1.087502370813312,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_I_R_relbias_mcse_pct": {
+  "value": 1.3120905715558056,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_I_R_relrmse_pct": {
+  "value": 4.485538959160494,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_I_R_relrmse_mcse_pct": {
+  "value": 0.7854286941676378,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_R_A_relbias_pct": {
+  "value": 78.32199567012056,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_R_A_relbias_mcse_pct": {
+  "value": 6.09999640055617,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_R_A_relrmse_pct": {
+  "value": 80.8927964821662,
+  "note": ""
+ },
+ "recx_meas_2000_bb_binom_R_A_relrmse_mcse_pct": {
+  "value": 5.707620224999104,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_S_A_relbias_pct": {
+  "value": -27.921536623647754,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_S_A_relbias_mcse_pct": {
+  "value": 7.5743513397142985,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_S_A_relrmse_pct": {
+  "value": 37.5591664952439,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_S_A_relrmse_mcse_pct": {
+  "value": 6.606507095397744,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_A_S_relbias_pct": {
+  "value": -6.7039605015728,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_A_S_relbias_mcse_pct": {
+  "value": 4.113761526054907,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_A_S_relrmse_pct": {
+  "value": 15.20185709814409,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_A_S_relrmse_mcse_pct": {
+  "value": 2.191482811440707,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_A_I_relbias_pct": {
+  "value": 11.69849775812156,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_A_I_relbias_mcse_pct": {
+  "value": 5.542672587022433,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_A_I_relrmse_pct": {
+  "value": 21.789636602591717,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_A_I_relrmse_mcse_pct": {
+  "value": 2.89417900833849,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_I_R_relbias_pct": {
+  "value": -0.3527333095579248,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_I_R_relbias_mcse_pct": {
+  "value": 1.7230353709177058,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_I_R_relrmse_pct": {
+  "value": 5.72553757925318,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_I_R_relrmse_mcse_pct": {
+  "value": 0.5744351815456742,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_R_A_relbias_pct": {
+  "value": -1.8572196042749283,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_R_A_relbias_mcse_pct": {
+  "value": 6.41367918993121,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_R_A_relrmse_pct": {
+  "value": 21.35268959460204,
+  "note": ""
+ },
+ "recx_meas_2000_bb_cat_R_A_relrmse_mcse_pct": {
+  "value": 3.1799662380732636,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_S_A_relbias_pct": {
+  "value": 355.33536846306646,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_S_A_relbias_mcse_pct": {
+  "value": 3.684302086402185,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_S_A_relrmse_pct": {
+  "value": 355.54541057547874,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_S_A_relrmse_mcse_pct": {
+  "value": 3.683754446644692,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_A_S_relbias_pct": {
+  "value": 68.59921271163228,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_A_S_relbias_mcse_pct": {
+  "value": 0.49843583998320795,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_A_S_relrmse_pct": {
+  "value": 68.61912857074294,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_A_S_relrmse_mcse_pct": {
+  "value": 0.4952666883799665,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_A_I_relbias_pct": {
+  "value": -54.50159053630373,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_A_I_relbias_mcse_pct": {
+  "value": 0.9276563229837816,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_A_I_relrmse_pct": {
+  "value": 54.58836304356636,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_A_I_relrmse_mcse_pct": {
+  "value": 0.9284617943598674,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_I_R_relbias_pct": {
+  "value": -25.62769172104907,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_I_R_relbias_mcse_pct": {
+  "value": 0.7933258103734552,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_I_R_relrmse_pct": {
+  "value": 25.762406859697304,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_I_R_relrmse_mcse_pct": {
+  "value": 0.7648355963024628,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_R_A_relbias_pct": {
+  "value": 171.11389250394856,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_R_A_relbias_mcse_pct": {
+  "value": 5.6245090437668,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_R_A_relrmse_pct": {
+  "value": 172.12771517007485,
+  "note": ""
+ },
+ "recx_meas_2000_bb_gauss_R_A_relrmse_mcse_pct": {
+  "value": 5.655974950733482,
+  "note": ""
+ },
+ "recx_meas_8000_reps": {
+  "value": 5,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_S_A_relbias_pct": {
+  "value": -2.0206759119359776,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_S_A_relbias_mcse_pct": {
+  "value": 4.102420537012138,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_S_A_relrmse_pct": {
+  "value": 8.450002851542367,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_S_A_relrmse_mcse_pct": {
+  "value": 3.3283620412202874,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_A_S_relbias_pct": {
+  "value": 1.7409392241076984,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_A_S_relbias_mcse_pct": {
+  "value": 0.7855435854651834,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_A_S_relrmse_pct": {
+  "value": 2.345033961523521,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_A_S_relrmse_mcse_pct": {
+  "value": 0.36574665342155416,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_A_I_relbias_pct": {
+  "value": 0.3107220849015822,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_A_I_relbias_mcse_pct": {
+  "value": 2.0594943709150533,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_A_I_relrmse_pct": {
+  "value": 4.130692008534254,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_A_I_relrmse_mcse_pct": {
+  "value": 0.6606742304519789,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_I_R_relbias_pct": {
+  "value": -1.067591823356661,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_I_R_relbias_mcse_pct": {
+  "value": 0.9456338581564487,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_I_R_relrmse_pct": {
+  "value": 2.171784030714243,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_I_R_relrmse_mcse_pct": {
+  "value": 0.4759141692656821,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_R_A_relbias_pct": {
+  "value": -2.4773301726570423,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_R_A_relbias_mcse_pct": {
+  "value": 1.9618120278903117,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_R_A_relrmse_pct": {
+  "value": 4.640257591498274,
+  "note": ""
+ },
+ "recx_meas_8000_bin_binom_R_A_relrmse_mcse_pct": {
+  "value": 1.1008602582376146,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_S_A_relbias_pct": {
+  "value": -4.544172743926423,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_S_A_relbias_mcse_pct": {
+  "value": 3.246529669757275,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_S_A_relrmse_pct": {
+  "value": 7.925233467419172,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_S_A_relrmse_mcse_pct": {
+  "value": 3.5896036254961343,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_A_S_relbias_pct": {
+  "value": -0.28560533432872576,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_A_S_relbias_mcse_pct": {
+  "value": 1.1169699638408626,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_A_S_relrmse_pct": {
+  "value": 2.252123000079626,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_A_S_relrmse_mcse_pct": {
+  "value": 0.6616776510203105,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_A_I_relbias_pct": {
+  "value": 2.755309507841675,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_A_I_relbias_mcse_pct": {
+  "value": 2.175241897194722,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_A_I_relrmse_pct": {
+  "value": 5.149605783868111,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_A_I_relrmse_mcse_pct": {
+  "value": 1.52805189243976,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_I_R_relbias_pct": {
+  "value": -1.1925794898788207,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_I_R_relbias_mcse_pct": {
+  "value": 0.91292893708074,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_I_R_relrmse_pct": {
+  "value": 2.180826177465115,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_I_R_relrmse_mcse_pct": {
+  "value": 0.4516082110831744,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_R_A_relbias_pct": {
+  "value": -5.100179879900273,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_R_A_relbias_mcse_pct": {
+  "value": 1.9537261860125952,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_R_A_relrmse_pct": {
+  "value": 6.424952828385968,
+  "note": ""
+ },
+ "recx_meas_8000_bin_cat_R_A_relrmse_mcse_pct": {
+  "value": 1.5767123903970628,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_S_A_relbias_pct": {
+  "value": -9.127237938948932,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_S_A_relbias_mcse_pct": {
+  "value": 5.810763594688294,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_S_A_relrmse_pct": {
+  "value": 14.777224590822458,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_S_A_relrmse_mcse_pct": {
+  "value": 4.866487460380891,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_A_S_relbias_pct": {
+  "value": -2.258399451068247,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_A_S_relbias_mcse_pct": {
+  "value": 2.0386623217509867,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_A_S_relrmse_pct": {
+  "value": 4.661002502583951,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_A_S_relrmse_mcse_pct": {
+  "value": 1.8197843226511903,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_A_I_relbias_pct": {
+  "value": 4.010390732483494,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_A_I_relbias_mcse_pct": {
+  "value": 2.5999838913646847,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_A_I_relrmse_pct": {
+  "value": 6.566802781309402,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_A_I_relrmse_mcse_pct": {
+  "value": 1.3679224585137044,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_I_R_relbias_pct": {
+  "value": -0.82426316612007,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_I_R_relbias_mcse_pct": {
+  "value": 1.0120419460066545,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_I_R_relrmse_pct": {
+  "value": 2.1854805807716593,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_I_R_relrmse_mcse_pct": {
+  "value": 0.2638344242729991,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_R_A_relbias_pct": {
+  "value": -3.52503878060674,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_R_A_relbias_mcse_pct": {
+  "value": 4.58317664694393,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_R_A_relrmse_pct": {
+  "value": 9.82079075803727,
+  "note": ""
+ },
+ "recx_meas_8000_bin_band3_R_A_relrmse_mcse_pct": {
+  "value": 1.8698687818449615,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_S_A_relbias_pct": {
+  "value": 9.034743212148044,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_S_A_relbias_mcse_pct": {
+  "value": 35.6988507022173,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_S_A_relrmse_pct": {
+  "value": 71.96706434714604,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_S_A_relrmse_mcse_pct": {
+  "value": 16.59384900686457,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_A_S_relbias_pct": {
+  "value": 36.19288115914853,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_A_S_relbias_mcse_pct": {
+  "value": 39.22866568525678,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_A_S_relrmse_pct": {
+  "value": 86.40299469568642,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_A_S_relrmse_mcse_pct": {
+  "value": 18.31016479590613,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_A_I_relbias_pct": {
+  "value": 20.844830240304887,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_A_I_relbias_mcse_pct": {
+  "value": 14.450451967334772,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_A_I_relrmse_pct": {
+  "value": 35.63382095689608,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_A_I_relrmse_mcse_pct": {
+  "value": 9.199751098971733,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_I_R_relbias_pct": {
+  "value": -2.739890348774597,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_I_R_relbias_mcse_pct": {
+  "value": 2.207175384488093,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_I_R_relrmse_pct": {
+  "value": 5.195526136482121,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_I_R_relrmse_mcse_pct": {
+  "value": 1.4825845562655486,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_R_A_relbias_pct": {
+  "value": 25.138354090910155,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_R_A_relbias_mcse_pct": {
+  "value": 34.88289410764192,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_R_A_relrmse_pct": {
+  "value": 74.15660490947394,
+  "note": ""
+ },
+ "recx_meas_8000_bin_bin6_R_A_relrmse_mcse_pct": {
+  "value": 26.25657348601645,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_S_A_relbias_pct": {
+  "value": 149.65954992119657,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_S_A_relbias_mcse_pct": {
+  "value": 4.388423163891965,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_S_A_relrmse_pct": {
+  "value": 149.91668991168612,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_S_A_relrmse_mcse_pct": {
+  "value": 4.542120367817378,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_A_S_relbias_pct": {
+  "value": 65.73503228994734,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_A_S_relbias_mcse_pct": {
+  "value": 1.6172565472131988,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_A_S_relrmse_pct": {
+  "value": 65.81456180146182,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_A_S_relrmse_mcse_pct": {
+  "value": 1.6244106625583188,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_A_I_relbias_pct": {
+  "value": -37.846204355767256,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_A_I_relbias_mcse_pct": {
+  "value": 1.166304323778473,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_A_I_relrmse_pct": {
+  "value": 37.91802008598489,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_A_I_relrmse_mcse_pct": {
+  "value": 1.1384586002482415,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_I_R_relbias_pct": {
+  "value": 0.26222612941073115,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_I_R_relbias_mcse_pct": {
+  "value": 0.9862928266516177,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_I_R_relrmse_pct": {
+  "value": 1.9899388690518824,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_I_R_relrmse_mcse_pct": {
+  "value": 0.4842318538708123,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_R_A_relbias_pct": {
+  "value": 64.0701409446135,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_R_A_relbias_mcse_pct": {
+  "value": 7.587948967453711,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_R_A_relrmse_pct": {
+  "value": 65.84292550299817,
+  "note": ""
+ },
+ "recx_meas_8000_bb_binom_R_A_relrmse_mcse_pct": {
+  "value": 6.165945872341742,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_S_A_relbias_pct": {
+  "value": 0.23382965017600502,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_S_A_relbias_mcse_pct": {
+  "value": 7.604632413126242,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_S_A_relrmse_pct": {
+  "value": 15.211062187118378,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_S_A_relrmse_mcse_pct": {
+  "value": 4.771689126226154,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_A_S_relbias_pct": {
+  "value": 4.4687171263544325,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_A_S_relbias_mcse_pct": {
+  "value": 3.1170335431472393,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_A_S_relrmse_pct": {
+  "value": 7.670268912612748,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_A_S_relrmse_mcse_pct": {
+  "value": 1.6394869336737734,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_A_I_relbias_pct": {
+  "value": -2.3630461319168545,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_A_I_relbias_mcse_pct": {
+  "value": 5.096560889657732,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_A_I_relrmse_pct": {
+  "value": 10.463446785334288,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_A_I_relrmse_mcse_pct": {
+  "value": 2.4552747269584665,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_I_R_relbias_pct": {
+  "value": -2.488893873070969,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_I_R_relbias_mcse_pct": {
+  "value": 1.0027300274760145,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_I_R_relrmse_pct": {
+  "value": 3.1963201878751764,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_I_R_relrmse_mcse_pct": {
+  "value": 0.7801414600123898,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_R_A_relbias_pct": {
+  "value": -3.534576500114735,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_R_A_relbias_mcse_pct": {
+  "value": 5.73256375327447,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_R_A_relrmse_pct": {
+  "value": 11.997598917141232,
+  "note": ""
+ },
+ "recx_meas_8000_bb_cat_R_A_relrmse_mcse_pct": {
+  "value": 3.926318870865943,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_S_A_relbias_pct": {
+  "value": 354.09603364960583,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_S_A_relbias_mcse_pct": {
+  "value": 2.236646428795156,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_S_A_relrmse_pct": {
+  "value": 354.12428806193526,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_S_A_relrmse_mcse_pct": {
+  "value": 2.2477029929477688,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_A_S_relbias_pct": {
+  "value": 68.98262973471834,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_A_S_relbias_mcse_pct": {
+  "value": 0.8959109506839836,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_A_S_relrmse_pct": {
+  "value": 69.00589707295651,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_A_S_relrmse_mcse_pct": {
+  "value": 0.8970194031959812,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_A_I_relbias_pct": {
+  "value": -55.19347393485918,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_A_I_relbias_mcse_pct": {
+  "value": 0.9160404465171222,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_A_I_relrmse_pct": {
+  "value": 55.22387242304366,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_A_I_relrmse_mcse_pct": {
+  "value": 0.9252666328704469,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_I_R_relbias_pct": {
+  "value": -25.064105158057398,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_I_R_relbias_mcse_pct": {
+  "value": 0.58321864266782,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_I_R_relrmse_pct": {
+  "value": 25.091232399282035,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_I_R_relrmse_mcse_pct": {
+  "value": 0.586311211135817,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_R_A_relbias_pct": {
+  "value": 171.2309450576491,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_R_A_relbias_mcse_pct": {
+  "value": 2.955913093091136,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_R_A_relrmse_pct": {
+  "value": 171.3329689061369,
+  "note": ""
+ },
+ "recx_meas_8000_bb_gauss_R_A_relrmse_mcse_pct": {
+  "value": 2.936910430185741,
+  "note": ""
+ },
+ "recx_exact_reps": {
+  "value": 10,
+  "note": ""
+ },
+ "recx_exact_n": {
+  "value": 2000,
+  "note": ""
+ },
+ "recx_exact_design_forbidden_S_pct": {
+  "value": 1.1729829921438684,
+  "note": "one-year probability of a transition the fitted model sets to zero"
+ },
+ "recx_exact_design_forbidden_A_pct": {
+  "value": 7.034928433598838,
+  "note": "one-year probability of a transition the fitted model sets to zero"
+ },
+ "recx_exact_design_forbidden_I_pct": {
+  "value": 3.131319433349613,
+  "note": "one-year probability of a transition the fitted model sets to zero"
+ },
+ "recx_exact_design_forbidden_R_pct": {
+  "value": 4.384605678549388,
+  "note": "one-year probability of a transition the fitted model sets to zero"
+ },
+ "recx_exact_design_AR_pct": {
+  "value": 7.034928433598838,
+  "note": ""
+ },
+ "recx_exact_design_SI_pct": {
+  "value": 0.9625419166238478,
+  "note": ""
+ },
+ "recx_exact_design_ct_converged_pct": {
+  "value": 100.0,
+  "note": ""
+ },
+ "recx_exact_design_onestep_S_A_hz_relbias_pct": {
+  "value": -6.694676696208597,
+  "note": ""
+ },
+ "recx_exact_design_onestep_S_A_hz_relbias_mcse_pct": {
+  "value": 4.298131419322492,
+  "note": ""
+ },
+ "recx_exact_design_onestep_S_A_hz_relrmse_pct": {
+  "value": 14.528733576835359,
+  "note": ""
+ },
+ "recx_exact_design_onestep_A_S_hz_relbias_pct": {
+  "value": 2.5684160378765717,
+  "note": ""
+ },
+ "recx_exact_design_onestep_A_S_hz_relbias_mcse_pct": {
+  "value": 1.4676157864385868,
+  "note": ""
+ },
+ "recx_exact_design_onestep_A_S_hz_relrmse_pct": {
+  "value": 5.0972370764027986,
+  "note": ""
+ },
+ "recx_exact_design_onestep_A_I_hz_relbias_pct": {
+  "value": 2.4109204484568503,
+  "note": ""
+ },
+ "recx_exact_design_onestep_A_I_hz_relbias_mcse_pct": {
+  "value": 1.6095132713197637,
+  "note": ""
+ },
+ "recx_exact_design_onestep_A_I_hz_relrmse_pct": {
+  "value": 5.396974536143135,
+  "note": ""
+ },
+ "recx_exact_design_onestep_I_R_hz_relbias_pct": {
+  "value": 1.3176042936196934,
+  "note": ""
+ },
+ "recx_exact_design_onestep_I_R_hz_relbias_mcse_pct": {
+  "value": 1.7966432688994824,
+  "note": ""
+ },
+ "recx_exact_design_onestep_I_R_hz_relrmse_pct": {
+  "value": 5.548641671229223,
+  "note": ""
+ },
+ "recx_exact_design_onestep_R_A_hz_relbias_pct": {
+  "value": 0.762150984098826,
+  "note": ""
+ },
+ "recx_exact_design_onestep_R_A_hz_relbias_mcse_pct": {
+  "value": 3.8790901734591827,
+  "note": ""
+ },
+ "recx_exact_design_onestep_R_A_hz_relrmse_pct": {
+  "value": 11.662201305371603,
+  "note": ""
+ },
+ "recx_exact_design_exact_S_A_hz_relbias_pct": {
+  "value": -26.26551974462679,
+  "note": ""
+ },
+ "recx_exact_design_exact_S_A_hz_relbias_mcse_pct": {
+  "value": 4.883032125806157,
+  "note": ""
+ },
+ "recx_exact_design_exact_S_A_hz_relrmse_pct": {
+  "value": 30.07446678048133,
+  "note": ""
+ },
+ "recx_exact_design_exact_A_S_hz_relbias_pct": {
+  "value": -8.554255358206635,
+  "note": ""
+ },
+ "recx_exact_design_exact_A_S_hz_relbias_mcse_pct": {
+  "value": 1.636548628165311,
+  "note": ""
+ },
+ "recx_exact_design_exact_A_S_hz_relrmse_pct": {
+  "value": 9.863057712725542,
+  "note": ""
+ },
+ "recx_exact_design_exact_A_I_hz_relbias_pct": {
+  "value": -35.16472731182205,
+  "note": ""
+ },
+ "recx_exact_design_exact_A_I_hz_relbias_mcse_pct": {
+  "value": 1.860665404331694,
+  "note": ""
+ },
+ "recx_exact_design_exact_A_I_hz_relrmse_pct": {
+  "value": 35.60500988114866,
+  "note": ""
+ },
+ "recx_exact_design_exact_I_R_hz_relbias_pct": {
+  "value": -11.465216851972627,
+  "note": ""
+ },
+ "recx_exact_design_exact_I_R_hz_relbias_mcse_pct": {
+  "value": 1.438820302658191,
+  "note": ""
+ },
+ "recx_exact_design_exact_I_R_hz_relrmse_pct": {
+  "value": 12.250838021655083,
+  "note": ""
+ },
+ "recx_exact_design_exact_R_A_hz_relbias_pct": {
+  "value": -2.354980491833675,
+  "note": ""
+ },
+ "recx_exact_design_exact_R_A_hz_relbias_mcse_pct": {
+  "value": 6.993746188236775,
+  "note": ""
+ },
+ "recx_exact_design_exact_R_A_hz_relrmse_pct": {
+  "value": 21.112989007390805,
+  "note": ""
+ },
+ "recx_exact_design_ct_S_A_hz_relbias_pct": {
+  "value": -9.474331336435379,
+  "note": ""
+ },
+ "recx_exact_design_ct_S_A_hz_relbias_mcse_pct": {
+  "value": 6.918203609980855,
+  "note": ""
+ },
+ "recx_exact_design_ct_S_A_hz_relrmse_pct": {
+  "value": 22.814837824865876,
+  "note": ""
+ },
+ "recx_exact_design_ct_A_S_hz_relbias_pct": {
+  "value": -3.081228627645253,
+  "note": ""
+ },
+ "recx_exact_design_ct_A_S_hz_relbias_mcse_pct": {
+  "value": 2.340963727753759,
+  "note": ""
+ },
+ "recx_exact_design_ct_A_S_hz_relrmse_pct": {
+  "value": 7.669091890683644,
+  "note": ""
+ },
+ "recx_exact_design_ct_A_I_hz_relbias_pct": {
+  "value": -3.042037420117946,
+  "note": ""
+ },
+ "recx_exact_design_ct_A_I_hz_relbias_mcse_pct": {
+  "value": 2.7916601184053316,
+  "note": ""
+ },
+ "recx_exact_design_ct_A_I_hz_relrmse_pct": {
+  "value": 8.910347221946612,
+  "note": ""
+ },
+ "recx_exact_design_ct_I_R_hz_relbias_pct": {
+  "value": -4.359371731078582,
+  "note": ""
+ },
+ "recx_exact_design_ct_I_R_hz_relbias_mcse_pct": {
+  "value": 1.3052495969913003,
+  "note": ""
+ },
+ "recx_exact_design_ct_I_R_hz_relrmse_pct": {
+  "value": 5.859796112813197,
+  "note": ""
+ },
+ "recx_exact_design_ct_R_A_hz_relbias_pct": {
+  "value": 0.011526645985924604,
+  "note": ""
+ },
+ "recx_exact_design_ct_R_A_hz_relbias_mcse_pct": {
+  "value": 5.379406103195493,
+  "note": ""
+ },
+ "recx_exact_design_ct_R_A_hz_relrmse_pct": {
+  "value": 16.138222426012103,
+  "note": ""
+ },
+ "recx_exact_central_forbidden_S_pct": {
+  "value": 4.463911251661533,
+  "note": "one-year probability of a transition the fitted model sets to zero"
+ },
+ "recx_exact_central_forbidden_A_pct": {
+  "value": 3.5747629287333993,
+  "note": "one-year probability of a transition the fitted model sets to zero"
+ },
+ "recx_exact_central_forbidden_I_pct": {
+  "value": 2.5010211575893226,
+  "note": "one-year probability of a transition the fitted model sets to zero"
+ },
+ "recx_exact_central_forbidden_R_pct": {
+  "value": 2.1541758085385267,
+  "note": "one-year probability of a transition the fitted model sets to zero"
+ },
+ "recx_exact_central_AR_pct": {
+  "value": 3.5747629287333993,
+  "note": ""
+ },
+ "recx_exact_central_SI_pct": {
+  "value": 3.703063074010862,
+  "note": ""
+ },
+ "recx_exact_central_ct_converged_pct": {
+  "value": 100.0,
+  "note": ""
+ },
+ "recx_exact_central_onestep_S_A_hz_relbias_pct": {
+  "value": 0.9983160940578459,
+  "note": ""
+ },
+ "recx_exact_central_onestep_S_A_hz_relbias_mcse_pct": {
+  "value": 1.9240498883733808,
+  "note": ""
+ },
+ "recx_exact_central_onestep_S_A_hz_relrmse_pct": {
+  "value": 5.8578448921255575,
+  "note": ""
+ },
+ "recx_exact_central_onestep_A_S_hz_relbias_pct": {
+  "value": -1.2350300863596644,
+  "note": ""
+ },
+ "recx_exact_central_onestep_A_S_hz_relbias_mcse_pct": {
+  "value": 1.468620181480041,
+  "note": ""
+ },
+ "recx_exact_central_onestep_A_S_hz_relrmse_pct": {
+  "value": 4.575686445908174,
+  "note": ""
+ },
+ "recx_exact_central_onestep_A_I_hz_relbias_pct": {
+  "value": 2.479356411721157,
+  "note": ""
+ },
+ "recx_exact_central_onestep_A_I_hz_relbias_mcse_pct": {
+  "value": 1.7781096352118766,
+  "note": ""
+ },
+ "recx_exact_central_onestep_A_I_hz_relrmse_pct": {
+  "value": 5.882369683201034,
+  "note": ""
+ },
+ "recx_exact_central_onestep_I_R_hz_relbias_pct": {
+  "value": -1.6090010002333563,
+  "note": ""
+ },
+ "recx_exact_central_onestep_I_R_hz_relbias_mcse_pct": {
+  "value": 1.3403763542729026,
+  "note": ""
+ },
+ "recx_exact_central_onestep_I_R_hz_relrmse_pct": {
+  "value": 4.3310926056362735,
+  "note": ""
+ },
+ "recx_exact_central_onestep_R_A_hz_relbias_pct": {
+  "value": -0.29861558908901575,
+  "note": ""
+ },
+ "recx_exact_central_onestep_R_A_hz_relbias_mcse_pct": {
+  "value": 3.5959539269753225,
+  "note": ""
+ },
+ "recx_exact_central_onestep_R_A_hz_relrmse_pct": {
+  "value": 10.791993934135162,
+  "note": ""
+ },
+ "recx_exact_central_exact_S_A_hz_relbias_pct": {
+  "value": -39.68858974022428,
+  "note": ""
+ },
+ "recx_exact_central_exact_S_A_hz_relbias_mcse_pct": {
+  "value": 2.235238876894736,
+  "note": ""
+ },
+ "recx_exact_central_exact_S_A_hz_relrmse_pct": {
+  "value": 40.251096768894016,
+  "note": ""
+ },
+ "recx_exact_central_exact_A_S_hz_relbias_pct": {
+  "value": -36.88368476221496,
+  "note": ""
+ },
+ "recx_exact_central_exact_A_S_hz_relbias_mcse_pct": {
+  "value": 1.8176218181023571,
+  "note": ""
+ },
+ "recx_exact_central_exact_A_S_hz_relrmse_pct": {
+  "value": 37.284580503221754,
+  "note": ""
+ },
+ "recx_exact_central_exact_A_I_hz_relbias_pct": {
+  "value": -25.969078790791905,
+  "note": ""
+ },
+ "recx_exact_central_exact_A_I_hz_relbias_mcse_pct": {
+  "value": 1.5648365873501633,
+  "note": ""
+ },
+ "recx_exact_central_exact_A_I_hz_relrmse_pct": {
+  "value": 26.38998816120131,
+  "note": ""
+ },
+ "recx_exact_central_exact_I_R_hz_relbias_pct": {
+  "value": -6.372549215117556,
+  "note": ""
+ },
+ "recx_exact_central_exact_I_R_hz_relbias_mcse_pct": {
+  "value": 1.3750950469317496,
+  "note": ""
+ },
+ "recx_exact_central_exact_I_R_hz_relrmse_pct": {
+  "value": 7.591268734010242,
+  "note": ""
+ },
+ "recx_exact_central_exact_R_A_hz_relbias_pct": {
+  "value": -5.531582430725738,
+  "note": ""
+ },
+ "recx_exact_central_exact_R_A_hz_relbias_mcse_pct": {
+  "value": 2.4364406989659098,
+  "note": ""
+ },
+ "recx_exact_central_exact_R_A_hz_relrmse_pct": {
+  "value": 9.16649298827589,
+  "note": ""
+ },
+ "recx_exact_central_ct_S_A_hz_relbias_pct": {
+  "value": -1.4919230059602913,
+  "note": ""
+ },
+ "recx_exact_central_ct_S_A_hz_relbias_mcse_pct": {
+  "value": 3.1591194282599573,
+  "note": ""
+ },
+ "recx_exact_central_ct_S_A_hz_relrmse_pct": {
+  "value": 9.594068704871738,
+  "note": ""
+ },
+ "recx_exact_central_ct_A_S_hz_relbias_pct": {
+  "value": -0.5788880316942501,
+  "note": ""
+ },
+ "recx_exact_central_ct_A_S_hz_relbias_mcse_pct": {
+  "value": 3.134751845495579,
+  "note": ""
+ },
+ "recx_exact_central_ct_A_S_hz_relrmse_pct": {
+  "value": 9.42205569654416,
+  "note": ""
+ },
+ "recx_exact_central_ct_A_I_hz_relbias_pct": {
+  "value": -1.1233859079477624,
+  "note": ""
+ },
+ "recx_exact_central_ct_A_I_hz_relbias_mcse_pct": {
+  "value": 2.218665319634214,
+  "note": ""
+ },
+ "recx_exact_central_ct_A_I_hz_relrmse_pct": {
+  "value": 6.750131710056028,
+  "note": ""
+ },
+ "recx_exact_central_ct_I_R_hz_relbias_pct": {
+  "value": -1.7958933743466383,
+  "note": ""
+ },
+ "recx_exact_central_ct_I_R_hz_relbias_mcse_pct": {
+  "value": 1.2871493582197961,
+  "note": ""
+ },
+ "recx_exact_central_ct_I_R_hz_relrmse_pct": {
+  "value": 4.258639952533303,
+  "note": ""
+ },
+ "recx_exact_central_ct_R_A_hz_relbias_pct": {
+  "value": 0.8868354492744825,
+  "note": ""
+ },
+ "recx_exact_central_ct_R_A_hz_relbias_mcse_pct": {
+  "value": 2.472339400658753,
+  "note": ""
+ },
+ "recx_exact_central_ct_R_A_hz_relrmse_pct": {
+  "value": 7.4698484671736844,
+  "note": ""
+ },
+ "recx_cpu_minutes_exact": {
+  "value": 0.9450128078460693,
+  "note": ""
+ },
+ "recx_runtime_minutes": {
+  "value": 15.29182455142339,
+  "note": ""
+ },
+ "recx_cpu_minutes_grid": {
+  "value": 14.246865812937418,
+  "note": ""
+ },
+ "recx_cpu_minutes_item": {
+  "value": 8.615261097749075,
+  "note": ""
+ },
+ "recx_cpu_minutes_meas": {
+  "value": 6.685575544834137,
+  "note": ""
+ },
+ "recx_n_fits_total": {
+  "value": 703,
+  "note": ""
+ },
+ "recx_seed": {
+  "value": 20261731,
+  "note": ""
+ }
+}

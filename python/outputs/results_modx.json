@@ -1,0 +1,126 @@
+{
+ "modx_dur_A_years": {
+  "value": 1.6482610845557937,
+  "note": ""
+ },
+ "modx_dur_I_years": {
+  "value": 1.6215339711366952,
+  "note": ""
+ },
+ "modx_dur_R_years": {
+  "value": 5.3561863952865565,
+  "note": ""
+ },
+ "modx_p_A_to_I": {
+  "value": 0.3131696060656008,
+  "note": ""
+ },
+ "modx_p_A_to_S": {
+  "value": 0.5768913795945277,
+  "note": ""
+ },
+ "modx_p_A_exit": {
+  "value": 0.10993901433987142,
+  "note": ""
+ },
+ "modx_p_I_to_R": {
+  "value": 0.8918436841251824,
+  "note": ""
+ },
+ "modx_p_R_to_A": {
+  "value": 0.6427423674343867,
+  "note": ""
+ },
+ "modx_q_loop": {
+  "value": 0.17951687320594162,
+  "note": ""
+ },
+ "modx_expected_A_spells_per_entry": {
+  "value": 1.218794107207765,
+  "note": ""
+ },
+ "modx_expected_I_spells_per_entry": {
+  "value": 0.38168927042933143,
+  "note": ""
+ },
+ "modx_lambda_star": {
+  "value": 0.6813439394847891,
+  "note": ""
+ },
+ "modx_hazard_SA_star": {
+  "value": 0.6913439394847891,
+  "note": ""
+ },
+ "modx_share_SA_social_pct": {
+  "value": 98.55354195952708,
+  "note": ""
+ },
+ "modx_ever_I_by25_b1_pct": {
+  "value": 80.9422556679104,
+  "note": ""
+ },
+ "modx_in_I_at25_b1_pct": {
+  "value": 10.627779393424657,
+  "note": ""
+ },
+ "modx_ever_I_by12_b1_pct": {
+  "value": 12.936099893302492,
+  "note": ""
+ },
+ "modx_ever_I_by13_b1_pct": {
+  "value": 21.908759584907685,
+  "note": ""
+ },
+ "modx_ever_I_by16_b1_pct": {
+  "value": 44.90662002001202,
+  "note": ""
+ },
+ "modx_ever_I_by20_b1_pct": {
+  "value": 65.62354397442576,
+  "note": ""
+ },
+ "modx_years_in_I_b1": {
+  "value": 1.6688702437506724,
+  "note": ""
+ },
+ "modx_hazard_SA_b1": {
+  "value": 0.6913439394847891,
+  "note": ""
+ },
+ "modx_ever_I_by25_b0_pct": {
+  "value": 56.31110720712431,
+  "note": ""
+ },
+ "modx_in_I_at25_b0_pct": {
+  "value": 8.14060342365847,
+  "note": ""
+ },
+ "modx_ever_I_by12_b0_pct": {
+  "value": 5.442026919180529,
+  "note": ""
+ },
+ "modx_ever_I_by13_b0_pct": {
+  "value": 10.026609108030694,
+  "note": ""
+ },
+ "modx_ever_I_by16_b0_pct": {
+  "value": 24.31759190864881,
+  "note": ""
+ },
+ "modx_ever_I_by20_b0_pct": {
+  "value": 40.66409306809806,
+  "note": ""
+ },
+ "modx_years_in_I_b0": {
+  "value": 1.0608365761732204,
+  "note": ""
+ },
+ "modx_hazard_SA_b0": {
+  "value": 0.22775684999186813,
+  "note": ""
+ },
+ "modx_mean_A_to_I_given_progress_years": {
+  "value": 1.6482610845557937,
+  "note": ""
+ }
+}
