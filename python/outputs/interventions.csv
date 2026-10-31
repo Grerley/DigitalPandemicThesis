@@ -1,0 +1,9 @@
+combination,median_reduction_2042,p05,p95
+platform,0.1323,0.0230,0.3237
+school,0.0927,0.0164,0.2187
+minimum_age,0.1184,0.0238,0.2374
+treatment,0.3713,0.2150,0.5157
+platform+minimum_age,0.2936,0.0609,0.5214
+school+treatment,0.4520,0.2862,0.6203
+platform+school,0.2661,0.0476,0.5106
+platform+school+minimum_age+treatment,0.6878,0.3908,0.8642
