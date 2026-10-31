@@ -232,7 +232,7 @@ def sec4(pc0, pc1):
         bt = brentq(lambda b: R0(q.with_(b=b)) - r0t, 1e-6, 100)
         pm.append(1 - extinction_probs(q.with_(b=bt))[0])
     fig, ax = plt.subplots(figsize=(6.4, 3.2))
-    ax.plot(r0s, pm, color=C1, lw=2, label="Starting from one At-Risk young person")
+    ax.plot(r0s, pm, color=C1, lw=2, ls="-", label="Starting from one At-Risk young person")
     ax.plot(r0s, 1 - 1 / r0s, color=GREY, lw=1, ls="--", label="$1 - 1/\\mathcal{R}_0$ (single-type reference)")
     ax.set_xlabel("$\\mathcal{R}_0$"); ax.set_ylabel("Probability of a major outbreak"); ax.set_ylim(0, 1)
     ax.legend(frameon=False, fontsize=8); fig.savefig(FIG / "fig_mathx_invasion.png"); plt.close(fig)
@@ -346,7 +346,7 @@ def sec6(pc1, x18):
     labels = {"b": "b", "eta": "η", "alpha": "α", "sigma": "σ", "gamma1": "γ₁", "gamma2": "γ₂", "delta": "δ", "nu": "ν"}
     fig, axs = plt.subplots(2, 4, figsize=(7.2, 3.8), sharey=True)
     for ax, nm in zip(axs.flat, NAMES):
-        ax.plot(np.exp(grid), np.minimum(prof[nm], 40), color=C1, marker="o", ms=2)
+        ax.plot(np.exp(grid), np.minimum(prof[nm], 40), color=C1, marker="o", ms=2, ls="-")
         ax.axhline(3.84, color=C2, lw=0.8, ls="--"); ax.set_xscale("log"); ax.set_title(labels[nm], fontsize=9)
         from matplotlib.ticker import NullFormatter, FixedLocator, FixedFormatter
         ax.xaxis.set_major_locator(FixedLocator([0.3, 1, 3])); ax.xaxis.set_major_formatter(FixedFormatter(["0.3", "1", "3"]))
@@ -369,7 +369,7 @@ def sec7(pc1):
     fig, ax = plt.subplots(figsize=(6.4, 3.8))
     cs = ax.contourf(bs, g2s, Z, levels=np.arange(0, 32, 2), cmap="Blues")
     ax.contour(bs, g2s, Z, levels=[7, 11], colors=[INK], linewidths=0.8, linestyles=["--", "-"])
-    ax.plot(R0line, g2s, color=C2, lw=1.5, label="$\\mathcal{R}_0 = 1$ (for $\\alpha = 0$)")
+    ax.plot(R0line, g2s, color=C2, lw=1.5, ls="-.", label="$\\mathcal{R}_0 = 1$ (for $\\alpha = 0$)")
     ax.plot([pc1.b], [pc1.gamma2], "o", color=C2)
     ax.set_xlim(bs[0], bs[-1]); ax.set_xlabel("Exposure rate $b$ (per year)"); ax.set_ylabel("Recovery rate $\\gamma_2$ (per year)")
     fig.colorbar(cs, ax=ax, label="Equilibrium problematic use (%)"); ax.legend(frameon=False, fontsize=8, loc="upper left")

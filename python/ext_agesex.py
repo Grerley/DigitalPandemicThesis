@@ -135,8 +135,8 @@ def central_analysis(pc_base, st):
     yrs, s, _ = out["P_series"]
     fig, axs = plt.subplots(1, 2, figsize=(7.0, 3.2), sharey=True)
     ax = axs[0]
-    ax.plot(yrs, s["girls"] * 100, color=C2, lw=2, label="Girls (HBSC ages)")
-    ax.plot(yrs, s["boys"] * 100, color=C1, lw=2, label="Boys (HBSC ages)")
+    ax.plot(yrs, s["girls"] * 100, color=C2, lw=2, ls="-", label="Girls (HBSC ages)")
+    ax.plot(yrs, s["boys"] * 100, color=C1, lw=2, ls="-.", label="Boys (HBSC ages)")
     ax.plot(yrs, s["whole"] * 100, color=INK, lw=1, ls="--", label="Whole population 10 to 24")
     ax.errorbar([2022, 2022], [13, 9], yerr=0.5, fmt="o", color=GREY, capsize=3)
     ax.errorbar([2018], [7], yerr=0.5, fmt="s", color=GREY, capsize=3)

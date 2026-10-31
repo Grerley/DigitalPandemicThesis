@@ -479,8 +479,8 @@ def fig_profiles(sol, cmp_, start):
     t = sol["t"] + start
     fig, ax = plt.subplots(1, 2, figsize=(9.0, 3.5))
     a = ax[0]
-    a.plot(t, 100 * sol["u1"], color=C2, lw=1.8, label=f"$u_1$: exposure (ceiling: $b$ cut {100 * U1MAX:.0f}%)")
-    a.plot(t, 100 * sol["u2"], color=C1, lw=1.8, label=f"$u_2$: recovery (ceiling: $\\gamma_2$ up {100 * U2MAX:.0f}%)")
+    a.plot(t, 100 * sol["u1"], color=C2, lw=1.8, ls="-.", label=f"$u_1$: exposure (ceiling: $b$ cut {100 * U1MAX:.0f}%)")
+    a.plot(t, 100 * sol["u2"], color=C1, lw=1.8, ls="-", label=f"$u_2$: recovery (ceiling: $\\gamma_2$ up {100 * U2MAX:.0f}%)")
     a.axhline(100 * cmp_["c1"], color=C2, lw=1, ls="--")
     a.axhline(100 * cmp_["c2"], color=C1, lw=1, ls="--")
     a.set_ylabel("control (% of its efficacy ceiling)"); a.set_xlabel("year")
@@ -505,8 +505,8 @@ def fig_grid(rows):
         ax[0].plot(RATIOS, sh, color=INK, ls=ls, marker="o", ms=3, label=lab)
         m1 = [100 * rows[(lev, r)]["s"]["u1_mean"] for r in RATIOS]
         m2 = [100 * rows[(lev, r)]["s"]["u2_mean"] for r in RATIOS]
-        ax[1].plot(RATIOS, m1, color=C2, ls=ls, marker="o", ms=3)
-        ax[1].plot(RATIOS, m2, color=C1, ls=ls, marker="o", ms=3)
+        ax[1].plot(RATIOS, m1, color=C2, ls=ls, marker="s", ms=3)
+        ax[1].plot(RATIOS, m2, color=C1, ls=ls, marker="^", ms=3.5)
     for a in ax:
         a.set_xscale("log", base=2); a.set_xlabel("weight ratio $B_1/B_2$")
         a.axvline(1, color=GREY, lw=0.8)
@@ -515,7 +515,7 @@ def fig_grid(rows):
     ax[0].legend(frameon=False, fontsize=8)
     ax[0].set_title("Split of effort between the two controls", fontsize=9, loc="left")
     ax[1].set_ylabel("time-averaged control (% of ceiling)"); ax[1].set_ylim(0, 105)
-    ax[1].set_title("Exposure ($u_1$, orange) and recovery ($u_2$, blue)", fontsize=9, loc="left")
+    ax[1].set_title("Exposure ($u_1$, squares) and recovery ($u_2$, triangles)", fontsize=9, loc="left")
     fig.tight_layout(); fig.savefig(FIG / "fig_ctl_weights.png"); plt.close(fig)
 
 

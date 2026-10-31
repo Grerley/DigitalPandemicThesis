@@ -81,8 +81,8 @@ def sec1(pc0, pc1, x18):
     put("curve_platform_max_possible_pct", 100 * (1 - floor / base))
     fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.2), sharey=True)
     ax = axs[0]
-    for k, col in [("platform", C1), ("minimum_age", C3), ("treatment_d", C2)]:
-        g, r, lab = out[k]; ax.plot(g * 100, r, color=col, lw=2, label=lab)
+    for k, col, lst in [("platform", C1, "-"), ("minimum_age", C3, ":"), ("treatment_d", C2, "-.")]:
+        g, r, lab = out[k]; ax.plot(g * 100, r, color=col, lw=2, ls=lst, label=lab)
     ax.axhline(100 * (1 - floor / base), color=GREY, lw=0.8, ls="--")
     ax.text(2, 100 * (1 - floor / base) + 1.5, "limit for exposure-only policies", fontsize=7, color=GREY)
     ax.set_xlabel("Efficacy or compliance (%)"); ax.set_ylabel("Reduction in 2042 (%)"); ax.legend(frameon=False, fontsize=7, loc="center left")

@@ -40,6 +40,9 @@ def pct(x):
 plt.rcParams.update({"font.size": 10, "axes.spines.top": False, "axes.spines.right": False,
                      "figure.dpi": 150, "savefig.bbox": "tight", "font.family": "DejaVu Sans"})
 INK = "#1f2933"; C1 = "#2f6db5"; C2 = "#c2571a"; C3 = "#4b8b3b"; GREY = "#9aa5b1"
+if __import__("os").environ.get("DPM_BW") == "1":  # black-and-white journal figures for the LaTeX edition
+    from dpm import bw as _bw
+    _bw.install(plt)
 
 
 # ---------------------------------------------------------------- 1. calibration
@@ -200,7 +203,7 @@ def run_mathematics(pc0, pc1):
     I0 = [equilibrium(pc1.with_(b=b, alpha=0.0))[2] * 100 for b in bs]
     Ia = [equilibrium(pc1.with_(b=b))[2] * 100 for b in bs]
     fig, ax = plt.subplots(figsize=(6.4, 3.4))
-    ax.plot(r0s, I0, color=C1, lw=2, label="α = 0: threshold at R₀ = 1")
+    ax.plot(r0s, I0, color=C1, lw=2, ls="-", label="α = 0: threshold at R₀ = 1")
     ax.plot(r0s, Ia, color=C2, lw=2, ls="--", label=f"α = {pc1.alpha:.3f} per year: no threshold")
     ax.axvline(1, color=GREY, lw=0.8); ax.set_xlabel("R₀ (exposure rate b varied, other parameters central)")
     ax.set_ylabel("Equilibrium problematic use I* (%)"); ax.legend(frameon=False, fontsize=8)
@@ -435,10 +438,10 @@ def run_networks(pc1, x22, reps, n_nodes):
     put("net_meanfield_I2042", pct(y[2, -1]))
     fig, ax = plt.subplots(figsize=(6.4, 3.6))
     yrs = np.arange(2022, 2043)
-    for kind, col in [("ER", C1), ("WS", C3), ("BA", C2)]:
+    for kind, col, lst in [("ER", C1, "-"), ("WS", C3, ":"), ("BA", C2, "-.")]:
         r = traj[kind] * 100
         ax.fill_between(yrs, np.percentile(r, 5, 0), np.percentile(r, 95, 0), color=col, alpha=0.15, lw=0)
-        ax.plot(yrs, r.mean(0), color=col, lw=2, label={"ER": "Erdős–Rényi", "WS": "Watts–Strogatz", "BA": "Barabási–Albert"}[kind])
+        ax.plot(yrs, r.mean(0), color=col, lw=2, ls=lst, label={"ER": "Erdős–Rényi", "WS": "Watts–Strogatz", "BA": "Barabási–Albert"}[kind])
     ax.plot(yrs, y[2] * 100, color=INK, lw=1.2, ls="--", label="Mean-field ODE")
     ax.set_xlabel("Year"); ax.set_ylabel("Problematic use (%)"); ax.set_ylim(0, None); ax.legend(frameon=False, fontsize=8)
     ax.set_xticks(np.arange(2022, 2043, 4))
@@ -633,7 +636,7 @@ def run_sa(pc0, pc1, access):
     fs = np.linspace(0.05, 1.0, 60)
     Ic = np.array([equilibrium(pc1.with_(b=pc1.b * f))[2] * 100 for f in fs])
     fig, ax = plt.subplots(figsize=(6.4, 3.4))
-    ax.plot(fs * 100, Ic, color=C1, lw=2, label="Among connected young people")
+    ax.plot(fs * 100, Ic, color=C1, lw=2, ls="-", label="Among connected young people")
     ax.plot(fs * 100, fs * Ic, color=C2, lw=2, ls="--", label="Whole population (unconnected counted as none)")
     pretty = {"Households_national_2024": "Households, national, 2024", "Urban_households_2023": "Urban households, 2023",
               "Children_9_17_2016": "Children 9 to 17, 2016", "Rural_households_2023": "Rural households, 2023"}

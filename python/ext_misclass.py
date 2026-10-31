@@ -70,7 +70,7 @@ def figure():
         ax[0].plot(fp, [100 * true_prev(0.11, se, s) for s in SP], "s--", color=cols[se], label=f"2022, Se = {se:.1f}")
         ax[1].plot(fp, [Rr[f"misx_{tag(se, s)}_central_R0_b1"]["value"] for s in SP], "o-", color=cols[se], label=f"Se = {se:.1f}")
     ax[0].set_xlabel("False-positive rate, 1 - Sp (%)"); ax[0].set_ylabel("Implied model prevalence (%)")
-    ax[0].legend(frameon=False, fontsize=7, ncol=2); ax[0].grid(alpha=0.3)
+    ax[0].legend(frameon=False, fontsize=7, ncol=3, loc="lower left", bbox_to_anchor=(0, 1.0)); ax[0].grid(alpha=0.3)
     ax[1].set_xlabel("False-positive rate, 1 - Sp (%)"); ax[1].set_ylabel(r"$\mathcal{R}_0$ after 2018 (with $\alpha = 0$)")
     ax[1].legend(frameon=False, fontsize=8); ax[1].grid(alpha=0.3)
     fig.tight_layout(); fig.savefig(FIG / "fig_misx_grid.png", dpi=200); plt.close(fig)
