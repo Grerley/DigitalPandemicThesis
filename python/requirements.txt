@@ -1,0 +1,6 @@
+# Exact versions used to produce the results reported in the thesis (see Appendix C).
+numpy==2.5.3
+scipy==1.18.1
+networkx==3.7
+matplotlib==3.11.2
+pytest==9.1.1
