@@ -217,7 +217,7 @@ def sec5():
     put("P2026_share_le10_pct", float(100 * np.mean(P < 10.5))); put("T2026_share_le10_pct", float(100 * np.mean(T < 10.5)))
     fig, ax = plt.subplots(figsize=(6.4, 3.0))
     xs = np.linspace(5, 20, 300)
-    ax.plot(xs, kP(xs), color=C1, lw=2, label="Scenario P"); ax.plot(xs, kT(xs), color=C2, lw=2, label="Scenario T")
+    ax.plot(xs, kP(xs), color=C1, lw=2, ls="-", label="Scenario P"); ax.plot(xs, kT(xs), color=C2, lw=2, ls="--", label="Scenario T")
     ax.set_xlabel("Projected problematic use in 2026 (%)"); ax.set_ylabel("Density across draws")
     ax.legend(frameon=False, fontsize=8); fig.savefig(FIG / "fig_calx_2026.png"); plt.close(fig)
 

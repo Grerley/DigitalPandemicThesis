@@ -1,0 +1,342 @@
+{
+ "p2_n_implicit": {
+  "value": 7169,
+  "note": ""
+ },
+ "p2_n_P_solvable": {
+  "value": 7238,
+  "note": ""
+ },
+ "p2_n_T_solvable": {
+  "value": 7260,
+  "note": ""
+ },
+ "p2_implicit_P2026_median": {
+  "value": 13.316763629427783,
+  "note": ""
+ },
+ "p2_implicit_T2026_median": {
+  "value": 10.383095099332184,
+  "note": ""
+ },
+ "p2_implicit_lr_9": {
+  "value": 0.04759220271318211,
+  "note": ""
+ },
+ "p2_implicit_post_P_9_pct": {
+  "value": 4.543008490319231,
+  "note": ""
+ },
+ "p2_implicit_pP_9": {
+  "value": 0.007012619437850519,
+  "note": ""
+ },
+ "p2_implicit_pT_9": {
+  "value": 0.14734807464391977,
+  "note": ""
+ },
+ "p2_implicit_lr_10": {
+  "value": 0.6014379872050005,
+  "note": ""
+ },
+ "p2_implicit_post_P_10_pct": {
+  "value": 37.556120936952034,
+  "note": ""
+ },
+ "p2_implicit_pP_10": {
+  "value": 0.10138592101692664,
+  "note": ""
+ },
+ "p2_implicit_pT_10": {
+  "value": 0.16857252646791862,
+  "note": ""
+ },
+ "p2_implicit_lr_11": {
+  "value": 0.7379485325997274,
+  "note": ""
+ },
+ "p2_implicit_post_P_11_pct": {
+  "value": 42.46089678477761,
+  "note": ""
+ },
+ "p2_implicit_pP_11": {
+  "value": 0.14861338402175336,
+  "note": ""
+ },
+ "p2_implicit_pT_11": {
+  "value": 0.20138719362744928,
+  "note": ""
+ },
+ "p2_implicit_lr_12": {
+  "value": 0.7477058234464513,
+  "note": ""
+ },
+ "p2_implicit_post_P_12_pct": {
+  "value": 42.7821326344262,
+  "note": ""
+ },
+ "p2_implicit_pP_12": {
+  "value": 0.13197193508586735,
+  "note": ""
+ },
+ "p2_implicit_pT_12": {
+  "value": 0.17650248392818466,
+  "note": ""
+ },
+ "p2_implicit_lr_13": {
+  "value": 1.7589618371664923,
+  "note": ""
+ },
+ "p2_implicit_post_P_13_pct": {
+  "value": 63.75448233720335,
+  "note": ""
+ },
+ "p2_implicit_pP_13": {
+  "value": 0.1423661867997443,
+  "note": ""
+ },
+ "p2_implicit_pT_13": {
+  "value": 0.08093762115332853,
+  "note": ""
+ },
+ "p2_implicit_lr_14": {
+  "value": 10.689532284020391,
+  "note": ""
+ },
+ "p2_implicit_post_P_14_pct": {
+  "value": 91.44533779707336,
+  "note": ""
+ },
+ "p2_implicit_pP_14": {
+  "value": 0.16517915371454617,
+  "note": ""
+ },
+ "p2_implicit_pT_14": {
+  "value": 0.01545242105320827,
+  "note": ""
+ },
+ "p2_flat_P_ess": {
+  "value": 310.3007004534833,
+  "note": ""
+ },
+ "p2_flat_P2026_median": {
+  "value": 10.29594778439032,
+  "note": ""
+ },
+ "p2_flat_T_ess": {
+  "value": 177.45839510861853,
+  "note": ""
+ },
+ "p2_flat_T2026_median": {
+  "value": 7.074382628157144,
+  "note": ""
+ },
+ "p2_flat_lr_9": {
+  "value": 1.1774988267213107,
+  "note": ""
+ },
+ "p2_flat_post_P_9_pct": {
+  "value": 54.07575022643235,
+  "note": ""
+ },
+ "p2_flat_pP_9": {
+  "value": 0.028509875788703714,
+  "note": ""
+ },
+ "p2_flat_pT_9": {
+  "value": 0.024212232863185183,
+  "note": ""
+ },
+ "p2_flat_lr_10": {
+  "value": 141.65418166377341,
+  "note": ""
+ },
+ "p2_flat_post_P_10_pct": {
+  "value": 99.2990040752139,
+  "note": ""
+ },
+ "p2_flat_pP_10": {
+  "value": 0.6337655411650694,
+  "note": ""
+ },
+ "p2_flat_pT_10": {
+  "value": 0.004474033408130219,
+  "note": ""
+ },
+ "p2_flat_lr_11": {
+  "value": 135.54302424435488,
+  "note": ""
+ },
+ "p2_flat_post_P_11_pct": {
+  "value": 99.26763010740818,
+  "note": ""
+ },
+ "p2_flat_pP_11": {
+  "value": 0.30568365052300345,
+  "note": ""
+ },
+ "p2_flat_pT_11": {
+  "value": 0.0022552518082518333,
+  "note": ""
+ },
+ "p2_flat_lr_12": {
+  "value": 15.831883654786996,
+  "note": ""
+ },
+ "p2_flat_post_P_12_pct": {
+  "value": 94.05889429543674,
+  "note": ""
+ },
+ "p2_flat_pP_12": {
+  "value": 0.017441723689311916,
+  "note": ""
+ },
+ "p2_flat_pT_12": {
+  "value": 0.0011016834174396022,
+  "note": ""
+ },
+ "p2_flat_lr_13": {
+  "value": 20.122151399903608,
+  "note": ""
+ },
+ "p2_flat_post_P_13_pct": {
+  "value": 95.26563378385517,
+  "note": ""
+ },
+ "p2_flat_pP_13": {
+  "value": 0.006498316109432002,
+  "note": ""
+ },
+ "p2_flat_pT_13": {
+  "value": 0.00032294340601488227,
+  "note": ""
+ },
+ "p2_flat_lr_14": {
+  "value": 90.8669576305497,
+  "note": ""
+ },
+ "p2_flat_post_P_14_pct": {
+  "value": 98.91146934023702,
+  "note": ""
+ },
+ "p2_flat_pP_14": {
+  "value": 0.004226883993266938,
+  "note": ""
+ },
+ "p2_flat_pT_14": {
+  "value": 4.6517283108044205e-05,
+  "note": ""
+ },
+ "p2_log_P_ess": {
+  "value": 251.77709805586213,
+  "note": ""
+ },
+ "p2_log_P2026_median": {
+  "value": 10.440257075446462,
+  "note": ""
+ },
+ "p2_log_T_ess": {
+  "value": 760.0328088960324,
+  "note": ""
+ },
+ "p2_log_T2026_median": {
+  "value": 8.104964423467564,
+  "note": ""
+ },
+ "p2_log_lr_9": {
+  "value": 0.8208160209074804,
+  "note": ""
+ },
+ "p2_log_post_P_9_pct": {
+  "value": 45.07956935145992,
+  "note": ""
+ },
+ "p2_log_pP_9": {
+  "value": 0.09144209896912618,
+  "note": ""
+ },
+ "p2_log_pT_9": {
+  "value": 0.11140389154201612,
+  "note": ""
+ },
+ "p2_log_lr_10": {
+  "value": 3.478641475667762,
+  "note": ""
+ },
+ "p2_log_post_P_10_pct": {
+  "value": 77.67180057986444,
+  "note": ""
+ },
+ "p2_log_pP_10": {
+  "value": 0.3726472332597178,
+  "note": ""
+ },
+ "p2_log_pT_10": {
+  "value": 0.10712435755920613,
+  "note": ""
+ },
+ "p2_log_lr_11": {
+  "value": 2.341150461018009,
+  "note": ""
+ },
+ "p2_log_post_P_11_pct": {
+  "value": 70.07018954497153,
+  "note": ""
+ },
+ "p2_log_pP_11": {
+  "value": 0.2822583778182977,
+  "note": ""
+ },
+ "p2_log_pT_11": {
+  "value": 0.12056396311049676,
+  "note": ""
+ },
+ "p2_log_lr_12": {
+  "value": 0.7879095063526437,
+  "note": ""
+ },
+ "p2_log_post_P_12_pct": {
+  "value": 44.06875759388898,
+  "note": ""
+ },
+ "p2_log_pP_12": {
+  "value": 0.06232925877645749,
+  "note": ""
+ },
+ "p2_log_pT_12": {
+  "value": 0.07910712876785733,
+  "note": ""
+ },
+ "p2_log_lr_13": {
+  "value": 1.1273888119466686,
+  "note": ""
+ },
+ "p2_log_post_P_13_pct": {
+  "value": 52.994018094654294,
+  "note": ""
+ },
+ "p2_log_pP_13": {
+  "value": 0.03228043959390101,
+  "note": ""
+ },
+ "p2_log_pT_13": {
+  "value": 0.02863292526219255,
+  "note": ""
+ },
+ "p2_log_lr_14": {
+  "value": 9.243318422204556,
+  "note": ""
+ },
+ "p2_log_post_P_14_pct": {
+  "value": 90.2375386687942,
+  "note": ""
+ },
+ "p2_log_pP_14": {
+  "value": 0.048318681741222544,
+  "note": ""
+ },
+ "p2_log_pT_14": {
+  "value": 0.005227417203885356,
+  "note": ""
+ }
+}
