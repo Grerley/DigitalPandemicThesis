@@ -1,0 +1,181 @@
+{
+ "p1_erl1_R0": {
+  "value": 4.018263549589861,
+  "note": ""
+ },
+ "p1_erl1_mult": {
+  "value": 1.218794107207765,
+  "note": ""
+ },
+ "p1_erl1_Ieq_pct": {
+  "value": 10.494553908523102,
+  "note": ""
+ },
+ "p1_erl1_floor_pct": {
+  "value": 0.592547263514814,
+  "note": ""
+ },
+ "p1_erl1_halflife": {
+  "value": 1.9793893546985244,
+  "note": ""
+ },
+ "p1_erl2_R0": {
+  "value": 4.074528505031936,
+  "note": ""
+ },
+ "p1_erl2_mult": {
+  "value": 1.2046606547977712,
+  "note": ""
+ },
+ "p1_erl2_Ieq_pct": {
+  "value": 10.300363169563509,
+  "note": ""
+ },
+ "p1_erl2_floor_pct": {
+  "value": 0.5985228742401278,
+  "note": ""
+ },
+ "p1_erl2_halflife": {
+  "value": 2.2158712221370633,
+  "note": ""
+ },
+ "p1_erl3_R0": {
+  "value": 4.092390639472877,
+  "note": ""
+ },
+ "p1_erl3_mult": {
+  "value": 1.1993660950431846,
+  "note": ""
+ },
+ "p1_erl3_Ieq_pct": {
+  "value": 10.223147222773104,
+  "note": ""
+ },
+ "p1_erl3_floor_pct": {
+  "value": 0.6003148106644268,
+  "note": ""
+ },
+ "p1_erl3_halflife": {
+  "value": 2.5607580856446854,
+  "note": ""
+ },
+ "p1_erl5_R0": {
+  "value": 4.106198544112064,
+  "note": ""
+ },
+ "p1_erl5_mult": {
+  "value": 1.1948745359250625,
+  "note": ""
+ },
+ "p1_erl5_Ieq_pct": {
+  "value": 10.155906983406696,
+  "note": ""
+ },
+ "p1_erl5_floor_pct": {
+  "value": 0.6016499708597011,
+  "note": ""
+ },
+ "p1_erl5_halflife": {
+  "value": 3.1404529613156833,
+  "note": ""
+ },
+ "p1_erl10_R0": {
+  "value": 4.116210640227353,
+  "note": ""
+ },
+ "p1_erl10_mult": {
+  "value": 1.1913391911542839,
+  "note": ""
+ },
+ "p1_erl10_Ieq_pct": {
+  "value": 10.10192285594221,
+  "note": ""
+ },
+ "p1_erl10_floor_pct": {
+  "value": 0.6025837436411876,
+  "note": ""
+ },
+ "p1_erl10_halflife": {
+  "value": 4.008302255488282,
+  "note": ""
+ },
+ "p1_erl20_R0": {
+  "value": 4.1210893974833676,
+  "note": ""
+ },
+ "p1_erl20_mult": {
+  "value": 1.1895133661428978,
+  "note": ""
+ },
+ "p1_erl20_Ieq_pct": {
+  "value": 10.073693118434363,
+  "note": ""
+ },
+ "p1_erl20_floor_pct": {
+  "value": 0.6030261932939629,
+  "note": ""
+ },
+ "p1_erl20_halflife": {
+  "value": 4.758172889025227,
+  "note": ""
+ },
+ "p1_erlinf_R0": {
+  "value": 4.125855423824628,
+  "note": ""
+ },
+ "p1_erlinf_mult": {
+  "value": 1.187653913677985,
+  "note": ""
+ },
+ "p1_erlinf_Ieq_pct": {
+  "value": 10.044706525836983,
+  "note": ""
+ },
+ "p1_erlinf_floor_pct": {
+  "value": 0.6034492543903415,
+  "note": ""
+ },
+ "p1_onlyA20_R0": {
+  "value": 4.1359342752833586,
+  "note": ""
+ },
+ "p1_onlyA20_Ieq_pct": {
+  "value": 10.307358540752642,
+  "note": ""
+ },
+ "p1_onlyI20_R0": {
+  "value": 4.093631668747848,
+  "note": ""
+ },
+ "p1_onlyI20_Ieq_pct": {
+  "value": 11.062936579947252,
+  "note": ""
+ },
+ "p1_onlyR20_R0": {
+  "value": 3.9315638698913618,
+  "note": ""
+ },
+ "p1_onlyR20_Ieq_pct": {
+  "value": 9.70275717662926,
+  "note": ""
+ },
+ "p1_shapes": {
+  "value": [
+   1,
+   2,
+   3,
+   5,
+   10,
+   20
+  ],
+  "note": ""
+ },
+ "p1_chk_R0_k1": {
+  "value": 0.0,
+  "note": ""
+ },
+ "p1_chk_I_k1": {
+  "value": 4.163336342344337e-17,
+  "note": ""
+ }
+}
