@@ -1,0 +1,122 @@
+{
+ "p3_ER_Rnet_star_cut1": {
+  "value": 0.8292048262828899,
+  "note": ""
+ },
+ "p3_ER_R0mf_star_cut1": {
+  "value": 0.9254548356797914,
+  "note": ""
+ },
+ "p3_ER_Rnet_star_cut3": {
+  "value": 0.8847378813937196,
+  "note": ""
+ },
+ "p3_ER_R0mf_star_cut3": {
+  "value": 0.9947716630203707,
+  "note": ""
+ },
+ "p3_ER_Rnet_star_cut5": {
+  "value": 0.8847378813937196,
+  "note": ""
+ },
+ "p3_ER_R0mf_star_cut5": {
+  "value": 0.9947716630203707,
+  "note": ""
+ },
+ "p3_ER_half_persist_Rnet": {
+  "value": 0.8,
+  "note": ""
+ },
+ "p3_ER_noback_factor": {
+  "value": 1.1003755578365397,
+  "note": ""
+ },
+ "p3_ER_noback_at_star": {
+  "value": 0.960350934079007,
+  "note": ""
+ },
+ "p3_WS_Rnet_star_cut1": {
+  "value": 0.9286278381046399,
+  "note": ""
+ },
+ "p3_WS_R0mf_star_cut1": {
+  "value": 1.1640982049646225,
+  "note": ""
+ },
+ "p3_WS_Rnet_star_cut3": {
+  "value": 0.9894822238129319,
+  "note": ""
+ },
+ "p3_WS_R0mf_star_cut3": {
+  "value": 1.2516660009813896,
+  "note": ""
+ },
+ "p3_WS_Rnet_star_cut5": {
+  "value": 0.9894822238129319,
+  "note": ""
+ },
+ "p3_WS_R0mf_star_cut5": {
+  "value": 1.2516660009813896,
+  "note": ""
+ },
+ "p3_WS_half_persist_Rnet": {
+  "value": 0.8,
+  "note": ""
+ },
+ "p3_WS_noback_factor": {
+  "value": 1.1099421360795048,
+  "note": ""
+ },
+ "p3_WS_noback_at_star": {
+  "value": 1.1085543081706437,
+  "note": ""
+ },
+ "p3_BA_Rnet_star_cut1": {
+  "value": 0.9633370660694285,
+  "note": ""
+ },
+ "p3_BA_R0mf_star_cut1": {
+  "value": 0.47088971152536707,
+  "note": ""
+ },
+ "p3_BA_Rnet_star_cut3": {
+  "value": 1.0349374441465582,
+  "note": ""
+ },
+ "p3_BA_R0mf_star_cut3": {
+  "value": 0.5080349611416626,
+  "note": ""
+ },
+ "p3_BA_Rnet_star_cut5": {
+  "value": 1.0405064407975984,
+  "note": ""
+ },
+ "p3_BA_R0mf_star_cut5": {
+  "value": 0.5109327784583582,
+  "note": ""
+ },
+ "p3_BA_half_persist_Rnet": {
+  "value": 0.9,
+  "note": ""
+ },
+ "p3_BA_noback_factor": {
+  "value": 1.0461712705344266,
+  "note": ""
+ },
+ "p3_BA_noback_at_star": {
+  "value": 1.1046631215115885,
+  "note": ""
+ },
+ "p3_check_cut3_matches_ER": {
+  "value": 0.011989548118157556,
+  "note": ""
+ },
+ "p3_check_cut3_matches_WS": {
+  "value": 0.009267415592809414,
+  "note": ""
+ },
+ "p3_check_cut3_matches_BA": {
+  "value": 0.020972952768931297,
+  "note": ""
+ }
+}
