@@ -61,6 +61,37 @@ def erlang_fixed(pc1):
     put("chk_I_k1", abs(ed.I_eq_dur(pc1, 1, 1, 1) - equilibrium(pc1)[2]))
 
 
+def trajectory_and_noise(pc0, pc1, x18):
+    """Overshoot of the illustrative path after 2018, damping of the complex pair, binomial comparison for the LNA."""
+    from dpm.model import simulate
+    tt = np.linspace(0, 40, 40001)
+    _, X = simulate(pc1, x18, 40, t_eval=tt)
+    I = X[2]; S = X[0]; k = int(np.argmax(I))
+    put("peak_pct", 100 * I[k]); put("peak_t", tt[k]); put("peak_year", 2018 + tt[k])
+    put("I2022_pct", 100 * np.interp(4.0, tt, I))
+    put("S2018_pct", 100 * S[0]); put("Speak_pct", 100 * S[k]); put("Sinf_pct", 100 * S[-1])
+    put("A2018_pct", 100 * X[1][0]); put("Apeak_pct", 100 * X[1][k])
+    put("R2018_pct", 100 * X[3][0]); put("Rpeak_pct", 100 * X[3][k]); put("Rinf_pct", 100 * X[3][-1])
+    put("Ieq_pct", 100 * I[-1])
+    lam = complex(ra_json("mathx_eig_b1_re")[0], ra_json("mathx_eig_b1_im")[0])
+    put("damping_ratio", -lam.real / abs(lam)); put("period_years", 2 * math.pi / abs(lam.imag))
+    pI = equilibrium(pc1)[2]
+    for N in (1000, 10000):
+        put(f"binom_sd_N{N}_pp", 100 * math.sqrt(pI * (1 - pI) / N))
+    put("lna_over_binom_N1000", ra_json("mathx_lna_N1000_sd_pp") / (100 * math.sqrt(pI * (1 - pI) / 1000)))
+    put("lna_excess_N1000_pct", 100 * (ra_json("mathx_lna_N1000_sd_pp") / (100 * math.sqrt(pI * (1 - pI) / 1000)) - 1))
+    put("diff_sd_N1000_pp", math.sqrt(2) * ra_json("mathx_lna_N1000_sd_pp"))
+    put("diff_mad_N1000_pp", math.sqrt(2) * ra_json("mathx_lna_N1000_sd_pp") * math.sqrt(2 / math.pi))
+
+
+def ra_json(key):
+    for f in sorted(OUT.glob("results*.json")):
+        d = json.load(open(f))
+        if key in d:
+            return d[key]["value"]
+    raise KeyError(key)
+
+
 DOT = r"""
 digraph SAIR {
   graph [rankdir=LR, nodesep=0.6, ranksep=1.0, pad=0.15];
@@ -97,6 +128,7 @@ def model_diagram():
 def main():
     pc0, pc1, da, x18 = ra.central(json.load(open(HERE / "data" / "parameter_ranges.json")))
     erlang_fixed(pc1)
+    trajectory_and_noise(pc0, pc1, x18)
     model_diagram()
     json.dump(R, open(OUT / "results_p1.json", "w"), indent=1, ensure_ascii=False)
     print("done", len(R))

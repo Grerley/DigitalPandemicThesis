@@ -177,3 +177,38 @@ def test_proposition_5_10_general_durations():
         k = tuple(int(v) for v in rng.integers(1, 6, size=3))
         ch = ed.Chain(*k)
         assert np.max(np.abs(ch.rhs(p)(0, ch.eq_state(p)))) < 1e-10
+
+
+def test_sensitivity_indices_of_R0_all_closed_forms():
+    """Proposition 1 of Paper 1: every normalised index of R0 against central differences; sign of gamma2 index."""
+    names = ["b", "eta", "sigma", "gamma1", "gamma2", "delta", "nu"]
+    for _ in range(300):
+        p = random_params(True)
+        a = p.sigma + p.gamma1 + p.nu; c = p.gamma2 + p.nu; d = p.delta + p.nu
+        D = a * c * d - p.sigma * p.gamma2 * p.delta; e = p.eta * c + p.sigma
+        closed = {"b": 1.0, "eta": p.eta * c / e,
+                  "sigma": p.sigma * (1 / e - (c * d - p.gamma2 * p.delta) / D),
+                  "gamma1": -p.gamma1 * c * d / D,
+                  "gamma2": p.gamma2 * (p.eta / e - (a * d - p.sigma * p.delta) / D),
+                  "delta": p.sigma * p.gamma2 * p.delta * p.nu / (d * D),
+                  "nu": p.nu * (1 / d + p.eta / e - (c * d + a * d + a * c) / D)}
+        for k in names:
+            th = getattr(p, k)
+            if th < 1e-3:
+                continue
+            h = 1e-6 * th
+            num = (R0(p.with_(**{k: th + h})) - R0(p.with_(**{k: th - h}))) / (2 * h) * th / R0(p)
+            assert abs(num - closed[k]) < 1e-5
+        assert closed["gamma2"] < 0 and closed["gamma1"] < 0
+
+
+def test_floor_monotone_in_rates():
+    """Corollary 1 of Paper 1: the floor rises with alpha, sigma, delta and falls with gamma1, gamma2."""
+    signs = {"alpha": 1, "sigma": 1, "delta": 1, "gamma1": -1, "gamma2": -1}
+    for _ in range(300):
+        p = random_params(False).with_(b=0.0)
+        f0 = equilibrium(p)[2]
+        for k, s in signs.items():
+            th = getattr(p, k)
+            f1 = equilibrium(p.with_(**{k: th * 1.01 + 1e-4}))[2]
+            assert s * (f1 - f0) > 0
