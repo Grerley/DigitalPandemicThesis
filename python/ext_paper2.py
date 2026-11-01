@@ -80,9 +80,72 @@ def main():
             put(f"{nm}_lr_{y}", float(pP / pT) if pT > 1e-12 else float("inf"))
             put(f"{nm}_post_P_{y}_pct", float(100 * pP / (pP + pT)))
             put(f"{nm}_pP_{y}", float(pP)); put(f"{nm}_pT_{y}", float(pT))
+    # weighted medians of the solved quantities under each prior
+    for nm, (wP_, wT_) in {"flat": (samples["flat"]["P"][1], samples["flat"]["T"][1]),
+                           "log": (samples["log"]["P"][1], samples["log"]["T"][1])}.items():
+        put(f"{nm}_b1_median", eb.wq(solP, wP_, 0.5)); put(f"{nm}_dalpha_median", eb.wq(solT, wT_, 0.5))
+    put("implicit_b1_median", float(np.median([r["b1"] for r in ok])))
+    put("implicit_dalpha_median", float(np.median([r["d_alpha"] for r in ok])))
+    # flat priors with bounds on the solved quantity of each scenario: sensitivity of the next-wave reading
+    def lr_pair(wP_, wT_):
+        kP = gaussian_kde(xP[wP_ > 0], weights=wP_[wP_ > 0] / wP_.sum())
+        kT = gaussian_kde(xT[wT_ > 0], weights=wT_[wT_ > 0] / wT_.sum())
+        out = {}
+        for y in YEARS:
+            pP = kP.integrate_box_1d(y - 0.5, y + 0.5); pT = kT.integrate_box_1d(y - 0.5, y + 0.5)
+            out[y] = (pP, pT, pP / pT if pT > 1e-12 else float("inf"))
+        return out
+    for cb in (20, 10, 5):
+        wP_ = np.where(solP <= cb, 1 / JP, 0.0)
+        put(f"cap_b{cb}_P2026_median", eb.wq(xP, wP_, 0.5)); put(f"cap_b{cb}_b1_median", eb.wq(solP, wP_, 0.5))
+        put(f"cap_b{cb}_P_ess", float(wP_.sum() ** 2 / np.sum(wP_ ** 2)))
+    for cd in (20, 10, 5, 2):
+        wT_ = np.where(solT <= cd, 1 / JT, 0.0)
+        put(f"cap_d{cd}_T2026_median", eb.wq(xT, wT_, 0.5)); put(f"cap_d{cd}_dalpha_median", eb.wq(solT, wT_, 0.5))
+        put(f"cap_d{cd}_T_ess", float(wT_.sum() ** 2 / np.sum(wT_ ** 2)))
+    for cb, cd in [(20, 20), (20, 5), (10, 10), (5, 5), (5, 2)]:
+        o = lr_pair(np.where(solP <= cb, 1 / JP, 0.0), np.where(solT <= cd, 1 / JT, 0.0))
+        for y in YEARS:
+            put(f"cap_b{cb}_d{cd}_lr_{y}", float(o[y][2])); put(f"cap_b{cb}_d{cd}_pT_{y}", float(o[y][1]))
+            put(f"cap_b{cb}_d{cd}_pP_{y}", float(o[y][0]))
+    # bootstrap of the log-uniform ratios at 10% and 11%
+    g = np.random.default_rng(2026)
+    wPl, wTl = samples["log"]["P"][1], samples["log"]["T"][1]
+    bs = {10: [], 11: []}
+    for _ in range(200):
+        iP = g.integers(0, len(xP), len(xP)); iT = g.integers(0, len(xT), len(xT))
+        kP = gaussian_kde(xP[iP], weights=wPl[iP] / wPl[iP].sum()); kT = gaussian_kde(xT[iT], weights=wTl[iT] / wTl[iT].sum())
+        for y in bs:
+            bs[y].append(kP.integrate_box_1d(y - 0.5, y + 0.5) / kT.integrate_box_1d(y - 0.5, y + 0.5))
+    for y in bs:
+        put(f"log_lr_{y}_boot_p05", float(np.percentile(bs[y], 5))); put(f"log_lr_{y}_boot_p95", float(np.percentile(bs[y], 95)))
+    json.dump(R, open(OUT / "results_p2.json", "w"), indent=1)
+    monotonicity(allrows)
     json.dump(R, open(OUT / "results_p2.json", "w"), indent=1)
     for k, v in R.items():
         print(k, round(v["value"], 3) if isinstance(v["value"], float) else v["value"])
+
+
+def monotonicity(allrows, n=100, m=60):
+    """Is the 2022 prevalence increasing in the solved quantity? Log-spaced grids over the whole search range,
+    for draws that solve each scenario (including draws that solve only one)."""
+    import dpm.calibrate as cal
+    from dpm.model import Params
+    g = np.random.default_rng(7)
+    for sc, field in (("P", "b1"), ("T", "d_alpha")):
+        rows = [r for r in allrows if r.get(field) is not None]
+        pick = [rows[i] for i in g.choice(len(rows), n, replace=False)]
+        good = 0; worst = np.inf
+        for r in pick:
+            d = {k: r[k] for k in cal.PARAM_ORDER}; p0 = Params(b=r["b0"], **d); x18 = np.array(r["x18"])
+            if sc == "P":
+                grid = np.geomspace(r["b0"], 200.0, m)
+                v = [cal.I_after(p0.with_(b=b), x18, 4.0) for b in grid]
+            else:
+                grid = np.concatenate([[0.0], np.geomspace(1e-4, 20.0, m - 1)])
+                v = [cal.I_after(p0, x18, 4.0, alpha_t=cal.shock(p0.alpha, z)) for z in grid]
+            dv = np.diff(v); good += bool(np.all(dv > 0)); worst = min(worst, float(dv.min()))
+        put(f"mono_{sc}_n", n); put(f"mono_{sc}_ok", good); put(f"mono_{sc}_grid", m); put(f"mono_{sc}_min_step", worst)
 
 
 if __name__ == "__main__":
