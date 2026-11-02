@@ -28,6 +28,34 @@ def series(y):
     return np.array([100 * x["girls"] for x in o]), np.array([100 * x["boys"] for x in o])
 
 
+def ratios_2018_across_draws(n=100):
+    """2018 girls-to-boys and age ratios of the constant-vulnerability fit, across the draws of ext_agesex."""
+    import ext_agesex as E
+    from dpm import calibrate as cal
+    from dpm.model import Params
+    st = AS.Struct()
+    g = np.random.default_rng(E.SEED)
+    ok = [r for r in json.load(open(OUT / "calibration_draws.json")) if r["ok"]][:n]
+    res = {"P": [], "T": []}
+    for r in ok:
+        d = {k: r[k] for k in cal.PARAM_ORDER}; base = Params(b=0.0, **d)
+        stx = st.with_(eps_a=g.uniform(0.5, 0.9), eps_s=g.uniform(0.3, 0.7))
+        targets = (g.uniform(0.065, 0.075), g.uniform(0.125, 0.135), g.uniform(0.085, 0.095), g.uniform(0.085, 0.095))
+        for sc in "PT":
+            sol = E.fit(base, stx, targets, sc)
+            if sol is None:
+                continue
+            o = AS.hbsc_obs(AS.equilibrium(base.with_(b=sol["b0"]), stx.with_(phi=sol["phi"], psi=sol["psi"])))
+            res[sc].append((o["girls"] / o["boys"], o["age11"] / o["age13_15"]))
+    for sc, rows in res.items():
+        a = np.array(rows)
+        put(f"{sc}_n", len(a))
+        for j, nm in enumerate(("sex", "age")):
+            put(f"{sc}_ratio18_{nm}_median", np.median(a[:, j]))
+            put(f"{sc}_ratio18_{nm}_p05", np.percentile(a[:, j], 5)); put(f"{sc}_ratio18_{nm}_p95", np.percentile(a[:, j], 95))
+            put(f"{sc}_ratio18_{nm}_min", a[:, j].min()); put(f"{sc}_ratio18_{nm}_max", a[:, j].max())
+
+
 def main():
     ranges = json.load(open(HERE / "data" / "parameter_ranges.json"))
     pc0, pc1, da, x18 = ra.central(ranges)
@@ -64,6 +92,7 @@ def main():
     h, l = axs[0].get_legend_handles_labels()
     fig.legend(h, l, loc="lower center", ncol=3, frameon=False, fontsize=7.5)
     fig.tight_layout(rect=(0, 0.14, 1, 1)); fig.savefig(FIG / "fig_p5_sex.png", dpi=200); plt.close(fig)
+    ratios_2018_across_draws()
     json.dump(R, open(OUT / "results_p5.json", "w"), indent=1)
     print({k: round(x["value"], 3) for k, x in R.items()})
 

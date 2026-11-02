@@ -14,5 +14,93 @@
  "p5_shift_2022_boys": {
   "value": 9.00000000000886,
   "note": ""
+ },
+ "p5_P_n": {
+  "value": 94.0,
+  "note": ""
+ },
+ "p5_P_ratio18_sex_median": {
+  "value": 1.6026521386896955,
+  "note": ""
+ },
+ "p5_P_ratio18_sex_p05": {
+  "value": 1.408744236299451,
+  "note": ""
+ },
+ "p5_P_ratio18_sex_p95": {
+  "value": 2.1308964131121018,
+  "note": ""
+ },
+ "p5_P_ratio18_sex_min": {
+  "value": 1.3717767470461175,
+  "note": ""
+ },
+ "p5_P_ratio18_sex_max": {
+  "value": 5.614855317259498,
+  "note": ""
+ },
+ "p5_P_ratio18_age_median": {
+  "value": 0.6653145193440828,
+  "note": ""
+ },
+ "p5_P_ratio18_age_p05": {
+  "value": 0.6074639546030282,
+  "note": ""
+ },
+ "p5_P_ratio18_age_p95": {
+  "value": 0.7429405999485035,
+  "note": ""
+ },
+ "p5_P_ratio18_age_min": {
+  "value": 0.5755042919992595,
+  "note": ""
+ },
+ "p5_P_ratio18_age_max": {
+  "value": 0.8113787468754428,
+  "note": ""
+ },
+ "p5_T_n": {
+  "value": 91.0,
+  "note": ""
+ },
+ "p5_T_ratio18_sex_median": {
+  "value": 1.66281321018033,
+  "note": ""
+ },
+ "p5_T_ratio18_sex_p05": {
+  "value": 1.4757814141150432,
+  "note": ""
+ },
+ "p5_T_ratio18_sex_p95": {
+  "value": 2.1633412425180936,
+  "note": ""
+ },
+ "p5_T_ratio18_sex_min": {
+  "value": 1.4371044952772871,
+  "note": ""
+ },
+ "p5_T_ratio18_sex_max": {
+  "value": 3.026842163033776,
+  "note": ""
+ },
+ "p5_T_ratio18_age_median": {
+  "value": 0.6117040886383454,
+  "note": ""
+ },
+ "p5_T_ratio18_age_p05": {
+  "value": 0.5580146352181181,
+  "note": ""
+ },
+ "p5_T_ratio18_age_p95": {
+  "value": 0.6910586711544222,
+  "note": ""
+ },
+ "p5_T_ratio18_age_min": {
+  "value": 0.5155423764357022,
+  "note": ""
+ },
+ "p5_T_ratio18_age_max": {
+  "value": 0.7124941646532135,
+  "note": ""
  }
 }
