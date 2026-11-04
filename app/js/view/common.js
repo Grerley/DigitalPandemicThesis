@@ -12,10 +12,10 @@ export function viewHead(kicker, title, intro) {
 
 /** Simple data table. rows: array of arrays of cell contents; align: "l" or "r" per column. */
 export function table(head, rows, align = []) {
-  return h("table", { class: "data" }, [
+  return h("div", { class: "tablewrap" }, h("table", { class: "data" }, [
     h("thead", {}, h("tr", {}, head.map((c, i) => h("th", { style: { textAlign: align[i] === "l" ? "left" : "right" }, html: c })))),
     h("tbody", {}, rows.map((r) => h("tr", {}, r.map((c, i) => h("td", { style: { textAlign: align[i] === "l" ? "left" : "right" }, html: String(c) }))))),
-  ]);
+  ]));
 }
 
 /** Short source note under a panel. */

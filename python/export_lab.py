@@ -33,7 +33,7 @@ def results():
 
 
 KEEP = re.compile(r"^(R0_b[01]$|I_star_b_zero$|eq_b1_I$|elast_I_|ident_n_|cal_n_|cal_kept_median_|cal_rej_median_|"
-                  r"proj_[PT]_20(22|26|32|42)_|proj_gap_2042$|p2_(implicit|flat|log)_(lr|pP|pT)_\d+$|"
+                  r"proj_[PT]_20(22|26|32|42)_|proj_gap_2042$|p2_(implicit|flat|log)_(lr|pP|pT)_\d+$|calx_lr_\d+$|int_n_draws$|"
                   r"int_.*_(median|p05|p95)$|int_start_year$|ctl_mv_ratio|ctl_ref_(const_share_pct|gain_pct|averted_opt_pct|"
                   r"I_2042_(none|opt|const)_pct)$|net_(ER|WS|BA)_|net_meanfield_|net_mean_degree$|net_nodes$|net_reps$|"
                   r"netx_tgt_(cal|r1p5)_(hub|random|acq)_c(5|10|20|30)_(rel_pct|se)$|netx_tgt_(cal|r1p5)_Rnet$|netx_tgt_(cal|r1p5)_base$|"
@@ -75,6 +75,10 @@ def main():
         "beta_k10": beta, "T_career_k10": nw.career_transmissibility(pc1.with_(alpha=0.0), beta),
         "T_single_k10": nw.transmissibility(pc1, beta),
     }
+    row = {k: getattr(pc1, k) for k in cal.PARAM_ORDER}
+    row.update(b0=pc0.b, b1=pc1.b, d_alpha=da, x18=list(x18))
+    mults = [{"b": 0.75}, {"b": 0.8, "alpha": 0.8}, {"gamma2": 1.6, "delta": 0.85}]
+    ref["interv_P_2042"] = float(ra.run_with(row, mults)[-1]); ref["interv_T_2042"] = float(ra.run_with_T(row, mults)[-1])
     ref = {k: ([r6(v) for v in x] if isinstance(x, list) else r6(x)) for k, x in ref.items()}
 
     # ---- age and sex: central constant-vulnerability fit and the variant with a change in 2018
@@ -105,7 +109,7 @@ def main():
             "Orben2024", "Ko2007", "Ko2009", "Wartberg2019", "Wartberg2020", "Xin2026", "Chiang2019", "Malygin2025",
             "Jo2025", "vandenDriessche2002", "CastilloChavez2004", "Newman2002", "Bliss1939", "Lenhart2007",
             "Zucchini2016", "StatisticsSouthAfrica2025", "Hethcote2000", "Kermack1927", "Poole2000", "Mossong2008",
-            "Cohen2003", "Centola2007", "MarinoHBSCItalia2020"]
+            "Cohen2003", "Centola2007", "MarinoHBSCItalia2020", "Fleming1975"]
     refs = {}
     if RESEARCH.exists():
         for f in [RESEARCH / "references.json"] + sorted(RESEARCH.glob("references_*.json")):

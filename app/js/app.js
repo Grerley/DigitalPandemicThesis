@@ -44,7 +44,9 @@ function mountView(id) {
 }
 
 function navigate(id) {
+  $("nav.sidebar")?.classList.remove("open");
   if (store.get().view === id && current) return;
+  if (location.hash !== `#${id}`) history.pushState(null, "", `#${id}`);
   store.set({ view: id }, { silent: true });
   $("nav.sidebar")?.classList.remove("open");
   mountView(id);

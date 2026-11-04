@@ -7,6 +7,6 @@ earlier targets), its starting state, its intervention effects and its cost fram
 version and are **not** consistent with the current thesis, the research proposal or the papers. It is not
 deployed and should not be cited for any result.
 
-The current lab is in `app/`. The same version is also available at the git tag `simulation-lab-v1`.
+The current lab is in `app/`.
 
 To run this archived copy locally: `cd archive/simulation-lab-v1 && python3 -m http.server 8000`.

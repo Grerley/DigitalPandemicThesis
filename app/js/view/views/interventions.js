@@ -17,7 +17,7 @@ export function InterventionsView() {
     "The efficacies are <strong>assumptions</strong>. The results describe relative leverage inside the model, not what any programme would achieve, and no costs are modelled."));
 
   const centralDraw = { rates: CENTRAL.rates, cal: { b0: CENTRAL.b0, b1: CENTRAL.b1, dAlpha: CENTRAL.dAlpha, x18: CENTRAL.x18 } };
-  const on = { platform: true, school: false, minimum_age: false, treatment: true };
+  const on = { platform: false, school: true, minimum_age: false, treatment: true };
   const eff = { platform: 0.25, school: 0.3, minimum_age: 0.5, treatment: 0.6 };
   let eff2 = 0.15, scenario = "P";
   const mults = () => KEYS.filter((k) => on[k]).map((k) => multipliers(k, eff[k], k === "treatment" ? eff2 : 0));
@@ -51,10 +51,11 @@ export function InterventionsView() {
       onInput: (v) => { eff2 = v; chart.update(); } }) : null;
     return h("div", {}, [box, sl, extra]);
   }));
-  const scen = h("div", { class: "row", style: { gap: "8px", marginBottom: "10px" } }, ["P", "T"].map((s) =>
-    h("button", { class: "sm", text: s === "P" ? "Persistent shift" : "Temporary shock", onclick: () => { scenario = s; chart.update(); } })));
+  const scenBtns = ["P", "T"].map((s) => h("button", { class: s === scenario ? "sm primary" : "sm", "aria-pressed": String(s === scenario), text: s === "P" ? "Persistent shift" : "Temporary shock",
+    onclick: () => { scenario = s; scenBtns.forEach((b, i) => { const a = ["P", "T"][i] === s; b.className = a ? "sm primary" : "sm"; b.setAttribute("aria-pressed", String(a)); }); chart.update(); } }));
+  const scen = h("div", { class: "row", style: { gap: "8px", marginBottom: "10px" } }, scenBtns);
 
-  el.appendChild(h("div", { class: "split" }, [
+  el.appendChild(h("div", { class: "split controls-first" }, [
     panel({ title: "Live comparison", children: [scen, metrics, chart, legend([{ name: "No intervention", color: "var(--ink-2)" }, { name: "With selected mechanisms", color: COLORS.I }])] }),
     panel({ title: "Mechanisms", children: [toggles] }),
   ]));
@@ -72,7 +73,7 @@ export function InterventionsView() {
       acrossOut.replaceChildren(table(["Reduction in 2042", "Lab, live", "Thesis"], [
         ["Persistent shift", `${(a.median * 100).toFixed(0)}% (${(a.p05 * 100).toFixed(0)}% to ${(a.p95 * 100).toFixed(0)}%)`, thesis("P")],
         ["Temporary shock", `${(b.median * 100).toFixed(0)}% (${(b.p05 * 100).toFixed(0)}% to ${(b.p95 * 100).toFixed(0)}%)`, thesis("T")],
-      ], ["l", "r", "r"]), h("p", { class: "hint", text: `Median and 5th to 95th percentile across ${a.n} parameter draws, with each efficacy drawn uniformly from its assumed range. The lab draws its own efficacies, so its figures differ slightly from the thesis's.` }));
+      ], ["l", "r", "r"]), h("p", { class: "hint", text: `Median and 5th to 95th percentile across ${a.n} parameter draws, with each efficacy drawn uniformly from its assumed range. The thesis used the first ${R("int_n_draws")} draws and its own efficacy draws, so the lab's figures differ slightly from the thesis's.` }));
     }, 20);
   };
 
@@ -84,6 +85,7 @@ export function InterventionsView() {
     h("button", { class: "primary sm", text: "Run the selected combination across all draws", onclick: runAcross }), acrossOut,
     h("h3", { text: "Thesis results: reduction in 2042 prevalence", style: { marginTop: "18px" } }),
     table(["Mechanisms", "Persistent shift, median (range)", "Temporary shock, median", "Bliss index"], single.concat(combos), ["l", "r", "r", "r"]),
+    h("p", { class: "prose", html: `The minimum age is represented crudely here, as a fixed 40% of the population whose exposure and non-social acquisition fall with compliance. The age-structured model represents it directly and gives a larger reduction across all young people (median ${R("asx_ma_d_whole_median").toFixed(0)}% across draws; Screen 8), under assumptions that are optimistic.` }),
     h("p", { class: "prose", html: "A Bliss index above 1 means the combination does better than independent action would predict. Combinations show at most mild synergy. Treatment access has the largest effect partly because of the assumed efficacy ranges. Measures on exposure cannot pass the floor; measures on recovery are not bounded in the same way but show diminishing returns." }),
   ] }));
 

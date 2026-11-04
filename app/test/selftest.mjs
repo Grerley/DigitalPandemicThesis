@@ -5,6 +5,7 @@ import { runSelfTests } from "../js/model/selftest.js";
 import { makeGraph, simulateNetwork, betaFromB, Rnet } from "../js/model/network.js";
 import { centralParams, R, LAB } from "../js/model/params.js";
 import { simulate } from "../js/model/sair.js";
+import { runNetworkJob } from "../js/model/network-job.js";
 
 let failures = 0;
 const p = (ok, name, detail = "") => {
@@ -37,5 +38,14 @@ for (const kind of ["ER", "WS", "BA"]) {
   const rt = R(`net_${kind}_R0net`);
   p(Math.abs(rm - rt) / rt < 0.1, `${kind}: network reproduction number within 10% of thesis`, `lab ${rm.toFixed(2)}, thesis ${rt.toFixed(2)}`);
 }
+// Targeting near the threshold: protecting the best-connected 10% beats random protection (thesis Chapter 8).
+console.log("\n[network] targeting experiment near the threshold (Barabási–Albert)");
+const job = (strategy) => runNetworkJob({ kind: "BA", n: 1000, k: 10, reps: 8, years: 20, params: pc, x22, regime: "near", strategy, cover: 0.1, damp: 0.2, seed: 4242 });
+const rel = (r) => 1 - r.prot.mean.at(-1) / r.base.mean.at(-1);
+const hub = rel(job("degree")), rnd = rel(job("random"));
+p(Math.abs(job("none").rnet - 1.5) < 1e-6, "Near-threshold exposure solved so that R_net = 1.5");
+p(hub > rnd + 0.15, "Degree-targeted protection beats random protection near the threshold",
+  `lab ${(hub * 100).toFixed(0)}% against ${(rnd * 100).toFixed(0)}%; thesis ${R("netx_tgt_r1p5_hub_c10_rel_pct").toFixed(0)}% against ${R("netx_tgt_r1p5_random_c10_rel_pct").toFixed(0)}%`);
+
 console.log(`\n${failures ? failures + " check(s) failed" : "All checks passed"} (${((Date.now() - t0) / 1000).toFixed(1)} s)\n`);
 process.exit(failures ? 1 : 0);

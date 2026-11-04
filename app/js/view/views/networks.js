@@ -35,19 +35,20 @@ export function NetworksView() {
     const res = await runJob({ ...cfg, k: 10, years: 20, params: pc1, x22, damp: 0.2, seed: 4242 },
       (f) => { status.textContent = `running… ${Math.round(f * 100)}%`; });
     runBtn.disabled = false; status.textContent = "";
-    const yrs = Array.from({ length: res.base.mean.length }, (_, i) => 2022 + i);
+    const near = cfg.regime === "near";
+    const yrs = Array.from({ length: res.base.mean.length }, (_, i) => (near ? i : 2022 + i));
     const series = [{ key: "b", name: "No protection", color: "var(--ink-2)", ys: res.base.mean, band: { lo: res.base.lo, hi: res.base.hi } }];
     if (res.prot) series.push({ key: "p", name: "With protection", color: COLORS.I, dash: "6 4", ys: res.prot.mean, band: { lo: res.prot.lo, hi: res.prot.hi } });
     const b42 = res.base.mean.at(-1), p42 = res.prot ? res.prot.mean.at(-1) : null;
     result.replaceChildren(
       metricGrid([
         { label: "Network reproduction number", value: res.rnet.toFixed(2), foot: "heuristic R_net, mean over graphs", accent: true },
-        { label: "Exposure rate used", value: res.bUsed.toFixed(2), foot: cfg.regime === "near" ? "set so that R_net = 1.5" : "calibrated, after 2018" },
+        { label: "Exposure rate used", value: res.bUsed.toFixed(2), foot: near ? "mean over graphs, each set so that R_net = 1.5" : "calibrated, after 2018" },
         { label: "2042, no protection", value: pc(b42), foot: `mean of ${cfg.reps} runs` },
         p42 != null ? { label: "2042, with protection", value: pc(p42), foot: `${((1 - p42 / b42) * 100).toFixed(0)}% lower` } : { label: "Protection", value: "none", foot: "" },
       ]),
       chartCard({ title: `${GRAPH_LABELS[cfg.kind]} network, ${cfg.n.toLocaleString("en-GB")} young people`, sub: "mean and 5th to 95th percentile across runs (live)", filename: "network-experiment",
-        render: () => timeSeries({ xs: yrs, series, yTitle: "Problematic use", yMax: Math.max(...series.flatMap((s) => s.band.hi)) * 1.15 }) }));
+        render: () => timeSeries({ xs: yrs, series, xTitle: near ? "Years from start (at equilibrium)" : "Year", yTitle: "Problematic use", yMax: Math.max(...series.flatMap((s) => s.band.hi)) * 1.15 }) }));
   }
 
   el.appendChild(panel({ title: "Run a network experiment", sub: "each run uses the same graph and random numbers with and without protection, as in the thesis", children: [
@@ -93,12 +94,12 @@ export function NetworksView() {
   // ---- thesis results
   const kinds = ["ER", "WS", "BA"];
   el.appendChild(panel({ title: "Thesis results", children: [
-    table(["Network", "⟨k²⟩/⟨k⟩", "R_net", "Problematic use 2042, mean (range)"],
+    table(["Network", "⟨<i>k</i>²⟩/⟨<i>k</i>⟩", "<i>R</i><sub>net</sub>", "Problematic use 2042, mean (range)"],
       kinds.map((k) => [GRAPH_LABELS[k], R(`net_${k}_k2_over_k`).toFixed(1), R(`net_${k}_R0net`).toFixed(2),
         `${R(`net_${k}_I2042_mean`).toFixed(1)}% (${R(`net_${k}_I2042_p05`).toFixed(1)}% to ${R(`net_${k}_I2042_p95`).toFixed(1)}%)`])
         .concat([["Population model", "", R("net_meanfield_R0").toFixed(2), `${R("net_meanfield_I2042").toFixed(1)}%`]]), ["l", "r", "r", "r"]),
     h("p", { class: "prose", html: "Degree heterogeneity changes the threshold strongly but the projected level little. Far above the threshold, networks lower prevalence slightly through an exposure deficit." }),
-    table(["Protect 10% of young people", "Calibrated exposure", "Near threshold (R_net = 1.5)"],
+    table(["Protect 10% of young people", "Calibrated exposure", "Near threshold (<i>R</i><sub>net</sub> = 1.5)"],
       [["Best-connected", "hub"], ["Random", "random"], ["Nominated friends", "acq"]].map(([t, k]) =>
         [t, `${R(`netx_tgt_cal_${k}_c10_rel_pct`).toFixed(0)}% lower`, `${R(`netx_tgt_r1p5_${k}_c10_rel_pct`).toFixed(0)}% lower`]), ["l", "r", "r"]),
     h("p", { class: "prose", html: "Targeting the best-connected adds little far above the threshold and a great deal near it. Protecting friends nominated by randomly chosen young people recovers about half of that advantage near the threshold without knowing the network." }),

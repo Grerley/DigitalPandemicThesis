@@ -34,9 +34,9 @@ export function ExplanationsView() {
       { label: "Persistent shift, 2042", value: `${R("proj_P_2042_median").toFixed(1)}%`, foot: `${R("proj_P_2042_p05").toFixed(1)}% to ${R("proj_P_2042_p95").toFixed(1)}%` },
       { label: "Temporary shock, 2042", value: `${R("proj_T_2042_median").toFixed(1)}%`, foot: `${R("proj_T_2042_p05").toFixed(1)}% to ${R("proj_T_2042_p95").toFixed(1)}%` },
       { label: "Gap between medians", value: `${R("proj_gap_2042").toFixed(1)} pp`, foot: "2042", accent: true },
-      { label: "Draws rejected", value: `${R("cal_n_draws") - R("cal_n_ok")}`, foot: `median recovery ${R("cal_rej_median_gamma2").toFixed(2)}/yr against ${R("cal_kept_median_gamma2").toFixed(2)}/yr kept` },
+      { label: "Draws rejected", value: `${R("cal_n_draws") - R("cal_n_ok")}`, foot: `${R("cal_n_rejected_2018")} at 2018, ${R("cal_n_draws") - R("cal_n_ok") - R("cal_n_rejected_2018")} at 2022` },
     ]),
-    h("p", { class: "prose", html: "The rejected draws are informative: with recovery that fast, no exposure rate can raise prevalence from 7% to 11% in four years. The speed of the rise therefore rules out the fastest recovery rates." }),
+    h("p", { class: "prose", html: `A draw is rejected when 7% cannot be reached in 2018 even at very high exposure (${R("cal_n_rejected_2018")} draws), or when 11% cannot be reached by 2022 in one of the scenarios. The rejected draws have much faster recovery than the kept ones (median ${R("cal_rej_median_gamma2").toFixed(2)} against ${R("cal_kept_median_gamma2").toFixed(2)} per year): with recovery that fast, prevalence cannot rise from 7% to 11% in four years. The speed of the rise therefore rules out the fastest recovery rates.` }),
     source("thesis Chapter 7; python/run_all.py (calibration and projections)."),
   ] }));
 
@@ -72,13 +72,14 @@ export function ExplanationsView() {
   const vals = [9, 10, 11, 12, 13, 14];
   const fmt = (v) => (v >= 10 ? v.toFixed(0) : v >= 1 ? v.toFixed(1) : v.toFixed(2));
   el.appendChild(panel({ title: "What the 2025/2026 HBSC wave can decide", sub: "likelihood ratio of the persistent shift against the temporary shock, for each possible published figure", children: [
-    table(["Published figure", "Implicit prior", "Log-uniform prior", "Flat prior"],
-      vals.map((v) => [`${v}%`, fmt(R(`p2_implicit_lr_${v}`)), fmt(R(`p2_log_lr_${v}`)), fmt(R(`p2_flat_lr_${v}`))]), ["l", "r", "r", "r"]),
+    table(["Published figure", "Implicit prior, kept draws", "Implicit prior, larger set", "Log-uniform prior", "Flat prior"],
+      vals.map((v) => [`${v}%`, fmt(R(`calx_lr_${v}`)), fmt(R(`p2_implicit_lr_${v}`)), fmt(R(`p2_log_lr_${v}`)), fmt(R(`p2_flat_lr_${v}`))]), ["l", "r", "r", "r", "r"]),
+    h("p", { class: "hint", html: `The first column uses the ${R("cal_n_ok")} kept draws (thesis Chapter 7). The other columns use the larger set of draws of the calibration paper, which also re-weights to explicit priors; the two implicit-prior columns differ by Monte Carlo and sampling variation.` }),
     h("p", { class: "prose", html:
       "A ratio above 1 favours the persistent shift and below 1 the temporary shock. A figure of 14% favours the persistent shift under the implicit and log-uniform priors. " +
       "For 10% or 11% the direction of the inference reverses between the implicit prior and the explicit priors, and the flat-prior ratios depend on the bounds placed on the solved rates and rest on the tails of the predictive distributions. " +
       "The calibration design is itself a Bayesian calibration with an implicit prior, so it should be reported alongside explicit alternatives." }),
-    source("thesis Chapter 7 and the calibration paper (Mutibura and Lubuma, manuscript in preparation); python/ext_paper2.py."),
+    source("thesis Chapter 7 (python/ext_calibration.py) and the calibration paper (Mutibura and Lubuma, manuscript in preparation; python/ext_paper2.py)."),
   ] }));
   return { el };
 }

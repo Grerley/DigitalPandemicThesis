@@ -8,6 +8,7 @@ import { R0, R0Factors, equilibrium, floor, isStable, elasticities } from "./sai
 import { calibrateRates, scenarioPath } from "./calibrate.js";
 import { careerTransmissibility, betaFromB } from "./network.js";
 import { CENTRAL, DRAWS } from "./params.js";
+import { runDraw } from "./interventions.js";
 
 const rel = (a, b) => Math.abs(a - b) / Math.max(1e-12, Math.abs(b));
 
@@ -51,6 +52,10 @@ export function runSelfTests() {
     add(`Median across ${DRAWS.length} draws, temporary shock, ${2018 + y}`, med(T[i]), LAB.projections.T[50][y], 1e-3, "Projection percentiles", (v) => `${(v * 100).toFixed(2)}%`);
   });
 
+  const centralDraw = { rates: CENTRAL.rates, cal: { b0: CENTRAL.b0, b1: CENTRAL.b1, dAlpha: CENTRAL.dAlpha, x18: CENTRAL.x18 } };
+  const mults = [{ b: 0.75 }, { b: 0.8, alpha: 0.8 }, { gamma2: 1.6, delta: 0.85 }];
+  add("Three mechanisms together, persistent shift, 2042", runDraw(centralDraw, "P", mults).at(-1), ref.interv_P_2042, 1e-5, "Interventions from 2024", (v) => `${(v * 100).toFixed(3)}%`);
+  add("Three mechanisms together, temporary shock, 2042", runDraw(centralDraw, "T", mults).at(-1), ref.interv_T_2042, 1e-5, "Interventions from 2024", (v) => `${(v * 100).toFixed(3)}%`);
   const beta = betaFromB(p1, 10);
   add("Per-edge monthly transmission at k = 10", beta, ref.beta_k10, 1e-5, "β from b");
   add("Career transmissibility at k = 10", careerTransmissibility({ ...p1, alpha: 0 }, beta), ref.T_career_k10, 1e-5, "Chapter 8");

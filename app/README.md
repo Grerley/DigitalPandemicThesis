@@ -50,5 +50,5 @@ node test/lint.mjs                        # syntax check of every file
 ## Earlier version
 
 The first version of the lab, built on the first version of the thesis, is kept for reference in
-`archive/simulation-lab-v1/` and at the git tag `simulation-lab-v1`. Its parameters, starting state, intervention
+`archive/simulation-lab-v1/`. Its parameters, starting state, intervention
 effects and cost framing are not consistent with the current thesis.

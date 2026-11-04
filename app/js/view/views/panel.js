@@ -21,7 +21,7 @@ export function PanelView() {
 
   let noise = "low";
   const rows = (nz) => LAB.recovery.filter((r) => r.noise === nz);
-  const chart = chartCard({ title: "Relative error of the recovered annual transition probabilities", sub: `${R("rec_waves")} annual waves (thesis results)`, filename: "panel-design",
+  const chart = chartCard({ title: "Relative error of the recovered annual transition probabilities", sub: `${R("rec_waves")} annual waves, original design of the study (thesis results)`, filename: "panel-design",
     csv: () => LAB.recovery,
     render: () => xyLines({ xLog: true, xTitle: "Young people followed (log scale)", yTitle: "Root mean squared error ÷ true value", xFmt: (v) => v.toLocaleString("en-GB"), yFmt: (v) => `${(v * 100).toFixed(0)}%`,
       series: TR.map((t, i) => {
@@ -37,7 +37,7 @@ export function PanelView() {
     }), ["l", "r", "r", "r", "r"]);
   const tbl = h("div", {}, makeTable());
 
-  el.appendChild(panel({ title: "Recovery of the rates by panel size", children: [btns, chart, tbl] }));
+  el.appendChild(panel({ title: "Recovery of the rates by panel size", children: [btns, chart, tbl, h("p", { class: "hint", text: "These are the results of the original design. Chapter 6 shows that part of the incidence bias reflects where the estimation algorithm stopped on a nearly flat direction of the likelihood, and that a baseline question on past problematic use removes most of the rest." })] }));
   el.appendChild(panel({ title: "What a panel would need", children: [
     h("ul", { class: "prose" }, [
       h("li", { html: "<strong>The full symptom count, not the classification.</strong> Recording only whether a young person is above the HBSC cut-off leaves the latent transitions unrecoverable at any realistic size." }),

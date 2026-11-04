@@ -9,7 +9,7 @@ export function ContextView() {
   const el = h("div", { class: "view" });
   el.appendChild(viewHead("Screen 1 · Research context", "What the research asks",
     "This lab is the interactive companion to the doctoral research <em>An epidemic-modelling framework for problematic social media use among young people</em> " +
-    "(Grerley Mutibura, School of Computer Science and Applied Mathematics, University of the Witwatersrand). Every number on its screens is produced by the same model and analysis code as the thesis."));
+    "(Grerley Mutibura, School of Computer Science and Applied Mathematics, University of the Witwatersrand). Thesis results on its screens come from the thesis's analysis code; live results come from a JavaScript port of the same model, checked against it by a built-in self-test."));
 
   el.appendChild(panel({ title: "The starting point", children: [
     h("p", { class: "prose", html:
@@ -18,7 +18,7 @@ export function ContextView() {
       "It is a measured behavioural category, not a clinical diagnosis." }),
     h("p", { class: "prose", html:
       "A prevalence changes only through flows: young people starting problematic use, stopping, relapsing, and entering or leaving the age group. Two survey figures cannot say which flow changed. " +
-      "South Africa does not take part in HBSC and has no measure of problematic social media use among adolescents, so its results here are scenarios and a research design, not estimates." }),
+      "South Africa does not take part in HBSC, no national survey has measured problematic social media use among its adolescents, and no peer-reviewed study was found that reports it among school-going adolescents with a validated scale. South African results here are therefore scenarios and a research design, not estimates." }),
     metricGrid([
       { label: "HBSC 2018", value: "7%", foot: "11-, 13- and 15-year-olds" },
       { label: "HBSC 2022", value: "11%", foot: "girls 13%, boys 9%" },
@@ -44,10 +44,10 @@ export function ContextView() {
     ["Interventions and data", "Under stated efficacy assumptions, which mechanisms have most leverage, and what panel study would estimate the rates?", "Interventions; Panel design"],
   ];
   el.appendChild(panel({ title: "Research questions and where to explore them", children: [
-    h("table", { class: "data" }, [
+    h("div", { class: "tablewrap" }, h("table", { class: "data" }, [
       h("thead", {}, h("tr", {}, ["Theme", "Question", "Screen"].map((t) => h("th", { style: { textAlign: "left" }, text: t })))),
       h("tbody", {}, rq.map((r) => h("tr", {}, r.map((c) => h("td", { style: { textAlign: "left" }, text: c }))))),
-    ]),
+    ])),
   ] }));
 
   el.appendChild(panel({ title: "How to read the numbers", children: [

@@ -157,7 +157,7 @@ main.content { flex: 1; min-width: 0; padding: clamp(16px, 3vw, 34px); }
 .metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap: 1px;
   background: var(--rule); border: 1px solid var(--rule); border-radius: var(--r-md); overflow: hidden; }
 .metric { background: var(--panel); padding: 12px 14px; }
-.metric .label { color: var(--ink-3); font-size: 11px; text-transform: uppercase; letter-spacing: .05em; font-weight: 600; }
+.metric .label { color: var(--ink-3); font-size: 12px; letter-spacing: .01em; font-weight: 600; }
 .metric .metric-value { font-size: 23px; font-weight: 640; letter-spacing: -.02em; margin-top: 3px; }
 .metric .metric-value small { font-size: 12px; color: var(--ink-3); font-weight: 500; letter-spacing: 0; }
 .metric .foot { color: var(--ink-3); font-size: 11px; margin-top: 1px; }
@@ -206,7 +206,7 @@ input[type="range"]::-moz-range-thumb { width: 15px; height: 15px; border-radius
 table.data { width: 100%; border-collapse: collapse; font-size: 13px; }
 table.data th, table.data td { text-align: right; padding: 7px 10px; border-bottom: 1px solid var(--rule); }
 table.data th:first-child, table.data td:first-child { text-align: left; }
-table.data thead th { color: var(--ink-3); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; border-bottom: 1px solid var(--rule-2); }
+table.data thead th { color: var(--ink-3); font-weight: 600; font-size: 12px; letter-spacing: .01em; border-bottom: 1px solid var(--rule-2); }
 table.data tbody tr:hover { background: var(--panel-2); }
 table.data td.pos { color: var(--good); font-weight: 600; }
 table.data .scen-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 7px; vertical-align: middle; }
@@ -322,3 +322,13 @@ dl.glossary dd { margin: 2px 0 0; font-size: 13px; }
   .navtoggle { display: inline-flex; }
   .brand .sub { display: none; }
 }
+
+/* tables, code and charts on narrow screens */
+.tablewrap { overflow-x: auto; max-width: 100%; }
+code { overflow-wrap: anywhere; }
+@media (max-width: 640px) {
+  figure.chart > div { overflow-x: auto; }
+  figure.chart svg { min-width: 560px; }
+  .split.controls-first > :last-child { order: -1; }
+}
+.split > *, .grid > * { min-width: 0; }

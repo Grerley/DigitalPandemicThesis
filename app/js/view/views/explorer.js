@@ -30,10 +30,9 @@ export function ExplorerView() {
     csv: () => { const t = Array.from({ length: 21 }, (_, i) => i); return simulate(P(), x22, t).map((x, i) => ({ year: 2022 + i, S: x[0], A: x[1], I: x[2], R: x[3] })); },
     render: () => {
       const t = Array.from({ length: 81 }, (_, i) => i / 4), xs = simulate(P(), x22, t);
-      const eq = equilibrium(P());
-      return timeSeries({ xs: t.map((v) => 2022 + v), yTitle: "Share of young people aged 10 to 24",
+            return timeSeries({ xs: t.map((v) => 2022 + v), yTitle: "Share of young people aged 10 to 24",
         series: ["S", "A", "I", "R"].map((k, j) => ({ key: k, name: { S: "Susceptible", A: "At-Risk", I: "Problematic use (I)", R: "Recovered" }[k], color: COLORS[k], ys: xs.map((x) => x[j]), width: k === "I" ? 2.6 : 1.8 })),
-        markers: [], points: [{ x: 2042, y: eq[2], color: COLORS.I, label: `I* ${pc(eq[2])}` }] });
+        markers: [] });
     } });
   const diagWrap = h("div");
   const elastCard = chartCard({ title: "Sensitivity of equilibrium prevalence", sub: "normalised index ∂ln I* / ∂ln θ", filename: "sensitivity",
@@ -86,12 +85,12 @@ export function ExplorerView() {
     const [mn, mx, st] = BOUNDS[k], m = PARAM_META[k];
     const range = RANGES[k] ? ` · thesis range ${RANGES[k].low} to ${RANGES[k].high}` : " · solved from data in the thesis";
     rows[k] = sliderRow({ sym: m.sym, label: m.label, unit: `${m.unit}${range}`, desc: m.desc, min: mn, max: mx, step: st, value: P()[k], baseline: central[k],
-      onInput: (v) => { store.set({ params: { [k]: v } }, { silent: true }); refreshSoon(); } });
+      onInput: (v) => { store.set({ params: { [k]: v } }, { silent: true }); calOut.replaceChildren(); calChart.replaceChildren(); refreshSoon(); } });
     return rows[k];
   }));
   const syncSliders = () => { for (const k of PARAM_KEYS) rows[k].setValue(P()[k]); };
 
-  el.appendChild(h("div", { class: "split" }, [
+  el.appendChild(h("div", { class: "split controls-first" }, [
     h("div", {}, [panel({ title: "Live model", children: [metrics, traj] }), panel({ title: "Where young people go", sub: "flows per year at the equilibrium", children: [diagWrap] })]),
     panel({ title: "Rates", actions: h("button", { class: "sm ghost", onclick: () => { store.resetParams(); syncSliders(); refresh(); }, text: "Reset to central" }), children: [sliders] }),
   ]));

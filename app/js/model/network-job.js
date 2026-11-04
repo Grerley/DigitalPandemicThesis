@@ -1,6 +1,8 @@
 // network-job.js: one network experiment, as run on the Networks screen (worker or main thread).
 // For each replicate the same graph and random seed are used without protection and with the chosen
-// protection, so the difference measures the protection itself (paired design, as in the thesis).
+// protection, so the difference measures the protection itself (paired design, as in the thesis). Near the
+// threshold, the exposure rate is solved separately for each graph so that its R_net is 1.5; the thesis solved it
+// once on one graph. Watts–Strogatz graphs are not forced to be connected, unlike networkx's connected variant.
 
 import { makeGraph, simulateNetwork, betaFromB, Rnet, topDegree } from "./network.js";
 import { calibrateRates } from "./calibrate.js";
@@ -17,15 +19,16 @@ export function runNetworkJob(opts, onProgress = () => {}) {
   let p = { ...opts.params };
   const months = years * 12;
   const base = [], prot = [], rnets = [];
-  let bUsed = p.b;
+  const bs = [];
   for (let r = 0; r < reps; r++) {
     const adj = makeGraph(kind, n, k, seed + r);
     let q = p, x0 = opts.x22;
     if (regime === "near") {
       // exposure rate at which the heuristic R_net of this graph equals 1.5
       const b = brent((bb) => Rnet({ ...p, b: bb }, betaFromB({ ...p, b: bb }, k), adj) - 1.5, 1e-4, 200, 1e-8);
-      q = { ...p, b }; x0 = equilibrium(q); bUsed = b;
+      q = { ...p, b }; x0 = equilibrium(q);
     }
+    bs.push(q.b);
     const beta = betaFromB(q, k);
     rnets.push(Rnet(q, beta, adj));
     const run = (w) => simulateNetwork(adj, q, beta, { months, x0, seed: seed + 1000 + r, recordEvery: 12, weights: w }).frac.map((f) => f[2]);
@@ -55,5 +58,5 @@ export function runNetworkJob(opts, onProgress = () => {}) {
     }
     return { mean, lo, hi, final: runs.map((x) => x[x.length - 1]) };
   };
-  return { base: summarise(base), prot: summarise(prot), rnet: rnets.reduce((a, b) => a + b, 0) / rnets.length, bUsed };
+  return { base: summarise(base), prot: summarise(prot), rnet: rnets.reduce((a, b) => a + b, 0) / rnets.length, bUsed: bs.reduce((a, b) => a + b, 0) / bs.length };
 }

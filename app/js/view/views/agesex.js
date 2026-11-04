@@ -10,7 +10,7 @@ export function AgeSexView() {
   const el = h("div", { class: "view" });
   el.appendChild(viewHead("Screen 8 · Age and sex", "Girls, boys and age bands",
     "A structured version splits young people into eight groups by sex and four age bands (10 to 12, 13 to 15, 16 to 19 and 20 to 24), with ageing through the bands, mixing mostly within age band, " +
-    "and a vulnerability multiplier for girls and for the youngest band. It is fitted exactly to the 2022 HBSC figures for all young people, girls (13%), boys (9%) and 11-year-olds (9%), and then compared with what is known about 2018, which it was not fitted to."));
+    "and a vulnerability multiplier for girls and for the youngest band. It is fitted exactly to the 2022 HBSC figures for all young people, girls (13%), boys (9%) and 11-year-olds (9%), and then compared with what is known about the 2018 breakdowns by sex and age, which it was not fitted to."));
 
   const A = LAB.agesex, d18g = R("asxs_derived18_girls") / 100, d18b = R("asxs_derived18_boys") / 100;
   const mk = (which, title) => chartCard({ title, sub: "HBSC ages (11, 13 and 15), central fit (thesis results)", filename: `agesex-${which}`,
@@ -31,8 +31,8 @@ export function AgeSexView() {
       { label: "Italian national HBSC report", value: "about 1.7 to 1.8", foot: "2018, ages 13 and 15" },
     ]),
     h("p", { class: "prose", html: "Reproducing the 2022 breakdowns requires girls to be more vulnerable to acquisition than boys, almost whatever the assumed mixing. Tested against 2018, the model reproduces the age gradient. " +
-      "On sex, a constant difference in vulnerability implies a 2018 ratio well above the one derived from pooled odds ratios, while its range overlaps the ratios in the Italian national report. " +
-      "The verdict therefore depends on a benchmark that tabulations from the HBSC 2017/2018 open-access data could settle. If the pooled benchmark holds, girls' vulnerability rose after 2018, and girls account for about two thirds of the absolute rise." }),
+      "On sex, a constant difference in vulnerability implies a 2018 girls-to-boys ratio well above the one derived from pooled odds ratios, so against that benchmark the sex test fails. Its range does, however, overlap the ratios in the Italian national report. " +
+      "The verdict therefore rests on the benchmark, which tabulations from the HBSC 2017/2018 open-access data could settle. If the pooled benchmark holds, girls' vulnerability rose after 2018, and girls account for about two thirds of the absolute rise." }),
     source("thesis Chapters 4, 5 and 7 and the age and sex paper (Mutibura and Lubuma, manuscript in preparation); Boniel-Nissim et al. (2024); Boer et al. (2022); Marino et al. (2020); python/ext_agesex.py, ext_agesex_shift.py and ext_paper5.py."),
   ] }));
 
@@ -40,7 +40,8 @@ export function AgeSexView() {
   el.appendChild(panel({ title: "A minimum age of 16, represented by age band", sub: `relative reduction in problematic use, from ${R("asx_start_year")}`, children: [
     table(["Group", "Compliance 30%", "Compliance 50%", "Compliance 70%"],
       bands.map(([t, k]) => [t, ...[30, 50, 70].map((c) => `${R(`asx_ma_c${c}_${k}_red_pct`).toFixed(0)}%`)]), ["l", "r", "r", "r"]),
-    h("p", { class: "prose", html: "Problematic use among the under-16s falls roughly in proportion to compliance, largely by construction. The effect fades among 16-to-24-year-olds. Under the model's assumption that rates after 16 do not depend on age at first access, delaying access delays problematic use more than it prevents it." }),
+    h("p", { class: "prose", html: "Problematic use among the under-16s falls roughly in proportion to compliance, largely by construction: young people kept off social media cannot have problematic use. The effect fades among 16-to-24-year-olds. Under the model's assumption that rates after 16 do not depend on age at first access, delaying access delays problematic use more than it prevents it." }),
+    h("p", { class: "prose", html: `Across parameter draws, with compliance drawn from 30% to 70%, the reduction across all young people aged 10 to 24 has median ${R("asx_ma_d_whole_median").toFixed(0)}% (90% range ${R("asx_ma_d_whole_p05").toFixed(0)}% to ${R("asx_ma_d_whole_p95").toFixed(0)}%), larger than the main model's cruder representation suggests (${R("int_minimum_age_median").toFixed(0)}%). Two caveats bound the result: the model assumes that a young person without access has no problematic use and no substitute behaviour, and that compliance means real absence from platforms rather than use through other accounts. Both are optimistic.` }),
     condNote("Compliance levels are assumptions. South Africa has no enacted minimum age for social media; the scenario is hypothetical for South Africa."),
   ] }));
   return { el };
