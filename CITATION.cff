@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software or model, please cite the thesis below."
-title: "The Digital Pandemic: An Epidemic-Modelling Framework for Technology-Induced Mental Health in a Connected World"
+title: "An Epidemic-Modelling Framework for Problematic Social Media Use among Young People"
 type: software
 authors:
   - family-names: Mutibura
@@ -13,13 +13,13 @@ keywords:
   - mathematical epidemiology
   - compartmental model
   - network science
-  - Bayesian inference
-  - digital addiction
-  - mental health
-  - public health
+  - identifiability
+  - calibration
+  - problematic social media use
+  - young people
 references:
   - type: thesis
-    title: "The Digital Pandemic: An Epidemic-Modelling Framework for Technology-Induced Mental Health in a Connected World"
+    title: "An Epidemic-Modelling Framework for Problematic Social Media Use among Young People"
     authors:
       - family-names: Mutibura
         given-names: Grerley

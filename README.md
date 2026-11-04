@@ -1,127 +1,96 @@
-# The Digital Pandemic
+# An epidemic-modelling framework for problematic social media use among young people
 
-**Reproducible modelling pipeline for the doctoral thesis**
-*The Digital Pandemic: An Epidemic-Modelling Framework for Technology-Induced Mental Health in a Connected World*
-Grerley Mutibura · 2026
+**Code, analysis outputs and interactive lab for the doctoral thesis of Grerley Mutibura**
+School of Computer Science and Applied Mathematics, University of the Witwatersrand
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-black.svg)](LICENSE)
-[![Data: CC BY 4.0](https://img.shields.io/badge/Data-CC%20BY%204.0-black.svg)](data/README.md)
 
 ---
 
 ## Overview
 
-This repository contains the full, reproducible modelling pipeline behind the thesis. It models youth
-digital addiction as a process of **behavioural contagion** and analyses its dynamics, drivers, and
-control using three complementary methods:
+In the Health Behaviour in School-aged Children (HBSC) study, problematic social media use among 11-, 13- and
+15-year-olds rose from 7% in 2017/2018 to 11% in 2021/2022 (Boniel-Nissim et al., 2024). Problematic use means six
+or more of the nine items of the Social Media Disorder Scale; it is a measured behavioural category, not a diagnosis.
 
-1. **An S–A–I–R compartmental model** (Susceptible → At-Risk → Addicted → Recovered) with a **relapse**
-   pathway, formulated as a system of nonlinear difference equations with a mass-action force of infection.
-2. **Network Monte Carlo simulation** over Erdős–Rényi (random), Watts–Strogatz (small-world), and
-   Barabási–Albert (scale-free) topologies, to quantify how social-network structure shapes spread.
-3. **Statistical calibration**: hierarchical Bayesian estimation of the transmission rate (Stan),
-   Hidden Markov Model estimation of transition probabilities, and logistic regression for risk factors.
+The thesis builds a four-state compartmental model of young people aged 10 to 24 (Susceptible, At-Risk, Addicted,
+Recovered) with population turnover, a social and a non-social route into risk, remission, recovery and relapse. It
 
-## Interactive Simulation Lab
+- proves the model's threshold, stability and bifurcation properties, and shows that any non-social acquisition
+  removes the threshold and sets a floor that measures acting only on social exposure cannot pass;
+- calibrates the model to the two HBSC figures by solving exactly the two quantities they identify, makes the prior
+  implied by that design explicit, and states in advance what the next HBSC wave would imply;
+- designs, by a hidden Markov parameter-recovery study, the panel data that would identify the transition rates;
+- examines network structure and targeting, intervention mechanisms under assumed efficacies, optimal control,
+  and an age- and sex-structured version tested against the 2018 survey.
 
-A browser-based **interactive lab** ([`app/`](app/)) lets readers explore the thesis model: the two explanations of
-the rise in problematic social media use between the 2018 and 2022 HBSC surveys and what the next wave can decide,
-the threshold and the floor, network structure and targeting, intervention mechanisms, panel design and the age-
-and sex-structured model. Thesis results are generated from the Python analysis by `python/export_lab.py`; live
-results come from a JavaScript port of the model that a built-in self-test checks against the Python values.
+The social exposure rate bundles influence, homophily and shared environment and is not a causal peer effect.
+The thesis makes no causal claim about social media and mental health. South Africa, which does not take part in
+HBSC, is treated through scenarios and a research design, not estimates.
 
-**Live demo: https://grerley.github.io/DigitalPandemicThesis/**, deployed from `app/` on every push to `main` by
-[`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml).
+## Selected results
+
+All are model outputs conditional on stated assumptions, produced by the code in `python/`.
+
+| Quantity | Value |
+|---|---|
+| Parameter draws reproducing both HBSC figures | 805 of 1,000 |
+| Projected problematic use in 2042, persistent shift in exposure (median, 90% range) | 13.2% (9.8% to 21.3%) |
+| Projected problematic use in 2042, temporary shock in 2020 and 2021 (median, 90% range) | 7.3% (6.6% to 8.6%) |
+| Floor of prevalence with no social exposure, central parameters | 0.59% |
+| R₀ after 2018 without non-social acquisition, central parameters | 4.02 |
+| Reduction in 2042 prevalence, treatment access (median, assumed efficacy) | 37% |
+| Reduction in 2042 prevalence, platform design regulation (median, assumed efficacy) | 13% |
+
+## Interactive lab
+
+A browser-based lab ([`app/`](app/)) lets readers explore the model: the two explanations of the rise and what the
+next wave can decide, the threshold and the floor, networks and targeting, interventions, panel design, and age and
+sex. Thesis results are generated from the Python analysis by `python/export_lab.py`; live results come from a
+JavaScript port of the model that a built-in self-test checks against the Python values.
+
+**Live: https://grerley.github.io/DigitalPandemicThesis/**, deployed from `app/` on every push to `main` by
+[`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml). See [`app/README.md`](app/README.md).
+
+## Reproduce
 
 ```bash
-cd app && python3 -m http.server 8000   # then open http://localhost:8000/
+cd python
+pip install -r requirements.txt
+python run_all.py          # calibration, projections, mathematics, networks, interventions, recovery study
+python derived.py
+python ext_*.py            # extension analyses, each writing outputs/results_<name>.json
+python export_lab.py       # data file for the interactive lab
+python -m pytest tests     # numerical checks of the theorems
 ```
 
-See [`app/README.md`](app/README.md). The first version of the lab is archived in `archive/simulation-lab-v1/`.
-
-> **Epistemic status.** All quantitative outputs are *conditional model results*, not empirical
-> forecasts. Parameters are calibrated against aggregate WHO HBSC and OECD surveillance data together
-> with a documented **synthetic cohort** that stands in for the longitudinal transition data that do
-> not yet exist. The robust conclusions are qualitative (a self-sustaining epidemic with a critical
-> threshold and an exploitable network structure); specific numbers illustrate rather than measure.
-
-## Headline (illustrative) results
-
-| Quantity | Model output | Notes |
-|---|---|---|
-| Basic reproduction number R₀ | ≈ 2.4 | next-generation-matrix derivation (`06_r0_analysis.R`) |
-| Peak addicted prevalence | ≈ 14% (baseline) → higher under scale-free / OECD | `01`, `02` |
-| Endemic prevalence | ≈ 8% | positive equilibrium, sustained by relapse |
-| Incidence–prevalence lag | ≈ 3 years | prevention window closes early |
-| Comprehensive intervention | up to −68% peak | conditional on assumed efficacies (`07`) |
-
-## Quick start
-
-```bash
-git clone https://github.com/GrerleyMutibura/DigitalPandemicThesis.git
-cd DigitalPandemicThesis
-Rscript -e 'install.packages(c("deSolve","igraph","depmixS4","dplyr","tidyr","ggplot2","survival"))'
-# (optional, for Bayesian calibration) install cmdstanr / rstan
-Rscript analysis/run_all.R      # reproduces core results and figures
-```
-
-Outputs (trajectories, calibrated parameters, and black-and-white journal-style figures) are written to
-`outputs/` and `figures/`.
+See [`python/README.md`](python/README.md). Running any script with `DPM_BW=1` renders black-and-white figures.
 
 ## Repository layout
 
 ```
 .
-├── R/                     Model + analysis source
-│   ├── utils.R                shared helpers, default parameters
-│   ├── 01_sair_model.R        deterministic S–A–I–R difference-equation model
-│   ├── 02_network_simulation.R  ER / WS / BA Monte Carlo contagion
-│   ├── 03_synthetic_data.R    synthetic longitudinal cohort generator
-│   ├── 04_hmm_estimation.R    Hidden Markov transition estimation
-│   ├── 05_regression.R        logistic regression of risk factors
-│   ├── 06_r0_analysis.R       R₀, next-generation matrix, endemic equilibrium, stability
-│   └── 07_interventions.R     intervention scenario simulation
-├── stan/
-│   └── hierarchical_beta.stan hierarchical Bayesian calibration of β
-├── data/
-│   ├── parameters.csv         calibrated parameters with uncertainty ranges
-│   └── README.md              data provenance and access (HBSC/OECD are external)
-├── figures/make_figures.R     regenerates all thesis figures (B&W)
-├── analysis/run_all.R         master pipeline
-├── docs/
-│   ├── model_specification.md  full equations (4.1–4.4, A.1–A.7)
-│   └── methods_summary.md      methods & calibration overview
-├── CITATION.cff
-├── LICENSE
-└── .gitignore
+├── python/                 the thesis pipeline (model, calibration, networks, recovery study, interventions)
+│   ├── dpm/                    model package
+│   ├── data/                   literature-based parameter ranges and scenario inputs
+│   ├── outputs/                every number reported in the thesis (results*.json)
+│   ├── figures/, figures_bw/   figures
+│   └── tests/                  numerical checks of the mathematical results
+├── app/                    interactive lab (static site, no build step)
+├── archive/
+│   └── simulation-lab-v1/  first version of the lab, kept for reference; not consistent with the thesis
+├── R/, stan/, analysis/, figures/, docs/, data/
+│                           code and documents from the first version of the thesis; not used for any result
+└── .github/workflows/      Python tests and lab deployment
 ```
 
-## Model summary
+## Data
 
-The population state vector **x**(t) = [S, A, I, R]ᵀ evolves under a state-dependent transition matrix
-**P**(**x**ₜ) whose S→A entry is a mass-action force of infection
+No individual-level or identifiable data are held here. The calibration uses only published HBSC aggregates;
+South African figures are published household and child-user statistics used for context and scenarios. The
+parameter-recovery study uses synthetic data generated from known values, which are not estimates for any
+population.
 
-```
-P_SA(x_t) = 1 − exp[ −β·k·(I_t + η·A_t) ] + μ
-```
+## Citation and licence
 
-with per-contact transmission β, mean active contacts k, reduced At-Risk infectivity η ∈ [0,1], and
-exogenous acquisition μ. The Recovered→At-Risk relapse term δ keeps the epidemic self-sustaining and
-produces a positive endemic equilibrium; the disease-free equilibrium loses stability through a
-transcritical bifurcation at R₀ = 1. Full derivations are in [`docs/model_specification.md`](docs/model_specification.md).
-
-## Data availability
-
-No identifiable human-subjects data are held in this repository. Country-level prevalence targets derive
-from the publicly reported **WHO Health Behaviour in School-aged Children (HBSC)** study and **OECD**
-sources; access instructions are in [`data/README.md`](data/README.md). The synthetic cohort is fully
-regenerable from `R/03_synthetic_data.R` with a fixed seed.
-
-## Citation
-
-If you use this code, please cite the thesis (see [`CITATION.cff`](CITATION.cff)).
-
-## Licence
-
-Code is released under the MIT Licence ([`LICENSE`](LICENSE)). Documentation and generated data tables
-are under CC BY 4.0.
+Please cite the thesis (see [`CITATION.cff`](CITATION.cff)). Code is released under the MIT Licence ([`LICENSE`](LICENSE)).

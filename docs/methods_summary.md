@@ -1,3 +1,5 @@
+> **First version of the thesis.** This file belongs to the first version and is not used for any result in the current thesis. The current pipeline is in `python/`.
+
 # Methods Summary
 
 A short guide to the estimation and simulation methods, mapping each thesis method to its code.

@@ -1,3 +1,5 @@
+> **First version of the thesis.** This file belongs to the first version and is not used for any result in the current thesis. The current pipeline is in `python/`.
+
 # Data
 
 This repository contains **no identifiable human-subjects data**. It holds only (a) a small table of

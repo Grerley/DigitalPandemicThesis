@@ -1,0 +1,18 @@
+{
+ "rejx_2018_floor_above": {
+  "value": 3,
+  "note": "draws whose floor (b = 0) exceeds the 2018 target"
+ },
+ "rejx_2018_unreachable": {
+  "value": 53,
+  "note": "draws whose equilibrium at b = 200 stays below the 2018 target"
+ },
+ "rejx_2018_unreachable_median_gamma2": {
+  "value": 1.1152957125681568,
+  "note": ""
+ },
+ "rejx_2018_unreachable_median_sigma": {
+  "value": 0.13825680900496576,
+  "note": ""
+ }
+}

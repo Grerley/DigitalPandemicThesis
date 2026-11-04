@@ -1,3 +1,5 @@
+> **First version of the thesis.** This file belongs to the first version and is not used for any result in the current thesis. The current pipeline is in `python/`.
+
 # Model Specification
 
 Full mathematical specification of the S–A–I–R model of digital addiction. Equation numbers match the

@@ -36,7 +36,7 @@ export function ExplanationsView() {
       { label: "Gap between medians", value: `${R("proj_gap_2042").toFixed(1)} pp`, foot: "2042", accent: true },
       { label: "Draws rejected", value: `${R("cal_n_draws") - R("cal_n_ok")}`, foot: `${R("cal_n_rejected_2018")} at 2018, ${R("cal_n_draws") - R("cal_n_ok") - R("cal_n_rejected_2018")} at 2022` },
     ]),
-    h("p", { class: "prose", html: `A draw is rejected when 7% cannot be reached in 2018 even at very high exposure (${R("cal_n_rejected_2018")} draws), or when 11% cannot be reached by 2022 in one of the scenarios. The rejected draws have much faster recovery than the kept ones (median ${R("cal_rej_median_gamma2").toFixed(2)} against ${R("cal_kept_median_gamma2").toFixed(2)} per year): with recovery that fast, prevalence cannot rise from 7% to 11% in four years. The speed of the rise therefore rules out the fastest recovery rates.` }),
+    h("p", { class: "prose", html: `A draw is rejected when 7% cannot be reached in 2018 (${R("cal_n_rejected_2018")} draws: in ${R("rejx_2018_unreachable")} the equilibrium stays below 7% even at very high exposure, and in ${R("rejx_2018_floor_above")} non-social acquisition alone already exceeds 7%), or when 11% cannot be reached by 2022 in one of the scenarios. The rejected draws have much faster recovery than the kept ones (median ${R("cal_rej_median_gamma2").toFixed(2)} against ${R("cal_kept_median_gamma2").toFixed(2)} per year): with recovery that fast, prevalence cannot rise from 7% to 11% in four years. The speed of the rise therefore rules out the fastest recovery rates.` }),
     source("thesis Chapter 7; python/run_all.py (calibration and projections)."),
   ] }));
 

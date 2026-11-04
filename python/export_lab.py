@@ -33,7 +33,7 @@ def results():
 
 
 KEEP = re.compile(r"^(R0_b[01]$|I_star_b_zero$|eq_b1_I$|elast_I_|ident_n_|cal_n_|cal_kept_median_|cal_rej_median_|"
-                  r"proj_[PT]_20(22|26|32|42)_|proj_gap_2042$|p2_(implicit|flat|log)_(lr|pP|pT)_\d+$|calx_lr_\d+$|int_n_draws$|"
+                  r"proj_[PT]_20(22|26|32|42)_|proj_gap_2042$|p2_(implicit|flat|log)_(lr|pP|pT)_\d+$|calx_lr_\d+$|int_n_draws$|rejx_|"
                   r"int_.*_(median|p05|p95)$|int_start_year$|ctl_mv_ratio|ctl_ref_(const_share_pct|gain_pct|averted_opt_pct|"
                   r"I_2042_(none|opt|const)_pct)$|net_(ER|WS|BA)_|net_meanfield_|net_mean_degree$|net_nodes$|net_reps$|"
                   r"netx_tgt_(cal|r1p5)_(hub|random|acq)_c(5|10|20|30)_(rel_pct|se)$|netx_tgt_(cal|r1p5)_Rnet$|netx_tgt_(cal|r1p5)_base$|"
