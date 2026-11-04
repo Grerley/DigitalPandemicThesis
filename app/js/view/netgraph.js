@@ -23,7 +23,7 @@ export function layout(adj, w, h, seed = 1, iters = 160) {
     pos[i] = { x: cx + Math.cos(a) * r, y: cy + Math.sin(a) * r, dx: 0, dy: 0 };
   }
   const area = w * h;
-  const kk = 0.9 * Math.sqrt(area / Math.max(1, n));
+  const kk = 0.55 * Math.sqrt(area / Math.max(1, n));
   let temp = w * 0.12;
   for (let it = 0; it < iters; it++) {
     for (let i = 0; i < n; i++) { pos[i].dx = 0; pos[i].dy = 0; }
@@ -53,8 +53,8 @@ export function layout(adj, w, h, seed = 1, iters = 160) {
     }
     // centring + integrate with cooling
     for (let i = 0; i < n; i++) {
-      pos[i].dx += (cx - pos[i].x) * 0.012;
-      pos[i].dy += (cy - pos[i].y) * 0.012;
+      pos[i].dx += (cx - pos[i].x) * 0.06;
+      pos[i].dy += (cy - pos[i].y) * 0.06;
       const d = Math.hypot(pos[i].dx, pos[i].dy) || 1;
       const step = Math.min(d, temp);
       pos[i].x += (pos[i].dx / d) * step;

@@ -1,235 +1,159 @@
-// network.js, Stochastic Reed–Frost contagion on explicit graphs.
+// network.js: stochastic S-A-I-R dynamics on explicit contact networks (thesis Chapter 8; python/dpm/network.py).
 // -----------------------------------------------------------------------------
-// Port of R/02_network_simulation.R with added node-immunisation. Three
-// topologies (Erdős–Rényi, Watts–Strogatz, Barabási–Albert) are generated from
-// a seeded RNG so ensembles are exactly reproducible. States are encoded as
-// integers: 0=S, 1=A(At-Risk), 2=I(Addicted), 3=R(Recovered), 4=V(protected).
-//
-// PURE module: no DOM. Imported by the web worker and by a main-thread fallback.
+// Discrete monthly steps, one node per young person. Each month:
+//   S → A with probability 1 − (1 − α_m)(1 − β)^(w_i (m_I + η m_A)), m_I and m_A the Addicted and At-Risk neighbours,
+//          w_i the node's susceptibility to social exposure (1, or a reduced value if protected);
+//   A, I and R leave by competing hazards converted with P = 1 − exp(−h Δt);
+//   turnover: with probability 1 − exp(−ν Δt) a node ages out and is replaced by a new Susceptible.
+// Graphs are generated in JavaScript with the same families and settings as the thesis; they are not the
+// same random graphs, so individual runs differ from the thesis runs while their distributions agree.
 
 import { RNG } from "./rng.js";
-import { rateToProb } from "./sair.js";
 
-export const STATE = { S: 0, A: 1, I: 2, R: 3, V: 4 };
+export const DT = 1 / 12;
 
-// ---- Graph generators -------------------------------------------------------
-
-/** Erdős–Rényi G(n, p) with p = meanDegree/(n−1). */
-function erdosRenyi(n, meanDegree, rng) {
+// ---------------------------------------------------------------- graphs (adjacency lists)
+function edgesToAdj(n, edges) {
   const adj = Array.from({ length: n }, () => []);
-  const p = meanDegree / (n - 1);
-  for (let i = 0; i < n; i++) {
-    for (let j = i + 1; j < n; j++) {
-      if (rng.next() < p) { adj[i].push(j); adj[j].push(i); }
-    }
-  }
+  for (const [u, v] of edges) { adj[u].push(v); adj[v].push(u); }
   return adj;
 }
 
-/** Watts–Strogatz small-world: ring lattice (nei each side) rewired w.p. β. */
-function wattsStrogatz(n, meanDegree, rng, beta = 0.1) {
-  const nei = Math.max(1, Math.floor(meanDegree / 2));
-  const set = Array.from({ length: n }, () => new Set());
-  for (let i = 0; i < n; i++) {
-    for (let d = 1; d <= nei; d++) {
-      const j = (i + d) % n;
-      set[i].add(j); set[j].add(i);
-    }
+/** Erdős–Rényi G(n, p) with p = k/(n − 1), by geometric skipping. */
+function erdosRenyi(n, k, rng) {
+  const p = k / (n - 1), edges = [];
+  const lp = Math.log(1 - p);
+  let v = 1, w = -1;
+  while (v < n) {
+    w += 1 + Math.floor(Math.log(1 - rng.next()) / lp);
+    while (w >= v && v < n) { w -= v; v++; }
+    if (v < n) edges.push([v, w]);
   }
-  // Rewire each forward edge with probability beta.
-  for (let i = 0; i < n; i++) {
-    for (let d = 1; d <= nei; d++) {
-      const j = (i + d) % n;
-      if (rng.next() < beta) {
-        set[i].delete(j); set[j].delete(i);
-        let t = rng.int(n), guard = 0;
-        while ((t === i || set[i].has(t)) && guard++ < 50) t = rng.int(n);
-        set[i].add(t); set[t].add(i);
+  return edgesToAdj(n, edges);
+}
+
+/** Watts–Strogatz: ring lattice with k neighbours, each edge rewired with probability pr. */
+function wattsStrogatz(n, k, rng, pr = 0.1) {
+  const half = Math.round(k) / 2, set = new Set(), key = (u, v) => (u < v ? u * n + v : v * n + u);
+  for (let u = 0; u < n; u++) for (let j = 1; j <= half; j++) set.add(key(u, (u + j) % n));
+  for (let j = 1; j <= half; j++) {
+    for (let u = 0; u < n; u++) {
+      const v = (u + j) % n;
+      if (rng.next() < pr) {
+        let w = rng.int(n), guard = 0;
+        while ((w === u || set.has(key(u, w))) && guard++ < 50) w = rng.int(n);
+        if (guard < 50) { set.delete(key(u, v)); set.add(key(u, w)); }
       }
     }
   }
-  return set.map((s) => [...s]);
+  return edgesToAdj(n, [...set].map((e) => [Math.floor(e / n), e % n]));
 }
 
-/** Barabási–Albert scale-free by preferential attachment (m new edges/node). */
-function barabasiAlbert(n, meanDegree, rng) {
-  const m = Math.max(1, Math.floor(meanDegree / 2));
-  const adj = Array.from({ length: n }, () => []);
-  const targets = []; // multiset of node ids, degree-weighted
-  // Seed: m0 = m fully connected nodes.
-  const m0 = m + 1;
-  for (let i = 0; i < m0; i++) {
-    for (let j = i + 1; j < m0; j++) { adj[i].push(j); adj[j].push(i); targets.push(i, j); }
+/** Barabási–Albert preferential attachment with m = k/2 edges per new node, started from a star on m + 1 nodes. */
+function barabasiAlbert(n, k, rng) {
+  const m = Math.round(k / 2), edges = [], repeated = [];
+  for (let i = 1; i <= m; i++) { edges.push([0, i]); repeated.push(0, i); }
+  for (let v = m + 1; v < n; v++) {
+    const targets = new Set();
+    while (targets.size < m) targets.add(repeated[rng.int(repeated.length)]);
+    for (const t of targets) { edges.push([v, t]); repeated.push(v, t); }
   }
-  for (let v = m0; v < n; v++) {
-    const chosen = new Set();
-    let guard = 0;
-    while (chosen.size < m && guard++ < 200) {
-      const t = targets.length ? targets[rng.int(targets.length)] : rng.int(v);
-      if (t !== v) chosen.add(t);
-    }
-    for (const t of chosen) {
-      adj[v].push(t); adj[t].push(v);
-      targets.push(v, t);
-    }
-  }
-  return adj;
+  return edgesToAdj(n, edges);
 }
 
+export const GRAPH_LABELS = { ER: "Erdős–Rényi", WS: "Watts–Strogatz", BA: "Barabási–Albert" };
+
+export function makeGraph(kind, n, k, seed) {
+  const rng = new RNG(seed);
+  if (kind === "ER") return erdosRenyi(n, k, rng);
+  if (kind === "WS") return wattsStrogatz(n, k, rng);
+  if (kind === "BA") return barabasiAlbert(n, k, rng);
+  throw new Error(kind);
+}
+
+export function degreeMoments(adj) {
+  let k1 = 0, k2 = 0;
+  for (const nb of adj) { k1 += nb.length; k2 += nb.length * nb.length; }
+  return { k1: k1 / adj.length, k2: k2 / adj.length };
+}
+
+// ---------------------------------------------------------------- transmissibility and R_net
+/** Per-edge monthly transmission probability matching the mean-field exposure rate b = rate × k. */
+export const betaFromB = (p, k) => 1 - Math.exp(-p.b / k / 12);
+
+function rates(p, beta) {
+  return { theta: -Math.log(1 - beta) / DT, a: p.sigma + p.gamma1 + p.nu, c: p.gamma2 + p.nu, d: p.delta + p.nu };
+}
+
+/** Career transmissibility: probability of exposing a given neighbour over all spells, relapses included. */
+export function careerTransmissibility(p, beta) {
+  const { theta, a, c, d } = rates(p, beta);
+  const hA = a + p.eta * theta, hI = c + theta;
+  const X = (p.gamma1 + p.nu) / hA + (p.sigma / hA) * (p.nu / hI + (p.gamma2 / hI) * (p.nu / d));
+  const Y = (p.sigma / hA) * (p.gamma2 / hI) * (p.delta / d);
+  return 1 - X / (1 - Y);
+}
+
+/** Heuristic network reproduction number T_career (⟨k²⟩ − ⟨k⟩)/⟨k⟩ (α set to zero). */
+export function Rnet(p, beta, adj) {
+  const { k1, k2 } = degreeMoments(adj);
+  return careerTransmissibility({ ...p, alpha: 0 }, beta) * (k2 - k1) / k1;
+}
+
+// ---------------------------------------------------------------- simulation
 /**
- * Build a network of the requested topology.
- * @param {"ER"|"WS"|"BA"} type
- * @returns {{adj:number[][], degree:number[]}}
+ * Run the monthly process. Returns { frac: [[S,A,I,R] per recorded month], states } .
+ * opts: { months, x0, seed, recordEvery = 12, weights (Float64Array of susceptibility multipliers) }
  */
-export function makeNetwork(type, n, meanDegree, rng) {
-  let adj;
-  if (type === "ER") adj = erdosRenyi(n, meanDegree, rng);
-  else if (type === "WS") adj = wattsStrogatz(n, meanDegree, rng);
-  else adj = barabasiAlbert(n, meanDegree, rng);
-  const degree = adj.map((a) => a.length);
-  return { adj, degree };
-}
-
-// ---- Contagion --------------------------------------------------------------
-
-/**
- * One stochastic Reed–Frost run on a fixed graph.
- * @param {{adj:number[][],degree:number[]}} g
- * @param {object} p parameters
- * @param {object} opts { horizonMonths, seedFrac, seedHub, immunizeFrac,
- *                        immunizeStrategy ('hub'|'random'), recordStates }
- * @param {RNG} rng
- * @returns trajectory arrays; if recordStates, also `frames` (per-step int8 states)
- */
-export function simulateNetworkOnce(g, p, opts, rng) {
-  const {
-    horizonMonths = 240, seedFrac = 0.01, seedHub = false,
-    immunizeFrac = 0, immunizeStrategy = "hub", recordStates = false, frameStride = 1,
-  } = opts;
-  const n = g.adj.length;
-  const state = new Int8Array(n); // all S = 0
-
-  // Immunise a coverage fraction (protected forever).
-  const nImm = Math.round(immunizeFrac * n);
-  if (nImm > 0) {
-    let idx;
-    if (immunizeStrategy === "hub") {
-      idx = [...g.degree.keys()].sort((a, b) => g.degree[b] - g.degree[a]);
-    } else {
-      idx = rng.shuffle([...Array(n).keys()]);
-    }
-    for (let i = 0; i < nImm; i++) state[idx[i]] = STATE.V;
+export function simulateNetwork(adj, p, beta, opts) {
+  const { months, x0, seed, recordEvery = 12, weights = null, keepStates = false } = opts;
+  const rng = new RNG(seed), n = adj.length;
+  let st = new Uint8Array(n);
+  const tot = x0[0] + x0[1] + x0[2] + x0[3];
+  for (let i = 0; i < n; i++) {
+    let r = rng.next() * tot, s = 0;
+    while (s < 3 && r >= x0[s]) { r -= x0[s]; s++; }
+    st[i] = s;
   }
-
-  // Seed Addicted among non-immune nodes.
-  const nSeed = Math.max(1, Math.round(seedFrac * n));
-  let seedPool;
-  if (seedHub) seedPool = [...g.degree.keys()].sort((a, b) => g.degree[b] - g.degree[a]);
-  else seedPool = rng.shuffle([...Array(n).keys()]);
-  let placed = 0;
-  for (const node of seedPool) {
-    if (placed >= nSeed) break;
-    if (state[node] === STATE.S) { state[node] = STATE.I; placed++; }
-  }
-
-  const pAI = rateToProb(p.sigma), pAS = rateToProb(p.gamma1);
-  const pIR = rateToProb(p.gamma2), pRA = rateToProb(p.delta);
-
-  const T = horizonMonths;
-  const S = new Float64Array(T + 1), A = new Float64Array(T + 1),
-        I = new Float64Array(T + 1), R = new Float64Array(T + 1);
-  const frames = recordStates ? [] : null;
-  const tally = (t) => {
-    let s = 0, a = 0, i = 0, r = 0;
-    for (let k = 0; k < n; k++) {
-      const st = state[k];
-      if (st === STATE.S) s++; else if (st === STATE.A) a++;
-      else if (st === STATE.I) i++; else if (st === STATE.R) r++;
-    }
-    S[t] = s / n; A[t] = a / n; I[t] = i / n; R[t] = r / n;
+  const am = 1 - Math.exp(-p.alpha * DT);
+  const pA = 1 - Math.exp(-(p.sigma + p.gamma1) * DT), shareI = p.sigma / (p.sigma + p.gamma1);
+  const pI = 1 - Math.exp(-p.gamma2 * DT), pR = 1 - Math.exp(-p.delta * DT), pexit = 1 - Math.exp(-p.nu * DT);
+  const l1mb = Math.log(1 - beta);
+  const frac = [], snapshots = [];
+  const record = () => {
+    const c = [0, 0, 0, 0];
+    for (let i = 0; i < n; i++) c[st[i]]++;
+    frac.push(c.map((v) => v / n));
+    if (keepStates) snapshots.push(st.slice());
   };
-  tally(0);
-  if (recordStates) frames.push(Int8Array.from(state));
-
-  const next = new Int8Array(n);
-  for (let t = 1; t <= T; t++) {
-    next.set(state);
+  const next = new Uint8Array(n);
+  for (let t = 0; t <= months; t++) {
+    if (t % recordEvery === 0) record();
+    if (t === months) break;
     for (let i = 0; i < n; i++) {
-      const s = state[i];
-      if (s === STATE.S) {
-        const nb = g.adj[i];
-        let mInf = 0;
-        for (let q = 0; q < nb.length; q++) {
-          const ns = state[nb[q]];
-          if (ns === STATE.I) mInf += 1;
-          else if (ns === STATE.A) mInf += p.eta;
-        }
-        const pinf = Math.min(1 - Math.pow(1 - p.beta, mInf) + p.mu, 1);
-        if (rng.next() < pinf) next[i] = STATE.A;
-      } else if (s === STATE.A) {
-        const u = rng.next();
-        if (u < pAI) next[i] = STATE.I;
-        else if (u < pAI + pAS) next[i] = STATE.S;
-      } else if (s === STATE.I) {
-        if (rng.next() < pIR) next[i] = STATE.R;
-      } else if (s === STATE.R) {
-        if (rng.next() < pRA) next[i] = STATE.A;
-      }
-      // V stays V.
+      const s = st[i], u = rng.next();
+      let ns = s;
+      if (s === 0) {
+        let e = 0;
+        for (const j of adj[i]) { const sj = st[j]; if (sj === 2) e += 1; else if (sj === 1) e += p.eta; }
+        if (weights) e *= weights[i];
+        if (u < 1 - (1 - am) * Math.exp(l1mb * e)) ns = 1;
+      } else if (s === 1) {
+        if (u < pA) ns = u < pA * shareI ? 2 : 0;
+      } else if (s === 2) {
+        if (u < pI) ns = 3;
+      } else if (u < pR) ns = 1;
+      next[i] = ns;
     }
-    state.set(next);
-    tally(t);
-    if (recordStates && t % frameStride === 0) frames.push(Int8Array.from(state));
+    for (let i = 0; i < n; i++) st[i] = rng.next() < pexit ? 0 : next[i];
   }
-  return { S, A, I, R, frames, months: T };
+  return { frac, snapshots };
 }
 
-/**
- * Monte-Carlo ensemble: many graph draws / runs. Returns mean trajectory and a
- * 95% envelope (2.5–97.5 percentiles) for the Addicted compartment.
- */
-export function simulateEnsemble(type, opts, onProgress) {
-  const {
-    n = 800, meanDegree = 10, runs = 60, horizonMonths = 240, seed = 1,
-    params, seedHub = false, immunizeFrac = 0, immunizeStrategy = "hub", seedFrac = 0.01,
-  } = opts;
-  const master = new RNG(seed);
-  const T = horizonMonths;
-  const all = []; // runs × (T+1) Addicted fraction
-  let peakSum = 0, peakYearSum = 0;
-  for (let r = 0; r < runs; r++) {
-    const rng = new RNG((master.int(2 ** 30) ^ (r * 2654435761)) >>> 0);
-    const g = makeNetwork(type, n, meanDegree, rng);
-    const run = simulateNetworkOnce(g, params, {
-      horizonMonths, seedHub, immunizeFrac, immunizeStrategy, seedFrac,
-    }, rng);
-    all.push(run.I);
-    let pk = 0, pkT = 0;
-    for (let t = 0; t <= T; t++) if (run.I[t] > pk) { pk = run.I[t]; pkT = t; }
-    peakSum += pk; peakYearSum += pkT / 12;
-    if (onProgress && r % 5 === 0) onProgress((r + 1) / runs);
-  }
-  const months = [], year = [], mean = [], lo = [], hi = [];
-  const col = new Float64Array(runs);
-  for (let t = 0; t <= T; t++) {
-    let sum = 0;
-    for (let r = 0; r < runs; r++) { col[r] = all[r][t]; sum += all[r][t]; }
-    const sorted = Float64Array.from(col).sort();
-    months.push(t); year.push(t / 12);
-    mean.push(sum / runs);
-    lo.push(percentile(sorted, 0.025));
-    hi.push(percentile(sorted, 0.975));
-  }
-  if (onProgress) onProgress(1);
-  return {
-    type, months, year, mean, lo, hi, runs,
-    meanPeak: peakSum / runs, meanPeakYear: peakYearSum / runs,
-  };
+/** Indices of the m highest-degree nodes. */
+export function topDegree(adj, m) {
+  return adj.map((nb, i) => [nb.length, i]).sort((a, b) => b[0] - a[0]).slice(0, m).map((x) => x[1]);
 }
 
-function percentile(sorted, q) {
-  const idx = q * (sorted.length - 1);
-  const lo = Math.floor(idx), hi = Math.ceil(idx);
-  if (lo === hi) return sorted[lo];
-  return sorted[lo] + (sorted[hi] - sorted[lo]) * (idx - lo);
-}
+/** Node-state codes for drawing (V marks a protected Susceptible). */
+export const STATE = { S: 0, A: 1, I: 2, R: 3, V: 4 };

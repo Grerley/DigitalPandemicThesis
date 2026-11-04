@@ -370,3 +370,58 @@ export function sankey({ flows, labels, colors, w = 560, h = 360 }) {
   g.appendChild(s("text", { x: iw - nodeW, y: ih + 14, "text-anchor": "end", class: "axis", "font-size": 10, fill: "var(--ink-3)", text: "final state" }));
   return svg;
 }
+
+// ---- signed horizontal bars (e.g. sensitivity indices) ---------------------
+export function bars({ rows, w = 720, valueFmt = (v) => fx(v, 2), xTitle = "", color = "var(--accent)" }) {
+  const rowH = 28, top = 14, bot = 40;
+  const H = top + rows.length * rowH + bot;
+  const { svg, g, iw } = frame({ w, h: H, m: { t: top, r: 60, b: bot, l: 280 } });
+  let lo = 0, hi = 0;
+  for (const r of rows) { lo = Math.min(lo, r.value); hi = Math.max(hi, r.value); }
+  const pad = (hi - lo) * 0.06 || 0.1;
+  const x = linScale([lo - (lo < 0 ? pad : 0), hi + pad], [0, iw]);
+  for (const t of niceTicks(x.domain[0], x.domain[1], 6)) {
+    g.appendChild(s("line", { x1: x(t), x2: x(t), y1: 0, y2: rows.length * rowH, stroke: t === 0 ? "var(--ink-3)" : "var(--grid)" }));
+    g.appendChild(s("text", { class: "axis", x: x(t), y: rows.length * rowH + 16, "text-anchor": "middle", fill: "var(--ink-3)", "font-size": 10, text: valueFmt(t) }));
+  }
+  rows.forEach((r, i) => {
+    const yy = i * rowH + rowH / 2, x0 = x(Math.min(0, r.value)), x1 = x(Math.max(0, r.value));
+    g.appendChild(s("rect", { x: x0, y: yy - 8, width: Math.max(1, x1 - x0), height: 16, rx: 2, fill: r.color || color, opacity: 0.8 }));
+    g.appendChild(s("text", { x: -10, y: yy + 3.5, "text-anchor": "end", class: "serieslabel", fill: "var(--ink-2)", text: r.label }));
+    g.appendChild(s("text", { x: r.value >= 0 ? x1 + 5 : x(0) + 5, y: yy + 3.5, "text-anchor": "start", class: "axis", "font-size": 10.5, fill: "var(--ink-2)", text: valueFmt(r.value) }));
+  });
+  if (xTitle) g.appendChild(s("text", { class: "axis-title", x: iw / 2, y: rows.length * rowH + 34, "text-anchor": "middle", fill: "var(--ink-2)", text: xTitle }));
+  return svg;
+}
+
+// ---- generic x-y lines with numeric x ----------------------------------------
+export function xyLines({ series, xTitle, yTitle, xFmt = (v) => fx(v, 1), yFmt = (v) => `${(v * 100).toFixed(0)}%`, yMax = null, xLog = false, markers = [], w = 720, h = 400 }) {
+  const { svg, g, iw, ih } = frame({ w, h, m: { t: 22, r: 120, b: 46, l: 58 } });
+  let x0 = Infinity, x1 = -Infinity, y1 = 0;
+  for (const se of series) for (let i = 0; i < se.xs.length; i++) { x0 = Math.min(x0, se.xs[i]); x1 = Math.max(x1, se.xs[i]); y1 = Math.max(y1, se.ys[i]); }
+  y1 = yMax ?? y1 * 1.1;
+  const x = xLog ? logScale([x0, x1], [0, iw]) : linScale([x0, x1], [0, iw]);
+  const y = linScale([0, y1], [ih, 0]);
+  const xt = xLog ? [x0, ...[1, 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000].filter((v) => v > x0 && v < x1), x1] : niceTicks(x0, x1, 6);
+  axes(g, x, y, iw, ih, { xTitle, yTitle, xTicks: xt, yTicks: niceTicks(0, y1, 5), xFmt, yFmt });
+  for (const mk of markers) {
+    if (mk.y != null) {
+      g.appendChild(s("line", { x1: 0, x2: iw, y1: y(mk.y), y2: y(mk.y), stroke: mk.color || "var(--ink-3)", "stroke-dasharray": "4 3" }));
+      g.appendChild(s("text", { x: 4, y: y(mk.y) - 5, class: "serieslabel", fill: mk.color || "var(--ink-3)", text: mk.label }));
+    } else {
+      g.appendChild(s("line", { x1: x(mk.x), x2: x(mk.x), y1: 0, y2: ih, stroke: mk.color || "var(--ink-3)", "stroke-dasharray": "4 3" }));
+      g.appendChild(s("text", { x: x(mk.x) + 4, y: 11, class: "serieslabel", fill: mk.color || "var(--ink-3)", text: mk.label }));
+    }
+  }
+  const placed = [];
+  for (const se of series) {
+    g.appendChild(s("path", { d: linePath(se.xs, se.ys, x, y), fill: "none", stroke: se.color, "stroke-width": se.width || 2,
+      "stroke-dasharray": se.dash || null, "stroke-linejoin": "round" }));
+    if (se.markers) for (let i = 0; i < se.xs.length; i++) g.appendChild(s("circle", { cx: x(se.xs[i]), cy: y(se.ys[i]), r: 3, fill: se.color }));
+    let yy = y(se.ys[se.ys.length - 1]);
+    for (const p of placed) if (Math.abs(p - yy) < 12) yy = p + 12;
+    placed.push(yy);
+    g.appendChild(s("text", { x: iw + 6, y: yy + 3.5, class: "serieslabel", fill: se.color, text: se.name }));
+  }
+  return svg;
+}

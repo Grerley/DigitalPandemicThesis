@@ -82,7 +82,7 @@ export function legend(items) {
  */
 export function sliderRow(o) {
   const valEl = h("span", { class: "val" });
-  const fmt = (v) => (o.step < 0.001 ? v.toFixed(4) : o.step < 0.01 ? v.toFixed(3) : v.toFixed(o.step < 0.1 ? 2 : 1));
+  const fmt = o.fmt || ((v) => (o.step >= 1 ? v.toFixed(0) : o.step < 0.001 ? v.toFixed(4) : o.step < 0.01 ? v.toFixed(3) : v.toFixed(o.step < 0.1 ? 2 : 1)));
   const range = h("input", {
     type: "range", min: o.min, max: o.max, step: o.step, value: o.value,
     "aria-label": `${o.label} (${o.sym})`,

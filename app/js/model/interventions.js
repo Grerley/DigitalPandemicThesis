@@ -1,94 +1,68 @@
-// interventions.js, Intervention scenarios (Chapter 8).
+// interventions.js: intervention mechanisms under assumed efficacies (thesis Chapter 9; python/run_all.py).
 // -----------------------------------------------------------------------------
-// Port of R/07_interventions.R. Interventions are multiplicative modifications
-// to model parameters. Efficacies are ASSUMED, informed by the direction and
-// rough magnitude of published evaluations, NOT estimated here. Outputs are
-// therefore comparative, not predictive.
+// Each mechanism multiplies one or more rates from 2024. Efficacy ranges are assumptions, taken from the thesis.
+// Effects are statements about the relative leverage of mechanisms inside the model, not predictions.
 
-import { simulate, summarise } from "./sair.js";
+import { LAB } from "./lab-data.js";
+import { simulate } from "./sair.js";
+import { shock } from "./calibrate.js";
+import { RNG } from "./rng.js";
 
-/**
- * Named interventions. Each maps a parameter to a multiplier. `comprehensive`
- * combines structural + behavioural + treatment levers and is tuned to land
- * near a −63% peak reduction.
- */
-export const INTERVENTIONS = Object.freeze({
-  education: { label: "Education", mods: { beta: 0.82 }, blurb: "Media-literacy / behavioural programmes reduce per-contact transmission (−18% β).", cost: 120 },
-  regulation: { label: "Platform regulation", mods: { beta: 0.71 }, blurb: "Structural platform-design constraints reduce transmission (−29% β).", cost: 65 },
-  age_gating: { label: "Age-gating", mods: { mu: 0.5, beta: 0.9 }, blurb: "Verified age limits cut exogenous entry (−50% μ) and some transmission (−10% β).", cost: 40 },
-  treatment: { label: "Treatment access", mods: { gamma2: 1.4, delta: 0.7 }, blurb: "Clinical services raise recovery (+40% γ₂) and reduce relapse (−30% δ).", cost: 210 },
-});
+export const SPEC = LAB.interventions;
+export const KEYS = ["platform", "school", "minimum_age", "treatment"];
+export const START = SPEC.start;          // 2024
+export const END = 2042;
 
-/** The comprehensive bundle (combined levers). Tuned to ≈ −63% peak. */
-export const COMPREHENSIVE = Object.freeze({
-  label: "Comprehensive",
-  mods: { beta: 0.55, mu: 0.5, gamma2: 1.4, delta: 0.7 },
-  blurb: "All levers combined: structural + behavioural transmission reduction, age-gating, and expanded treatment.",
-  cost: 380,
-});
+/** Multipliers for one mechanism at efficacy e (and e2 for the second effect of treatment). */
+export function multipliers(key, e, e2 = 0) {
+  if (key === "platform") return { b: 1 - e };
+  if (key === "school") return { gamma1: 1 + e };
+  if (key === "minimum_age") return { b: 1 - 0.4 * e, alpha: 1 - 0.4 * e };
+  if (key === "treatment") return { gamma2: 1 + e, delta: 1 - e2 };
+  throw new Error(key);
+}
 
-/** The (illustrative) unit-cost basis for the ZAR cost-effectiveness framing. */
-export const COST_ASSUMPTIONS = Object.freeze({
-  populationYouth: 12_500_000, // approx SA population aged 10–24 (illustrative)
-  currency: "ZAR",
-  note: "Costs are illustrative per-youth-per-year figures (ZAR) for comparative framing only, not a costed programme budget.",
-});
-
-/**
- * Apply a set of multiplicative modifiers to a parameter vector.
- * @param {object} p base parameters
- * @param {Record<string, number>} mods parameter → multiplier
- */
-export function applyMods(p, mods) {
-  const out = { ...p };
-  for (const key of Object.keys(mods)) {
-    if (key in out) out[key] = p[key] * mods[key];
-  }
-  return out;
+export function applyAll(p, mults) {
+  const q = { ...p };
+  for (const m of mults) for (const [k, v] of Object.entries(m)) q[k] *= v;
+  return q;
 }
 
 /**
- * Compose several named interventions into a single modifier map. When two
- * interventions touch the same parameter, their multipliers multiply.
- * @param {string[]} names keys of INTERVENTIONS
+ * Prevalence 2024..2042 for a calibrated draw under scenario P or T, with the given multipliers applied from 2024.
+ * The state in 2024 comes from the calibrated path (in T the 2020 to 2021 shock has ended by then).
  */
-export function composeMods(names) {
-  const mods = {};
-  for (const name of names) {
-    const spec = INTERVENTIONS[name];
-    if (!spec) continue;
-    for (const [k, v] of Object.entries(spec.mods)) {
-      mods[k] = (mods[k] ?? 1) * v;
-    }
-  }
-  return mods;
+export function runDraw(draw, scenario, mults) {
+  const p0 = { ...draw.rates, b: draw.cal.b0 };
+  const pre = scenario === "P" ? { ...p0, b: draw.cal.b1 } : p0;
+  const opts = scenario === "T" ? { shock: shock(draw.cal.dAlpha) } : {};
+  const x24 = simulate(pre, draw.cal.x18, [START - 2018], opts)[0];
+  const q = applyAll(pre, mults);
+  const t = Array.from({ length: END - START + 1 }, (_, i) => i);
+  return simulate(q, x24, t).map((x) => x[2]);
+}
+
+/** Random efficacy draw for a mechanism, as in the thesis. */
+export function drawEfficacy(key, rng) {
+  const r = SPEC[key].range;
+  const e = r[0] + rng.next() * (r[1] - r[0]);
+  if (key === "treatment") { const r2 = SPEC.treatment.range2; return multipliers(key, e, r2[0] + rng.next() * (r2[1] - r2[0])); }
+  return multipliers(key, e);
 }
 
 /**
- * Run every named scenario plus baseline and comprehensive, returning a table
- * of peak prevalence, peak year, endemic level, and % peak reduction.
+ * Relative reduction in 2042 prevalence across draws for a combination of mechanisms, with efficacies drawn
+ * uniformly from the assumed ranges (one draw per mechanism per parameter set).
  */
-export function runScenarioTable(p, init, horizonYears = 20) {
-  const base = simulate(p, init, horizonYears);
-  const baseSum = summarise(base);
-  const rows = [
-    { key: "baseline", label: "Baseline", ...scenarioSummary(baseSum, baseSum) },
-  ];
-  for (const [key, spec] of Object.entries(INTERVENTIONS)) {
-    const s = summarise(simulate(applyMods(p, spec.mods), init, horizonYears));
-    rows.push({ key, label: spec.label, cost: spec.cost, ...scenarioSummary(s, baseSum) });
+export function acrossDraws(draws, combo, scenario, seed = 20261031) {
+  const rng = new RNG(seed), red = [];
+  for (const d of draws) {
+    const mults = combo.map((k) => drawEfficacy(k, rng));
+    const base = runDraw(d, scenario, []);
+    const with_ = runDraw(d, scenario, mults);
+    red.push(1 - with_[with_.length - 1] / base[base.length - 1]);
   }
-  const comp = summarise(simulate(applyMods(p, COMPREHENSIVE.mods), init, horizonYears));
-  rows.push({ key: "comprehensive", label: COMPREHENSIVE.label, cost: COMPREHENSIVE.cost, ...scenarioSummary(comp, baseSum) });
-  return rows;
-}
-
-function scenarioSummary(s, baseSum) {
-  const reduction = (baseSum.peakPrevalence - s.peakPrevalence) / baseSum.peakPrevalence;
-  return {
-    peakPrevalence: s.peakPrevalence,
-    peakYear: s.peakYear,
-    endemicPrevalence: s.endemicPrevalence,
-    pctReduction: reduction,
-  };
+  red.sort((a, b) => a - b);
+  const q = (f) => red[Math.min(red.length - 1, Math.floor(f * red.length))];
+  return { median: q(0.5), p05: q(0.05), p95: q(0.95), n: red.length };
 }

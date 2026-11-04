@@ -1,27 +1,29 @@
-// app.js, Application shell: routing, navigation, scenario bar, theme.
+// app.js: application shell (routing, navigation, theme, self-test, sharing).
 // -----------------------------------------------------------------------------
 
 import { h, $, clear, toast } from "./view/dom.js";
-import { store, PRESETS } from "./state.js";
+import { store } from "./state.js";
 import { ContextView } from "./view/views/context.js";
-import { OverviewView } from "./view/views/overview.js";
+import { ExplanationsView } from "./view/views/explanations.js";
 import { ExplorerView } from "./view/views/explorer.js";
-import { PhaseView } from "./view/views/phase.js";
-import { NetworkLabView } from "./view/views/network-lab.js";
-import { CohortView } from "./view/views/cohort.js";
+import { ThresholdsView } from "./view/views/thresholds.js";
+import { NetworksView } from "./view/views/networks.js";
 import { InterventionsView } from "./view/views/interventions.js";
+import { PanelView } from "./view/views/panel.js";
+import { AgeSexView } from "./view/views/agesex.js";
 import { MethodsView } from "./view/views/methods.js";
 import { selfTestPanel } from "./view/views/selftest-panel.js";
 
 const VIEWS = [
-  { id: "context", title: "Research Context", desc: "Questions, framing, sources", make: ContextView },
-  { id: "overview", title: "Overview", desc: "Baseline S–A–I–R run", make: OverviewView },
-  { id: "explorer", title: "Parameter Explorer", desc: "Sliders, R₀, sensitivity", make: ExplorerView },
-  { id: "phase", title: "Phase & Equilibrium", desc: "Bifurcation, phase, lag", make: PhaseView },
-  { id: "network", title: "Network Lab", desc: "Topologies, immunisation", make: NetworkLabView },
-  { id: "cohort", title: "Cohort & Risk", desc: "Forest, Sankey, HMM", make: CohortView },
-  { id: "interventions", title: "Intervention Simulator", desc: "Compose levers, cost", make: InterventionsView },
-  { id: "methods", title: "Methods & Provenance", desc: "Equations, sources, caveats", make: MethodsView },
+  { id: "context", title: "Research context", desc: "What the research asks", make: ContextView },
+  { id: "explanations", title: "Two explanations", desc: "The rise, projections, next wave", make: ExplanationsView },
+  { id: "explorer", title: "Model explorer", desc: "Rates, R₀, equilibrium, calibration", make: ExplorerView },
+  { id: "thresholds", title: "Thresholds and floor", desc: "Why the threshold disappears", make: ThresholdsView },
+  { id: "networks", title: "Networks", desc: "Structure and targeting", make: NetworksView },
+  { id: "interventions", title: "Interventions", desc: "Mechanisms and leverage", make: InterventionsView },
+  { id: "panel", title: "Panel design", desc: "Data that would identify the rates", make: PanelView },
+  { id: "agesex", title: "Age and sex", desc: "Structured model, 2018 test", make: AgeSexView },
+  { id: "methods", title: "Methods and sources", desc: "Equations, parameters, references", make: MethodsView },
 ];
 
 let current = null;
@@ -84,80 +86,6 @@ function openModal(title, node) {
   return close;
 }
 
-// ---- scenario bar ----
-function buildScenarioBar() {
-  const bar = h("div", { class: "scenariobar" });
-  const rebuild = () => { clear(bar); fill(); };
-
-  function fill() {
-    bar.appendChild(h("span", { class: "grp", style: { color: "var(--ink-3)", fontWeight: 600 } }, ["Presets"]));
-    for (const [key, p] of Object.entries(PRESETS)) {
-      bar.appendChild(h("button", { class: "sm", title: p.note, onclick: () => { store.applyPreset(key); toast(`Applied: ${p.label}`); } }, [p.label]));
-    }
-    bar.appendChild(h("span", { style: { width: "1px", height: "20px", background: "var(--rule-2)" } }));
-    // compare
-    const cmp = store.get().compare;
-    if (cmp) {
-      bar.appendChild(h("span", { class: "pill", text: `compare: ${cmp.label}` }));
-      bar.appendChild(h("button", { class: "sm ghost", onclick: () => { store.set({ compare: null }); toast("Compare cleared"); } }, ["clear compare"]));
-    } else {
-      bar.appendChild(h("button", { class: "sm", title: "Pin the current scenario to overlay against edits", onclick: () => {
-        const s = store.get();
-        store.set({ compare: { label: describe(s), params: { ...s.params }, interventions: [...s.interventions] } });
-        toast("Pinned current scenario for comparison");
-      } }, ["⎘ Pin for compare"]));
-    }
-    bar.appendChild(h("span", { class: "grp spacer", style: { flex: 1 } }));
-    // save/load
-    bar.appendChild(h("button", { class: "sm ghost", onclick: openSaveMenu }, ["✔ Save scenario"]));
-    bar.appendChild(h("button", { class: "sm ghost", onclick: openLoadMenu }, ["↺ Saved…"]));
-  }
-  fill();
-  store.subscribe(rebuild);
-  return bar;
-}
-
-function describe(s) {
-  if (s.interventions.includes("comprehensive")) return "comprehensive";
-  if (s.interventions.length) return s.interventions.join("+");
-  const changed = Object.keys(s.params).filter((k) => s.params[k] !== PRESETS.baseline.params[k]);
-  return changed.length ? "custom" : "baseline";
-}
-
-function openSaveMenu() {
-  const input = h("input", { type: "text", placeholder: "Scenario name", style: { padding: "8px 10px", border: "1px solid var(--rule-2)", borderRadius: "6px", width: "100%", background: "var(--panel)", color: "var(--ink)" } });
-  const body = h("div", {}, [
-    h("p", { class: "prose", text: "Save the current parameters and interventions to this browser (localStorage)." }),
-    input,
-    h("div", { class: "row", style: { marginTop: "12px" } }, [
-      h("button", { class: "primary sm", onclick: () => { const n = input.value.trim() || `scenario ${new Date().toISOString().slice(0, 16).replace("T", " ")}`; store.saveScenario(n); toast(`Saved “${n}”`); close(); } }, ["Save"]),
-    ]),
-  ]);
-  const close = openModal("Save scenario", body);
-  setTimeout(() => input.focus(), 30);
-}
-
-function openLoadMenu() {
-  const list = store.savedScenarios();
-  const body = h("div", {});
-  if (!list.length) body.appendChild(h("p", { class: "prose", text: "No saved scenarios yet. Use “Save scenario” to store the current setup." }));
-  else {
-    const table = h("table", { class: "data" }, [
-      h("thead", {}, h("tr", {}, [h("th", { style: { textAlign: "left" }, text: "Name" }), h("th", { text: "Saved" }), h("th", {})])),
-      h("tbody", {}, list.slice().reverse().map((e) => h("tr", {}, [
-        h("td", { style: { textAlign: "left" }, text: e.name }),
-        h("td", { class: "hint", text: new Date(e.ts).toLocaleDateString() }),
-        h("td", {}, h("div", { class: "row", style: { justifyContent: "flex-end" } }, [
-          h("button", { class: "sm", onclick: () => { store.loadScenario(e); toast(`Loaded “${e.name}”`); close(); } }, ["load"]),
-          h("button", { class: "sm ghost", onclick: () => { store.deleteScenario(e.name); close(); openLoadMenu(); } }, ["delete"]),
-        ])),
-      ]))),
-    ]);
-    body.appendChild(table);
-  }
-  const close = openModal("Saved scenarios", body);
-}
-
 async function share() {
   const url = store.shareUrl();
   try { await navigator.clipboard.writeText(url); toast("Shareable link copied to clipboard"); }
@@ -171,12 +99,12 @@ function build() {
     h("header", { class: "topbar" }, [
       h("button", { class: "navtoggle ghost sm", "aria-label": "Toggle navigation", onclick: () => $("nav.sidebar")?.classList.toggle("open") }, ["☰"]),
       h("div", { class: "brand" }, [
-        h("span", { class: "mark", text: "The Digital Pandemic" }),
-        h("span", { class: "sub", text: "Interactive Simulation Lab · Mutibura 2026" }),
+        h("span", { class: "mark", text: "Digital Pandemic Lab" }),
+        h("span", { class: "sub", text: "Problematic social media use among young people · Interactive model lab" }),
       ]),
       h("span", { class: "spacer" }),
       h("div", { class: "tools" }, [
-        h("button", { class: "sm ghost", onclick: () => openModal("Correctness self-test", selfTestPanel()), title: "Run acceptance self-tests" }, ["✓ Self-test"]),
+        h("button", { class: "sm ghost", onclick: () => openModal("Self-test against the thesis model", selfTestPanel()), title: "Check the lab model against the thesis model" }, ["✓ Self-test"]),
         h("button", { class: "sm ghost", onclick: share, title: "Copy shareable URL" }, ["⇪ Share"]),
         h("button", { id: "themeBtn", class: "sm ghost", onclick: cycleTheme }, ["◒ Auto"]),
       ]),
@@ -191,11 +119,10 @@ function build() {
           h("span", {}, [h("span", { class: "t", text: v.title }), h("span", { class: "d", text: v.desc })]),
         ])))),
         h("div", { style: { padding: "12px 11px", marginTop: "8px", borderTop: "1px solid var(--rule)" } }, [
-          h("p", { class: "hint", html: "All outputs are <strong>conditional model results</strong>, not empirical forecasts." }),
+          h("p", { class: "hint", html: "All outputs are <strong>model results conditional on stated assumptions</strong>, not forecasts." }),
         ]),
       ]),
       h("main", { class: "content", id: "content", tabindex: "-1" }, [
-        buildScenarioBar(),
         h("div", { id: "view-holder" }),
       ]),
     ]),

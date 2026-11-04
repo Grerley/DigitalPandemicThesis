@@ -24,24 +24,20 @@ control using three complementary methods:
 
 ## Interactive Simulation Lab
 
-A browser-based, research-grade **interactive lab** ([`app/`](app/)) reimplements this entire
-pipeline as a live "flight simulator" for the thesis: explore every model in real time, sweep
-parameters, animate network contagion, and compose interventions, with all five model families
-interactive, URL-shareable scenarios, CSV/PNG/SVG export, and a built-in acceptance self-test that
-verifies R₀ ≈ 2.50 / 3.04 / 2.71, peak ≈ 14% @ ~yr 7, endemic ≈ 8%, and a ≈ −63% comprehensive
-intervention.
+A browser-based **interactive lab** ([`app/`](app/)) lets readers explore the thesis model: the two explanations of
+the rise in problematic social media use between the 2018 and 2022 HBSC surveys and what the next wave can decide,
+the threshold and the floor, network structure and targeting, intervention mechanisms, panel design and the age-
+and sex-structured model. Thesis results are generated from the Python analysis by `python/export_lab.py`; live
+results come from a JavaScript port of the model that a built-in self-test checks against the Python values.
 
-**▶ Live demo: https://grerley.github.io/DigitalPandemicThesis/**, deployed automatically from
-`app/` on every push to `main` by [`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml).
-(One-time: in *Settings → Pages → Build and deployment*, set the source to **GitHub Actions**.)
-
-Or run it locally, no backend or build step:
+**Live demo: https://grerley.github.io/DigitalPandemicThesis/**, deployed from `app/` on every push to `main` by
+[`.github/workflows/deploy-pages.yml`](.github/workflows/deploy-pages.yml).
 
 ```bash
 cd app && python3 -m http.server 8000   # then open http://localhost:8000/
 ```
 
-See [`app/README.md`](app/README.md) for the full description and architecture.
+See [`app/README.md`](app/README.md). The first version of the lab is archived in `archive/simulation-lab-v1/`.
 
 > **Epistemic status.** All quantitative outputs are *conditional model results*, not empirical
 > forecasts. Parameters are calibrated against aggregate WHO HBSC and OECD surveillance data together

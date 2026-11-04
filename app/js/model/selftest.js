@@ -1,43 +1,59 @@
-// selftest.js, Automated acceptance tests, surfaced in the UI.
+// selftest.js: checks that the lab's JavaScript model reproduces the thesis's Python model.
 // -----------------------------------------------------------------------------
-// Makes correctness VISIBLE: asserts the thesis acceptance targets against the
-// live model code and returns PASS/FAIL rows. Run at startup and on demand.
+// Reference values come from lab-data.js (python/export_lab.py). Each check compares the JavaScript
+// computation at the thesis's central parameters with the Python value, to a stated tolerance.
 
-import { simulate, summarise, transitionMatrix, rowsSumToOne, foiSA } from "./sair.js";
-import { r0Trio } from "./r0.js";
-import { baselineParams, baselineInit } from "./params.js";
-import { runScenarioTable } from "./interventions.js";
+import { LAB } from "./lab-data.js";
+import { R0, R0Factors, equilibrium, floor, isStable, elasticities } from "./sair.js";
+import { calibrateRates, scenarioPath } from "./calibrate.js";
+import { careerTransmissibility, betaFromB } from "./network.js";
+import { CENTRAL, DRAWS } from "./params.js";
 
-/** Run all acceptance checks; returns { pass, results:[{name, got, want, pass, tol}] }. */
+const rel = (a, b) => Math.abs(a - b) / Math.max(1e-12, Math.abs(b));
+
 export function runSelfTests() {
-  const p = baselineParams();
-  const init = baselineInit();
-  const traj = simulate(p, init, 20);
-  const s = summarise(traj);
-  const r0 = r0Trio(p);
-  const scen = runScenarioTable(p, init, 20);
-  const comp = scen.find((r) => r.key === "comprehensive");
+  const ref = LAB.ref, out = [];
+  const add = (name, got, want, tol, detail, fmt = (v) => v.toFixed(4)) =>
+    out.push({ name, got: fmt(got), want: fmt(want), tol: `${tol.toExponential(0)} relative`, pass: rel(got, want) <= tol, detail });
+  const addBool = (name, ok, detail) => out.push({ name, got: ok ? "yes" : "no", want: "yes", tol: "", pass: ok, detail });
 
-  const results = [];
-  const add = (name, got, want, tol, unit = "", detail = "") =>
-    results.push({ name, got, want, tol, pass: Math.abs(got - want) <= tol, unit, detail });
+  const p0 = { ...CENTRAL.rates, b: CENTRAL.b0 }, p1 = { ...CENTRAL.rates, b: CENTRAL.b1 };
+  add("R₀ before 2018 (α = 0)", R0({ ...p0, alpha: 0 }), ref.R0_b0, 1e-5, "Closed form (5.3)");
+  add("R₀ after 2018 (α = 0)", R0({ ...p1, alpha: 0 }), ref.R0_b1, 1e-5, "Closed form (5.3)");
+  add("Relapse multiplier", R0Factors(p1).multiplier, ref.relapse_multiplier, 1e-5, "1/(1 − q)");
+  add("Equilibrium prevalence after 2018", equilibrium(p1)[2], ref.eq_b1[2], 1e-5, "Quadratic (5.9)");
+  add("Equilibrium prevalence with α = 0", equilibrium({ ...p1, alpha: 0 })[2], ref.eq_b1_alpha0[2], 1e-5, "S* = 1/R₀");
+  add("Floor of prevalence at b = 0", floor(p1), ref.floor, 1e-5, "Equation (5.10)");
+  addBool("Interior equilibrium is locally stable", isStable(p1, equilibrium(p1)), "Routh–Hurwitz (Theorem 5.9)");
 
-  add("R₀, NGM operative (S₀ = 0.823)", r0.operative, 2.50, 0.05, "", "spectral radius of F·V⁻¹ on {A,I}");
-  add("R₀, NGM basic (S₀ = 1)", r0.basic, 3.04, 0.05, "", "next-generation matrix at fully susceptible");
-  add("R₀, crude β·k·D (D = 1/γ₂)", r0.crude, 2.71, 0.05, "", "well-mixed upper estimate");
-  add("Peak addicted prevalence", s.peakPrevalence, 0.14, 0.01, "%", "baseline S–A–I–R run");
-  add("Peak timing", s.peakYear, 7.0, 1.0, " yr", "year of maximum I(t)");
-  add("Endemic prevalence (t = 20 yr)", s.endemicPrevalence, 0.08, 0.01, "%", "sustained by relapse δ");
-  add("Comprehensive intervention peak reduction", comp.pctReduction, 0.63, 0.05, "%", "combined levers vs baseline");
+  const el = elasticities(p1, "I");
+  add("Sensitivity of I* to recovery γ₂", el.gamma2, LAB.results.elast_I_gamma2, 1e-4, "Normalised index");
+  add("Sensitivity of I* to exposure b", el.b, LAB.results.elast_I_b, 1e-4, "Normalised index");
+  const cal = calibrateRates(CENTRAL.rates);
+  add("Solved b₀ at central rates", cal.b0, CENTRAL.b0, 1e-5, "Exact solution, 7% in 2018");
+  add("Solved b₁ at central rates", cal.b1, CENTRAL.b1, 1e-4, "Exact solution, 11% in 2022");
+  add("Solved Δα at central rates", cal.dAlpha, CENTRAL.dAlpha, 1e-4, "Exact solution, 11% in 2022");
+  const pP = scenarioPath(CENTRAL.rates, { b0: CENTRAL.b0, b1: CENTRAL.b1, dAlpha: CENTRAL.dAlpha, x18: CENTRAL.x18 }, "P");
+  const pT = scenarioPath(CENTRAL.rates, { b0: CENTRAL.b0, b1: CENTRAL.b1, dAlpha: CENTRAL.dAlpha, x18: CENTRAL.x18 }, "T");
+  add("Persistent shift: prevalence in 2042", pP[24], ref.I_P[24], 1e-5, "ODE integration", (v) => `${(v * 100).toFixed(3)}%`);
+  add("Temporary shock: prevalence in 2026", pT[8], ref.I_T[8], 1e-5, "ODE with step change in α", (v) => `${(v * 100).toFixed(3)}%`);
+  add("Temporary shock: prevalence in 2042", pT[24], ref.I_T[24], 1e-5, "ODE with step change in α", (v) => `${(v * 100).toFixed(3)}%`);
 
-  // Structural invariants (boolean checks encoded as 1/1).
-  const { M } = transitionMatrix(init, p);
-  results.push({ name: "Transition-matrix rows sum to 1", got: rowsSumToOne(M) ? 1 : 0, want: 1, tol: 0, pass: rowsSumToOne(M), unit: "", detail: "each row is a valid probability vector", bool: true });
-  const foi = foiSA({ S: 0.5, A: 0.9, I: 0.9 }, { ...p, beta: 5, k: 5 });
-  results.push({ name: "Force of infection clamped ≤ 1", got: foi <= 1 ? 1 : 0, want: 1, tol: 0, pass: foi <= 1, unit: "", detail: "probabilities constrained to [0,1]", bool: true });
+  // projection medians across all kept draws
+  const yrs = [8, 24], P = yrs.map(() => []), T = yrs.map(() => []);
+  for (const d of DRAWS) {
+    const a = scenarioPath(d.rates, d.cal, "P"), b = scenarioPath(d.rates, d.cal, "T");
+    yrs.forEach((y, i) => { P[i].push(a[y]); T[i].push(b[y]); });
+  }
+  const med = (v) => { const s = v.slice().sort((x, y) => x - y); const m = s.length >> 1; return s.length % 2 ? s[m] : (s[m - 1] + s[m]) / 2; };
+  yrs.forEach((y, i) => {
+    add(`Median across ${DRAWS.length} draws, persistent shift, ${2018 + y}`, med(P[i]), LAB.projections.P[50][y], 1e-3, "Projection percentiles", (v) => `${(v * 100).toFixed(2)}%`);
+    add(`Median across ${DRAWS.length} draws, temporary shock, ${2018 + y}`, med(T[i]), LAB.projections.T[50][y], 1e-3, "Projection percentiles", (v) => `${(v * 100).toFixed(2)}%`);
+  });
 
-  const allStateSums = traj.S.every((_, i) => Math.abs(traj.S[i] + traj.A[i] + traj.I[i] + traj.R[i] - 1) < 1e-6);
-  results.push({ name: "State vector normalised each step", got: allStateSums ? 1 : 0, want: 1, tol: 0, pass: allStateSums, unit: "", detail: "S+A+I+R = 1 for all t", bool: true });
+  const beta = betaFromB(p1, 10);
+  add("Per-edge monthly transmission at k = 10", beta, ref.beta_k10, 1e-5, "β from b");
+  add("Career transmissibility at k = 10", careerTransmissibility({ ...p1, alpha: 0 }, beta), ref.T_career_k10, 1e-5, "Chapter 8");
 
-  return { pass: results.every((r) => r.pass), results };
+  return { pass: out.every((r) => r.pass), results: out };
 }

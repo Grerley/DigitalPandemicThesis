@@ -1,74 +1,41 @@
-// selftest.mjs, Headless acceptance self-test for the Digital Pandemic Lab.
-// -----------------------------------------------------------------------------
-// Runs the model layer under Node (no browser) and asserts the thesis
-// acceptance targets plus the qualitative network/cohort claims. Exits 0 on
-// success, 1 on any failure, suitable for CI and the SessionStart hook.
-//
-//   node app/test/selftest.mjs
+// selftest.mjs: headless check that the lab's JavaScript model reproduces the thesis's Python model.
+//   node app/test/selftest.mjs        (exit 0 on success, 1 on any failure)
 
 import { runSelfTests } from "../js/model/selftest.js";
-import { simulateEnsemble } from "../js/model/network.js";
-import { generateCohort } from "../js/model/cohort.js";
-import { baselineParams } from "../js/model/params.js";
+import { makeGraph, simulateNetwork, betaFromB, Rnet } from "../js/model/network.js";
+import { centralParams, R, LAB } from "../js/model/params.js";
+import { simulate } from "../js/model/sair.js";
 
 let failures = 0;
 const p = (ok, name, detail = "") => {
-  console.log(`${ok ? "  ✅ PASS" : "  ‼️  FAIL"}  ${name}${detail ? "  ·  " + detail : ""}`);
+  console.log(`${ok ? "  PASS" : "  FAIL"}  ${name}${detail ? "  ·  " + detail : ""}`);
   if (!ok) failures++;
 };
 
-console.log("\nDigital Pandemic Lab · acceptance self-test\n" + "-".repeat(52));
+console.log("\nDigital Pandemic Lab · self-test against the thesis model\n" + "-".repeat(60));
+const t0 = Date.now();
+const { results } = runSelfTests();
+for (const r of results) p(r.pass, r.name, `lab ${r.got}, thesis ${r.want}${r.tol ? ` (tolerance ${r.tol})` : ""}`);
 
-// 1) Deterministic acceptance targets (R₀ trio, peak, endemic, comprehensive, invariants)
-console.log("\n[1] Deterministic core & acceptance targets");
-const { pass, results } = runSelfTests();
-for (const r of results) {
-  const got = r.bool ? (r.pass ? "yes" : "no")
-    : r.unit === "%" ? `${(r.got * 100).toFixed(1)}%`
-    : r.unit === " yr" ? `${r.got.toFixed(1)} yr` : r.got.toFixed(2);
-  p(r.pass, r.name, `model ${got}`);
+// Network: mean 2042 prevalence over a few runs should fall inside the thesis's 5th to 95th percentile range.
+console.log("\n[network] stochastic runs compared with the thesis distribution");
+const pc = centralParams();
+const x22 = simulate(pc, LAB.central.x18, [4])[0];
+const n = R("net_nodes"), k = R("net_mean_degree"), beta = betaFromB(pc, k);
+for (const kind of ["ER", "WS", "BA"]) {
+  const vals = [], rn = [];
+  for (let s = 0; s < 4; s++) {
+    const adj = makeGraph(kind, n, k, 100 + s);
+    rn.push(Rnet(pc, beta, adj));
+    const { frac } = simulateNetwork(adj, pc, beta, { months: 240, x0: x22, seed: 200 + s });
+    vals.push(frac[frac.length - 1][2]);
+  }
+  const m = vals.reduce((a, b) => a + b) / vals.length, rm = rn.reduce((a, b) => a + b) / rn.length;
+  const lo = R(`net_${kind}_I2042_p05`) / 100, hi = R(`net_${kind}_I2042_p95`) / 100;
+  p(m >= lo && m <= hi, `${kind}: mean 2042 prevalence inside thesis 5th to 95th percentile range`,
+    `lab ${(m * 100).toFixed(1)}%, thesis ${(lo * 100).toFixed(1)}% to ${(hi * 100).toFixed(1)}%`);
+  const rt = R(`net_${kind}_R0net`);
+  p(Math.abs(rm - rt) / rt < 0.1, `${kind}: network reproduction number within 10% of thesis`, `lab ${rm.toFixed(2)}, thesis ${rt.toFixed(2)}`);
 }
-
-// 2) Network: scale-free peaks higher AND earlier than random; hubs beat random.
-console.log("\n[2] Network Monte-Carlo (reduced runs)");
-const base = baselineParams();
-const netP = { ...base, beta: (base.beta * base.k) / 10, mu: 0 };
-const opt = { n: 400, meanDegree: 10, runs: 20, horizonMonths: 180, params: netP, seed: 42, seedFrac: 0.004 };
-const ER = simulateEnsemble("ER", opt);
-const WS = simulateEnsemble("WS", opt);
-const BA = simulateEnsemble("BA", opt);
-p(BA.meanPeak > ER.meanPeak && BA.meanPeak > WS.meanPeak,
-  "Scale-free peaks higher than random & small-world",
-  `BA ${(BA.meanPeak * 100).toFixed(1)}% vs ER ${(ER.meanPeak * 100).toFixed(1)}% / WS ${(WS.meanPeak * 100).toFixed(1)}%`);
-p(BA.meanPeakYear < ER.meanPeakYear && BA.meanPeakYear < WS.meanPeakYear,
-  "Scale-free peaks earlier than random & small-world",
-  `BA ${BA.meanPeakYear.toFixed(1)}yr vs ER ${ER.meanPeakYear.toFixed(1)}yr / WS ${WS.meanPeakYear.toFixed(1)}yr`);
-
-const immBase = { ...opt, topology: "BA", seed: 11 };
-const none = simulateEnsemble("BA", { ...opt, seed: 11 });
-const hub = simulateEnsemble("BA", { ...opt, seed: 11, immunizeFrac: 0.3, immunizeStrategy: "hub" });
-const rnd = simulateEnsemble("BA", { ...opt, seed: 11, immunizeFrac: 0.3, immunizeStrategy: "random" });
-p(hub.meanPeak < rnd.meanPeak,
-  "Hub-targeted immunisation beats random at equal coverage",
-  `hub ${(hub.meanPeak * 100).toFixed(1)}% < random ${(rnd.meanPeak * 100).toFixed(1)}% (from ${(none.meanPeak * 100).toFixed(1)}%)`);
-
-// 3) Cohort: transition-matrix recovery is accurate.
-console.log("\n[3] Synthetic cohort & statistics");
-const cohort = generateCohort(base, { n: 3000, years: 10, seed: 42 });
-p(cohort.matrixMAE < 0.05, "Estimated transition matrix recovers the known matrix",
-  `MAE ${cohort.matrixMAE.toFixed(3)} < 0.05`);
-p(cohort.oddsRatios.every((o) => (o.knownOR > 1) === (o.estOR > 1)),
-  "Recovered odds ratios match the direction of published ORs");
-
-// Determinism: same seed ⇒ identical result.
-const c2 = generateCohort(base, { n: 3000, years: 10, seed: 42 });
-p(Math.abs(c2.matrixMAE - cohort.matrixMAE) < 1e-12, "Seeded RNG is reproducible (same seed ⇒ same result)");
-
-console.log("\n" + "-".repeat(52));
-if (failures === 0) {
-  console.log(`✅ ALL CHECKS PASSED (${results.length + 6} assertions)\n`);
-  process.exit(0);
-} else {
-  console.log(`‼️  ${failures} CHECK(S) FAILED\n`);
-  process.exit(1);
-}
+console.log(`\n${failures ? failures + " check(s) failed" : "All checks passed"} (${((Date.now() - t0) / 1000).toFixed(1)} s)\n`);
+process.exit(failures ? 1 : 0);

@@ -1,12 +1,11 @@
 // diagram.js, Animated S–A–I–R state-transition diagram.
 // -----------------------------------------------------------------------------
 // Four compartment nodes with directed edges whose thickness tracks the live
-// per-step transition probabilities. Animated dash offset conveys flow
+// flows between states (share of the population per year). Animated dash offset conveys flow
 // direction (disabled under prefers-reduced-motion). Node fill encodes current
 // occupancy. Pure of app state, driven by (state, params) passed in.
 
 import { s } from "./dom.js";
-import { transitionMatrix } from "../model/sair.js";
 import { reduceMotion } from "./dom.js";
 
 const NODES = {
@@ -18,7 +17,7 @@ const NODES = {
 
 // edges: from,to, probability key, curvature, label position
 const EDGES = [
-  { from: "S", to: "A", key: "P_SA", name: "β·k·(I+ηA)", curve: -28 },
+  { from: "S", to: "A", key: "P_SA", name: "λ + α", curve: -28 },
   { from: "A", to: "I", key: "P_AI", name: "σ", curve: 0 },
   { from: "I", to: "R", key: "P_IR", name: "γ₂", curve: -28 },
   { from: "R", to: "A", key: "P_RA", name: "δ (relapse)", curve: 0, cross: true },
@@ -30,7 +29,10 @@ const R = 34;
 export function stateDiagram({ state, params, w = 400, h = 310 }) {
   const svg = s("svg", { viewBox: `0 0 ${w} ${h}`, role: "img" });
   svg.appendChild(s("title", { text: "S–A–I–R state-transition diagram with live flow rates" }));
-  const { probs } = transitionMatrix(state, params);
+  // flows per year between states at the given state (fractions of the population)
+  const lam = params.b * (state.I + params.eta * state.A);
+  const probs = { P_SA: (lam + params.alpha) * state.S, P_AI: params.sigma * state.A, P_AS: params.gamma1 * state.A,
+    P_IR: params.gamma2 * state.I, P_RA: params.delta * state.R };
   const maxP = Math.max(probs.P_SA, probs.P_AI, probs.P_AS, probs.P_IR, probs.P_RA, 1e-6);
   const defs = s("defs");
   const anim = !reduceMotion();
@@ -42,7 +44,7 @@ export function stateDiagram({ state, params, w = 400, h = 310 }) {
     const width = 1.2 + 7 * Math.sqrt(p / maxP);
     const { path, mid, ang } = edgePath(a, b, e.curve, e.cross);
     const mkId = `arw-${e.from}${e.to}`;
-    const mk = s("marker", { id: mkId, viewBox: "0 0 8 8", refX: 6, refY: 4, markerWidth: 6, markerHeight: 6, orient: "auto-start-reverse" });
+    const mk = s("marker", { id: mkId, viewBox: "0 0 8 8", refX: 6, refY: 4, markerWidth: 9, markerHeight: 9, markerUnits: "userSpaceOnUse", orient: "auto-start-reverse" });
     mk.appendChild(s("path", { d: "M0,0L8,4L0,8Z", fill: a.color, opacity: 0.9 }));
     defs.appendChild(mk);
     // base line
@@ -60,7 +62,7 @@ export function stateDiagram({ state, params, w = 400, h = 310 }) {
     edgeG.appendChild(s("text", { x: mid.x, y: mid.y - 3, "text-anchor": "middle", class: "serieslabel", fill: a.color,
       "font-size": 10.5, text: `${e.name}` }));
     edgeG.appendChild(s("text", { x: mid.x, y: mid.y + 9, "text-anchor": "middle", class: "axis", fill: "var(--ink-3)",
-      "font-size": 9.5, text: `${(p * 100).toFixed(p < 0.01 ? 2 : 1)}%/mo` }));
+      "font-size": 9.5, text: `${(p * 100).toFixed(p < 0.01 ? 2 : 1)}% / yr` }));
   }
   svg.appendChild(defs);
   svg.appendChild(edgeG);
